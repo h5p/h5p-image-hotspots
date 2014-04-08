@@ -1,0 +1,19 @@
+{
+  "title": "Image hotspot",
+  "description": "Image with hotspots",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Amendor AS",
+  "license": "cc-by-sa",
+  "machineName": "H5P.ImageHotspots",
+  "preloadedJs": [
+    {"path": "js/image-hotspots.js"}
+  ],
+  "preloadedCss": [
+    {"path": "css/image-hotspots.css"}
+  ],
+  "fullscreen": 1,
+  "embedTypes": ["div"]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Background image",
+    "name": "image",
+    "type": "image",
+    "optional": false,
+    "description": "Image shown on background."
+  },
+  {
+    "name": "color",
+    "type": "text",
+    "label": "Color",
+    "description": "The color of the hotspots specified using a hex color code",
+    "optional": true,
+    "default": "000000"
+  },
+  {
+    "name": "hotspots",
+    "type": "list",
+    "entity": "hotspot",
+    "label": "Hotspots",
+    "min": 1,
+    "defaultNum": 1,
+    "field": {
+      "name": "hotspot",
+      "type": "group",
+      "label": "Hotspot",
+      "fields": [
+        {
+          "name": "header",
+          "type": "text",
+          "label": "Header"
+        },
+        {
+          "name": "action",
+          "type": "library",
+          "options": [
+            "H5P.Text 1.0"
+          ]
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "label": "X",
+          "description": "X"
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "label": "Y",
+          "description": "Y"
+        }
+      ]
+    }
+  }
+]
