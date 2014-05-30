@@ -56,7 +56,6 @@
   padding: 1em;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  max-width: 70%;
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
 }
@@ -95,9 +94,12 @@
   transition: left .3s ease-in-out;
 }
 .h5p-image-hotspot-popup-header {
+  /* Header is just a one-liner for now */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: bold;
-  margin-bottom: 1em;
-  margin: 0 1em;
+  margin: 0 1em 1em;
 }
 .h5p-image-hotspot-popup-text {
   /*TODO - overflow*/
@@ -105,13 +107,11 @@
   overflow: auto;
   bottom: 0;
   top: 3em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: 0 1em;
   padding-right: 1em;
   line-height: 1;
 }
 .h5p-image-hotspots-overlay {
-  display:none;
   position: absolute;
   top: 0;
   left: 0;  
@@ -120,9 +120,13 @@
   -webkit-transition: background .5s ease-in-out;
   transition: background .5s ease-in-out;
   background: transparent;
-  display: block;
+  z-index:1;
 }
 .h5p-image-hotspots-overlay.visible {
-  z-index:1;
   background: rgba(0,0,0,0.6);
+}
+
+/* Fullscreen */
+.h5p-image-hotspots.h5p-fullscreen {
+  background-color: #000;
 }

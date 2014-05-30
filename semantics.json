@@ -34,6 +34,7 @@
         {
           "name": "action",
           "type": "library",
+          "label": "Popup content",
           "options": [
             "H5P.Text 1.0"
           ]
@@ -41,14 +42,14 @@
         {
           "name": "x",
           "type": "number",
-          "label": "X",
-          "description": "X"
+          "label": "Horizontal position (x)",
+          "description": "The horizontal hotspot location in percent. (0 - 100)"
         },
         {
           "name": "y",
           "type": "number",
-          "label": "Y",
-          "description": "Y"
+          "label": "Vertical position (y)",
+          "description": "The vertical hotspot location in percent. (0 - 100)"
         }
       ]
     }

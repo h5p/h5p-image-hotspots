@@ -1,5 +1,8 @@
 var H5P = H5P || {};
- 
+
+/**
+ * 
+ */
 H5P.ImageHotspots = (function ($) {
   
   var DEFAULT_FONT_SIZE = 24;
@@ -39,9 +42,6 @@ H5P.ImageHotspots = (function ($) {
         src: H5P.getPath(this.options.image.path, this.id)
       }).css({width: this.initialWidth, height: height}).appendTo(this.$hotspotContainer);
     }
-    
-    // Add invisible layer:
-    this.$hotspotsOverlay = $('<div/>', {'class': 'h5p-image-hotspots-overlay'}).appendTo(this.$hotspotContainer);
     
     // Add hotspots
     var numHotspots = this.options.hotspots.length;
@@ -91,21 +91,30 @@ H5P.ImageHotspots = (function ($) {
     var self = this;
     var width = this.$hotspotContainer.width();
     
+    self.hotspot = hotspot;
+    
     // Translate percent to pixels
     var hotspotLeft = (hotspot.x/100) * width;
-    var toTheLeft = (hotspot.x > 50);
+    var toTheLeft = (hotspot.x > 45);
     
     var popupLeft = (toTheLeft ? 0 : hotspotLeft+(this.fontSize*2.8));
     var popupWidth = (toTheLeft ? hotspotLeft-(this.fontSize*1.2) : width-popupLeft);
+    
+    this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
     
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup'
     }).css({
       left: (toTheLeft ? width : -width) + 'px',
       width: popupWidth + 'px'
-    });
+    }).click(function (event){
+      // If clicking on popup, stop propagating:
+      return false;
+    }).appendTo(this.$popupBackground);
     
-    $('body').on('click.h5p-image-hotspot-popup', function() { self.hidePopup(hotspot); });
+    $('body').on('click.h5p-image-hotspot-popup', function(event) { 
+      self.hidePopup(hotspot); 
+    });
     
     // Add content to popup:
     this.$popup.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', text: hotspot.header}));
@@ -121,16 +130,15 @@ H5P.ImageHotspots = (function ($) {
     }).css({
       left: (toTheLeft ? width : -width) + 'px',
       top: hotspot.y + '%'
-    }).appendTo(this.$hotspotContainer);
+    }).appendTo(this.$popupBackground);
     
     this.$popup.append($('<div/>', {
       'class': 'h5p-image-hotspot-popup-close',
       click: function() { self.hidePopup(hotspot); }
     }));
-    this.$popup.appendTo(this.$hotspotContainer);
+    this.$popupBackground.appendTo(this.$hotspotContainer);
     
     // Show overlay:
-    this.$hotspotsOverlay.addClass('visible');
     hotspot.$.addClass('active');
     hotspot.visible = true;
     
@@ -142,6 +150,8 @@ H5P.ImageHotspots = (function ($) {
       self.$pointer.css({
         left: (toTheLeft ? popupWidth-(self.fontSize) : popupLeft-(self.fontSize/2)) + 'px'
       });
+      
+      self.$popupBackground.addClass('visible');
     }, 100);
   };
   
@@ -150,11 +160,11 @@ H5P.ImageHotspots = (function ($) {
    */
   C.prototype.hidePopup = function (hotspot) {
     $('body').off('click.h5p-image-hotspot-popup');
-    this.$hotspotsOverlay.removeClass('visible');
     hotspot.$.removeClass('active');
     hotspot.visible = false;
-    $('.h5p-image-hotspot-popup-pointer').remove();
-    this.$popup.remove();
+    this.$popupBackground.remove();
+    
+    this.hotspot = undefined;
   };
   
   /**
@@ -163,6 +173,11 @@ H5P.ImageHotspots = (function ($) {
   C.prototype.resize = function () {
     var containerWidth = this.$hotspotContainer.parent().width();
     var containerHeight = this.$hotspotContainer.parent().height();
+    
+    // Hide popup:
+    if (this.hotspot !== undefined) {
+      this.hidePopup(this.hotspot);
+    }
     
     var width = containerWidth;
     var height = (width/this.options.image.width)*this.options.image.height;
@@ -185,6 +200,16 @@ H5P.ImageHotspots = (function ($) {
       height: height,
       fontSize: this.fontSize + 'px'
     });
+  };
+  
+  C.prototype.getCopyrights = function () {
+    var info = new H5P.ContentCopyrights();
+    
+    var image = new H5P.MediaCopyright(this.options.image.copyright);
+    image.setThumbnail(new H5P.Thumbnail(H5P.getPath(this.options.image.path, this.id), this.options.image.width, this.options.image.height));
+    info.addMedia(image);
+    
+    return info;
   };
  
   return C;

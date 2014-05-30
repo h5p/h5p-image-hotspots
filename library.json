@@ -1,9 +1,9 @@
 {
-  "title": "Image hotspot",
+  "title": "Image hotspots",
   "description": "Image with hotspots",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 0,
+  "patchVersion": 1,
   "runnable": 1,
   "author": "Amendor AS",
   "license": "cc-by-sa",
