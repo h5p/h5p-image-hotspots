@@ -100,6 +100,7 @@
   text-overflow: ellipsis;
   font-weight: bold;
   margin: 0 1em 1em;
+  line-height: 1;
 }
 .h5p-image-hotspot-popup-text {
   /*TODO - overflow*/
