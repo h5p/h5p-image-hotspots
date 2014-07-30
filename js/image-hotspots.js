@@ -27,6 +27,12 @@ H5P.ImageHotspots = (function ($) {
    */
   C.prototype.attach = function ($container) {
     var self = this;
+    
+    // Need to know since ios uses :hover when clicking on an element 
+    if (/(iPad|iPhone|iPod)/g.test( navigator.userAgent ) === false) {
+      $container.addClass("not-an-ios-device");
+    }
+    
     $container.addClass("h5p-image-hotspots");
     
     this.$hotspotContainer = $('<div/>', {
