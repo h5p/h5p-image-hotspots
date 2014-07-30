@@ -59,26 +59,6 @@
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
 }
-.h5p-image-hotspot-popup-close {
-  color: #555;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  width: 1em;
-  height: 1em;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-.h5p-image-hotspot-popup-close:before {
-  font-family: H5PFontAwesome4;
-  content: '\f00d';
-}
-.h5p-image-hotspot-popup-close:hover {
-  cursor: pointer;
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
-  transform: scale(1.5);
-}
 .h5p-image-hotspot-popup-pointer {
   position: absolute;
   width: 1.4em;
@@ -112,6 +92,11 @@
   padding-right: 1em;
   line-height: 1;
 }
+
+.h5p-image-hotspot-popup-text > * {
+  font-size: 0.7em;
+}
+
 .h5p-image-hotspots-overlay {
   position: absolute;
   top: 0;
@@ -124,7 +109,7 @@
   z-index:1;
 }
 .h5p-image-hotspots-overlay.visible {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
 }
 
 /* Fullscreen */

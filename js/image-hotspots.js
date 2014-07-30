@@ -47,7 +47,7 @@ H5P.ImageHotspots = (function ($) {
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
       var hotspot = this.options.hotspots[i];
-      hotspot.$ = $('<div/>', {
+      hotspot.element = $('<div/>', {
         'class': 'h5p-image-hotspot',
         'data-hotspot-index': i,
         click: function () {
@@ -112,8 +112,9 @@ H5P.ImageHotspots = (function ($) {
       return false;
     }).appendTo(this.$popupBackground);
     
-    $('body').on('click.h5p-image-hotspot-popup', function(event) { 
-      self.hidePopup(hotspot); 
+    /* We don't get click events on body for iOS-devices */
+    $('body').children().on('click.h5p-image-hotspot-popup', function(event) {
+      self.hidePopup(hotspot);
     });
     
     // Add content to popup:
@@ -132,14 +133,10 @@ H5P.ImageHotspots = (function ($) {
       top: hotspot.y + '%'
     }).appendTo(this.$popupBackground);
     
-    this.$popup.append($('<div/>', {
-      'class': 'h5p-image-hotspot-popup-close',
-      click: function() { self.hidePopup(hotspot); }
-    }));
     this.$popupBackground.appendTo(this.$hotspotContainer);
     
     // Show overlay:
-    hotspot.$.addClass('active');
+    hotspot.element.addClass('active');
     hotspot.visible = true;
     
     // Create animation:
@@ -159,8 +156,9 @@ H5P.ImageHotspots = (function ($) {
    * Hide the popup
    */
   C.prototype.hidePopup = function (hotspot) {
-    $('body').off('click.h5p-image-hotspot-popup');
-    hotspot.$.removeClass('active');
+    /* We don't get click events on body for iOS-devices */
+    $('body').children().off('click.h5p-image-hotspot-popup');
+    hotspot.element.removeClass('active');
     hotspot.visible = false;
     this.$popupBackground.remove();
     
