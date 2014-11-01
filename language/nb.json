@@ -1,0 +1,35 @@
+{
+  "semantics": [
+    {
+      "label": "Bakgrunnsbilde",
+      "description": "Bilde brukt som bakgrunn"
+    },
+    {
+      "label": "Punktfarge",
+      "description": "Fargen på punktene (spesifisert med heksadesimal fargekode)"
+    },
+    {
+      "entity": "punkt",
+      "label": "Punkter",
+      "field": {
+        "label": "Punkt",
+        "fields": [
+          {
+            "label": "Overskrift"
+          },
+          {
+            "label": "Innhold"
+          },
+          {
+            "label": "Horisontal posisjon (x)",
+            "description": "Den horisontale posisjonen til punktet målt i prosent. (0 - 100)"
+          },
+          {
+            "label": "Vertical posisjon (y)",
+            "description": "Den verticale posisjonen til punktet målt i prosent. (0 - 100)"
+          }
+        ]
+      }
+    }
+  ]
+}
