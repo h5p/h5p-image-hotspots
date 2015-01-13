@@ -115,7 +115,7 @@ H5P.ImageHotspots = (function ($) {
       width: popupWidth + 'px'
     }).click(function (event){
       // If clicking on popup, stop propagating:
-      return false;
+      event.stopPropagation();
     }).appendTo(this.$popupBackground);
     
     /* We don't get click events on body for iOS-devices */
