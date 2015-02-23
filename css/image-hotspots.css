@@ -2,6 +2,7 @@
 
 .h5p-image-hotspots {
   background-color: #FFF;
+  color: #333;
 }
 .h5p-image-hotspots-container {
   margin: 0 auto;
@@ -22,9 +23,12 @@
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   background: rgba(0,0,0,0.5);
+  padding: 0;
+  border: none;
+  margin: 0;
 }
 .h5p-image-hotspot.active {
-  z-index: 2;
+  z-index: 1;
   cursor: pointer;
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
@@ -52,8 +56,9 @@
   top: 0;
   height: 100%;
   max-height: 100%;
-  background: #FFF;
-  padding: 1em;
+  background: white;
+  background: rgba(255,255,255,0.9);
+  padding: 0.7em;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-transition: left .3s ease-in-out;
@@ -61,52 +66,93 @@
 }
 .h5p-image-hotspot-popup-pointer {
   position: absolute;
-  width: 1.4em;
-  height: 1.4em;
-  background: #FFF;
-  z-index: 2;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
+  width: 0;
+  height: 0;
+  border-top: 0.6em solid transparent;
+  border-left: 0.7em solid rgba(255,255,255,0.9);
+  border-bottom: 0.6em solid transparent;
 }
+.h5p-image-hotspot-popup-pointer.to-the-right {
+  border-right: 0.7em solid rgba(255,255,255,0.9);
+  border-left: none;
+  left: -0.7em;
+}
+
 .h5p-image-hotspot-popup-header {
   /* Header is just a one-liner for now */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  margin: 0 1em 1em;
+  margin: 0;
+  margin-bottom: 1em;
   line-height: 1;
 }
 .h5p-image-hotspot-popup-text {
-  /*TODO - overflow*/
   position: absolute;
-  overflow: auto;
+  left: 0.7em;
+  top: 2em;
   bottom: 0;
-  top: 3em;
-  margin: 0 1em;
-  padding-right: 1em;
+  right: 0.2em;
   line-height: 1;
+  overflow: auto;
+  word-wrap: break-word;
 }
-
+.small-device .h5p-image-hotspot-popup-text {
+  margin-right: 1.8em;
+}
 .h5p-image-hotspot-popup-text > * {
   font-size: 0.7em;
 }
+.h5p-image-hotspot-popup-text > p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.h5p-fullscreen .h5p-image-hotspot-close-popup-button {
+  top: 0;
+}
+.h5p-image-hotspot-close-popup-button {
+  position: absolute;
+  top: 1em;
+  right: -1.125em;
+  bottom: 0;
+  z-index: 3;
+  cursor: pointer;
+  color: #EEE;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.3);
+  font-size: 1.35em;
+  width: 1.125em;
 
+  -webkit-transition: right .5s ease-in-out;
+  transition: right .5s ease-in-out;
+}
+.h5p-image-hotspot-close-popup-button:hover,
+.h5p-image-hotspot-close-popup-button:active {
+  background: rgba(0,0,0,0.5);
+}
+.h5p-image-hotspot-close-popup-button:after {
+  font-family: H5PFontAwesome4;
+  content: '\f112';
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  text-align: center;
+  width: 100%;
+  font-size: 80%;
+}
 .h5p-image-hotspots-overlay {
   position: absolute;
   top: 0;
-  left: 0;  
+  left: 0;
   width: 100%;
   height: 100%;
   -webkit-transition: background .5s ease-in-out;
   transition: background .5s ease-in-out;
   background: transparent;
-  z-index:1;
+  z-index: 1;
 }
 .h5p-image-hotspots-overlay.visible {
   background: rgba(0,0,0,0.5);
