@@ -18,7 +18,7 @@ H5P.ImageHotspots = (function ($) {
     // Keep provided id.
     this.id = id;
     this.isSmallDevice = false;
-  };
+  }
 
   /**
    * Attach function called by H5P framework to insert H5P content into
@@ -32,10 +32,10 @@ H5P.ImageHotspots = (function ($) {
 
     // Need to know since ios uses :hover when clicking on an element
     if (/(iPad|iPhone|iPod)/g.test( navigator.userAgent ) === false) {
-      $container.addClass("not-an-ios-device");
+      $container.addClass('not-an-ios-device');
     }
 
-    $container.addClass("h5p-image-hotspots");
+    $container.addClass('h5p-image-hotspots');
 
     this.$hotspotContainer = $('<div/>', {
       'class': 'h5p-image-hotspots-container'
@@ -51,23 +51,27 @@ H5P.ImageHotspots = (function ($) {
       }).css({width: this.initialWidth, height: height}).appendTo(this.$hotspotContainer);
     }
 
+    var hotspotClicked = function (){
+      var index = $(this).data('hotspot-index');
+      var hs = self.options.hotspots[index];
+      if(hs.visible) {
+        self.hidePopup(hs);
+      }
+      else {
+        self.showPopup(hs);
+      }
+      return false;
+    };
+
     // Add hotspots
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
       var hotspot = this.options.hotspots[i];
+      hotspot.index = i;
       hotspot.element = $('<div/>', {
         'class': 'h5p-image-hotspot',
         'data-hotspot-index': i,
-        click: function () {
-          var hs = self.options.hotspots[$(this).data('hotspot-index')];
-          if(hs.visible) {
-            self.hidePopup(hs);
-          }
-          else {
-            self.showPopup(hs);
-          }
-          return false;
-        }
+        click: hotspotClicked
       }).css({top: hotspot.y + '%', left: hotspot.x + '%', background: 'rgba('+ this.hexToRgb(this.options.color) + ',0.5)'}).appendTo(this.$hotspotContainer);
     }
 
@@ -102,14 +106,17 @@ H5P.ImageHotspots = (function ($) {
     self.hotspot = hotspot;
     var popupLeft = 0;
     var popupWidth = 0;
-
-    if (self.isSmallDevice) {
+    var toTheLeft = 0;
+    var className = hotspot.action.library.split(' ')[0].replace('.','-').toLowerCase();
+    var fullscreen = hotspot.alwaysFullscreen || self.isSmallDevice;
+    if (fullscreen) {
       popupWidth = width;
+      className += ' fullscreen-popup';
     }
     else {
       // Translate percent to pixels
       var hotspotLeft = (hotspot.x/100) * width;
-      var toTheLeft = (hotspot.x > 45);
+      toTheLeft = (hotspot.x > 45);
 
       popupLeft = (toTheLeft ? 0 : hotspotLeft+(this.fontSize*2.8));
       popupWidth = (toTheLeft ? hotspotLeft-(this.fontSize*1.2) : width-popupLeft);
@@ -118,7 +125,7 @@ H5P.ImageHotspots = (function ($) {
     this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
 
     this.$popup = $('<div/>', {
-      'class': 'h5p-image-hotspot-popup'
+      'class': 'h5p-image-hotspot-popup ' + className
     }).css({
       left: (toTheLeft ? width : -width) + 'px',
       width: popupWidth + 'px'
@@ -133,15 +140,24 @@ H5P.ImageHotspots = (function ($) {
     });
 
     // Add content to popup:
-    this.$popup.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', text: hotspot.header}));
+    var $popupContent = $('<div/>', {'class': 'h5p-image-hotspot-popup-content'});
+    if (hotspot.header) {
+      $popupContent.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', text: hotspot.header}));
+      this.$popup.addClass('h5p-image-hotspot-has-header');
+    }
 
-    var $content = $('<div/>', {'class': 'h5p-image-hotspot-popup-text'});
-    var action = H5P.newRunnable(hotspot.action, this.id);
-    action.attach($content);
-    $content.appendTo(this.$popup);
+    if(hotspot.$element === undefined) {
+      hotspot.$element = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
+      var action = H5P.newRunnable(hotspot.action, this.id);
+      action.attach(hotspot.$element);
+    }
+
+    hotspot.$element.appendTo($popupContent);
+    $popupContent.appendTo(this.$popup);
+
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
-    if (self.isSmallDevice) {
+    if (fullscreen) {
       this.$closeButton = $('<div>', {
         'class': 'h5p-image-hotspot-close-popup-button'
       }).appendTo(this.$popupBackground);
@@ -174,7 +190,7 @@ H5P.ImageHotspots = (function ($) {
       self.$popupBackground.addClass('visible');
     }, 100);
 
-    if (self.isSmallDevice) {
+    if (fullscreen) {
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         self.$closeButton.css({
           right: 0
@@ -192,6 +208,11 @@ H5P.ImageHotspots = (function ($) {
     $('body').children().off('click.h5p-image-hotspot-popup');
     hotspot.element.removeClass('active');
     hotspot.visible = false;
+
+    if (hotspot.$element !== undefined) {
+      hotspot.$element.detach();
+    }
+
     this.$popupBackground.remove();
 
     this.hotspot = undefined;
