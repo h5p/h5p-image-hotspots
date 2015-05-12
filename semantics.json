@@ -29,14 +29,19 @@
         {
           "name": "header",
           "type": "text",
-          "label": "Header"
+          "label": "Header",
+          "optional": true
         },
         {
           "name": "action",
           "type": "library",
           "label": "Popup content",
           "options": [
-            "H5P.Text 1.0"
+            "H5P.Text 1.0",
+            "H5P.Video 1.1",
+            "H5P.Image 1.0",
+            "H5P.SingleChoiceSet 1.1",
+            "H5P.Summary 1.2"
           ]
         },
         {
@@ -50,6 +55,11 @@
           "type": "number",
           "label": "Vertical position (y)",
           "description": "The vertical hotspot location in percent. (0 - 100)"
+        },
+        {
+          "name": "alwaysFullscreen",
+          "type": "boolean",
+          "label": "Always popup in fullscreen"
         }
       ]
     }
