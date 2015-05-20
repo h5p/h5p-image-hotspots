@@ -15,18 +15,27 @@
         "label": "Punto focale",
         "fields": [
           {
-            "label": "Testata"
+            "label": "Position",
+            "fields": [
+              {
+                "label": "Posizione orizzontale (x)",
+                "description": "Posizione orizzontale del punto focale stabilita in percentuale. (0 - 100)"
+              },
+              {
+                "label": "Posizione verticale (y)",
+                "description": "Posizione verticale del punto focale stabilita in percentuale. (0 - 100)"
+              }
+            ]
+          },
+          {
+            "label": "Cover entire frame on popup"
+          },
+          {
+            "label": "Testata",
+            "description": "optional"
           },
           {
             "label": "Popup contenuto"
-          },
-          {
-            "label": "Posizione orizzontale (x)",
-            "description": "Posizione orizzontale del punto focale stabilita in percentuale. (0 - 100)"
-          },
-          {
-            "label": "Posizione verticale (y)",
-            "description": "Posizione verticale del punto focale stabilita in percentuale. (0 - 100)"
           }
         ]
       }

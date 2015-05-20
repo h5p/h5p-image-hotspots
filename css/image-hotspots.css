@@ -171,6 +171,11 @@
 .h5p-image-hotspots-overlay.visible {
   background: rgba(0,0,0,0.5);
 }
+.background-image-missing {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 2em;
+}
 
 /* Fullscreen */
 .h5p-image-hotspots.h5p-fullscreen {

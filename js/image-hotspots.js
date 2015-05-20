@@ -30,6 +30,11 @@ H5P.ImageHotspots = (function ($) {
     var self = this;
     self.$container = $container;
 
+    if (this.options.image === null || this.options.image === undefined) {
+      $container.append('<div class="background-image-missing">I really need a background image :)</div>');
+      return;
+    }
+
     // Need to know since ios uses :hover when clicking on an element
     if (/(iPad|iPhone|iPod)/g.test( navigator.userAgent ) === false) {
       $container.addClass('not-an-ios-device');
@@ -72,7 +77,9 @@ H5P.ImageHotspots = (function ($) {
         'class': 'h5p-image-hotspot',
         'data-hotspot-index': i,
         click: hotspotClicked
-      }).css({top: hotspot.y + '%', left: hotspot.x + '%', background: 'rgba('+ this.hexToRgb(this.options.color) + ',0.5)'}).appendTo(this.$hotspotContainer);
+      }).css({top: hotspot.position.y + '%', left: hotspot.position.x + '%', background: 'rgba('+ hexToRgb(this.options.color) + ',0.5)'}).appendTo(this.$hotspotContainer);
+      hotspot.actionInstance = H5P.newRunnable(hotspot.action, this.id);
+      hotspot.$element = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
     }
 
     this.$hotspotContainer.appendTo($container);
@@ -81,19 +88,6 @@ H5P.ImageHotspots = (function ($) {
       self.resize();
     });
     this.resize();
-  };
-
-  /**
-   * Hex string to RGB
-   *
-   * eg: FFFFFF -> 255,255,255
-   */
-  C.prototype.hexToRgb = function(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    if(result) {
-      return parseInt(result[1], 16) + ',' + parseInt(result[2], 16) + ',' + parseInt(result[3], 16);
-    }
-    return '0,0,0';
   };
 
   /**
@@ -115,8 +109,8 @@ H5P.ImageHotspots = (function ($) {
     }
     else {
       // Translate percent to pixels
-      var hotspotLeft = (hotspot.x/100) * width;
-      toTheLeft = (hotspot.x > 45);
+      var hotspotLeft = (hotspot.position.x/100) * width;
+      toTheLeft = (hotspot.position.x > 45);
 
       popupLeft = (toTheLeft ? 0 : hotspotLeft+(this.fontSize*2.8));
       popupWidth = (toTheLeft ? hotspotLeft-(this.fontSize*1.2) : width-popupLeft);
@@ -127,7 +121,7 @@ H5P.ImageHotspots = (function ($) {
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className
     }).css({
-      left: (toTheLeft ? width : -width) + 'px',
+      left: (toTheLeft ? width : -width) + '%',
       width: popupWidth + 'px'
     }).click(function (event){
       // If clicking on popup, stop propagating:
@@ -142,18 +136,15 @@ H5P.ImageHotspots = (function ($) {
     // Add content to popup:
     var $popupContent = $('<div/>', {'class': 'h5p-image-hotspot-popup-content'});
     if (hotspot.header) {
-      $popupContent.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', text: hotspot.header}));
+      $popupContent.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', html: hotspot.header}));
       this.$popup.addClass('h5p-image-hotspot-has-header');
     }
 
-    if(hotspot.$element === undefined) {
-      hotspot.$element = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
-      var action = H5P.newRunnable(hotspot.action, this.id);
-      action.attach(hotspot.$element);
-    }
-
+    hotspot.actionInstance.attach(hotspot.$element);
     hotspot.$element.appendTo($popupContent);
+
     $popupContent.appendTo(this.$popup);
+
 
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
@@ -167,7 +158,7 @@ H5P.ImageHotspots = (function ($) {
         'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right'),
       }).css({
         left: (toTheLeft ? width : (-width-(0.7*self.fontSize))) + 'px',
-        top: hotspot.y + '%'
+        top: hotspot.position.y + '%'
       }).appendTo(this.$popupBackground);
     }
 
@@ -198,6 +189,9 @@ H5P.ImageHotspots = (function ($) {
       }, 300);
     }
 
+    if (hotspot.actionInstance.trigger !== undefined) {
+      hotspot.actionInstance.trigger('resize');
+    }
   };
 
   /**
@@ -208,10 +202,7 @@ H5P.ImageHotspots = (function ($) {
     $('body').children().off('click.h5p-image-hotspot-popup');
     hotspot.element.removeClass('active');
     hotspot.visible = false;
-
-    if (hotspot.$element !== undefined) {
-      hotspot.$element.detach();
-    }
+    hotspot.$element.detach();
 
     this.$popupBackground.remove();
 
@@ -224,14 +215,21 @@ H5P.ImageHotspots = (function ($) {
   C.prototype.resize = function () {
     var containerWidth = this.$container.width();
     var containerHeight = this.$container.height();
+    var isFullscreen = this.$container.hasClass('h5p-fullscreen');
 
     // Hide popup:
-    if (this.hotspot !== undefined) {
+    /*if (this.hotspot !== undefined) {
       this.hidePopup(this.hotspot);
-    }
+    }*/
 
     var width = containerWidth;
     var height = Math.floor((width/this.options.image.width)*this.options.image.height);
+
+    // If fullscreen, we have both a max width and max height
+    if (isFullscreen && height > containerHeight) {
+      height = containerHeight;
+      width = Math.floor((height/this.options.image.height)*this.options.image.width);
+    }
 
     this.$image.css({
       width: width,
@@ -239,7 +237,6 @@ H5P.ImageHotspots = (function ($) {
     });
 
     this.fontSize = (DEFAULT_FONT_SIZE * (width/this.initialWidth));
-    this.fontSize = this.fontSize < DEFAULT_FONT_SIZE ? DEFAULT_FONT_SIZE : this.fontSize;
 
     this.$hotspotContainer.css({
       width: width,
@@ -251,14 +248,18 @@ H5P.ImageHotspots = (function ($) {
     this.$container.toggleClass('small-device', this.isSmallDevice);
   };
 
-  C.prototype.getCopyrights = function () {
-    var info = new H5P.ContentCopyrights();
 
-    var image = new H5P.MediaCopyright(this.options.image.copyright);
-    image.setThumbnail(new H5P.Thumbnail(H5P.getPath(this.options.image.path, this.id), this.options.image.width, this.options.image.height));
-    info.addMedia(image);
-
-    return info;
+  /**
+   * Hex string to RGB
+   *
+   * eg: FFFFFF -> 255,255,255
+   */
+  var hexToRgb = function(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    if(result) {
+      return parseInt(result[1], 16) + ',' + parseInt(result[2], 16) + ',' + parseInt(result[3], 16);
+    }
+    return '0,0,0';
   };
 
   return C;
