@@ -13,13 +13,13 @@
     "iframe"
   ],
   "preloadedJs": [
-    {"path": "js/popup.js"},
-    {"path": "js/hotspot.js"},
-    {"path": "js/image-hotspots.js"}
+    {"path": "scripts/popup.js"},
+    {"path": "scripts/hotspot.js"},
+    {"path": "scripts/image-hotspots.js"}
   ],
   "preloadedCss": [
     {
-      "path": "css/image-hotspots.css"
+      "path": "styles/image-hotspots.css"
     }
   ],
   "preloadedDependencies": [
