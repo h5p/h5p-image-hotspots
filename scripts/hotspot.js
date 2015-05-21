@@ -12,6 +12,10 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
 
+    if (this.config.action === undefined) {
+      throw new Error('Missing mandatory library for hotspot');
+    }
+
     this.$element = $('<div/>', {
       'class': 'h5p-image-hotspot',
       click: function(){
@@ -29,8 +33,6 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
       background: 'rgba('+ hexToRgb(color) + ',0.5)'
     });
 
-    this.actionInstance = H5P.newRunnable(this.config.action, this.id);
-
     parent.on('resize', function () {
       if (self.popup && self.actionInstance.trigger !== undefined) {
         // The reason for this timeout is fullscreen on chrome on android
@@ -39,6 +41,8 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
         }, 1);
       }
     });
+
+    this.actionInstance = H5P.newRunnable(this.config.action, this.id);
   }
 
   /**

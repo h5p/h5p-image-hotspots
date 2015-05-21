@@ -91,7 +91,8 @@
   font-weight: bold;
   margin: 0;
   margin-bottom: 0.5em;
-  line-height: 1;
+  line-height: 1.5em;
+  max-height: 7%;
 }
 .h5p-image-hotspot-popup-content {
   height: 100%;
@@ -100,10 +101,10 @@
   height: 100%;
 }
 .h5p-image-hotspot-has-header .h5p-image-hotspot-popup-body{
-  height: 95%;
+  height: 93%;
 }
 .h5p-image-hotspot-has-header .h5p-text.h5p-image-hotspot-popup-body {
-  max-height: 95%;
+  max-height: 93%;
 }
 .h5p-text.h5p-image-hotspot-popup-body {
   height: auto;
