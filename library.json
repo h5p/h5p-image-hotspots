@@ -13,9 +13,9 @@
     "iframe"
   ],
   "preloadedJs": [
-    {
-      "path": "js/image-hotspots.js"
-    }
+    {"path": "js/popup.js"},
+    {"path": "js/hotspot.js"},
+    {"path": "js/image-hotspots.js"}
   ],
   "preloadedCss": [
     {
