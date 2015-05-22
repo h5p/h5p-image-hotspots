@@ -51,13 +51,12 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
     });
 
     this.initialWidth = $container.width();
-    var height = (this.initialWidth/this.options.image.width)*this.options.image.height;
 
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
         'class': 'h5p-image-hotspots-background',
         src: H5P.getPath(this.options.image.path, this.id)
-      }).css({width: this.initialWidth, height: height}).appendTo(this.$hotspotContainer);
+      }).appendTo(this.$hotspotContainer);
     }
 
     var isSmallDevice = function () {
@@ -76,14 +75,10 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
     }
     this.$hotspotContainer.appendTo($container);
 
+    self.resize();
     this.on('resize', function () {
       self.resize();
     });
-    /*$(window).on('orientationchange', function () {
-      self.trigger('resize');
-      //alert('JALLA');
-    });*/
-    this.resize();
   };
 
   /**
@@ -104,15 +99,15 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
     }
 
     self.$image.css({
-      width: width,
-      height: height
+      width: width + 'px',
+      height: height + 'px'
     });
 
     self.fontSize = (DEFAULT_FONT_SIZE * (width/self.initialWidth));
 
     self.$hotspotContainer.css({
-      width: width,
-      height: height,
+      width: width + 'px',
+      height: height + 'px',
       fontSize: self.fontSize + 'px'
     });
 

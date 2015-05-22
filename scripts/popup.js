@@ -51,8 +51,22 @@ H5P.ImageHotspots.Popup = (function ($) {
     // by the popup
     if (fullscreen) {
       this.$closeButton = $('<div>', {
-        'class': 'h5p-image-hotspot-close-popup-button'
+        'class': 'h5p-image-hotspot-close-popup-button',
       }).appendTo(this.$popupBackground);
+
+      var $fullscreenButton = $('.h5p-enable-fullscreen').is(':visible') ? $('.h5p-enable-fullscreen') : ($('.h5p-disable-fullscreen').is(':visible') ? $('.h5p-disable-fullscreen') : undefined);
+      if ($fullscreenButton !== undefined) {
+        this.$closeButton.css({
+          width: $fullscreenButton.outerWidth() + 'px',
+          top: $fullscreenButton.outerHeight() + 'px'
+        });
+      }
+
+      H5P.Transition.onTransitionEnd(self.$popup, function () {
+        self.$closeButton.css({
+          right: ($fullscreenButton === undefined ? 0 : 2) + 'px'
+        });
+      }, 300);
     }
     else {
       this.$pointer = $('<div/>', {
@@ -71,14 +85,6 @@ H5P.ImageHotspots.Popup = (function ($) {
       });
       self.$popupBackground.addClass('visible');
     }, 100);
-
-    if (fullscreen) {
-      H5P.Transition.onTransitionEnd(self.$popup, function () {
-        self.$closeButton.css({
-          right: 0
-        });
-      }, 300);
-    }
   }
 
   Popup.prototype.hide = function () {
