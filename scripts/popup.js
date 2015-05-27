@@ -54,7 +54,7 @@ H5P.ImageHotspots.Popup = (function ($) {
         'class': 'h5p-image-hotspot-close-popup-button',
       }).appendTo(this.$popupBackground);
 
-      var $fullscreenButton = $('.h5p-enable-fullscreen').is(':visible') ? $('.h5p-enable-fullscreen') : ($('.h5p-disable-fullscreen').is(':visible') ? $('.h5p-disable-fullscreen') : undefined);
+      var $fullscreenButton = $('.h5p-enable-fullscreen').is(':visible') ? $('.h5p-enable-fullscreen') : undefined;
       if ($fullscreenButton !== undefined) {
         this.$closeButton.css({
           width: $fullscreenButton.outerWidth() + 'px',
