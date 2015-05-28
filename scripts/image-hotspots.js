@@ -1,13 +1,25 @@
-var H5P = H5P || {};
-
 /**
- *
+ * Defines the H5P.ImageHotspots class
  */
-H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
+H5P.ImageHotspots = (function ($, EventDispatcher) {
 
-  var DEFAULT_FONT_SIZE = 24;
   /**
-   * Constructor function.
+   * Default font size
+   *
+   * @constant
+   * @type {number}
+   * @default
+   */
+  var DEFAULT_FONT_SIZE = 24;
+
+  /**
+   * Creates a new Image hotspots instance
+   *
+   * @class
+   * @augments H5P.EventDispatcher
+   * @namespace H5P
+   * @param {Object} options
+   * @param {number} id
    */
   function ImageHotspots(options, id) {
     EventDispatcher.call(this);
@@ -21,6 +33,7 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
     this.id = id;
     this.isSmallDevice = false;
   }
+  // Extends the event dispatcher
   ImageHotspots.prototype = Object.create(EventDispatcher.prototype);
   ImageHotspots.prototype.constructor = ImageHotspots;
 
@@ -28,7 +41,8 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
    * Attach function called by H5P framework to insert H5P content into
    * page
    *
-   * @param {jQuery} $container
+   * @public
+   * @param {H5P.jQuery} $container
    */
   ImageHotspots.prototype.attach = function ($container) {
     var self = this;
@@ -50,8 +64,6 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
       'class': 'h5p-image-hotspots-container'
     });
 
-    this.initialWidth = $container.width();
-
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
         'class': 'h5p-image-hotspots-background',
@@ -67,10 +79,10 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
       try {
-        new Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
+        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
       }
       catch (e) {
-        console.error(e);
+        H5P.error(e);
       }
     }
     this.$hotspotContainer.appendTo($container);
@@ -83,6 +95,7 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
 
   /**
    * Handle resizing
+   * @private
    */
   ImageHotspots.prototype.resize = function () {
     var self = this;
@@ -103,6 +116,10 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
       height: height + 'px'
     });
 
+    if (self.initialWidth === undefined) {
+      self.initialWidth = self.$container.width();
+    }
+
     self.fontSize = (DEFAULT_FONT_SIZE * (width/self.initialWidth));
 
     self.$hotspotContainer.css({
@@ -111,8 +128,8 @@ H5P.ImageHotspots = (function ($, Hotspot, EventDispatcher) {
       fontSize: self.fontSize + 'px'
     });
 
-    self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 45);
+    self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);
   };
 
   return ImageHotspots;
-})(H5P.jQuery, H5P.ImageHotspots.Hotspot, H5P.EventDispatcher);
+})(H5P.jQuery, H5P.EventDispatcher);

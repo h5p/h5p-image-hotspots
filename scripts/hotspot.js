@@ -1,11 +1,20 @@
-var H5P = H5P || {};
-H5P.ImageHotspots = H5P.ImageHotspots || {};
 /**
- * SingleChoiceResultSlide - Represents the result slide
+ * Defines the ImageHotspots.Hotspot class
  */
-H5P.ImageHotspots.Hotspot = (function ($, Popup) {
+(function ($, ImageHotspots) {
 
-  function Hotspot(config, color, id, isSmallDeviceCB, parent) {
+  /**
+   * Creates a new Hotspot
+   *
+   * @class
+   * @namespace H5P.ImageHotspots
+   * @param  {Object} config
+   * @param  {string} color
+   * @param  {number} id
+   * @param  {boolean} isSmallDeviceCB
+   * @param  {H5P.ImageHotspots} parent
+   */
+  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent) {
     var self = this;
     this.config = config;
     this.visible = false;
@@ -46,27 +55,27 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
   }
 
   /**
-   * Append the resultslide to a container
-   *
-   * @param  {domElement} $container The container
-   * @return {domElement}            This dom element
+   * Append the hotspot to a container
+   * @public
+   * @param {H5P.jQuery} $container
    */
-  Hotspot.prototype.appendTo = function ($container) {
+  ImageHotspots.Hotspot.prototype.appendTo = function ($container) {
     this.$container = $container;
     this.$element.appendTo($container);
   };
 
   /**
    * Display the popup
+   * @public
    */
-  Hotspot.prototype.showPopup = function () {
+  ImageHotspots.Hotspot.prototype.showPopup = function () {
     var self = this;
 
     // Create popup content:
     var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
     this.actionInstance.attach($popupBody);
 
-    this.popup = new Popup(this.$container, $popupBody, this.config.position.x, this.config.position.y, this.$element.outerWidth(), this.config.header, this.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), this.config.alwaysFullscreen || this.isSmallDeviceCB());
+    this.popup = new ImageHotspots.Popup(this.$container, $popupBody, this.config.position.x, this.config.position.y, this.$element.outerWidth(), this.config.header, this.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), this.config.alwaysFullscreen || this.isSmallDeviceCB());
     this.$element.addClass('active');
     this.visible = true;
 
@@ -85,8 +94,9 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
 
   /**
    * Hide popup
+   * @public
    */
-  Hotspot.prototype.hidePopup = function () {
+  ImageHotspots.Hotspot.prototype.hidePopup = function () {
     if (this.popup) {
       // We don't get click events on body for iOS-devices
       $('body').children().off('click.h5p-image-hotspot-popup');
@@ -101,8 +111,10 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
 
   /**
    * Hex string to RGB
-   *
    * eg: FFFFFF -> 255,255,255
+   * @private
+   * @param {string} hex
+   * @returns {string} RGB equivalent
    */
   var hexToRgb = function(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -112,6 +124,4 @@ H5P.ImageHotspots.Hotspot = (function ($, Popup) {
     return '0,0,0';
   };
 
-  return Hotspot;
-
-})(H5P.jQuery, H5P.ImageHotspots.Popup);
+})(H5P.jQuery, H5P.ImageHotspots);

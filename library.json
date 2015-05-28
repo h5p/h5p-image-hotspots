@@ -5,17 +5,17 @@
   "minorVersion": 1,
   "patchVersion": 0,
   "runnable": 1,
-  "author": "Amendor AS",
-  "license": "cc-by-sa",
+  "author": "Joubel AS (fnoks)",
+  "license": "MIT",
   "machineName": "H5P.ImageHotspots",
   "fullscreen": 1,
   "embedTypes": [
     "iframe"
   ],
   "preloadedJs": [
-    {"path": "scripts/popup.js"},
+    {"path": "scripts/image-hotspots.js"},
     {"path": "scripts/hotspot.js"},
-    {"path": "scripts/image-hotspots.js"}
+    {"path": "scripts/popup.js"}
   ],
   "preloadedCss": [
     {

@@ -3,7 +3,6 @@
     "label": "Background image",
     "name": "image",
     "type": "image",
-    "optional": false,
     "description": "Image shown on background."
   },
   {
@@ -34,7 +33,7 @@
           "name": "position",
           "type": "group",
           "widget": "imageCoordinateSelector",
-          "imagePath": "../../image",
+          "imageFieldPath": "../../image",
           "label": "Hotspot position",
           "description": "Click on the thumbnail image to place the hotspot",
           "fields": [

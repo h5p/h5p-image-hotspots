@@ -1,11 +1,24 @@
-var H5P = H5P || {};
-H5P.ImageHotspots = H5P.ImageHotspots || {};
 /**
- * SingleChoiceResultSlide - Represents the result slide
+ * Defines the ImageHotspots.Popup class
  */
-H5P.ImageHotspots.Popup = (function ($) {
+(function ($, ImageHotspots) {
 
-  function Popup($container, $content, x, y, hotspotWidth, header, className, fullscreen) {
+  /**
+   * Creates new Popup instance
+   *
+   * @class
+   * @namespace H5P.ImageHotspots
+   * @param {H5P.jQuery} $container
+   * @param {H5P.jQuery} $content
+   * @param {number} x
+   * @param {number} y
+   * @param {number} hotspotWidth
+   * @param {string} header
+   * @param {string} className
+   * @param {boolean} fullscreen
+   *
+   */
+  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen) {
     var self = this;
     this.$container = $container;
 
@@ -87,10 +100,13 @@ H5P.ImageHotspots.Popup = (function ($) {
     }, 100);
   }
 
-  Popup.prototype.hide = function () {
+
+  /**
+   * Hides popup
+   *
+   * @public
+   */
+  ImageHotspots.Popup.prototype.hide = function () {
     this.$popupBackground.remove();
   };
-
-  return Popup;
-
-})(H5P.jQuery);
+})(H5P.jQuery, H5P.ImageHotspots);
