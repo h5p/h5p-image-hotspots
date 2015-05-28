@@ -15,18 +15,27 @@
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Header"
+            "label": "Position",
+            "fields": [
+              {
+                "label": "Horizontal position (x)",
+                "description": "The horizontal hotspot location in percent. (0 - 100)"
+              },
+              {
+                "label": "Vertical position (y)",
+                "description": "The vertical hotspot location in percent. (0 - 100)"
+              }
+            ]
+          },
+          {
+            "label": "Cover entire frame on popup"
+          },
+          {
+            "label": "Header",
+            "description": "optional"
           },
           {
             "label": "Popup content"
-          },
-          {
-            "label": "Horizontal position (x)",
-            "description": "The horizontal hotspot location in percent. (0 - 100)"
-          },
-          {
-            "label": "Vertical position (y)",
-            "description": "The vertical hotspot location in percent. (0 - 100)"
           }
         ]
       }

@@ -15,18 +15,28 @@
         "label": "Punkt",
         "fields": [
           {
-            "label": "Overskrift"
+            "label": "Position",
+            "fields": [
+              {
+                "label": "Horisontal posisjon (x)",
+                "description": "Den horisontale posisjonen til punktet målt i prosent. (0 - 100)"
+              },
+              {
+                "label": "Vertical posisjon (y)",
+                "description": "Den verticale posisjonen til punktet målt i prosent. (0 - 100)"
+              }
+            ]
+          },
+          {
+            "label": "Dekk hele bakgrunnsbildet",
+            "description": "Når brukeren klikker vil popup dekke hele bakgrunnsbildet"
+          },
+          {
+            "label": "Overskrift",
+            "description": "Valgfri overskrift for popup"
           },
           {
             "label": "Innhold"
-          },
-          {
-            "label": "Horisontal posisjon (x)",
-            "description": "Den horisontale posisjonen til punktet målt i prosent. (0 - 100)"
-          },
-          {
-            "label": "Vertical posisjon (y)",
-            "description": "Den verticale posisjonen til punktet målt i prosent. (0 - 100)"
           }
         ]
       }

@@ -2,24 +2,24 @@
   "title": "Image hotspots",
   "description": "Image with hotspots",
   "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 12,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "runnable": 1,
-  "author": "Amendor AS",
-  "license": "cc-by-sa",
+  "author": "Joubel AS (fnoks)",
+  "license": "MIT",
   "machineName": "H5P.ImageHotspots",
   "fullscreen": 1,
   "embedTypes": [
     "iframe"
   ],
   "preloadedJs": [
-    {
-      "path": "js/image-hotspots.js"
-    }
+    {"path": "scripts/image-hotspots.js"},
+    {"path": "scripts/hotspot.js"},
+    {"path": "scripts/popup.js"}
   ],
   "preloadedCss": [
     {
-      "path": "css/image-hotspots.css"
+      "path": "styles/image-hotspots.css"
     }
   ],
   "preloadedDependencies": [
@@ -30,6 +30,18 @@
     },
     {
       "machineName": "H5P.Transition",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.ImageCoordinateSelector",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
       "minorVersion": 0
     }
