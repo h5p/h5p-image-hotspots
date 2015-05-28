@@ -8,7 +8,7 @@
   {
     "name": "color",
     "type": "text",
-    "label": "Color",
+    "label": "Hotspot color",
     "description": "The color of the hotspots",
     "optional": true,
     "default": "981d99",
@@ -50,13 +50,14 @@
         {
           "name": "alwaysFullscreen",
           "type": "boolean",
-          "label": "Cover entire frame on popup"
+          "label": "Cover entire bakground image",
+          "description": "When the user clicks the hotspot the popup will cover the entire background image"
         },
         {
           "name": "header",
           "type": "text",
           "label": "Header",
-          "description": "Optional",
+          "description": "Optional header for the popup",
           "optional": true
         },
         {

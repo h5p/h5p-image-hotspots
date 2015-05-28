@@ -28,11 +28,12 @@
             ]
           },
           {
-            "label": "Cover entire frame on popup"
+            "label": "Dekk hele bakgrunnsbildet",
+            "description": "Når brukeren klikker vil popup dekke hele bakgrunnsbildet"
           },
           {
             "label": "Overskrift",
-            "description": "valgfri"
+            "description": "Valgfri overskrift for popup"
           },
           {
             "label": "Innhold"
