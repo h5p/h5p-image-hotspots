@@ -50,8 +50,6 @@
         }, 1);
       }
     });
-
-    this.actionInstance = H5P.newRunnable(this.config.action, this.id);
   }
 
   /**
@@ -70,6 +68,8 @@
    */
   ImageHotspots.Hotspot.prototype.showPopup = function () {
     var self = this;
+
+    this.actionInstance = H5P.newRunnable(this.config.action, this.id);
 
     // Create popup content:
     var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});

@@ -83,7 +83,6 @@
   border-left: none;
   left: -0.59em;
 }
-
 .h5p-image-hotspot-popup-header {
   /* Header is just a one-liner for now */
   white-space: nowrap;
@@ -125,12 +124,9 @@
   margin-top: 0;
   margin-bottom: 1em;
 }
-.h5p-fullscreen .h5p-image-hotspot-close-popup-button {
-  top: 0;
-}
 .h5p-image-hotspot-close-popup-button {
   position: absolute;
-  top: 1em;
+  top: 0;
   right: -1.125em;
   bottom: 0;
   z-index: 3;
@@ -140,7 +136,6 @@
   background: rgba(0,0,0,0.3);
   font-size: 1.35em;
   width: 1.125em;
-
   -webkit-transition: right .5s ease-in-out;
   transition: right .5s ease-in-out;
 }
@@ -177,13 +172,11 @@
   text-align: center;
   padding: 2em;
 }
-
 /* Fullscreen */
 .h5p-image-hotspots.h5p-fullscreen,
 .h5p-image-hotspots.h5p-semi-fullscreen {
   background-color: #000;
 }
-
 /* Center vertically on fullscreen */
 .h5p-image-hotspots.h5p-fullscreen .h5p-image-hotspots-container,
 .h5p-image-hotspots.h5p-semi-fullscreen .h5p-image-hotspots-container {
@@ -193,8 +186,6 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
-
 /* Singlechoice set
 .h5p-image-hotspot-popup.h5p-singlechoiceset {
   background: rgba(255,255,255,0.95);
@@ -205,7 +196,6 @@
 .h5p-image-hotspots .h5p-sc-sound-control {
   right: 2.5em;
 }*/
-
 /* H5P.Image */
 .h5p-image.h5p-image-hotspot-popup-body img {
   width: auto;
@@ -213,7 +203,6 @@
   max-height: 95%;
   max-width: 100%;
 }
-
 /* H5P.Summary
 .h5p-image-hotspot-popup-body.summary-content {
   padding: 0.2em;

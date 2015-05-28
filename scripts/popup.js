@@ -67,8 +67,8 @@
         'class': 'h5p-image-hotspot-close-popup-button',
       }).appendTo(this.$popupBackground);
 
-      var $fullscreenButton = $('.h5p-enable-fullscreen').is(':visible') ? $('.h5p-enable-fullscreen') : undefined;
-      if ($fullscreenButton !== undefined) {
+      if (!H5P.isFullscreen) {
+        var $fullscreenButton = $('.h5p-enable-fullscreen');
         this.$closeButton.css({
           width: $fullscreenButton.outerWidth() + 'px',
           top: $fullscreenButton.outerHeight() + 'px'
@@ -77,7 +77,7 @@
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         self.$closeButton.css({
-          right: ($fullscreenButton === undefined ? 0 : 2) + 'px'
+          right: (H5P.isFullscreen ? 0 : 2) + 'px'
         });
       }, 300);
     }
