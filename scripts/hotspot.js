@@ -39,7 +39,7 @@
     }).css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      background: 'rgba('+ hexToRgb(color) + ',0.5)'
+      color: '#'+ color
     });
 
     parent.on('resize', function () {
