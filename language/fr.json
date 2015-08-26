@@ -15,24 +15,16 @@
         "label": "Mini-jeux",
         "fields": [
           {
-            "label": "Position",
-            "fields": [
-              {
-            "label": "Position horizontale (x)",
-            "description": "Position horizontale du mini-jeu en pourcentage. (0 - 100)"
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label": "Position verticale (y)",
-            "description": "Position verticale du mini-jeu en pourcentage. (0 - 100)"
-              }
-            ]
+            "label": "Cover entire bakground image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "Afficher le cadre en popup recouvrant complètement l'image"
-          },
-          {
-            "label": "Test",
-            "description": "optionel"
+            "label": "Entête",
+            "description": "Optional header for the popup"
           },
           {
             "label": "Contenu en popup"
