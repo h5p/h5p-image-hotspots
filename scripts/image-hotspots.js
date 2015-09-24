@@ -91,13 +91,19 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.on('resize', function () {
       self.resize();
     });
+
+    this.on('exitFullScreen', function () {
+      // Do not rely on that isFullscreen has been updated
+      self.resize(true);
+    });
   };
 
   /**
    * Handle resizing
    * @private
+   * @param {boolean} [forceImageHeight]
    */
-  ImageHotspots.prototype.resize = function () {
+  ImageHotspots.prototype.resize = function (forceImageHeight) {
     var self = this;
     var containerWidth = $(window.frameElement.parentNode).width();
     var containerHeight = self.$container.height();
@@ -105,8 +111,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var width = containerWidth;
     var height = Math.floor((width/self.options.image.width)*self.options.image.height);
 
-    // If fullscreen, we have both a max width and max height
-    if (H5P.isFullscreen && height > containerHeight) {
+    // If fullscreen, we have both a max width and max height.
+    if (!forceImageHeight && H5P.isFullscreen && height > containerHeight) {
       height = containerHeight;
       width = Math.floor((height/self.options.image.height)*self.options.image.width);
     }
