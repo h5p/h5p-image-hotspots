@@ -65,7 +65,7 @@
           "type": "library",
           "label": "Popup content",
           "options": [
-            "H5P.Text 1.0",
+            "H5P.Text 1.1",
             "H5P.Video 1.1",
             "H5P.Image 1.0"
           ]
