@@ -92,6 +92,13 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       self.resize();
     });
 
+    this.on('enterFullScreen', function () {
+      // Resize image when entering fullscreen.
+      setTimeout(function () {
+        self.trigger('resize');
+      });
+    });
+
     this.on('exitFullScreen', function () {
       // Do not rely on that isFullscreen has been updated
       self.resize(true);
