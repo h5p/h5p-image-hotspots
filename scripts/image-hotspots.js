@@ -112,7 +112,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    */
   ImageHotspots.prototype.resize = function (forceImageHeight) {
     var self = this;
-    var containerWidth = $(window.frameElement.parentNode).width();
+    var containerWidth = self.$container.width();
     var containerHeight = self.$container.height();
 
     var width = containerWidth;
