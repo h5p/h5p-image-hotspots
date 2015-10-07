@@ -1,8 +1,8 @@
 {
-  "title": "Image hotspots",
-  "description": "Image with hotspots",
+  "title": "Image Hotspots",
+  "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
-  "minorVersion": 1,
+  "minorVersion": 2,
   "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel AS (fnoks)",
@@ -13,9 +13,15 @@
     "iframe"
   ],
   "preloadedJs": [
-    {"path": "scripts/image-hotspots.js"},
-    {"path": "scripts/hotspot.js"},
-    {"path": "scripts/popup.js"}
+    {
+      "path": "scripts/image-hotspots.js"
+    },
+    {
+      "path": "scripts/hotspot.js"
+    },
+    {
+      "path": "scripts/popup.js"
+    }
   ],
   "preloadedCss": [
     {
@@ -26,7 +32,7 @@
     {
       "machineName": "FontAwesome",
       "majorVersion": 4,
-      "minorVersion": 1
+      "minorVersion": 3
     },
     {
       "machineName": "H5P.Transition",

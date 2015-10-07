@@ -23,7 +23,7 @@
   background: black;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  background: rgba(0,0,0,0.5);
+  background: #fff;
   padding: 0;
   border: none;
   margin: 0;
@@ -43,13 +43,12 @@
 }
 .h5p-image-hotspot:before {
   font-family: H5PFontAwesome4;
-  content: '\f192';
+  content: '\f055';
   width: 1.2em;
   height: 1.2em;
   font-size: 1.2em;
   line-height: 1.2em;
-  margin: 0.3em 0;
-  color: rgba(255,255,255,0.8);
+  margin: 0 0.1em;
 }
 .h5p-image-hotspot-popup {
   position: absolute;
