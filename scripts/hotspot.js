@@ -71,16 +71,40 @@
 
     this.actionInstance = H5P.newRunnable(this.config.action, this.id);
 
+    var waitForLoaded = (this.actionInstance.libraryInfo.machineName === 'H5P.Image' || this.actionInstance.libraryInfo.machineName === 'H5P.Video');
+
+    var readyToPopup = function () {
+      self.popup = new ImageHotspots.Popup(self.$container, $popupBody, self.config.position.x, self.config.position.y, self.$element.outerWidth(), self.config.header, self.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), self.config.alwaysFullscreen || self.isSmallDeviceCB());
+      self.$element.addClass('active');
+      self.visible = true;
+
+      if (self.actionInstance.trigger !== undefined) {
+        self.actionInstance.trigger('resize');
+      }
+    };
+
+    if (waitForLoaded) {
+      var fire = function () {
+        clearTimeout(timeout);
+        self.actionInstance.off('loaded', fire);
+        setTimeout(function () {
+          readyToPopup();
+        }, 100);
+      };
+
+      // Add timer fallback if loaded event is not triggered
+      var timeout = setTimeout(fire, 1000);
+      this.actionInstance.on('loaded', fire);
+    }
+
     // Create popup content:
     var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
-    this.actionInstance.attach($popupBody);
+    self.actionInstance.attach($popupBody);
 
-    this.popup = new ImageHotspots.Popup(this.$container, $popupBody, this.config.position.x, this.config.position.y, this.$element.outerWidth(), this.config.header, this.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), this.config.alwaysFullscreen || this.isSmallDeviceCB());
-    this.$element.addClass('active');
-    this.visible = true;
-
-    if (this.actionInstance.trigger !== undefined) {
-      this.actionInstance.trigger('resize');
+    if (!waitForLoaded) {
+      setTimeout(function () {
+        readyToPopup();
+      }, 100);
     }
 
     // We don't get click events on body for iOS-devices
