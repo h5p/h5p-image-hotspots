@@ -19,9 +19,9 @@
    *
    */
   ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen) {
+
     var self = this;
     this.$container = $container;
-
     var width = this.$container.width();
 
     var pointerWidthInPercent = 4;
@@ -52,13 +52,13 @@
       event.stopPropagation();
     }).appendTo(this.$popupBackground);
 
-    var $popupContent = $('<div/>', {'class': 'h5p-image-hotspot-popup-content'});
+    this.$popupContent = $('<div/>', {'class': 'h5p-image-hotspot-popup-content'});
     if (header) {
-      $popupContent.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', html: header}));
+      this.$popupContent.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', html: header}));
       this.$popup.addClass('h5p-image-hotspot-has-header');
     }
-    $content.appendTo($popupContent);
-    $popupContent.appendTo(this.$popup);
+    $content.appendTo(this.$popupContent);
+    this.$popupContent.appendTo(this.$popup);
 
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
@@ -77,7 +77,7 @@
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         self.$closeButton.css({
-          right: (H5P.isFullscreen ? 0 : 2) + 'px'
+          right: '0'
         });
       }, 300);
     }
@@ -91,22 +91,62 @@
 
     this.$popupBackground.appendTo(this.$container);
 
-    // Create animation:
-    setTimeout(function(){
-      self.$popup.css({
-        left: popupLeft + '%'
-      });
-      self.$popupBackground.addClass('visible');
-    }, 100);
-  }
+    self.show = function () {
+      // Fix height
+      var contentHeight = self.$popupContent.height();
+      var parentHeight = self.$popup.height();
+      if (!fullscreen) {
+      if (contentHeight < parentHeight) {
+        // don't need all height:
+        self.$popup.css({
+          maxHeight: 'auto',
+          height: 'auto'
+        });
 
+        // find new top:
+        var yInPixels = (y / 100) * parentHeight;
+        var top = ((y / 100) * parentHeight) - (contentHeight / 2);
 
-  /**
-   * Hides popup
-   *
-   * @public
-   */
-  ImageHotspots.Popup.prototype.hide = function () {
+        if (top < 0) {
+          top = 0;
+        }
+        else if (top + contentHeight > parentHeight) {
+          top = parentHeight - contentHeight;
+        }
+
+        // From pixels to percent:
+        var pointerTop = yInPixels - top;
+        top = (top / parentHeight) * 100 ;
+
+        self.$popup.css({
+          top: top + '%'
+        });
+
+        // Need to move pointer:
+        var pointerHeightInPercent = (self.$pointer.height() / contentHeight) * 100 ;
+        self.$pointer.css({
+          top: ((pointerTop / contentHeight) * 100) - (parentHeight/contentHeight*0.5) + '%'
+        });
+      }
+      else {
+        // Need all height:
+        self.$popupContent.css({
+          height: '100%',
+          overflow: 'auto'
+        });
+      }
+    }
+
+    self.$popup.css({
+      left: popupLeft + '%'
+    });
+    self.$popupBackground.addClass('visible');
+  };
+
+  self.hide = function () {
     this.$popupBackground.remove();
   };
+
+  self.show();
+}
 })(H5P.jQuery, H5P.ImageHotspots);
