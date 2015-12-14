@@ -74,14 +74,16 @@
     var waitForLoaded = (this.actionInstance.libraryInfo.machineName === 'H5P.Image' || this.actionInstance.libraryInfo.machineName === 'H5P.Video');
 
     var readyToPopup = function () {
-      self.popup = new ImageHotspots.Popup(self.$container, $popupBody, self.config.position.x, self.config.position.y, self.$element.outerWidth(), self.config.header, self.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), self.config.alwaysFullscreen || self.isSmallDeviceCB());
+      self.popup.show();
       self.$element.addClass('active');
       self.visible = true;
-
-      if (self.actionInstance.trigger !== undefined) {
-        self.actionInstance.trigger('resize');
-      }
+      self.actionInstance.trigger('resize');
     };
+
+    // Create popup content:
+    var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
+    self.actionInstance.attach($popupBody);
+    self.popup = new ImageHotspots.Popup(self.$container, $popupBody, self.config.position.x, self.config.position.y, self.$element.outerWidth(), self.config.header, self.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), self.config.alwaysFullscreen || self.isSmallDeviceCB());
 
     if (waitForLoaded) {
       var fire = function () {
@@ -95,13 +97,9 @@
       // Add timer fallback if loaded event is not triggered
       var timeout = setTimeout(fire, 1000);
       this.actionInstance.on('loaded', fire);
+      self.actionInstance.trigger('resize');
     }
-
-    // Create popup content:
-    var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
-    self.actionInstance.attach($popupBody);
-
-    if (!waitForLoaded) {
+    else {
       setTimeout(function () {
         readyToPopup();
       }, 100);

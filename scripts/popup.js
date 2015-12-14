@@ -146,7 +146,5 @@
   self.hide = function () {
     this.$popupBackground.remove();
   };
-
-  self.show();
 }
 })(H5P.jQuery, H5P.ImageHotspots);
