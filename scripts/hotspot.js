@@ -58,13 +58,6 @@
    * @param {H5P.jQuery} $container
    */
   ImageHotspots.Hotspot.prototype.appendTo = function ($container) {
-    // Add event listener if it did not exist for container element
-    var self = this;
-    if (this.$container !== $container) {
-      $container.on('closePopup', function () {
-        self.hidePopup();
-      });
-    }
     this.$container = $container;
     this.$element.appendTo($container);
   };
