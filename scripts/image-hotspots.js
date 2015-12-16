@@ -118,6 +118,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var height = Math.floor((width/self.options.image.width)*self.options.image.height);
     var forceImageHeight = e && e.data && e.data.forceImageHeight;
 
+    // Close popups when resizing to avoid displacement of floating popups arrow and positioning.
+    if (this.$hotspotContainer) {
+      this.$hotspotContainer.trigger('closePopup');
+    }
+
     // Check if decreasing iframe size
     var decreaseSize = e && e.data && e.data.decreaseSize;
     if (!decreaseSize) {
