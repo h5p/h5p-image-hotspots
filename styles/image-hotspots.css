@@ -109,6 +109,12 @@
 .h5p-image-hotspot-popup-body > * {
   font-size: 0.7em;
 }
+
+.h5p-image-hotspot-popup:not(.fullscreen-popup) .h5p-image-hotspot-popup-body.h5p-video > div {
+  max-height: 18em;
+  min-height: 16em;
+}
+
 .h5p-image-hotspot-popup-body > p {
   margin-top: 0;
   margin-bottom: 1em;
