@@ -50,7 +50,7 @@
         {
           "name": "alwaysFullscreen",
           "type": "boolean",
-          "label": "Cover entire bakground image",
+          "label": "Cover entire background image",
           "description": "When the user clicks the hotspot the popup will cover the entire background image"
         },
         {
