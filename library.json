@@ -3,7 +3,7 @@
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
   "minorVersion": 2,
-  "patchVersion": 1,
+  "patchVersion": 2,
   "runnable": 1,
   "author": "Joubel AS (fnoks)",
   "license": "MIT",
@@ -32,7 +32,7 @@
     {
       "machineName": "FontAwesome",
       "majorVersion": 4,
-      "minorVersion": 3
+      "minorVersion": 5
     },
     {
       "machineName": "H5P.Transition",
