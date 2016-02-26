@@ -27,6 +27,25 @@ H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
         }
 
         finished(null, parameters);
+      },
+      /**
+       * Upgrades content parameters to support ImageHotspots 1.3
+       *
+       * Moves hotspot content into list
+       *
+       * @param parameters
+       * @param finished
+       */
+      3: function (parameters, finished) {
+        parameters.hotspots.forEach(function (hotspot) {
+          if (hotspot.action) {
+            hotspot.content = [];
+            hotspot.content.push(hotspot.action);
+            delete hotspot.action;
+          }
+        });
+
+        finished(null, parameters);
       }
     }
   };
