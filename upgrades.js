@@ -37,13 +37,15 @@ H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
        * @param finished
        */
       3: function (parameters, finished) {
-        parameters.hotspots.forEach(function (hotspot) {
-          if (hotspot.action) {
-            hotspot.content = [];
-            hotspot.content.push(hotspot.action);
-            delete hotspot.action;
-          }
-        });
+        if (parameters.hotspots !== undefined) {
+          parameters.hotspots.forEach(function (hotspot) {
+            if (hotspot.action) {
+              hotspot.content = [];
+              hotspot.content.push(hotspot.action);
+              delete hotspot.action;
+            }
+          });
+        }
 
         finished(null, parameters);
       }
