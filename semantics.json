@@ -61,14 +61,19 @@
           "optional": true
         },
         {
-          "name": "action",
-          "type": "library",
+          "name": "content",
+          "type": "list",
           "label": "Popup content",
-          "options": [
-            "H5P.Text 1.1",
-            "H5P.Video 1.1",
-            "H5P.Image 1.0"
-          ]
+          "field": {
+            "name": "action",
+            "type": "library",
+            "label": "Library",
+            "options": [
+              "H5P.Text 1.1",
+              "H5P.Video 1.2",
+              "H5P.Image 1.0"
+            ]
+          }
         }
       ]
     }
