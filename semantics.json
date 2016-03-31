@@ -67,7 +67,7 @@
           "field": {
             "name": "action",
             "type": "library",
-            "label": "Library",
+            "label": "Content Item",
             "options": [
               "H5P.Text 1.1",
               "H5P.Video 1.2",
