@@ -38,7 +38,7 @@
           {
             "label": "Innhold",
             "field" : {
-              "label": "Bibliotek"
+              "label": "Innholdselement"
             }
           }
         ]
