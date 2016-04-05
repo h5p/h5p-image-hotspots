@@ -27,7 +27,10 @@
             "description": "Optional header for the popup"
           },
           {
-            "label": "Contenu en popup"
+            "label": "Contenu en popup",
+            "field": {
+              "label": "Content Item"
+            }
           }
         ]
       }

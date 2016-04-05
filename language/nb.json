@@ -36,7 +36,10 @@
             "description": "Valgfri overskrift for popup"
           },
           {
-            "label": "Innhold"
+            "label": "Innhold",
+            "field" : {
+              "label": "Innholdselement"
+            }
           }
         ]
       }

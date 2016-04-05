@@ -35,7 +35,10 @@
             "description": "optional"
           },
           {
-            "label": "Popup content"
+            "label": "Popup content",
+            "field": {
+              "label": "Content Item"
+            }
           }
         ]
       }

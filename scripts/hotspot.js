@@ -21,7 +21,7 @@
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
 
-    if (this.config.action === undefined) {
+    if (!this.config.content.length) {
       throw new Error('Missing mandatory library for hotspot');
     }
 
@@ -43,14 +43,20 @@
     });
 
     parent.on('resize', function () {
-      if (self.popup && self.actionInstance.trigger !== undefined) {
-        // The reason for this timeout is fullscreen on chrome on android
-        setTimeout(function () {
-          self.actionInstance.trigger('resize');
-        }, 1);
+      if (self.popup) {
+
+        self.actionInstances.forEach(function (actionInstance) {
+          if (actionInstance.trigger !== undefined) {
+
+            // The reason for this timeout is fullscreen on chrome on android
+            setTimeout(function () {
+              actionInstance.trigger('resize');
+            }, 1);
+          }
+        });
       }
     });
-  }
+  };
 
   /**
    * Append the hotspot to a container
@@ -69,35 +75,80 @@
   ImageHotspots.Hotspot.prototype.showPopup = function () {
     var self = this;
 
-    this.actionInstance = H5P.newRunnable(this.config.action, this.id);
+    // Create popup content:
+    var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
 
-    var waitForLoaded = (this.actionInstance.libraryInfo.machineName === 'H5P.Image' || this.actionInstance.libraryInfo.machineName === 'H5P.Video');
+    this.actionInstances = [];
+    var waitForLoaded = [];
+    this.config.content.forEach(function (action) {
+      var $popupFraction = $('<div>', {
+        'class': 'h5p-image-hotspot-popup-body-fraction',
+        appendTo: $popupBody
+      });
+
+      var actionInstance = H5P.newRunnable(action, self.id);
+      self.actionInstances.push(actionInstance);
+      if (actionInstance.libraryInfo.machineName === 'H5P.Image' || actionInstance.libraryInfo.machineName === 'H5P.Video') {
+        waitForLoaded.push(actionInstance);
+      }
+      actionInstance.attach($popupFraction);
+    });
 
     var readyToPopup = function () {
       self.popup.show();
       self.$element.addClass('active');
       self.visible = true;
-      self.actionInstance.trigger('resize');
+
+      self.actionInstances.forEach(function (actionInstance) {
+        actionInstance.trigger('resize');
+      });
     };
 
-    // Create popup content:
-    var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
-    self.actionInstance.attach($popupBody);
-    self.popup = new ImageHotspots.Popup(self.$container, $popupBody, self.config.position.x, self.config.position.y, self.$element.outerWidth(), self.config.header, self.config.action.library.split(' ')[0].replace('.','-').toLowerCase(), self.config.alwaysFullscreen || self.isSmallDeviceCB());
+    // Popup style
+    var popupClass = 'h5p-video';
+    if (!waitForLoaded.length) {
+      popupClass = 'h5p-text';
+    }
+    else if (self.actionInstances.length === 1 && self.actionInstances[0].libraryInfo.machineName === 'H5P.Image') {
+      popupClass = 'h5p-image';
+    }
 
-    if (waitForLoaded) {
-      var fire = function () {
-        clearTimeout(timeout);
-        self.actionInstance.off('loaded', fire);
-        setTimeout(function () {
-          readyToPopup();
-        }, 100);
-      };
+    // Create Image hot-spots popup
+    self.popup = new ImageHotspots.Popup(
+      self.$container, $popupBody,
+      self.config.position.x,
+      self.config.position.y,
+      self.$element.outerWidth(),
+      self.config.header,
+      popupClass,
+      self.config.alwaysFullscreen || self.isSmallDeviceCB()
+    );
 
-      // Add timer fallback if loaded event is not triggered
-      var timeout = setTimeout(fire, 1000);
-      this.actionInstance.on('loaded', fire);
-      self.actionInstance.trigger('resize');
+    if (waitForLoaded.length) {
+      var loaded = 0;
+
+      // Wait for libraries to load before showing popup
+      waitForLoaded.forEach(function (unloaded) {
+
+        // Signal that library has finished loading
+        var fire = function () {
+          clearTimeout(timeout);
+          unloaded.off('loaded', fire);
+          loaded += 1;
+
+          if (loaded >= waitForLoaded.length) {
+            setTimeout(function () {
+              readyToPopup();
+            }, 100);
+          }
+        };
+
+        // Add timer fallback if loaded event is not triggered
+        var timeout = setTimeout(fire, 1000);
+        unloaded.on('loaded', fire, {unloaded: unloaded, timeout: timeout});
+        unloaded.trigger('resize');
+      });
+
     }
     else {
       setTimeout(function () {
