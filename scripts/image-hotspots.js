@@ -67,6 +67,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
         'class': 'h5p-image-hotspots-background',
+        'alt': this.options.alt,
         src: H5P.getPath(this.options.image.path, this.id)
       }).appendTo(this.$hotspotContainer);
     }
@@ -79,7 +80,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
       try {
-        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
+        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self, i + 1).appendTo(this.$hotspotContainer);
       }
       catch (e) {
         H5P.error(e);
