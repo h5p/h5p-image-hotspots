@@ -21,8 +21,8 @@
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
 
-    if (!this.config.content.length) {
-      throw new Error('Missing mandatory library for hotspot');
+    if (this.config.content === undefined  || this.config.content.length === 0) {
+      throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
     this.$element = $('<div/>', {
