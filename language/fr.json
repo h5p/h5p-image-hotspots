@@ -5,31 +5,31 @@
       "description": "Image affichée en arrière-plan."
     },
     {
-      "label": "Couleur",
-      "description": "Couleur des mini-jeux (en cote hexadécimal)."
+      "label": "Couleur de la puce interactive",
+      "description": "Couleur des puces interactives (en code hexadécimal)."
     },
     {
-      "entity": "Mini-jeux",
-      "label": "Mini-jeux",
+      "entity": "Puces interactives",
+      "label": "Puce interactive",
       "field": {
-        "label": "Mini-jeux",
+        "label": "Puce interactive",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Position de la puce interactive",
+            "description": "Cliquez sur la miniature pour positionner la puce interactive"
           },
           {
-            "label": "Cover entire bakground image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Recouvrir toute l'image d'arrière-plan",
+            "description": "Quand l'utilisateur cliquera sur la puce interactive, le popup recouvrira toute l'image d'arrière-plan"
           },
           {
-            "label": "Entête",
-            "description": "Optional header for the popup"
+            "label": "Titre",
+            "description": "Titre facultatif du popup"
           },
           {
-            "label": "Contenu en popup",
+            "label": "Contenu du popup",
             "field": {
-              "label": "Content Item"
+              "label": "Type de contenu"
             }
           }
         ]
