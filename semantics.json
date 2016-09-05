@@ -11,7 +11,7 @@
     "label": "Hotspot color",
     "description": "The color of the hotspots",
     "optional": true,
-    "default": "981d99",
+    "default": "#981d99",
     "widget": "colorSelector",
     "spectrum": {
       "showInput": true
