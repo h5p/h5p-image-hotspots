@@ -48,7 +48,25 @@ H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
         }
 
         finished(null, parameters);
-      }
+      },
+      /**
+       * Upgrades content parameters to support ImageHotspots 1.4
+       *
+       * Adds '#' in front of hex color provided from color selector widget
+       *
+       * @param parameters
+       * @param finished
+       */
+      4: function (parameters, finished) {
+
+        // Old content has specified a color, opposed to using the default
+        if (parameters.color.charAt(0) !== '#') {
+          parameters.color = '#' + parameters.color;
+        }
+
+        finished(null, parameters);
+      },
+
     }
   };
 })(H5P.jQuery);

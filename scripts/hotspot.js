@@ -39,7 +39,7 @@
     }).css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: '#'+ color
+      color: color
     });
 
     parent.on('resize', function () {
