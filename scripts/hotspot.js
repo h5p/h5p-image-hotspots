@@ -21,8 +21,8 @@
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
 
-    if (!this.config.content.length) {
-      throw new Error('Missing mandatory library for hotspot');
+    if (this.config.content === undefined  || this.config.content.length === 0) {
+      throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
     this.$element = $('<div/>', {
@@ -39,7 +39,7 @@
     }).css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: '#'+ color
+      color: color
     });
 
     parent.on('resize', function () {
@@ -159,7 +159,7 @@
     // We don't get click events on body for iOS-devices
     $('body').children().on('click.h5p-image-hotspot-popup', function(event) {
       var $target = $(event.target);
-      if(!$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
+      if(self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
         self.hidePopup();
       }
     });
