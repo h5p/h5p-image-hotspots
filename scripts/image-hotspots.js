@@ -165,7 +165,31 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       self.initialWidth = self.$container.width();
     }
 
+    
+    var screenWidth = $(window).width();
+
+    if(screenWidth<400){
+    self.fontSize = 12;
+    console.log("'fontSize set to : " + self.fontSize);  
+    console.log("screenWidth : " + screenWidth);     
+   
+    }
+
+    if(screenWidth > 400 && screenWidth < 800){
+    self.fontSize = 16;
+    console.log("'fontSize set to : " + self.fontSize);  
+    console.log("screenWidth : " + screenWidth);     
+   
+    }
+
+    if(screenWidth > 800){
     self.fontSize = (DEFAULT_FONT_SIZE * (width/self.initialWidth));
+    console.log("'fontSize set to : " + self.fontSize);     
+    console.log("screenWidth : " + screenWidth);     
+
+    }
+   
+    
 
     self.$hotspotContainer.css({
       width: width + 'px',
