@@ -18,6 +18,18 @@
     }
   },
   {
+    "name": "hotspotIcon",
+    "type": "text",
+    "default": "f055",
+    "maxLength": 4,
+    "regexp": {
+      "pattern": "^f[a-z\\d]{3}$",
+      "modifiers": "i"
+    },
+    "label": "Hotspot Icon",
+    "description": "Set a hotspot icon by entering a unicode from fontawesome.io"
+  },
+  {
     "name": "hotspotClicked",
     "type": "group",
     "label": "Change the color of a hotspot after it was clicked",

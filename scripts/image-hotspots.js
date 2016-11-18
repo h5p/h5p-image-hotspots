@@ -53,6 +53,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       return;
     }
 
+    var style = document.createElement('style');
+    style.innerHTML =
+        '.h5p-image-hotspot:before { content: "\\'+this.options.hotspotIcon+'";}';
+    document.querySelector('head').appendChild(style);
+
     // Need to know since ios uses :hover when clicking on an element
     if (/(iPad|iPhone|iPod)/g.test( navigator.userAgent ) === false) {
       $container.addClass('not-an-ios-device');
