@@ -14,12 +14,13 @@
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
    */
-  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent) {
+  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent, hotspotClicked) {
     var self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
+    this.hotspotClicked = hotspotClicked;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
@@ -171,6 +172,11 @@
    */
   ImageHotspots.Hotspot.prototype.hidePopup = function () {
     if (this.popup) {
+
+      if(this.hotspotClicked.enabled){
+        this.$element.css('background', this.hotspotClicked.color);
+      }
+
       // We don't get click events on body for iOS-devices
       $('body').children().off('click.h5p-image-hotspot-popup');
 
