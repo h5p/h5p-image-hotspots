@@ -1,6 +1,7 @@
 [
   {
     "label": "Background image",
+    "importance": "high",
     "name": "image",
     "type": "image",
     "description": "Image shown on background."
@@ -9,6 +10,7 @@
     "name": "color",
     "type": "text",
     "label": "Hotspot color",
+    "importance": "medium",
     "description": "The color of the hotspots",
     "optional": true,
     "default": "#981d99",
@@ -22,12 +24,14 @@
     "type": "list",
     "entity": "hotspot",
     "label": "Hotspots",
+    "importnace": "high",
     "min": 1,
     "defaultNum": 1,
     "field": {
       "name": "hotspot",
       "type": "group",
       "label": "Hotspot",
+      "importnace": "high",
       "fields": [
         {
           "name": "position",
@@ -35,6 +39,7 @@
           "widget": "imageCoordinateSelector",
           "imageFieldPath": "../../image",
           "label": "Hotspot position",
+          "importance": "low",
           "description": "Click on the thumbnail image to place the hotspot",
           "fields": [
             {
@@ -51,12 +56,14 @@
           "name": "alwaysFullscreen",
           "type": "boolean",
           "label": "Cover entire background image",
+          "importance": "low",
           "description": "When the user clicks the hotspot the popup will cover the entire background image"
         },
         {
           "name": "header",
           "type": "text",
           "label": "Header",
+          "importance": "low",
           "description": "Optional header for the popup",
           "optional": true
         },
@@ -64,6 +71,7 @@
           "name": "content",
           "type": "list",
           "label": "Popup content",
+          "importance": "low",
           "field": {
             "name": "action",
             "type": "library",
