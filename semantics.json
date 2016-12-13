@@ -31,7 +31,7 @@
       "name": "hotspot",
       "type": "group",
       "label": "Hotspot",
-      "importnace": "high",
+      "importance": "high",
       "fields": [
         {
           "name": "position",
