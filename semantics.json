@@ -39,7 +39,7 @@
           "widget": "imageCoordinateSelector",
           "imageFieldPath": "../../image",
           "label": "Hotspot position",
-          "importance": "low",
+          "importance": "high",
           "description": "Click on the thumbnail image to place the hotspot",
           "fields": [
             {
@@ -71,7 +71,7 @@
           "name": "content",
           "type": "list",
           "label": "Popup content",
-          "importance": "low",
+          "importance": "high",
           "field": {
             "name": "action",
             "type": "library",
