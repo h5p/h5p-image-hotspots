@@ -24,7 +24,7 @@
     "type": "list",
     "entity": "hotspot",
     "label": "Hotspots",
-    "importnace": "high",
+    "importance": "high",
     "min": 1,
     "defaultNum": 1,
     "field": {
