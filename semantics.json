@@ -71,7 +71,7 @@
           "name": "content",
           "type": "list",
           "label": "Popup content",
-          "importance": "high",
+          "importance": "medium",
           "field": {
             "name": "action",
             "type": "library",
