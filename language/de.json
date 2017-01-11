@@ -1,0 +1,39 @@
+{
+  "semantics": [
+    {
+      "label": "Hintergrundbild",
+      "description": "Bild, das im Hintergrund angezeigt wird."
+    },
+    {
+      "label": "Hotspot-Farbe",
+      "description": "Die Farbe des Hotspots (als Hexadezimalzahl)"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
+      "field": {
+        "label": "Hotspot",
+        "fields": [
+          {
+            "label": "Hotspot-Position",
+            "description": "Klicke auf das Vorschaubild, um den Hotspot zu platzieren."
+          },
+          {
+            "label": "Das gesamte Hintergrundbild überdecken",
+            "description": "Wenn der Nutzer den Hotspot anklickt, wird das Popup-Fenster den gesamten Hintergrund überdecken"
+          },
+          {
+            "label": "Kopfzeile",
+            "description": "Optionale Kopfzeile für das Popup-Fenster"
+          },
+          {
+            "label": "Inhalt des Popup-Fensters",
+            "field": {
+              "label": "Inhaltstyp"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
