@@ -2,8 +2,8 @@
   "title": "Image Hotspots",
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
-  "minorVersion": 4,
-  "patchVersion": 1,
+  "minorVersion": 5,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel AS (fnoks)",
   "license": "MIT",
@@ -44,12 +44,12 @@
     {
       "machineName": "H5PEditor.ImageCoordinateSelector",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     },
     {
       "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
-      "minorVersion": 1
+      "minorVersion": 2
     }
   ]
 }
