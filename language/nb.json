@@ -15,7 +15,8 @@
         "label": "Punkt",
         "fields": [
           {
-            "label": "Position",
+            "label": "Posisjon",
+            "description": "Klikk på bildet for å plassere punktet",
             "fields": [
               {
                 "label": "Horisontal posisjon (x)",
@@ -37,7 +38,8 @@
           },
           {
             "label": "Innhold",
-            "field" : {
+            "entity": "innhold",
+            "field": {
               "label": "Innholdselement"
             }
           }
