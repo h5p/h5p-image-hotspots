@@ -20,6 +20,51 @@
     }
   },
   {
+    "name": "icon",
+    "type": "select",
+    "label": "Hotspot Icon",
+    "importance": "medium",
+    "description": "The icon of the hotspots",
+    "options": [
+      {
+        "value": "plus",
+        "label": "Plus"
+      },
+      {
+        "value": "minus",
+        "label": "minus"
+      },
+      {
+        "value": "times",
+        "label": "Times"
+      },
+      {
+        "value": "check",
+        "label": "Check"
+      },
+      {
+        "value": "question",
+        "label": "Question"
+      },
+      {
+        "value": "info",
+        "label": "Info"
+      },
+      {
+        "value": "exclamation",
+        "label": "Exclamation"
+      }
+    ],
+    "default": "plus"
+  },
+  {
+    "name": "iconImage",
+    "type": "image",
+    "label": "Icon image override",
+    "optional": true,
+    "description": "Override the existing icon for hotspot and use your own. This overrides the Hotspot Color & Hotspot Icon settings.<br>75px by 75px is recommended for your image."
+  },
+  {
     "name": "hotspots",
     "type": "list",
     "entity": "hotspot",
