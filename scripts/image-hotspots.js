@@ -2,7 +2,10 @@
  * Defines the H5P.ImageHotspots class
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
-
+	var counter = 0; 
+	var windowWidth = $(window).width();
+	var DEFAULT_FONT_SIZE = checkWidth();
+  
   /**
    * Default font size
    *
@@ -10,7 +13,41 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @type {number}
    * @default
    */
-  var DEFAULT_FONT_SIZE = 24;
+   
+   function checkWidth(){
+					if(windowWidth < 400){
+						console.log("from checkWidth function: window width: " + windowWidth);
+						DEFAULT_FONT_SIZE=10;
+					}
+					if(windowWidth > 400){
+						console.log("from checkWidth function: window width: " + windowWidth);
+						DEFAULT_FONT_SIZE=24;
+					}
+					
+							console.log("DEFAULT_FONT_SIZE: " + DEFAULT_FONT_SIZE);
+							return DEFAULT_FONT_SIZE;
+				  }
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   $(document).ready(function(){
+	   console.log("doc ready function fired. ");
+				counter ++;
+				if(counter ===1){console.log("within the doc ready function the windowWidth variable is currently: " + windowWidth + ".  this function has been called once.");
+		}else console.log("within the doc ready function the windowWidth variable is currently: " + windowWidth + ".  this function has been called " + counter + " times. ");
+	console.log("counter variable value : " + counter);
+	checkWidth();
+	
+	
+    });
+	
+	
 
   /**
    * Creates a new Image hotspots instance
@@ -164,32 +201,18 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     if (self.initialWidth === undefined) {
       self.initialWidth = self.$container.width();
     }
+	
 
-    
-    var screenWidth = $(window).width();
+	
+		self.fontSize = DEFAULT_FONT_SIZE;
 
-    if(screenWidth<400){
-    self.fontSize = 12;
-    console.log("'fontSize set to : " + self.fontSize);  
-    console.log("screenWidth : " + screenWidth);     
-   
-    }
+	
+	console.log("self.fontSize: " + self.fontSize);
+	console.log("window width: " + windowWidth);
+	
+  
+	console.log("self.fontSize: " + self.fontSize);
 
-    if(screenWidth > 400 && screenWidth < 800){
-    self.fontSize = 16;
-    console.log("'fontSize set to : " + self.fontSize);  
-    console.log("screenWidth : " + screenWidth);     
-   
-    }
-
-    if(screenWidth > 800){
-    self.fontSize = (DEFAULT_FONT_SIZE * (width/self.initialWidth));
-    console.log("'fontSize set to : " + self.fontSize);     
-    console.log("screenWidth : " + screenWidth);     
-
-    }
-   
-    
 
     self.$hotspotContainer.css({
       width: width + 'px',
@@ -198,6 +221,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     });
 
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);
+	console.log("self.isSmallDevice"+self.isSmallDevice);
   };
 
   return ImageHotspots;
