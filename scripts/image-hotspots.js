@@ -15,7 +15,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    */
    
    function checkWidth(){
-					if(windowWidth < 400){
+					if(windowWidth <= 400){
 						DEFAULT_FONT_SIZE=10;
 					}
 					if(windowWidth > 400){
@@ -24,16 +24,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 					
 							return DEFAULT_FONT_SIZE;
 				  }
-  
-   
-   
-   
-   
-   
-   
-   
-   
-   $(document).ready(function(){	  
+$(document).ready(function(){	  
 				
 	checkWidth();
 	
