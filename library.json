@@ -44,12 +44,13 @@
     {
       "machineName": "H5PEditor.ImageCoordinateSelector",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     },
     {
       "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
       "minorVersion": 0
+
     }
   ]
 }
