@@ -41,7 +41,7 @@
       popupWidth = (toTheLeft ?  x - pointerWidthInPercent : 100 - popupLeft);
     }
 
-    this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
+    this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'}).css({height: 50 + '%'});
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className
     }).css({

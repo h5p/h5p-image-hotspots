@@ -2,7 +2,10 @@
  * Defines the H5P.ImageHotspots class
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
-
+	var counter = 0; 
+	var windowWidth = $(window).width();
+	var DEFAULT_FONT_SIZE = checkWidth();
+  
   /**
    * Default font size
    *
@@ -10,7 +13,25 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @type {number}
    * @default
    */
-  var DEFAULT_FONT_SIZE = 24;
+   
+   function checkWidth(){
+					if(windowWidth <= 400){
+						DEFAULT_FONT_SIZE=10;
+					}
+					if(windowWidth > 400){
+						DEFAULT_FONT_SIZE=24;
+					}
+					
+							return DEFAULT_FONT_SIZE;
+				  }
+$(document).ready(function(){	  
+				
+	checkWidth();
+	
+	
+    });
+	
+	
 
   /**
    * Creates a new Image hotspots instance
@@ -164,8 +185,13 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     if (self.initialWidth === undefined) {
       self.initialWidth = self.$container.width();
     }
+	
 
-    self.fontSize = (DEFAULT_FONT_SIZE * (width/self.initialWidth));
+	
+		self.fontSize = DEFAULT_FONT_SIZE;
+
+	
+
 
     self.$hotspotContainer.css({
       width: width + 'px',
