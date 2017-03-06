@@ -14,19 +14,23 @@
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
    */
-  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent) {
+  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent, index) {
     var self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
+    this.tabIndex = index;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
     this.$element = $('<div/>', {
+      'id': 'hotspot-' + this.tabIndex,
       'class': 'h5p-image-hotspot',
+      'title': 'Clickable hotspot number: '+ this.tabIndex,
+      'tabindex': this.tabIndex,
       click: function(){
         if(self.visible) {
           self.hidePopup();
@@ -76,7 +80,10 @@
     var self = this;
 
     // Create popup content:
-    var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
+    var $popupBody = $('<div/>', {
+      'class': 'h5p-image-hotspot-popup-body',
+      'title': 'The hotspot name is: ' + self.config.header
+    });
 
     this.actionInstances = [];
     var waitForLoaded = [];

@@ -20,6 +20,12 @@
     }
   },
   {
+    "label": "Alternate text for the image",
+    "name": "alt",
+    "type": "text",
+    "description": "Put the alternate text here to make the image accessible!"
+  },
+  {
     "name": "hotspots",
     "type": "list",
     "entity": "hotspot",
