@@ -15,17 +15,19 @@
 }
 .h5p-image-hotspot {
   position: absolute;
-  height: 1.4em;
-  width: 1.4em;
+  height: 0.9em;
+  width: 0.9em;
   text-align: center;
-  line-height: 1;
-  border-radius: 0.7em;
-  background: black;
+  line-height: 0.9em;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.8em;
+  vertical-align: middle;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  background: #fff;
-  padding: 0;
-  border: none;
+  padding: 0.3em;
+  border: 0.2em solid #FFFFFF;
   margin: 0;
 }
 .h5p-image-hotspot.active {
@@ -41,14 +43,29 @@
   -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
   transform: scale(1.5);
 }
-.h5p-image-hotspot:before {
+.h5p-image-hotspot-icon,
+.h5p-image-hotspot-text {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.h5p-image-hotspot-icon:before,
+.h5p-image-hotspot-text:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.h5p-image-hotspot-icon:before {
   font-family: H5PFontAwesome4;
-  content: '\f055';
-  width: 1.2em;
-  height: 1.2em;
-  font-size: 1.2em;
-  line-height: 1.2em;
-  margin: 0 0.1em;
+}
+.h5p-image-hotspot-text:before {
+  font-family: sans-serif;
+  content: attr(data-before);
+}
+.h5p-image-hotspot-text-2char:before {
+  font-size:0.7em;
 }
 .h5p-image-hotspot-popup {
   position: absolute;

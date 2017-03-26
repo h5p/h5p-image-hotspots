@@ -67,6 +67,24 @@ H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
         finished(null, parameters);
       },
 
+      /**
+       * Upgrades content parameters to support ImageHotspots 1.6
+       *
+       * Sets the specified color as the default color
+       *
+       * @param parameters
+       * @param finished
+       */
+      5: function (parameters, finished) {
+
+        // Old content has specified a color, opposed to using the default
+        if (parameters.color !== undefined) {
+          parameters.defaultColor = parameters.color;
+        }
+
+        finished(null, parameters);
+      },
+
     }
   };
 })(H5P.jQuery);
