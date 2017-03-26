@@ -7,16 +7,29 @@
     "description": "Image shown on background."
   },
   {
-    "name": "color",
+    "name": "defaultColor",
     "type": "text",
-    "label": "Hotspot color",
+    "label": "Default Hotspot color",
     "importance": "medium",
-    "description": "The color of the hotspots",
+    "description": "The default background color of the hotspots.",
     "optional": true,
     "default": "#981d99",
     "widget": "colorSelector",
     "spectrum": {
       "showInput": true
+    }
+  },
+  {
+    "name": "defaultIcon",
+    "type": "text",
+    "label": "Default Icon",
+    "description": "The default icon of the hotspots.",
+    "importance": "medium",
+    "optional": true,
+    "default": "fa-plus",
+    "widget": "iconSelector",
+    "fontIconPicker": {
+      "emptyIcon": false
     }
   },
   {
@@ -60,6 +73,62 @@
           "description": "When the user clicks the hotspot the popup will cover the entire background image"
         },
         {
+          "name": "hotspotSettings",
+          "type": "group",
+          "label": "Hotspot Customization",
+          "importance": "low",
+          "expanded": false,
+          "fields": [
+            {
+              "name": "icon",
+              "type": "text",
+              "label": "Hotspot Icon",
+              "description": "The icon of the hotspot. This overrides the default icon. Leave as <span class='icons-selector'><i class='fip-icon-block' data-fip-value='fip-icon-block'></i></span> to use the default icon.",
+              "importance": "low",
+              "optional": true,
+              "widget": "iconSelector",
+              "fontIconPicker": {
+                "emptyIcon": true
+              }
+            },
+            {
+              "name": "iconText",
+              "type": "text",
+              "label": "Hotspot Text",
+              "description": "Display letters or numbers (max 2 chars) instead of an icon. This overrides any icon.",
+              "importance": "low",
+              "optional": true,
+              "maxLength": 2
+            },
+            {
+              "name": "iconColor",
+              "type": "text",
+              "label": "Icon/Text color",
+              "description": "The color of the icon or text on the hotspot.",
+              "importance": "low",
+              "optional": true,
+              "default": "#FFFFFF",
+              "widget": "colorSelector",
+              "spectrum": {
+                "showInput": true
+              }
+            },
+            {
+              "name": "color",
+              "type": "text",
+              "label": "Hotspot color",
+              "description": "The background color of the hotspot. This overrides the default color. Leave as #000000 to use the default color.",
+              "importance": "low",
+              "optional": true,
+              "default": "#000000",
+              "widget": "colorSelector",
+              "spectrum": {
+                "showInput": true
+              }
+            }
+          ]
+        },
+        {
           "name": "header",
           "type": "text",
           "label": "Header",
@@ -84,6 +153,6 @@
           }
         }
       ]
-    }
-  }
+}
+}
 ]

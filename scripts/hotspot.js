@@ -14,16 +14,23 @@
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
    */
-  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent) {
+  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent, icon, iconText, iconColor) {
     var self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
 
+    var hotspotDisplay = ((iconText === null || iconText === undefined) ? 'icon ' + icon : 'text');
+
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
+
+    // Display hotspot either as icon or text
+    this.$hotspotIcon = $('<span/>', {
+      'class': 'h5p-image-hotspot-'+hotspotDisplay
+    });
 
     this.$element = $('<div/>', {
       'class': 'h5p-image-hotspot',
@@ -39,8 +46,18 @@
     }).css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: color
+      backgroundColor: color,
+      color: iconColor
     });
+
+    // Override icon with text
+    if (iconText !== null) {
+      this.$hotspotIcon.attr('data-before',iconText);
+      // Need to reduce font-size if 2 chars entered.
+      if(iconText.length === 2){
+        this.$hotspotIcon.addClass('h5p-image-hotspot-text-2char');
+      }
+    }
 
     parent.on('resize', function () {
       if (self.popup) {
@@ -66,6 +83,7 @@
   ImageHotspots.Hotspot.prototype.appendTo = function ($container) {
     this.$container = $container;
     this.$element.appendTo($container);
+    this.$hotspotIcon.appendTo(this.$element);
   };
 
   /**

@@ -78,8 +78,12 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     // Add hotspots
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
+      var hotspotColor = (this.options.hotspots[i].hotspotSettings.color == '#000000' ? this.options.defaultColor : this.options.hotspots[i].hotspotSettings.color);
+      var hotspotIcon = (this.options.hotspots[i].hotspotSettings.icon ? this.options.hotspots[i].hotspotSettings.icon : this.options.defaultIcon);
+      var hotspotText = (this.options.hotspots[i].hotspotSettings.iconText ? this.options.hotspots[i].hotspotSettings.iconText : null);
+      var hotspotIconColor = (this.options.hotspots[i].hotspotSettings.iconColor ? this.options.hotspots[i].hotspotSettings.iconColor : null);
       try {
-        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
+        new ImageHotspots.Hotspot(this.options.hotspots[i], hotspotColor, this.id, isSmallDevice, self, hotspotIcon, hotspotText, hotspotIconColor).appendTo(this.$hotspotContainer);
       }
       catch (e) {
         H5P.error(e);
