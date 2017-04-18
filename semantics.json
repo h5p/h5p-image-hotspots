@@ -20,6 +20,44 @@
     }
   },
   {
+    "name": "hotspotIcon",
+    "type": "text",
+    "default": "f055",
+    "maxLength": 4,
+    "regexp": {
+      "pattern": "^f[a-z\\d]{3}$",
+      "modifiers": "i"
+    },
+    "label": "Hotspot Icon",
+    "description": "Set a hotspot icon by entering a unicode from fontawesome.io"
+  },
+  {
+    "name": "hotspotClicked",
+    "type": "group",
+    "label": "Change the color of a hotspot after it was clicked",
+    "fields": [
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "default": false,
+        "label": "Enable clicked Hotspot",
+        "description": "A hotspot that was already clicked will change it´s color"
+      },
+      {
+        "name": "color",
+        "type": "text",
+        "label": "Clicked hotspot color",
+        "description": "The color of the Hotspot after it was clicked",
+        "optional": true,
+        "default": "#5A5D5E",
+        "widget": "colorSelector",
+        "spectrum": {
+          "showInput": true
+        }
+      }
+    ]
+  },
+  {
     "name": "hotspots",
     "type": "list",
     "entity": "hotspot",

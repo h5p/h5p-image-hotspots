@@ -53,6 +53,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       return;
     }
 
+    var style = document.createElement('style');
+    style.innerHTML =
+        '.h5p-image-hotspot:before { content: "\\'+this.options.hotspotIcon+'";}';
+    document.querySelector('head').appendChild(style);
+
     // Need to know since ios uses :hover when clicking on an element
     if (/(iPad|iPhone|iPod)/g.test( navigator.userAgent ) === false) {
       $container.addClass('not-an-ios-device');
@@ -79,7 +84,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
       try {
-        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
+        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self, this.options.hotspotClicked).appendTo(this.$hotspotContainer);
       }
       catch (e) {
         H5P.error(e);
