@@ -13,20 +13,25 @@
    * @param  {number} id
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
+   * @param  {string} icon
+   * @param  {image} iconImage
    */
-  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent) {
+  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent, icon, iconImage) {
     var self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
+    // A utility variable so you don't have to always check if there is an iconImage.
+    var iconImageExists = (iconImage == null ? false : true); 
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
-
-    this.$element = $('<div/>', {
-      'class': 'h5p-image-hotspot',
+    
+    // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
+    this.$element = $((iconImageExists ? '<img/>' : '<div/>'), {
+      'class': 'h5p-image-hotspot ' + 'h5p-image-hotspot-' + icon,
       click: function(){
         if(self.visible) {
           self.hidePopup();
@@ -41,7 +46,11 @@
       left: this.config.position.x + '%',
       color: color
     });
-
+    // If there is the iconImage, then add the src to the icon.
+    if (iconImageExists) {
+      this.$element.attr("src", H5P.getPath(iconImage.path, this.id));
+    }
+    
     parent.on('resize', function () {
       if (self.popup) {
 
