@@ -37,7 +37,7 @@
     
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     this.$element = $((iconImageExists ? '<img/>' : '<div/>'), {
-      'class': 'h5p-image-hotspot ' + 'h5p-image-hotspot-' + icon,
+      'class': 'h5p-image-hotspot ' + (!iconImageExists ? 'h5p-image-hotspot-' + icon : ''),
       click: function(){
         if(self.visible) {
           self.hidePopup();
@@ -46,16 +46,14 @@
           self.showPopup();
         }
         return false;
-      }
+      },
+      // If there is the iconImage, then add the src to the icon.
+      src: iconImageExists ? H5P.getPath(iconImage.path, this.id) : undefined
     }).css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
       color: color
     });
-    // If there is the iconImage, then add the src to the icon.
-    if (iconImageExists) {
-      this.$element.attr("src", H5P.getPath(iconImage.path, this.id));
-    }
     
     parent.on('resize', function () {
       if (self.popup) {
