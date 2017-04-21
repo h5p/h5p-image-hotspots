@@ -79,7 +79,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var numHotspots = this.options.hotspots.length;
     for(var i=0; i<numHotspots; i++) {
       try {
-        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self, this.options.icon, this.options.iconImage).appendTo(this.$hotspotContainer);
+        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self, this.options.icon, this.options.iconImage, this.options.iconType).appendTo(this.$hotspotContainer);
       }
       catch (e) {
         H5P.error(e);

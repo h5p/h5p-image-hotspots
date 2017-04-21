@@ -16,14 +16,20 @@
    * @param  {string} icon
    * @param  {image} iconImage
    */
-  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent, icon, iconImage) {
+  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent, icon, iconImage, iconType) {
     var self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
-    // A utility variable so you don't have to always check if there is an iconImage.
-    var iconImageExists = (iconImage == null ? false : true); 
+    // A utility variable to check if a Predefined icon or an uploaded image should be used.
+    var iconImageExists;
+    // If there is an image loaded & the iconType is image.
+    if (iconImage !== undefined && iconType === 'image') {
+      iconImageExists = true;
+    } else {
+      iconImageExists = false;
+    }
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
