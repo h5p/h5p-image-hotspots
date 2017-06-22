@@ -113,7 +113,11 @@
 
     this.$popupBackground.appendTo(this.$container);
 
-    self.show = function () {
+    /**
+     * Show popup
+     * @param {boolean} [focusContainer] Will focus container for keyboard accessibility
+     */
+    self.show = function (focusContainer) {
       // Fix height
       var contentHeight = self.$popupContent.height();
       var parentHeight = self.$popup.height();
@@ -169,7 +173,9 @@
       self.$popupBackground.addClass('visible');
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
-        self.$popup.focus();
+        if (focusContainer) {
+          self.$popup.focus();
+        }
         self.trigger('finishedLoading');
       }, 300);
     };

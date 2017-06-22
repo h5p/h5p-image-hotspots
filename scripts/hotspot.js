@@ -53,7 +53,7 @@
             self.hidePopup();
           }
           else {
-            self.showPopup();
+            self.showPopup(true);
           }
           e.stopPropagation();
           return false;
@@ -93,9 +93,9 @@
 
   /**
    * Display the popup
-   * @public
+   * @param {boolean} [focusPopup] Focuses popup for keyboard accessibility
    */
-  ImageHotspots.Hotspot.prototype.showPopup = function () {
+  ImageHotspots.Hotspot.prototype.showPopup = function (focusPopup) {
     var self = this;
 
     // Create popup content:
@@ -122,7 +122,7 @@
       // Disable all hotspots
       self.toggleHotspotsTabindex(true);
       self.visible = true;
-      self.popup.show();
+      self.popup.show(focusPopup);
       self.$element.addClass('active');
       self.actionInstances.forEach(function (actionInstance) {
         actionInstance.trigger('resize');
