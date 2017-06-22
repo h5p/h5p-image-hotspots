@@ -29,6 +29,11 @@
       'class': 'h5p-image-hotspot',
       'tabindex': 0,
       click: function(){
+        // prevents duplicates while loading
+        if (self.loadingPopup) {
+          return false;
+        }
+
         if(self.visible) {
           self.hidePopup();
         }
@@ -39,6 +44,11 @@
       },
       keydown: function (e) {
         if (e.which === 32 || e.which === 13) {
+          // Prevent duplicates while loading
+          if (self.loadingPopup) {
+            return false;
+          }
+
           if(self.visible) {
             self.hidePopup();
           }
@@ -90,6 +100,7 @@
 
     // Create popup content:
     var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
+    self.loadingPopup = true;
 
     this.actionInstances = [];
     var waitForLoaded = [];
@@ -108,10 +119,11 @@
     });
 
     var readyToPopup = function () {
+      // Disable all hotspots
+      self.toggleHotspotsTabindex(true);
+      self.visible = true;
       self.popup.show();
       self.$element.addClass('active');
-      self.visible = true;
-
       self.actionInstances.forEach(function (actionInstance) {
         actionInstance.trigger('resize');
       });
@@ -136,6 +148,21 @@
       popupClass,
       self.config.alwaysFullscreen || self.isSmallDeviceCB()
     );
+
+    // Release
+    self.popup.on('closed', function (e) {
+      self.toggleHotspotsTabindex();
+
+      // Refocus hotspot
+      if (e.data.refocus) {
+        self.focus();
+      }
+    });
+
+    // Finished loading popup
+    self.popup.on('finishedLoading', function () {
+      self.loadingPopup = false;
+    });
 
     if (waitForLoaded.length) {
       var loaded = 0;
@@ -176,6 +203,15 @@
         self.hidePopup();
       }
     });
+  };
+
+  /**
+   * Toggle whether hotspots has tabindex
+   * @param {boolean} [disable] Disable tabindex if true
+   */
+  ImageHotspots.Hotspot.prototype.toggleHotspotsTabindex = function (disable) {
+    this.$container.find('.h5p-image-hotspot')
+      .attr('tabindex', disable ? '-1' : '0');
   };
 
   /**
@@ -223,7 +259,6 @@
    * Release trap focus from hotspot
    */
   ImageHotspots.Hotspot.prototype.releaseTrapFocus = function () {
-    console.log("release trap focus");
     this.$element.off('keydown.trapfocus');
   };
 

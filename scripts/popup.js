@@ -1,7 +1,7 @@
 /**
  * Defines the ImageHotspots.Popup class
  */
-(function ($, ImageHotspots) {
+(function ($, ImageHotspots, EventDispatcher) {
 
   /**
    * Creates new Popup instance
@@ -19,6 +19,8 @@
    *
    */
   ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen) {
+    EventDispatcher.call(this);
+
     var self = this;
     this.$container = $container;
     var width = this.$container.width();
@@ -65,6 +67,14 @@
     if (fullscreen) {
       this.$closeButton = $('<div>', {
         'class': 'h5p-image-hotspot-close-popup-button',
+        'tabindex': '0'
+      }).click(function () {
+        self.hide();
+      }).keydown(function (e) {
+        if (e.which === 32 || e.which === 13) {
+          self.hide(true);
+          return false;
+        }
       }).appendTo(this.$popupBackground);
 
       if (!H5P.isFullscreen) {
@@ -86,6 +96,18 @@
         'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right'),
       }).css({
         top: y + 0.5 + '%'
+      }).appendTo(this.$popup);
+
+      // Add close button
+      this.$closeButton = $('<button>', {
+        'class': 'h5p-image-hotspot-close-popup-button-small'
+      }).click(function () {
+        self.hide();
+      }).keydown(function (e) {
+        if (e.which === 32 || e.which === 13) {
+          self.hide(true);
+          return false;
+        }
       }).appendTo(this.$popup);
     }
 
@@ -118,12 +140,16 @@
           var pointerTop = yInPixels - top;
           top = (top / parentHeight) * 100 ;
 
+          // Make sure popup close button is not conflicting with full screen button
+          if (top < 5) {
+            top = 5;
+          }
+
           self.$popup.css({
             top: top + '%'
           });
 
           // Need to move pointer:
-          var pointerHeightInPercent = (self.$pointer.height() / contentHeight) * 100 ;
           self.$pointer.css({
             top: ((pointerTop / contentHeight) * 100) - (parentHeight/contentHeight*0.5) + '%'
           });
@@ -142,11 +168,20 @@
       });
       self.$popupBackground.addClass('visible');
 
-      self.$popup.focus();
+      H5P.Transition.onTransitionEnd(self.$popup, function () {
+        self.$popup.focus();
+        self.trigger('finishedLoading');
+      }, 300);
     };
 
-    self.hide = function () {
+    self.hide = function (refocus) {
       self.$popupBackground.remove();
+      self.trigger('closed', {refocus: refocus});
     };
-  }
-})(H5P.jQuery, H5P.ImageHotspots);
+  };
+
+  // Extends the event dispatcher
+  ImageHotspots.Popup.prototype = Object.create(EventDispatcher.prototype);
+  ImageHotspots.Popup.prototype.constructor = ImageHotspots.Popup;
+
+})(H5P.jQuery, H5P.ImageHotspots, H5P.EventDispatcher);

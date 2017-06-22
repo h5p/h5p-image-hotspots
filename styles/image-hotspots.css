@@ -28,6 +28,11 @@
   border: none;
   margin: 0;
 }
+
+.h5p-image-hotspot.disabled {
+  display: none;
+}
+
 .h5p-image-hotspot.active {
   z-index: 1;
   cursor: pointer;
@@ -151,6 +156,22 @@
   width: 100%;
   font-size: 80%;
 }
+
+.h5p-image-hotspot-close-popup-button-small {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.7em;
+  padding: 0.3em;
+}
+
+.h5p-image-hotspot-close-popup-button-small:before {
+  font-family: 'H5PFontAwesome4';
+  content: '\f00d';
+}
+
 .h5p-image-hotspots-overlay {
   position: absolute;
   top: 0;
