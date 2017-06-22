@@ -77,9 +77,13 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     // Add hotspots
     var numHotspots = this.options.hotspots.length;
+    this.hotspots = [];
     for(var i=0; i<numHotspots; i++) {
       try {
-        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
+        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self);
+        hotspot.appendTo(this.$hotspotContainer);
+        console.log("appended", hotspot.$element);
+        this.hotspots.push(hotspot);
       }
       catch (e) {
         H5P.error(e);
@@ -94,13 +98,43 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       // Resize image when entering fullscreen.
       setTimeout(function () {
         self.trigger('resize');
+
+        // Trap focus
+        self.toggleTrapFocus(true);
       });
     });
 
     this.on('exitFullScreen', function () {
       // Do not rely on that isFullscreen has been updated
       self.trigger('resize', {forceImageHeight: true});
+      self.toggleTrapFocus(false);
     });
+  };
+
+  /**
+   * Toggle trap focus between hotspots
+   *
+   * @param {boolean} enable True to enable, otherwise will be released
+   */
+  ImageHotspots.prototype.toggleTrapFocus = function (enable) {
+    if (this.hotspots.length < 1) {
+      return;
+    }
+    if (enable) {
+      // focus first hotspot
+      this.hotspots[0].focus();
+
+      // Trap focus
+      if (this.hotspots.length > 1) {
+        this.hotspots[this.hotspots.length - 1].setTrapFocusTo(this.hotspots[0]);
+        this.hotspots[0].setTrapFocusTo(this.hotspots[this.hotspots.length - 1], true);
+      }
+    }
+    else {
+      // Untrap focus
+      this.hotspots[this.hotspots.length - 1].releaseTrapFocus();
+      this.hotspots[0].releaseTrapFocus();
+    }
   };
 
   /**

@@ -27,6 +27,7 @@
 
     this.$element = $('<div/>', {
       'class': 'h5p-image-hotspot',
+      'tabindex': 0,
       click: function(){
         if(self.visible) {
           self.hidePopup();
@@ -35,6 +36,18 @@
           self.showPopup();
         }
         return false;
+      },
+      keydown: function (e) {
+        if (e.which === 32 || e.which === 13) {
+          if(self.visible) {
+            self.hidePopup();
+          }
+          else {
+            self.showPopup();
+          }
+          e.stopPropagation();
+          return false;
+        }
       }
     }).css({
       top: this.config.position.y + '%',
@@ -180,6 +193,38 @@
 
       this.popup = undefined;
     }
+  };
+
+  /**
+   * Focus hotspot
+   */
+  ImageHotspots.Hotspot.prototype.focus = function () {
+    this.$element.focus();
+  };
+
+  /**
+   * Set up trapping of focus
+   *
+   * @param {ImageHotspots.Hotspot} hotspot Hotspot that focus should be trapped to
+   * @param {boolean} [trapReverseTab] Traps when tabbing backwards
+   */
+  ImageHotspots.Hotspot.prototype.setTrapFocusTo = function (hotspot, trapReverseTab) {
+    this.$element.on('keydown.trapfocus', function (e) {
+      var keyCombination = e.which === 9 && (trapReverseTab ? e.shiftKey : !e.shiftKey);
+      if (keyCombination) {
+        hotspot.focus();
+        e.stopPropagation();
+        return false;
+      }
+    });
+  };
+
+  /**
+   * Release trap focus from hotspot
+   */
+  ImageHotspots.Hotspot.prototype.releaseTrapFocus = function () {
+    console.log("release trap focus");
+    this.$element.off('keydown.trapfocus');
   };
 
   /**
