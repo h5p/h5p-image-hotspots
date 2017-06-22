@@ -82,7 +82,6 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       try {
         var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
-        console.log("appended", hotspot.$element);
         this.hotspots.push(hotspot);
       }
       catch (e) {
