@@ -151,10 +151,10 @@
 
     // Release
     self.popup.on('closed', function (e) {
-      self.toggleHotspotsTabindex();
+      self.hidePopup();
 
       // Refocus hotspot
-      if (e.data.refocus) {
+      if (e.data && e.data.refocus) {
         self.focus();
       }
     });
@@ -226,8 +226,8 @@
       this.popup.hide();
       this.$element.removeClass('active');
       this.visible = false;
-
       this.popup = undefined;
+      this.toggleHotspotsTabindex();
     }
   };
 

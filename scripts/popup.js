@@ -69,10 +69,10 @@
         'class': 'h5p-image-hotspot-close-popup-button',
         'tabindex': '0'
       }).click(function () {
-        self.hide();
+        self.trigger('closed');
       }).keydown(function (e) {
         if (e.which === 32 || e.which === 13) {
-          self.hide(true);
+          self.trigger('closed', {refocus: true});
           return false;
         }
       }).appendTo(this.$popupBackground);
@@ -102,10 +102,10 @@
       this.$closeButton = $('<button>', {
         'class': 'h5p-image-hotspot-close-popup-button-small'
       }).click(function () {
-        self.hide();
+        self.trigger('closed');
       }).keydown(function (e) {
         if (e.which === 32 || e.which === 13) {
-          self.hide(true);
+          self.trigger('closed', {refocus: true});
           return false;
         }
       }).appendTo(this.$popup);
@@ -174,9 +174,8 @@
       }, 300);
     };
 
-    self.hide = function (refocus) {
+    self.hide = function () {
       self.$popupBackground.remove();
-      self.trigger('closed', {refocus: refocus});
     };
   };
 
