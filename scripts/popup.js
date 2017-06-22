@@ -75,7 +75,7 @@
           self.trigger('closed', {refocus: true});
           return false;
         }
-      }).appendTo(this.$popupBackground);
+      }).prependTo(this.$popup);
 
       if (!H5P.isFullscreen) {
         var $fullscreenButton = $('.h5p-enable-fullscreen');
@@ -108,7 +108,7 @@
           self.trigger('closed', {refocus: true});
           return false;
         }
-      }).appendTo(this.$popup);
+      }).prependTo(this.$popup);
     }
 
     this.$popupBackground.appendTo(this.$container);
