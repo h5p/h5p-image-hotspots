@@ -7,7 +7,6 @@
     {
       "label":"Hotspot color",
       "description":"The color of the hotspots",
-      "default":"#981d99",
       "spectrum":{
         
       }
