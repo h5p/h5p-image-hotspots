@@ -7,7 +7,6 @@
     {
       "label":"Color",
       "description":"The color of the hotspots specified using a hex color code",
-      "default":"#981d99",
       "spectrum":{
         
       }
