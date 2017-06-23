@@ -27,7 +27,9 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     // Extend defaults with provided options
     this.options = $.extend(true, {}, {
       image: null,
-      hotspots: []
+      hotspots: [],
+      hotspotNumberLabel: 'Hotspot #num',
+      closeButtonLabel: 'Close'
     }, options);
     // Keep provided id.
     this.id = id;
@@ -69,6 +71,15 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         'class': 'h5p-image-hotspots-background',
         src: H5P.getPath(this.options.image.path, this.id)
       }).appendTo(this.$hotspotContainer);
+
+      // Set alt text of image
+      if (this.options.backgroundImageAltText) {
+        this.$image.attr('alt', this.options.backgroundImageAltText);
+      }
+      else {
+        // Ignore image if no alternative text for assistive technologies
+        this.$image.attr('aria-hidden', true);
+      }
     }
 
     var isSmallDevice = function () {
@@ -103,8 +114,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     for(var i=0; i<numHotspots; i++) {
       try {
-        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self);
+        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
+        var hotspotTitle = this.options.hotspots[i].header ? this.options.hotspots[i].header
+          : this.options.hotspotNumberLabel.replace('#num', (i + 1).toString());
+        hotspot.setTitle(hotspotTitle);
         this.hotspots.push(hotspot);
       }
       catch (e) {
