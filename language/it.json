@@ -7,7 +7,6 @@
     {
       "label":"Colore",
       "description":"Il colore dei punti focali viene impostato utilizzando un codice esadecimale.",
-      "default":"#981d99",
       "spectrum":{
         
       }
