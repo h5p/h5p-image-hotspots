@@ -7,7 +7,6 @@
     {
       "label":"Couleur de la puce interactive",
       "description":"Couleur des puces interactives (en code hexadécimal).",
-      "default":"#981d99",
       "spectrum":{
         
       }
