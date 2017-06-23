@@ -29,6 +29,7 @@
     this.$element = $('<button/>', {
       'class': 'h5p-image-hotspot',
       'tabindex': 0,
+      'aria-haspopup': true,
       click: function(){
         // prevents duplicates while loading
         if (self.loadingPopup) {
