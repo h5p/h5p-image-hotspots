@@ -7,7 +7,6 @@
     {
       "label":"Punktfarge",
       "description":"Fargen på punktene (spesifisert med heksadesimal fargekode)",
-      "default":"#981d99",
       "spectrum":{
         
       }
