@@ -1,43 +1,47 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "صورة الخلفية",
-      "description": "صورة تظهر في خلفية النشاط"
+      "label":"صورة الخلفية",
+      "description":"صورة تظهر في خلفية النشاط"
     },
     {
-      "label": "اللون",
-      "description": "لون النقاط الفعالة محددة باستخدام رمز اللون هيكس"
+      "label":"اللون",
+      "description":"لون النقاط الفعالة محددة باستخدام رمز اللون هيكس",
+      "default":"#981d99",
+      "spectrum":{
+        
+      }
     },
     {
-      "entity": "الخطوة",
-      "label": "الخطوات",
-      "field": {
-        "label": "الخطوة",
-        "fields": [
+      "entity":"الخطوة",
+      "label":"الخطوات",
+      "field":{
+        "label":"الخطوة",
+        "fields":[
           {
-            "label": "Position",
-            "fields": [
+            "label":"Position",
+            "description":"Click on the thumbnail image to place the hotspot",
+            "fields":[
               {
-                "label": "الوضع الأفقي س",
-                "description": "موقع الخطوة الأفقي في المئة من٠ - ١٠٠"
+                
               },
               {
-                "label": "الوضع الرأسي ص",
-                "description": "موقع الخطوة الرأسي في المئة من٠ - ١٠٠"
+                
               }
             ]
           },
           {
-            "label": "Cover entire frame on popup"
+            "label":"Cover entire frame on popup",
+            "description":"When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "عنوان",
-            "description": "optional"
+            "label":"عنوان",
+            "description":"optional"
           },
           {
-            "label": "محتويات منبثقة",
-            "field": {
-              "label": "Content Item"
+            "label":"محتويات منبثقة",
+            "field":{
+              "label":"Content Item"
             }
           }
         ]
