@@ -129,58 +129,55 @@
   margin-bottom: 1em;
 }
 
-.h5p-image-hotspot-close-popup-button:focus {
-  outline: 1px solid deepskyblue;
-}
-
 .h5p-image-hotspot-close-popup-button {
   position: absolute;
   top: 0;
-  right: -1.125em;
-  bottom: 0;
-  z-index: 3;
-  cursor: pointer;
-  color: #EEE;
-  background: rgb(0,0,0);
-  background: rgba(0,0,0,0.3);
-  font-size: 1.35em;
-  width: 1.125em;
-  -webkit-transition: right .5s ease-in-out;
-  transition: right .5s ease-in-out;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  text-align: left;
-}
-.h5p-image-hotspot-close-popup-button:hover,
-.h5p-image-hotspot-close-popup-button:active {
-  background: rgba(0,0,0,0.5);
-}
-.h5p-image-hotspot-close-popup-button:after {
-  font-family: H5PFontAwesome4;
-  content: '\f112';
-  position: absolute;
-  top: 50%;
-  margin-top: -0.5em;
-  text-align: center;
-  width: 100%;
-  font-size: 80%;
-}
-
-.h5p-image-hotspot-close-popup-button-small {
-  position: absolute;
-  top: 0;
   right: 0;
-  border: none;
+  border: 0;
   background: transparent;
   font-size: 0.7em;
   padding: 0.3em;
   cursor: pointer;
 }
 
-.h5p-image-hotspot-close-popup-button-small:before {
-  font-family: 'H5PFontAwesome4';
+.h5p-image-hotspot-close-popup-button.h5p-image-hotspot-close-fullscreen {
+  right: -1.125em;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+  font-size: 1.35em;
+  width: 1.125em;
+
+  color: #EEE;
+  background: rgba(0,0,0,0.3);
+  -webkit-transition: right .5s ease-in-out;
+  transition: right .5s ease-in-out;
+  text-align: left;
+}
+
+.h5p-image-hotspot-close-popup-button.h5p-image-hotspot-close-fullscreen:hover,
+.h5p-image-hotspot-close-popup-button.h5p-image-hotspot-close-fullscreen:active {
+  background: rgba(0,0,0,0.5);
+}
+
+.h5p-image-hotspot-close-popup-button.h5p-image-hotspot-close-fullscreen:focus {
+  outline: 1px solid deepskyblue;
+}
+
+.h5p-image-hotspot-close-popup-button:after {
+  font-family: H5PFontAwesome4;
   content: '\f00d';
+}
+
+.h5p-image-hotspot-close-popup-button.h5p-image-hotspot-close-fullscreen:after {
+  content: '\f112';
+  position: absolute;
+  font-size: 80%;
+  top: 50%;
+  width: 100%;
+  margin-top: -0.5em;
+  text-align: center;
 }
 
 .h5p-image-hotspots-overlay {

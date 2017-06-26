@@ -68,20 +68,24 @@
     $content.appendTo(this.$popupContent);
     this.$popupContent.appendTo(this.$popup);
 
+
+    // Add close button
+    this.$closeButton = $('<button>', {
+      'class': 'h5p-image-hotspot-close-popup-button',
+      'title': options.closeButtonLabel
+    }).click(function () {
+      self.trigger('closed');
+    }).keydown(function (e) {
+      if (e.which === 32 || e.which === 13) {
+        self.trigger('closed', {refocus: true});
+        return false;
+      }
+    }).appendTo(this.$popup);
+
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
     if (fullscreen) {
-      this.$closeButton = $('<button>', {
-        'class': 'h5p-image-hotspot-close-popup-button',
-        'title': options.closeButtonLabel
-      }).click(function () {
-        self.trigger('closed');
-      }).keydown(function (e) {
-        if (e.which === 32 || e.which === 13) {
-          self.trigger('closed', {refocus: true});
-          return false;
-        }
-      }).appendTo(this.$popup);
+      this.$closeButton.addClass('h5p-image-hotspot-close-fullscreen');
 
       if (!H5P.isFullscreen) {
         var $fullscreenButton = $('.h5p-enable-fullscreen');
@@ -102,19 +106,6 @@
         'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right'),
       }).css({
         top: y + 0.5 + '%'
-      }).appendTo(this.$popup);
-
-      // Add close button
-      this.$closeButton = $('<button>', {
-        'class': 'h5p-image-hotspot-close-popup-button-small',
-        'title': options.closeButtonLabel
-      }).click(function () {
-        self.trigger('closed');
-      }).keydown(function (e) {
-        if (e.which === 32 || e.which === 13) {
-          self.trigger('closed', {refocus: true});
-          return false;
-        }
       }).appendTo(this.$popup);
     }
 
