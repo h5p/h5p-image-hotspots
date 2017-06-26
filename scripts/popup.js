@@ -16,9 +16,10 @@
    * @param {string} header
    * @param {string} className
    * @param {boolean} fullscreen
+   * @param {Object} options
    *
    */
-  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen) {
+  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options) {
     EventDispatcher.call(this);
 
     var self = this;
@@ -45,7 +46,7 @@
     this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className,
-      'tabindex': '-1'
+      'role': 'dialog'
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
@@ -56,26 +57,35 @@
 
     this.$popupContent = $('<div/>', {'class': 'h5p-image-hotspot-popup-content'});
     if (header) {
-      this.$popupContent.append($('<div/>', {'class': 'h5p-image-hotspot-popup-header', html: header}));
+      this.$popupHeader = $('<div/>', {
+        'class': 'h5p-image-hotspot-popup-header',
+        html: header,
+        'tabindex': '-1'
+      });
+      this.$popupContent.append(this.$popupHeader);
       this.$popup.addClass('h5p-image-hotspot-has-header');
     }
     $content.appendTo(this.$popupContent);
     this.$popupContent.appendTo(this.$popup);
 
+
+    // Add close button
+    this.$closeButton = $('<button>', {
+      'class': 'h5p-image-hotspot-close-popup-button',
+      'title': options.closeButtonLabel
+    }).click(function () {
+      self.trigger('closed');
+    }).keydown(function (e) {
+      if (e.which === 32 || e.which === 13) {
+        self.trigger('closed', {refocus: true});
+        return false;
+      }
+    }).appendTo(this.$popup);
+
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
     if (fullscreen) {
-      this.$closeButton = $('<div>', {
-        'class': 'h5p-image-hotspot-close-popup-button',
-        'tabindex': '0'
-      }).click(function () {
-        self.trigger('closed');
-      }).keydown(function (e) {
-        if (e.which === 32 || e.which === 13) {
-          self.trigger('closed', {refocus: true});
-          return false;
-        }
-      }).prependTo(this.$popup);
+      this.$closeButton.addClass('h5p-image-hotspot-close-fullscreen');
 
       if (!H5P.isFullscreen) {
         var $fullscreenButton = $('.h5p-enable-fullscreen');
@@ -97,18 +107,6 @@
       }).css({
         top: y + 0.5 + '%'
       }).appendTo(this.$popup);
-
-      // Add close button
-      this.$closeButton = $('<button>', {
-        'class': 'h5p-image-hotspot-close-popup-button-small'
-      }).click(function () {
-        self.trigger('closed');
-      }).keydown(function (e) {
-        if (e.which === 32 || e.which === 13) {
-          self.trigger('closed', {refocus: true});
-          return false;
-        }
-      }).prependTo(this.$popup);
     }
 
     this.$popupBackground.appendTo(this.$container);
@@ -133,8 +131,9 @@
           var yInPixels = (y / 100) * parentHeight;
           var top = ((y / 100) * parentHeight) - (contentHeight / 2);
 
-          if (top < 0) {
-            top = 0;
+          // Make sure popup close button is not conflicting with full screen button
+          if (top < 30) {
+            top = 30;
           }
           else if (top + contentHeight > parentHeight) {
             top = parentHeight - contentHeight;
@@ -143,11 +142,6 @@
           // From pixels to percent:
           var pointerTop = yInPixels - top;
           top = (top / parentHeight) * 100 ;
-
-          // Make sure popup close button is not conflicting with full screen button
-          if (top < 5) {
-            top = 5;
-          }
 
           self.$popup.css({
             top: top + '%'
@@ -174,7 +168,12 @@
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         if (focusContainer) {
-          self.$popup.focus();
+          if (self.$popupHeader) {
+            self.$popupHeader.focus();
+          }
+          else {
+            self.$closeButton.focus();
+          }
         }
         self.trigger('finishedLoading');
       }, 300);

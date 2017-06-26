@@ -7,6 +7,13 @@
     "description": "Image shown on background."
   },
   {
+    "name": "backgroundImageAltText",
+    "type": "text",
+    "label": "Alternative text for background image",
+    "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies.",
+    "optional": true
+  },
+  {
     "name": "color",
     "type": "text",
     "label": "Hotspot color",
@@ -85,5 +92,20 @@
         }
       ]
     }
+  },
+  {
+    "name": "hotspotNumberLabel",
+    "type": "text",
+    "label": "Hotspot label for assistive technologies",
+    "default": "Hotspot #num",
+    "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number.",
+    "common": true
+  },
+  {
+    "name": "closeButtonLabel",
+    "type": "text",
+    "label": "Close button label for assistive technologies",
+    "default": "Close",
+    "common": true
   }
 ]

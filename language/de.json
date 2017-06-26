@@ -5,6 +5,10 @@
       "description": "Bild, das im Hintergrund angezeigt wird."
     },
     {
+      "label": "Alternative text for background image",
+      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+    },
+    {
       "label": "Hotspot-Farbe",
       "description": "Die Farbe des Hotspots (als Hexadezimalzahl)"
     },
@@ -34,6 +38,15 @@
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number.",
+      "default": "Hotspot #num"
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }
