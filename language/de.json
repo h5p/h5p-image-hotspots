@@ -7,6 +7,7 @@
     {
       "label":"Hotspot-Farbe",
       "description":"Die Farbe des Hotspots (als Hexadezimalzahl)",
+      "default":"#981d99",
       "spectrum":{
         
       }
