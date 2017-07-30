@@ -20,7 +20,7 @@
         "fields":[
           {
             "label":"ホット スポットの位置",
-            "description":"Click on the thumbnail image to place the hotspot",
+            "description":"ホット スポットを配置するためには、サムネイルの画像をクリックします。",
             "fields":[
               {
                 
