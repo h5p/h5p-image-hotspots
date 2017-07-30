@@ -1,25 +1,25 @@
 {
   "semantics":[
     {
-      "label":"Background image",
-      "description":"Image shown on background."
+      "label":"背景画像",
+      "description":"背景に表示される画像。"
     },
     {
-      "label":"Hotspot color",
-      "description":"The color of the hotspots",
+      "label":"ホット スポットカラー",
+      "description":"ホットスポットの色",
       "default":"#981d99",
       "spectrum":{
         
       }
     },
     {
-      "entity":"hotspot",
-      "label":"Hotspots",
+      "entity":"ホットスポット",
+      "label":"ホットスポット",
       "field":{
-        "label":"Hotspot",
+        "label":"ホットスポット",
         "fields":[
           {
-            "label":"Hotspot position",
+            "label":"ホット スポットの位置",
             "description":"Click on the thumbnail image to place the hotspot",
             "fields":[
               {
