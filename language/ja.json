@@ -31,17 +31,17 @@
             ]
           },
           {
-            "label":"Cover entire background image",
-            "description":"When the user clicks the hotspot the popup will cover the entire background image"
+            "label":"背景画像全体を覆う",
+            "description":"ユーザーがホット スポットをクリックしたとき、ポップアップが背景画像全体を覆います。"
           },
           {
-            "label":"Header",
-            "description":"Optional header for the popup"
+            "label":"ヘッダー",
+            "description":"ポップアップするオプションのヘッダー"
           },
           {
-            "label":"Popup content",
+            "label":"ポップアップコンテンツ",
             "field":{
-              "label":"Content Item"
+              "label":"コンテンツアイテム"
             }
           }
         ]
