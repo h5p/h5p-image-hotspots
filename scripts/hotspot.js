@@ -9,25 +9,33 @@
    * @class
    * @namespace H5P.ImageHotspots
    * @param  {Object} config
-   * @param  {string} color
+   * @param  {Object} options
    * @param  {number} id
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
    */
-  ImageHotspots.Hotspot = function (config, color, id, isSmallDeviceCB, parent) {
+  ImageHotspots.Hotspot = function (config, options, id, isSmallDeviceCB, parent) {
     var self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
+    this.options = options;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
-    this.$element = $('<div/>', {
+    this.$element = $('<button/>', {
       'class': 'h5p-image-hotspot',
+      'tabindex': 0,
+      'aria-haspopup': true,
       click: function(){
+        // prevents duplicates while loading
+        if (self.loadingPopup) {
+          return false;
+        }
+
         if(self.visible) {
           self.hidePopup();
         }
@@ -35,11 +43,28 @@
           self.showPopup();
         }
         return false;
+      },
+      keydown: function (e) {
+        if (e.which === 32 || e.which === 13) {
+          // Prevent duplicates while loading
+          if (self.loadingPopup) {
+            return false;
+          }
+
+          if(self.visible) {
+            self.hidePopup();
+          }
+          else {
+            self.showPopup(true);
+          }
+          e.stopPropagation();
+          return false;
+        }
       }
     }).css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: color
+      color: options.color
     });
 
     parent.on('resize', function () {
@@ -70,13 +95,14 @@
 
   /**
    * Display the popup
-   * @public
+   * @param {boolean} [focusPopup] Focuses popup for keyboard accessibility
    */
-  ImageHotspots.Hotspot.prototype.showPopup = function () {
+  ImageHotspots.Hotspot.prototype.showPopup = function (focusPopup) {
     var self = this;
 
     // Create popup content:
     var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
+    self.loadingPopup = true;
 
     this.actionInstances = [];
     var waitForLoaded = [];
@@ -95,10 +121,11 @@
     });
 
     var readyToPopup = function () {
-      self.popup.show();
-      self.$element.addClass('active');
+      // Disable all hotspots
+      self.toggleHotspotsTabindex(true);
       self.visible = true;
-
+      self.popup.show(focusPopup);
+      self.$element.addClass('active');
       self.actionInstances.forEach(function (actionInstance) {
         actionInstance.trigger('resize');
       });
@@ -121,8 +148,24 @@
       self.$element.outerWidth(),
       self.config.header,
       popupClass,
-      self.config.alwaysFullscreen || self.isSmallDeviceCB()
+      self.config.alwaysFullscreen || self.isSmallDeviceCB(),
+      self.options
     );
+
+    // Release
+    self.popup.on('closed', function (e) {
+      self.hidePopup();
+
+      // Refocus hotspot
+      if (e.data && e.data.refocus) {
+        self.focus();
+      }
+    });
+
+    // Finished loading popup
+    self.popup.on('finishedLoading', function () {
+      self.loadingPopup = false;
+    });
 
     if (waitForLoaded.length) {
       var loaded = 0;
@@ -166,6 +209,16 @@
   };
 
   /**
+   * Toggle whether hotspots has tabindex
+   * @param {boolean} [disable] Disable tabindex if true
+   */
+  ImageHotspots.Hotspot.prototype.toggleHotspotsTabindex = function (disable) {
+    this.$container.find('.h5p-image-hotspot')
+      .attr('tabindex', disable ? '-1' : '0')
+      .attr('aria-hidden', disable ? true : '');
+  };
+
+  /**
    * Hide popup
    * @public
    */
@@ -177,9 +230,48 @@
       this.popup.hide();
       this.$element.removeClass('active');
       this.visible = false;
-
       this.popup = undefined;
+      this.toggleHotspotsTabindex();
     }
+  };
+
+  /**
+   * Focus hotspot
+   */
+  ImageHotspots.Hotspot.prototype.focus = function () {
+    this.$element.focus();
+  };
+
+  /**
+   * Set up trapping of focus
+   *
+   * @param {ImageHotspots.Hotspot} hotspot Hotspot that focus should be trapped to
+   * @param {boolean} [trapReverseTab] Traps when tabbing backwards
+   */
+  ImageHotspots.Hotspot.prototype.setTrapFocusTo = function (hotspot, trapReverseTab) {
+    this.$element.on('keydown.trapfocus', function (e) {
+      var keyCombination = e.which === 9 && (trapReverseTab ? e.shiftKey : !e.shiftKey);
+      if (keyCombination) {
+        hotspot.focus();
+        e.stopPropagation();
+        return false;
+      }
+    });
+  };
+
+  /**
+   * Release trap focus from hotspot
+   */
+  ImageHotspots.Hotspot.prototype.releaseTrapFocus = function () {
+    this.$element.off('keydown.trapfocus');
+  };
+
+  /**
+   * Set title of hotspot element
+   * @param {string} title Title to set for hotspot element
+   */
+  ImageHotspots.Hotspot.prototype.setTitle = function (title) {
+    this.$element.attr('title', title);
   };
 
   /**
