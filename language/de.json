@@ -1,52 +1,51 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Hintergrundbild",
-      "description": "Bild, das im Hintergrund angezeigt wird."
+      "label":"Hintergrundbild",
+      "description":"Bild, das im Hintergrund angezeigt wird."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label":"Hotspot-Farbe",
+      "description":"Die Farbe des Hotspots (als Hexadezimalzahl)",
+      "default":"#981d99",
+      "spectrum":{
+        
+      }
     },
     {
-      "label": "Hotspot-Farbe",
-      "description": "Die Farbe des Hotspots (als Hexadezimalzahl)"
-    },
-    {
-      "entity": "hotspot",
-      "label": "Hotspots",
-      "field": {
-        "label": "Hotspot",
-        "fields": [
+      "entity":"hotspot",
+      "label":"Hotspots",
+      "field":{
+        "label":"Hotspot",
+        "fields":[
           {
-            "label": "Hotspot-Position",
-            "description": "Klicke auf das Vorschaubild, um den Hotspot zu platzieren."
+            "label":"Hotspot-Position",
+            "description":"Klicke auf das Vorschaubild, um den Hotspot zu platzieren.",
+            "fields":[
+              {
+                
+              },
+              {
+                
+              }
+            ]
           },
           {
-            "label": "Das gesamte Hintergrundbild überdecken",
-            "description": "Wenn der Nutzer den Hotspot anklickt, wird das Popup-Fenster den gesamten Hintergrund überdecken"
+            "label":"Das gesamte Hintergrundbild überdecken",
+            "description":"Wenn der Nutzer den Hotspot anklickt, wird das Popup-Fenster den gesamten Hintergrund überdecken"
           },
           {
-            "label": "Kopfzeile",
-            "description": "Optionale Kopfzeile für das Popup-Fenster"
+            "label":"Kopfzeile",
+            "description":"Optionale Kopfzeile für das Popup-Fenster"
           },
           {
-            "label": "Inhalt des Popup-Fensters",
-            "field": {
-              "label": "Inhaltstyp"
+            "label":"Inhalt des Popup-Fensters",
+            "field":{
+              "label":"Inhaltstyp"
             }
           }
         ]
       }
-    },
-    {
-      "label": "Hotspot label for assistive technologies",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number.",
-      "default": "Hotspot #num"
-    },
-    {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
     }
   ]
 }
