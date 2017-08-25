@@ -1,63 +1,51 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Bakgrunnsbilde",
-      "description": "Bilde brukt som bakgrunn"
+      "label":"Bakgrunnsbilde",
+      "description":"Bilde brukt som bakgrunn"
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label":"Punktfarge",
+      "description":"Fargen på punktene (spesifisert med heksadesimal fargekode)",
+      "default":"#981d99",
+      "spectrum":{
+        
+      }
     },
     {
-      "label": "Punktfarge",
-      "description": "Fargen på punktene (spesifisert med heksadesimal fargekode)"
-    },
-    {
-      "entity": "punkt",
-      "label": "Punkter",
-      "field": {
-        "label": "Punkt",
-        "fields": [
+      "entity":"punkt",
+      "label":"Punkter",
+      "field":{
+        "label":"Punkt",
+        "fields":[
           {
-            "label": "Posisjon",
-            "description": "Klikk på bildet for å plassere punktet",
-            "fields": [
+            "label":"Posisjon",
+            "description":"Klikk på bildet for å plassere punktet",
+            "fields":[
               {
-                "label": "Horisontal posisjon (x)",
-                "description": "Den horisontale posisjonen til punktet målt i prosent. (0 - 100)"
+                
               },
               {
-                "label": "Vertical posisjon (y)",
-                "description": "Den verticale posisjonen til punktet målt i prosent. (0 - 100)"
+                
               }
             ]
           },
           {
-            "label": "Dekk hele bakgrunnsbildet",
-            "description": "Når brukeren klikker vil popup dekke hele bakgrunnsbildet"
+            "label":"Dekk hele bakgrunnsbildet",
+            "description":"Når brukeren klikker vil popup dekke hele bakgrunnsbildet"
           },
           {
-            "label": "Overskrift",
-            "description": "Valgfri overskrift for popup"
+            "label":"Overskrift",
+            "description":"Valgfri overskrift for popup"
           },
           {
-            "label": "Innhold",
-            "entity": "innhold",
-            "field": {
-              "label": "Innholdselement"
+            "label":"Innhold",
+            "field":{
+              "label":"Innholdselement"
             }
           }
         ]
       }
-    },
-    {
-      "label": "Hotspot label for assistive technologies",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number.",
-      "default": "Hotspot #num"
-    },
-    {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
     }
   ]
 }

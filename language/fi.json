@@ -1,60 +1,51 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label":"Background image",
+      "description":"Image shown on background."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label":"Color",
+      "description":"The color of the hotspots specified using a hex color code",
+      "default":"#981d99",
+      "spectrum":{
+        
+      }
     },
     {
-      "label": "Color",
-      "description": "The color of the hotspots specified using a hex color code"
-    },
-    {
-      "entity": "hotspot",
-      "label": "Hotspots",
-      "field": {
-        "label": "Hotspot",
-        "fields": [
+      "entity":"hotspot",
+      "label":"Hotspots",
+      "field":{
+        "label":"Hotspot",
+        "fields":[
           {
-            "label": "Position",
-            "fields": [
+            "label":"Position",
+            "description":"Click on the thumbnail image to place the hotspot",
+            "fields":[
               {
-                "label": "Horizontal position (x)",
-                "description": "The horizontal hotspot location in percent. (0 - 100)"
+                
               },
               {
-                "label": "Vertical position (y)",
-                "description": "The vertical hotspot location in percent. (0 - 100)"
+                
               }
             ]
           },
           {
-            "label": "Cover entire frame on popup"
+            "label":"Cover entire frame on popup",
+            "description":"When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "Header",
-            "description": "optional"
+            "label":"Header",
+            "description":"optional"
           },
           {
-            "label": "Popup content",
-            "field": {
-              "label": "Content Item"
+            "label":"Popup content",
+            "field":{
+              "label":"Content Item"
             }
           }
         ]
       }
-    },
-    {
-      "label": "Hotspot label for assistive technologies",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number.",
-      "default": "Hotspot #num"
-    },
-    {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
     }
   ]
 }
