@@ -27,7 +27,9 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     // Extend defaults with provided options
     this.options = $.extend(true, {}, {
       image: null,
-      hotspots: []
+      hotspots: [],
+      hotspotNumberLabel: 'Hotspot #num',
+      closeButtonLabel: 'Close'
     }, options);
     // Keep provided id.
     this.id = id;
@@ -69,6 +71,15 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         'class': 'h5p-image-hotspots-background',
         src: H5P.getPath(this.options.image.path, this.id)
       }).appendTo(this.$hotspotContainer);
+
+      // Set alt text of image
+      if (this.options.backgroundImageAltText) {
+        this.$image.attr('alt', this.options.backgroundImageAltText);
+      }
+      else {
+        // Ignore image if no alternative text for assistive technologies
+        this.$image.attr('aria-hidden', true);
+      }
     }
 
     var isSmallDevice = function () {
@@ -77,9 +88,38 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     // Add hotspots
     var numHotspots = this.options.hotspots.length;
+    this.hotspots = [];
+
+    this.options.hotspots.sort(function (a, b) {
+      // Sanity checks, move data to the back if invalid
+      var firstIsValid = a.position && a.position.x && a.position.y;
+      var secondIsValid = b.position && b.position.x && b.position.y;
+      if (!firstIsValid) {
+        return 1;
+      }
+
+      if (!secondIsValid) {
+        return -1;
+      }
+
+      // Order top-to-bottom, left-to-right
+      if (a.position.y !== b.position.y) {
+        return a.position.y < b.position.y ? -1 : 1;
+      }
+      else {
+        // a and b y position is equal, sort on x
+        return a.position.x < b.position.x ? -1 : 1;
+      }
+    });
+
     for(var i=0; i<numHotspots; i++) {
       try {
-        new ImageHotspots.Hotspot(this.options.hotspots[i], this.options.color, this.id, isSmallDevice, self).appendTo(this.$hotspotContainer);
+        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
+        hotspot.appendTo(this.$hotspotContainer);
+        var hotspotTitle = this.options.hotspots[i].header ? this.options.hotspots[i].header
+          : this.options.hotspotNumberLabel.replace('#num', (i + 1).toString());
+        hotspot.setTitle(hotspotTitle);
+        this.hotspots.push(hotspot);
       }
       catch (e) {
         H5P.error(e);
@@ -94,13 +134,43 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       // Resize image when entering fullscreen.
       setTimeout(function () {
         self.trigger('resize');
+
+        // Trap focus
+        self.toggleTrapFocus(true);
       });
     });
 
     this.on('exitFullScreen', function () {
       // Do not rely on that isFullscreen has been updated
       self.trigger('resize', {forceImageHeight: true});
+      self.toggleTrapFocus(false);
     });
+  };
+
+  /**
+   * Toggle trap focus between hotspots
+   *
+   * @param {boolean} enable True to enable, otherwise will be released
+   */
+  ImageHotspots.prototype.toggleTrapFocus = function (enable) {
+    if (this.hotspots.length < 1) {
+      return;
+    }
+    if (enable) {
+      // focus first hotspot
+      this.hotspots[0].focus();
+
+      // Trap focus
+      if (this.hotspots.length > 1) {
+        this.hotspots[this.hotspots.length - 1].setTrapFocusTo(this.hotspots[0]);
+        this.hotspots[0].setTrapFocusTo(this.hotspots[this.hotspots.length - 1], true);
+      }
+    }
+    else {
+      // Untrap focus
+      this.hotspots[this.hotspots.length - 1].releaseTrapFocus();
+      this.hotspots[0].releaseTrapFocus();
+    }
   };
 
   /**

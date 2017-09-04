@@ -1,35 +1,47 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Image d'arrière-plan",
-      "description": "Image affichée en arrière-plan."
+      "label":"Image d'arrière-plan",
+      "description":"Image affichée en arrière-plan."
     },
     {
-      "label": "Couleur de la puce interactive",
-      "description": "Couleur des puces interactives (en code hexadécimal)."
+      "label":"Couleur de la puce interactive",
+      "description":"Couleur des puces interactives (en code hexadécimal).",
+      "default":"#981d99",
+      "spectrum":{
+        
+      }
     },
     {
-      "entity": "Puces interactives",
-      "label": "Puce interactive",
-      "field": {
-        "label": "Puce interactive",
-        "fields": [
+      "entity":"Puces interactives",
+      "label":"Puce interactive",
+      "field":{
+        "label":"Puce interactive",
+        "fields":[
           {
-            "label": "Position de la puce interactive",
-            "description": "Cliquez sur la miniature pour positionner la puce interactive"
+            "label":"Position de la puce interactive",
+            "description":"Cliquez sur la miniature pour positionner la puce interactive",
+            "fields":[
+              {
+                
+              },
+              {
+                
+              }
+            ]
           },
           {
-            "label": "Recouvrir toute l'image d'arrière-plan",
-            "description": "Quand l'utilisateur cliquera sur la puce interactive, le popup recouvrira toute l'image d'arrière-plan"
+            "label":"Recouvrir toute l'image d'arrière-plan",
+            "description":"Quand l'utilisateur cliquera sur la puce interactive, le popup recouvrira toute l'image d'arrière-plan"
           },
           {
-            "label": "Titre",
-            "description": "Titre facultatif du popup"
+            "label":"Titre",
+            "description":"Titre facultatif du popup"
           },
           {
-            "label": "Contenu du popup",
-            "field": {
-              "label": "Type de contenu"
+            "label":"Contenu du popup",
+            "field":{
+              "label":"Type de contenu"
             }
           }
         ]
