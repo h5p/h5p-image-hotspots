@@ -1,12 +1,12 @@
 {
   "semantics":[
     {
-      "label":"Background image",
-      "description":"Image shown on background."
+      "label":"Taustakuva",
+      "description":"Taustakuva hotspoteille."
     },
     {
-      "label":"Color",
-      "description":"The color of the hotspots specified using a hex color code",
+      "label":"Väri",
+      "description":"Hotspotien väri heksamuodossa",
       "default":"#981d99",
       "spectrum":{
         
@@ -14,13 +14,13 @@
     },
     {
       "entity":"hotspot",
-      "label":"Hotspots",
+      "label":"Hotspotit",
       "field":{
         "label":"Hotspot",
         "fields":[
           {
-            "label":"Position",
-            "description":"Click on the thumbnail image to place the hotspot",
+            "label":"Sijainti",
+            "description":"Klikkaa pikkukuvaa sijoittaaksesi hotspotin",
             "fields":[
               {
                 
@@ -31,17 +31,17 @@
             ]
           },
           {
-            "label":"Cover entire frame on popup",
-            "description":"When the user clicks the hotspot the popup will cover the entire background image"
+            "label":"Täytä koko alue",
+            "description":"Käyttäjän klikatessa hotspotia aukeava ponnahdusikkuna peittää taustakuvan kokonaan"
           },
           {
-            "label":"Header",
-            "description":"optional"
+            "label":"Otsikko",
+            "description":"valinnainen"
           },
           {
-            "label":"Popup content",
+            "label":"Ponnahdusikkunan sisältö",
             "field":{
-              "label":"Content Item"
+              "label":"Sisältökohde"
             }
           }
         ]
