@@ -129,6 +129,11 @@
   margin-bottom: 1em;
 }
 
+.h5p-image-hotspots .h5p-image-hotspot-popup-body-fraction p{
+  margin: 0;
+  padding: 1em 0;
+}
+
 .h5p-image-hotspot-close-popup-button {
   position: absolute;
   top: 0;
