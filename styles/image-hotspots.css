@@ -114,6 +114,9 @@
   height: 100%;
   overflow: auto;
 }
+.h5p-image-hotspot-popup-content {
+  overflow: auto;
+}
 .h5p-image-hotspot-popup-body > * {
   font-size: 0.7em;
   line-height: 1.1;
@@ -128,12 +131,6 @@
   margin-top: 0;
   margin-bottom: 1em;
 }
-
-.h5p-image-hotspots .h5p-image-hotspot-popup-body-fraction p{
-  margin: 0;
-  padding: 1em 0;
-}
-
 .h5p-image-hotspot-close-popup-button {
   position: absolute;
   top: 0;
