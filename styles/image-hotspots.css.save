@@ -62,10 +62,11 @@
   z-index: 3; /* On top of hotspots */
   top: 0;
   margin: 0;
-  height: 100%;
+  //height: 100%;
   max-height: 100%;
   background: white;
   background: rgba(255,255,255,0.9);
+  padding: 0.5em;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-transition: left .3s ease-in-out;
@@ -100,9 +101,6 @@
   line-height: 1.5em;
   height: 1.5em;
 }
-.h5p-image-hotspot-popup-body {
-  padding: 0.5em;
-}
 .h5p-text.h5p-image-hotspot-popup-body {
   bottom: 0;
   overflow: auto;
@@ -115,10 +113,16 @@
 .fullscreen-popup .h5p-image-hotspot-popup-content {
   height: 100%;
   overflow: auto;
+overflow: auto;
 }
 .h5p-image-hotspot-popup-content {
-  overflow: auto;
+  //overflow: auto;
 }
+
+.h5p-image-hotspot-popup-body {
+  height: 100%;
+}
+
 .h5p-image-hotspot-popup-body > * {
   font-size: 0.7em;
   line-height: 1.1;
