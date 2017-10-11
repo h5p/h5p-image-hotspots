@@ -71,6 +71,11 @@
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
 }
+
+.h5p-image-hotspot-has-header .h5p-image-hotspot-popup-body {
+  padding-top: 0;
+}
+
 .h5p-image-hotspot-popup-pointer {
   position: absolute;
   -webkit-transition: left .3s ease-in-out;
@@ -96,6 +101,7 @@
   text-overflow: ellipsis;
   font-weight: bold;
   margin: 0;
+  padding: 0.5em 0.5em 0 0.5em;
   margin-bottom: 0.5em;
   line-height: 1.5em;
   height: 1.5em;
