@@ -68,7 +68,6 @@
     $content.appendTo(this.$popupContent);
     this.$popupContent.appendTo(this.$popup);
 
-
     // Add close button
     this.$closeButton = $('<button>', {
       'class': 'h5p-image-hotspot-close-popup-button',
@@ -119,6 +118,7 @@
       // Fix height
       var contentHeight = self.$popupContent.height();
       var parentHeight = self.$popup.height();
+
       if (!fullscreen) {
         if (contentHeight < parentHeight) {
           // don't need all height:
@@ -142,14 +142,13 @@
           // From pixels to percent:
           var pointerTop = yInPixels - top;
           top = (top / parentHeight) * 100 ;
-
           self.$popup.css({
             top: top + '%'
           });
 
           // Need to move pointer:
           self.$pointer.css({
-            top: ((pointerTop / contentHeight) * 100) - (parentHeight/contentHeight*0.5) + '%'
+            top: ((pointerTop / contentHeight) * 100) - (parentHeight / contentHeight * 0.5) + '%'
           });
         }
         else {
