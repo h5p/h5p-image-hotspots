@@ -274,19 +274,4 @@
     this.$element.attr('title', title);
   };
 
-  /**
-   * Hex string to RGB
-   * eg: FFFFFF -> 255,255,255
-   * @private
-   * @param {string} hex
-   * @returns {string} RGB equivalent
-   */
-  var hexToRgb = function(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    if(result) {
-      return parseInt(result[1], 16) + ',' + parseInt(result[2], 16) + ',' + parseInt(result[3], 16);
-    }
-    return '0,0,0';
-  };
-
 })(H5P.jQuery, H5P.ImageHotspots);
