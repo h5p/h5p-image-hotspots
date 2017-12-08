@@ -1,41 +1,41 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "背景圖",
+      "description": "圖像顯示在背景上."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots",
+      "label": "熱點顏色",
+      "description": "熱點的顏色",
       "default": "#981d99",
       "spectrum": {}
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "熱點",
+      "label": "熱點",
       "field": {
-        "label": "Hotspot",
+        "label": "熱點",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot",
+            "label": "熱點位置",
+            "description": "點擊縮圖以放置熱點",
             "fields": [
               {},
               {}
             ]
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "覆蓋全部背景圖",
+            "description": "當使用者點擊熱點時，彈出視窗將覆蓋全部背景圖"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "標題",
+            "description": "彈出視窗的可選標題"
           },
           {
-            "label": "Popup content",
+            "label": "彈出內容",
             "field": {
-              "label": "Content Item"
+              "label": "內容項目"
             }
           }
         ]
