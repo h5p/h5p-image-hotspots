@@ -199,7 +199,7 @@
   -webkit-transition: background .5s ease-in-out;
   transition: background .5s ease-in-out;
   background: transparent;
-  z-index: 1;
+  z-index: 3;
 }
 .h5p-image-hotspots-overlay.visible {
   background: rgba(0,0,0,0.5);

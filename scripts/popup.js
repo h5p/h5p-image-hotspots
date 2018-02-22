@@ -24,7 +24,6 @@
 
     var self = this;
     this.$container = $container;
-
     var width = this.$container.width();
 
     var pointerWidthInPercent = 4;
@@ -32,16 +31,16 @@
 
     var popupLeft = 0;
     var popupWidth = 0;
-    this.toTheLeft = false;
+    var toTheLeft = false;
 
     if (fullscreen) {
       popupWidth = 100;
       className += ' fullscreen-popup';
     }
     else {
-      this.toTheLeft = (x > 45);
-      popupLeft = (this.toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
-      popupWidth = (this.toTheLeft ?  x - pointerWidthInPercent : 100 - popupLeft);
+      toTheLeft = (x > 45);
+      popupLeft = (toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
+      popupWidth = (toTheLeft ?  x - pointerWidthInPercent : 100 - popupLeft);
     }
 
     this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
@@ -49,7 +48,7 @@
       'class': 'h5p-image-hotspot-popup ' + className,
       'role': 'dialog'
     }).css({
-      left: (this.toTheLeft ? '' : '-') + '100%',
+      left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
     }).click(function (event){
       // If clicking on popup, stop propagating:
@@ -103,7 +102,7 @@
     }
     else {
       this.$pointer = $('<div/>', {
-        'class': 'h5p-image-hotspot-popup-pointer to-the-' + (this.toTheLeft ? 'left' : 'right'),
+        'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right'),
       }).css({
         top: y + 0.5 + '%'
       }).appendTo(this.$popup);
@@ -116,8 +115,6 @@
      * @param {boolean} [focusContainer] Will focus container for keyboard accessibility
      */
     self.show = function (focusContainer) {
-      var topOffset = $('.h5p-enable-fullscreen').outerHeight() || 0;
-
       // Fix height
       var contentHeight = self.$popupContent.height();
       var parentHeight = self.$popup.height();
@@ -135,8 +132,8 @@
           var top = ((y / 100) * parentHeight) - (contentHeight / 2);
 
           // Make sure popup close button is not conflicting with full screen button
-          if (top < topOffset) {
-            top = topOffset;
+          if (top < 30) {
+            top = 30;
           }
           else if (top + contentHeight > parentHeight) {
             top = parentHeight - contentHeight;
@@ -156,25 +153,10 @@
         }
         else {
           // Need all height:
-          if (self.toTheLeft) {
-            self.$popupContent.css({
-               height: '100%',
-               overflow: 'auto'
-             });
-          }
-          else {
-            // Need to spare the fullscreen button
-            self.$popup.css({
-              top: topOffset + 'px'
-            });
-            self.$popupContent.css({
-              height: 'calc(100% - ' + topOffset + 'px)',
-              overflow: 'auto'
-            });
-            self.$pointer.css({
-              top: parseInt(self.$pointer.css('top')) - topOffset + 'px'
-            });
-          }
+          self.$popupContent.css({
+            height: '100%',
+            overflow: 'auto'
+          });
         }
       }
 
