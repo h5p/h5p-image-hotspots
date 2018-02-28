@@ -142,7 +142,7 @@
 .h5p-image-hotspot-close-popup-button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 1em;
   border: 0;
   background: transparent;
   font-size: 0.7em;
