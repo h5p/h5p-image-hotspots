@@ -1,47 +1,41 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Background image",
-      "description":"Image shown on background."
+      "label": "תמונת רקע",
+      "description": "תמונה מוצגת ברקע"
     },
     {
-      "label":"Hotspot color",
-      "description":"The color of the hotspots",
-      "default":"#981d99",
-      "spectrum":{
-        
-      }
+      "label": "צבע אזור בחירה",
+      "description": "הצבע של אזורי הבחירה",
+      "default": "#981d99",
+      "spectrum": {}
     },
     {
-      "entity":"hotspot",
-      "label":"Hotspots",
-      "field":{
-        "label":"Hotspot",
-        "fields":[
+      "entity": "אזור בחירה",
+      "label": "אזורי בחירה",
+      "field": {
+        "label": "אזור בחירה",
+        "fields": [
           {
-            "label":"Hotspot position",
-            "description":"Click on the thumbnail image to place the hotspot",
-            "fields":[
-              {
-                
-              },
-              {
-                
-              }
+            "label": "מיקום אזור בחירה",
+            "description": " יש להקליק על התמונה הממוזערת כדי למקם את אזור הבחירה",
+            "fields": [
+              {},
+              {}
             ]
           },
           {
-            "label":"Cover entire background image",
-            "description":"When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "יש לכסות את כל תמונת הרקע",
+            "description": "כאשר המשתמש יקליק על אזור הבחירה, החלונית הקופצת תכסה את כל תמונת הרקע "
           },
           {
-            "label":"Header",
-            "description":"Optional header for the popup"
+            "label": "כותרת הדף",
+            "description": "כותרת דף אפשרית לחלונית קופצת"
           },
           {
-            "label":"Popup content",
-            "field":{
-              "label":"Content Item"
+            "label": "תוכן חלונית קופצת",
+            "field": {
+              "label": "תוכן הפריט"
             }
           }
         ]
