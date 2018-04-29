@@ -1,0 +1,45 @@
+{
+  "semantics": [
+    {
+      "label": "背景圖片",
+      "description": "背景要顯示的圖片。"
+    },
+    {
+      "label": "熱點顏色",
+      "description": "熱點要顯示的顏色。",
+      "default": "#981d99",
+      "spectrum": {}
+    },
+    {
+      "entity": "熱點",
+      "label": "所有熱點",
+      "field": {
+        "label": "熱點",
+        "fields": [
+          {
+            "label": "熱點位置",
+            "description": "在縮圖上點擊以放置熱點。",
+            "fields": [
+              {},
+              {}
+            ]
+          },
+          {
+            "label": "彈出視窗佈滿整個背景圖片",
+            "description": "當用戶點擊熱點時，彈出的視窗會與背景圖片的尺寸一致。"
+          },
+          {
+            "label": "彈出視窗標題文字",
+            "description": "彈出視窗上顯示的標題。"
+          },
+          {
+            "label": "彈出視窗內文文字",
+            "field": {
+              "label": "項目"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
