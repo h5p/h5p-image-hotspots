@@ -2,7 +2,7 @@
   "semantics":[
     {
       "label":"Achtergrondafbeelding",
-      "description":"Afbeelding die op de achtergrond getoond wordt."
+      "description":"Afbeelding die op de achtergrond wordt getoond."
     },
     {
       "label":"Hotspot kleur",
@@ -20,7 +20,7 @@
         "fields":[
           {
             "label":"Hotspot positie",
-            "description":"Klik op de verkleinde afbeelding om de hotspot te plaatsen",
+            "description":"Klik op de miniatuurafbeelding om de hotspot te plaatsen",
             "fields":[
               {
                 
@@ -32,16 +32,16 @@
           },
           {
             "label":"Bedek de volledige achtergrondafbeelding",
-            "description":"Wanneer de gebruiker de hotspot aanklikt, zal de pop-up de hele achtergrondafbeelding bedekken."
+            "description":"Als de gebruiker op de hotspot klikt, dan zal de popup de volledige achtergrondafbeelding bedekken"
           },
           {
-            "label":"Titel",
-            "description":"Optionele titel voor de pop-up"
+            "label":"Koptitel",
+            "description":"Optionele koptitel voor de popup"
           },
           {
-            "label":"Pop-up inhoud",
+            "label":"Popup inhoud",
             "field":{
-              "label":"Inhoud item"
+              "label":"Inhoudsitem"
             }
           }
         ]
