@@ -6,11 +6,7 @@
     },
     {
       "label":"Punktfarge",
-      "description":"Fargen på punktene (spesifisert med heksadesimal fargekode)",
-      "default":"#981d99",
-      "spectrum":{
-        
-      }
+      "description":"Fargen på punktene (spesifisert med heksadesimal fargekode)"
     },
     {
       "entity":"punkt",
@@ -23,10 +19,10 @@
             "description":"Klikk på bildet for å plassere punktet",
             "fields":[
               {
-                
+
               },
               {
-                
+
               }
             ]
           },

@@ -6,9 +6,7 @@
     },
     {
       "label": "熱點顏色",
-      "description": "熱點要顯示的顏色。",
-      "default": "#981d99",
-      "spectrum": {}
+      "description": "熱點要顯示的顏色。"
     },
     {
       "entity": "熱點",

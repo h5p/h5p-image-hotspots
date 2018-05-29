@@ -6,11 +6,7 @@
     },
     {
       "label":"Couleur de la puce interactive",
-      "description":"Couleur des puces interactives (en code hexadécimal).",
-      "default":"#981d99",
-      "spectrum":{
-        
-      }
+      "description":"Couleur des puces interactives (en code hexadécimal)."
     },
     {
       "entity":"Puces interactives",
@@ -23,10 +19,10 @@
             "description":"Cliquez sur la miniature pour positionner la puce interactive",
             "fields":[
               {
-                
+
               },
               {
-                
+
               }
             ]
           },

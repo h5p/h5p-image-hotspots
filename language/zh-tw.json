@@ -6,9 +6,7 @@
     },
     {
       "label": "任務連結點顏色",
-      "description": "任務連結點的顏色",
-      "default": "#981d99",
-      "spectrum": {}
+      "description": "任務連結點的顏色"
     },
     {
       "entity": "任務連結點",
