@@ -1,47 +1,59 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Image d'arrière-plan",
-      "description":"Image affichée en arrière-plan."
+      "label": "Image d'arrière-plan",
+      "description": "Image affichée en arrière-plan."
     },
     {
-      "label":"Couleur de la puce interactive",
-      "description":"Couleur des puces interactives (en code hexadécimal)."
+      "label": "Texte alternatif pour l'image d'arrière-plan",
+      "description": "Si le navigateur ne peut pas charger l'image, ce texte sera affiché à la place. Également utilisé par les technologies d'accessibilité."
     },
     {
-      "entity":"Puces interactives",
-      "label":"Puce interactive",
-      "field":{
-        "label":"Puce interactive",
-        "fields":[
+      "label": "Couleur de la puce cliquable",
+      "description": "Couleur des puces cliquables (en code hexadécimal).",
+      "default": "#981d99",
+      "spectrum": {}
+    },
+    {
+      "entity": "Puces cliquables",
+      "label": "Puce cliquable",
+      "field": {
+        "label": "Puce cliquable",
+        "description": "La couleur des puces cliquables.",
+        "fields": [
           {
-            "label":"Position de la puce interactive",
-            "description":"Cliquez sur la miniature pour positionner la puce interactive",
-            "fields":[
-              {
-
-              },
-              {
-
-              }
+            "label": "Position de la puce cliquable",
+            "description": "Cliquez sur la miniature pour positionner la puce cliquable.",
+            "fields": [
+              {},
+              {}
             ]
           },
           {
-            "label":"Recouvrir toute l'image d'arrière-plan",
-            "description":"Quand l'utilisateur cliquera sur la puce interactive, le popup recouvrira toute l'image d'arrière-plan"
+            "label": "Recouvrir toute l'image d'arrière-plan",
+            "description": "Quand l'utilisateur cliquera sur la puce cliquable, le popup recouvrira toute l'image d'arrière-plan."
           },
           {
-            "label":"Titre",
-            "description":"Titre facultatif du popup"
+            "label": "Titre",
+            "description": "Titre facultatif du popup."
           },
           {
-            "label":"Contenu du popup",
-            "field":{
-              "label":"Type de contenu"
+            "label": "Contenu du popup",
+            "field": {
+              "label": "Type de contenu"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Intitulé de la puce cliquable pour les technologies d'accessibilité",
+      "default": "Puce #num",
+      "description": "Permet d'annoncer à quelle puce l'utilisateur est parvenu à naviguer s'il n'y a pas de titre spécifié pour cette puce. #num peut être utilisé pour remplacer le numéro de la puce."
+    },
+    {
+      "label": "Intitulé du bouton \"Fermer\" pour les technologies d'accessibilité",
+      "default": "Fermer"
     }
   ]
 }
