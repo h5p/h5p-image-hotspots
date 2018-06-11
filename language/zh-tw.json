@@ -9,35 +9,45 @@
       "description": "任務連結點的顏色"
     },
     {
-      "entity": "任務連結點",
       "label": "任務連結點",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
       "field": {
-        "label": "任務連結點",
+        "label": "Hotspot",
         "fields": [
           {
-            "label": "任務連結點位置",
-            "description": "點擊縮圖以放置任務連結點",
-            "fields": [
-              {},
-              {}
-            ]
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label": "覆蓋全部背景圖示",
-            "description": "當使用者點擊任務連結點時，彈出視窗將覆蓋全部背景圖像"
+            "label": "Cover entire background image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "標題",
-            "description": "選填。彈出視窗的標題"
+            "label": "Header",
+            "description": "Optional header for the popup"
           },
           {
-            "label": "彈出內容",
+            "label": "Popup content",
             "field": {
-              "label": "內容項目"
+              "label": "Content Item"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "default": "Hotspot #num",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }

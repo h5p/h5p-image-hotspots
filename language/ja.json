@@ -1,47 +1,53 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"背景画像",
-      "description":"背景に表示される画像。"
+      "label": "背景画像",
+      "description": "背景に表示される画像。"
     },
     {
-      "label":"ホット スポットカラー",
-      "description":"ホットスポットの色"
+      "label": "ホット スポットカラー",
+      "description": "ホットスポットの色"
     },
     {
-      "entity":"ホットスポット",
-      "label":"ホットスポット",
-      "field":{
-        "label":"ホットスポット",
-        "fields":[
+      "label": "ホットスポット",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
+      "field": {
+        "label": "Hotspot",
+        "fields": [
           {
-            "label":"ホット スポットの位置",
-            "description":"ホット スポットを配置するためには、サムネイルの画像をクリックします。",
-            "fields":[
-              {
-
-              },
-              {
-
-              }
-            ]
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label":"背景画像全体を覆う",
-            "description":"ユーザーがホット スポットをクリックしたとき、ポップアップが背景画像全体を覆います。"
+            "label": "Cover entire background image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label":"ヘッダー",
-            "description":"ポップアップするオプションのヘッダー"
+            "label": "Header",
+            "description": "Optional header for the popup"
           },
           {
-            "label":"ポップアップコンテンツ",
-            "field":{
-              "label":"コンテンツアイテム"
+            "label": "Popup content",
+            "field": {
+              "label": "Content Item"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "default": "Hotspot #num",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }

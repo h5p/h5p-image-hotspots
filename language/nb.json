@@ -1,47 +1,53 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Bakgrunnsbilde",
-      "description":"Bilde brukt som bakgrunn"
+      "label": "Bakgrunnsbilde",
+      "description": "Bilde brukt som bakgrunn"
     },
     {
-      "label":"Punktfarge",
-      "description":"Fargen på punktene (spesifisert med heksadesimal fargekode)"
+      "label": "Punktfarge",
+      "description": "Fargen på punktene (spesifisert med heksadesimal fargekode)"
     },
     {
-      "entity":"punkt",
-      "label":"Punkter",
-      "field":{
-        "label":"Punkt",
-        "fields":[
+      "label": "Punkter",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
+      "field": {
+        "label": "Hotspot",
+        "fields": [
           {
-            "label":"Posisjon",
-            "description":"Klikk på bildet for å plassere punktet",
-            "fields":[
-              {
-
-              },
-              {
-
-              }
-            ]
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label":"Dekk hele bakgrunnsbildet",
-            "description":"Når brukeren klikker vil popup dekke hele bakgrunnsbildet"
+            "label": "Cover entire background image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label":"Overskrift",
-            "description":"Valgfri overskrift for popup"
+            "label": "Header",
+            "description": "Optional header for the popup"
           },
           {
-            "label":"Innhold",
-            "field":{
-              "label":"Innholdselement"
+            "label": "Popup content",
+            "field": {
+              "label": "Content Item"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "default": "Hotspot #num",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }

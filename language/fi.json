@@ -1,47 +1,53 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Taustakuva",
-      "description":"Taustakuva hotspoteille."
+      "label": "Taustakuva",
+      "description": "Taustakuva hotspoteille."
     },
     {
-      "label":"Väri",
-      "description":"Hotspotien väri heksamuodossa"
+      "label": "Väri",
+      "description": "Hotspotien väri heksamuodossa"
     },
     {
-      "entity":"hotspot",
-      "label":"Hotspotit",
-      "field":{
-        "label":"Hotspot",
-        "fields":[
+      "label": "Hotspotit",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
+      "field": {
+        "label": "Hotspot",
+        "fields": [
           {
-            "label":"Sijainti",
-            "description":"Klikkaa pikkukuvaa sijoittaaksesi hotspotin",
-            "fields":[
-              {
-
-              },
-              {
-
-              }
-            ]
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label":"Täytä koko alue",
-            "description":"Käyttäjän klikatessa hotspotia aukeava ponnahdusikkuna peittää taustakuvan kokonaan"
+            "label": "Cover entire background image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label":"Otsikko",
-            "description":"valinnainen"
+            "label": "Header",
+            "description": "Optional header for the popup"
           },
           {
-            "label":"Ponnahdusikkunan sisältö",
-            "field":{
-              "label":"Sisältökohde"
+            "label": "Popup content",
+            "field": {
+              "label": "Content Item"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "default": "Hotspot #num",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }

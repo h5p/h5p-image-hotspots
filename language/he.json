@@ -9,35 +9,45 @@
       "description": "הצבע של אזורי הבחירה"
     },
     {
-      "entity": "אזור בחירה",
       "label": "אזורי בחירה",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
       "field": {
-        "label": "אזור בחירה",
+        "label": "Hotspot",
         "fields": [
           {
-            "label": "מיקום אזור בחירה",
-            "description": " יש להקליק על התמונה הממוזערת כדי למקם את אזור הבחירה",
-            "fields": [
-              {},
-              {}
-            ]
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label": "יש לכסות את כל תמונת הרקע",
-            "description": "כאשר המשתמש יקליק על אזור הבחירה, החלונית הקופצת תכסה את כל תמונת הרקע "
+            "label": "Cover entire background image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "כותרת הדף",
-            "description": "כותרת דף אפשרית לחלונית קופצת"
+            "label": "Header",
+            "description": "Optional header for the popup"
           },
           {
-            "label": "תוכן חלונית קופצת",
+            "label": "Popup content",
             "field": {
-              "label": "תוכן הפריט"
+              "label": "Content Item"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "default": "Hotspot #num",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }

@@ -9,35 +9,45 @@
       "description": "熱點要顯示的顏色。"
     },
     {
-      "entity": "熱點",
       "label": "所有熱點",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Hotspots",
       "field": {
-        "label": "熱點",
+        "label": "Hotspot",
         "fields": [
           {
-            "label": "熱點位置",
-            "description": "在縮圖上點擊以放置熱點。",
-            "fields": [
-              {},
-              {}
-            ]
+            "label": "Hotspot position",
+            "description": "Click on the thumbnail image to place the hotspot"
           },
           {
-            "label": "彈出視窗佈滿整個背景圖片",
-            "description": "當用戶點擊熱點時，彈出的視窗會與背景圖片的尺寸一致。"
+            "label": "Cover entire background image",
+            "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "彈出視窗標題文字",
-            "description": "彈出視窗上顯示的標題。"
+            "label": "Header",
+            "description": "Optional header for the popup"
           },
           {
-            "label": "彈出視窗內文文字",
+            "label": "Popup content",
             "field": {
-              "label": "項目"
+              "label": "Content Item"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Hotspot label for assistive technologies",
+      "default": "Hotspot #num",
+      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+    },
+    {
+      "label": "Close button label for assistive technologies",
+      "default": "Close"
     }
   ]
 }
