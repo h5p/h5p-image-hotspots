@@ -84,9 +84,18 @@
             "type": "library",
             "label": "Content Item",
             "options": [
-              "H5P.Text 1.1",
-              "H5P.Video 1.4",
-              "H5P.Image 1.1"
+              {
+                "name": "H5P.Text 1.1",
+                "hasmetadata": false
+              },
+              {
+                "name": "H5P.Video 1.4",
+                "hasmetadata": true
+              },
+              {
+                "name": "H5P.Image 1.1",
+                "hasmetadata": true
+              }
             ]
           }
         }
