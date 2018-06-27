@@ -10,8 +10,7 @@
     },
     {
       "label": "الخطوات",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",

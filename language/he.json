@@ -5,13 +5,12 @@
       "description": "תמונה מוצגת ברקע"
     },
     {
-      "label": "צבע אזור בחירה",
-      "description": "הצבע של אזורי הבחירה"
+      "label": "Alternative text for background image",
+      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
     },
     {
-      "label": "אזורי בחירה",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
