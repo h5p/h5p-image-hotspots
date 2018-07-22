@@ -10,8 +10,7 @@
     },
     {
       "label": "نقاط الاتصال",
-      "description": "لون نقاط الاتصال",
-      "default": "#981d99"
+      "description": "لون نقاط الاتصال"
     },
     {
       "entity": "hotspot",

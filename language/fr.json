@@ -10,8 +10,7 @@
     },
     {
       "label": "Couleur de la puce cliquable",
-      "description": "Couleur des puces cliquables (en code hexadécimal).",
-      "default": "#981d99"
+      "description": "Couleur des puces cliquables (en code hexadécimal)."
     },
     {
       "entity": "Puces cliquables",

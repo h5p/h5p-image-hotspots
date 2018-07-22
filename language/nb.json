@@ -5,13 +5,12 @@
       "description": "Bilde brukt som bakgrunn"
     },
     {
-      "label": "Punktfarge",
-      "description": "Fargen på punktene (spesifisert med heksadesimal fargekode)"
+      "label": "Alternative text for background image",
+      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
     },
     {
-      "label": "Punkter",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",

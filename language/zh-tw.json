@@ -5,13 +5,12 @@
       "description": "圖像顯示在背景上."
     },
     {
-      "label": "任務連結點顏色",
-      "description": "任務連結點的顏色"
+      "label": "Alternative text for background image",
+      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
     },
     {
-      "label": "任務連結點",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
