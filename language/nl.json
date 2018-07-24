@@ -5,13 +5,12 @@
       "description": "Afbeelding die op de achtergrond wordt getoond."
     },
     {
-      "label": "Hotspot kleur",
-      "description": "De kleur van de hotspots"
+      "label": "Alternative text for background image",
+      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
     },
     {
-      "label": "Hotspots",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",

@@ -5,13 +5,12 @@
       "description": "Bild, das im Hintergrund angezeigt wird."
     },
     {
-      "label": "Hotspot-Farbe",
-      "description": "Die Farbe des Hotspots (als Hexadezimalzahl)"
+      "label": "Alternative text for background image",
+      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
     },
     {
-      "label": "Hotspots",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
