@@ -1,16 +1,16 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Imagem de fundo",
+      "description": "Imagem a mostrar no fundo."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Texto alternativo para imagem de fundo",
+      "description": "Se não foi possível ao browser carregar a imagem, este texto vai ser mostrado em seu lugar. Também é utilizado em tecnologias de apoio."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Cor do hotspot",
+      "description": "A cor dos hotspots"
     },
     {
       "entity": "hotspot",
@@ -19,34 +19,34 @@
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Posição do hotspot",
+            "description": "Clique na miniatura da imagem para definir o hotspot"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Cobrir a imagem de fundo",
+            "description": "Quando o utilizador clicar no hotspot a janela popup vai cobrir toda a imagem de fundo"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Cabeçalho",
+            "description": "Cabeçalho opcional para a janela popup"
           },
           {
-            "label": "Popup content",
+            "label": "Conteúdo da janela popup",
             "field": {
-              "label": "Content Item"
+              "label": "Item de Conteúdo"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
+      "label": "Hotspot para tecnologias de apoio",
       "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "description": "Esta etiqueta vai ajudar o leitor de ecrã a anunciar o elemento do hotspot se não existir informação específica. #num pode ser utilizado para substituir o número do hotspot."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Etiqueta do botão fechar para tecnologias de apoio",
+      "default": "Fechar"
     }
   ]
 }
