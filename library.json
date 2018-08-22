@@ -9,6 +9,10 @@
   "license": "MIT",
   "machineName": "H5P.ImageHotspots",
   "fullscreen": 1,
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 19
+  },
   "embedTypes": [
     "iframe"
   ],
