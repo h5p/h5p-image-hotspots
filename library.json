@@ -2,13 +2,17 @@
   "title": "Image Hotspots",
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
-  "minorVersion": 6,
-  "patchVersion": 3,
+  "minorVersion": 7,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
   "machineName": "H5P.ImageHotspots",
   "fullscreen": 1,
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 19
+  },
   "embedTypes": [
     "iframe"
   ],
