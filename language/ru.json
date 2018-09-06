@@ -1,52 +1,52 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Фоновое изображение",
+      "description": "Изображение показанное на фоне"
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Альтернативный текст для фонового изображения",
+      "description": "Если браузер не может загрузить изображение, этот текст будет отображаться вместо него. Также используется вспомогательными технологиями"
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Цвет метки",
+      "description": "Цвет меток"
     },
     {
       "entity": "hotspot",
-      "label": "Hotspots",
+      "label": "Метки",
       "field": {
-        "label": "Hotspot",
+        "label": "Метка",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Позиция метки",
+            "description": "Нажмите на уменьшенное изображение для размещения метки"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Обложка всего фонового изображения",
+            "description": "Когда пользователь нажимает на метку, всплывающее окно будет охватывать все фоновое изображение"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Заголовок",
+            "description": "Необязательный заголовок для всплывающего окна"
           },
           {
-            "label": "Popup content",
+            "label": "Содержимое всплывающего окна",
             "field": {
-              "label": "Content Item"
+              "label": "Элемент содержимого"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Название метки для вспомогательных технологий",
+      "default": "Метка #num",
+      "description": "Будет помогать объявлять, какая метка была перемещена, если нет заголовка указанного для метки. #num можно использовать для замены номера метки."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Кнопка \"Закрыть\" для вспомогательных технологий",
+      "default": "Закрыть"
     }
   ]
 }
