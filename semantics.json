@@ -85,16 +85,13 @@
             "label": "Content Item",
             "options": [
               {
-                "name": "H5P.Text 1.1",
-                "hasMetadata": false
+                "name": "H5P.Text 1.1"
               },
               {
-                "name": "H5P.Video 1.5",
-                "hasMetadata": true
+                "name": "H5P.Video 1.5"
               },
               {
-                "name": "H5P.Image 1.1",
-                "hasMetadata": true
+                "name": "H5P.Image 1.1"
               }
             ]
           }
