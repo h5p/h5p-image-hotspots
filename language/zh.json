@@ -5,48 +5,48 @@
       "description": "背景要顯示的圖片。"
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "替代文字",
+      "description": "當瀏覽器無法載入圖片時會顯示的文字，也用來作為視障者的輔助工具。"
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "熱點顏色",
+      "description": "熱點要顯示的顏色。"
     },
     {
       "entity": "hotspot",
-      "label": "Hotspots",
+      "label": "所有熱點",
       "field": {
-        "label": "Hotspot",
+        "label": "熱點",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "熱點位置",
+            "description": "在縮圖上點擊以放置熱點。"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "彈出視窗佈滿整個背景圖片",
+            "description": "當用戶點擊熱點時，彈出的視窗會與背景圖片的尺寸一致。"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "彈出視窗標題文字",
+            "description": "彈出視窗上顯示的標題。"
           },
           {
-            "label": "Popup content",
+            "label": "彈出視窗內文文字",
             "field": {
-              "label": "Content Item"
+              "label": "項目"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
+      "label": "熱點輔助說明",
       "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "description": "如果熱點沒有設定標題，這可以用來幫助說明熱點。#num 參數為熱點的自動編號。"
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "視窗關閉輔助文字",
+      "default": "關閉"
     }
   ]
 }
