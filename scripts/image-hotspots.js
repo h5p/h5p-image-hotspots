@@ -181,6 +181,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @param {boolean} [e.decreaseSize]
    */
   ImageHotspots.prototype.resize = function (e) {
+    if (this.options.image === null) {
+      return;
+    }
+
     var self = this;
     var containerWidth = self.$container.width();
     var containerHeight = self.$container.height();
