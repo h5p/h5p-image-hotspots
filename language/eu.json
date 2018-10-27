@@ -1,0 +1,52 @@
+{
+  "semantics": [
+    {
+      "label": "Atzeko planoko irudia",
+      "description": "Atzeko planoan erakusten den irudia."
+    },
+    {
+      "label": "Atzeko planoko irudiaren ordezko testua",
+      "description": "Nabigatzaileak ezin badu irudia kargatu testu hau haren ordez erakutsiko da. Laguntzako teknologiek ere erabiltzen dute."
+    },
+    {
+      "label": "Leku beroen kolorea",
+      "description": "Leku beroek duten kolorea"
+    },
+    {
+      "entity": "leku beroa",
+      "label": "Leku beroa",
+      "field": {
+        "label": "Leku beroa",
+        "fields": [
+          {
+            "label": "Leku beroaren kokapena",
+            "description": "Egin klik miniaturan leku beroa kokatzeko"
+          },
+          {
+            "label": "Atzeko planoko irudi osoa estaltzen du",
+            "description": "Erabiltzaileak leku beroan klik egiten duenean popupak atzeko planoko irudi guztia estaliko du"
+          },
+          {
+            "label": "Goiburua",
+            "description": "Popuparen aukerako goiburua"
+          },
+          {
+            "label": "Popuparen edukia",
+            "field": {
+              "label": "Eduki-elementua"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Leku beroaren etiketa laguntzako teknologietarako",
+      "default": "Leku beroa #num",
+      "description": "Lagunduko du adierazten zein leku beroan nabigatu dugun baldin eta bere popupak goibururik ez badu. #num erabili daiteke leku beroaren zenbakiaren ordez."
+    },
+    {
+      "label": "Itxi botoiaren etiketa laguntzako teknologietarako",
+      "default": "Itxi"
+    }
+  ]
+}
