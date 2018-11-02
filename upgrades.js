@@ -1,6 +1,6 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
+H5PUpgrades['H5P.ImageHotspots'] = (function () {
   return {
     1: {
        /**
@@ -69,4 +69,4 @@ H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
 
     }
   };
-})(H5P.jQuery);
+})();
