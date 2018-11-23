@@ -272,6 +272,7 @@
    */
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
     this.$element.attr('title', title);
+    this.$element.attr('aria-label', title);
   };
 
 })(H5P.jQuery, H5P.ImageHotspots);

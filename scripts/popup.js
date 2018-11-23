@@ -71,6 +71,7 @@
     // Add close button
     this.$closeButton = $('<button>', {
       'class': 'h5p-image-hotspot-close-popup-button',
+      'aria-label': options.closeButtonLabel,
       'title': options.closeButtonLabel
     }).click(function () {
       self.trigger('closed');
