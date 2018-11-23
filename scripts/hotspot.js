@@ -30,13 +30,13 @@
       'class': 'h5p-image-hotspot',
       'tabindex': 0,
       'aria-haspopup': true,
-      click: function(){
+      click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {
           return false;
         }
 
-        if(self.visible) {
+        if (self.visible) {
           self.hidePopup();
         }
         else {
@@ -51,7 +51,7 @@
             return false;
           }
 
-          if(self.visible) {
+          if (self.visible) {
             self.hidePopup();
           }
           else {
@@ -200,9 +200,9 @@
     }
 
     // We don't get click events on body for iOS-devices
-    $('body').children().on('click.h5p-image-hotspot-popup', function(event) {
+    $('body').children().on('click.h5p-image-hotspot-popup', function (event) {
       var $target = $(event.target);
-      if(self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
+      if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
         self.hidePopup();
       }
     });

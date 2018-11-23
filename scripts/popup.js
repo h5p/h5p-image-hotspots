@@ -50,7 +50,7 @@
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
-    }).click(function (event){
+    }).click(function (event) {
       // If clicking on popup, stop propagating:
       event.stopPropagation();
     }).appendTo(this.$popupBackground);
