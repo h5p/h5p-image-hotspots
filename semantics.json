@@ -56,6 +56,10 @@
             {
               "name": "y",
               "type": "number"
+            },
+            {
+              "name": "legacyPositioning",
+              "type": "boolean"
             }
           ]
         },

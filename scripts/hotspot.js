@@ -61,11 +61,21 @@
           return false;
         }
       }
-    }).css({
-      top: this.config.position.y + '%',
-      left: this.config.position.x + '%',
-      color: options.color
     });
+    if (this.config.position.legacyPositioning) {
+      this.$element.css({
+        top: this.config.position.y + '%',
+        left: this.config.position.x + '%',
+        color: options.color
+      });
+    }
+    else {
+      this.$element.css({
+        top: 'calc(' + this.config.position.y + '% - 0.6em)',
+        left: 'calc(' + this.config.position.x + '% - 0.6em)',
+        color: options.color
+      });
+    }
 
     parent.on('resize', function () {
       if (self.popup) {
