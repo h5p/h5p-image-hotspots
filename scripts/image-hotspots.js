@@ -51,7 +51,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     self.$container = $container;
 
     if (this.options.image === null || this.options.image === undefined) {
-      $container.append('<div class="background-image-missing">I really need a background image :)</div>');
+      $container.append('<div class="background-image-missing">Missing required background image</div>');
       return;
     }
 
