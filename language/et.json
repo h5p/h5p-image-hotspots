@@ -1,52 +1,52 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Taustapilt",
+      "description": "Taustal näidatav pilt."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Taustapildi alternatiivtekst",
+      "description": "Seda teksti näidatakse siis, kui brauser ei saa pilti laadida. Samuti kasutatakse teksti assisteeriva tehnoloogia puhul."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Tulipunkti värv",
+      "description": "Tulipunktide värv"
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "tulipunkt",
+      "label": "Tulipunktid",
       "field": {
-        "label": "Hotspot",
+        "label": "Tulipunkt",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Tulipunkti asukoht",
+            "description": "Tulipunkti asetamiseks kliki pisipildil"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Kata kogu taustapilt",
+            "description": "Kui kasutaja klikib tulipunktil, siis katab hüpikaken kogu taustapildi"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Päis",
+            "description": "Valikuline hüpikakna pealkiri"
           },
           {
-            "label": "Popup content",
+            "label": "Hüpikakna sisu",
             "field": {
-              "label": "Content Item"
+              "label": "Sisuelement"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Tulipunkti silt assisteeriva tehnoloogia jaoks",
+      "default": "Tulipunkt #num",
+      "description": "Aitab teavitada, missugusele tulipunkti elemendile on navigeeritud, kui tulipunktile ei ole määratud pealkirja. #num saab kasutada tulipunkti arvu asendamiseks."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Sulge nupu silt assisteeriva tehnoloogia jaoks",
+      "default": "Sulge"
     }
   ]
 }
