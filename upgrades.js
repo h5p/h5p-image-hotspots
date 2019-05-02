@@ -81,6 +81,11 @@ H5PUpgrades['H5P.ImageHotspots'] = (function () {
             if (hotspot.position) {
               hotspot.position.legacyPositioning = true;
             }
+
+            // Move "always fullscreen" option to popup settings group
+            hotspot.popupSettings = {};
+            hotspot.popupSettings.sizePosition = (hotspot.alwaysFullscreen === true) ? 'fullscreen' : 'free';
+            delete hotspot.alwaysFullscreen;
           });
         }
         finished(null, parameters);

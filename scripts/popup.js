@@ -17,12 +17,20 @@
    * @param {string} className
    * @param {boolean} fullscreen
    * @param {Object} options
-   *
+   * @param {object} [customSettings] Custom settings.
+   * @param {number} [customSettings.maxWidth=100] Maximum width for popup (percentage).
+   * @param {number} [customSettings.position=0] Force popup left (=1) or right (=2).
    */
   ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy) {
     EventDispatcher.call(this);
 
     var self = this;
+
+    // Sanitize custom settings
+    customSettings = customSettings || {};
+    const maxWidth = Math.min(100, Math.max(0, customSettings.maxWidth || 100));
+    const forcePos = parseInt(options.popupSettings.position) || ImageHotspots.Popup.FORCE_AUTO;
+
     this.$container = $container;
     var width = this.$container.width();
     var height = this.$container.height();
@@ -39,9 +47,17 @@
       className += ' fullscreen-popup';
     }
     else {
-      toTheLeft = (x > 50);
-      popupLeft = (toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
-      popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
+      // Determine position of popup in relation to the hotspot
+      toTheLeft = ((x > 50) || forcePos === ImageHotspots.Popup.FORCE_LEFT) && (forcePos !== ImageHotspots.Popup.FORCE_RIGHT);
+
+      if (toTheLeft) {
+        popupWidth = Math.min(x - pointerWidthInPercent, maxWidth);
+        popupLeft = x - pointerWidthInPercent - popupWidth;
+      }
+      else {
+        popupWidth = Math.min(100 - (x + hotspotWidth + pointerWidthInPercent), maxWidth);
+        popupLeft = x + hotspotWidth + pointerWidthInPercent;
+      }
     }
 
     this.$popupBackground = $('<div/>', {
@@ -117,7 +133,7 @@
         return;
       }
 
-      // Reset 
+      // Reset
       self.$popup.css({
         maxHeight: '',
         height: ''
@@ -213,5 +229,12 @@
   // Extends the event dispatcher
   ImageHotspots.Popup.prototype = Object.create(EventDispatcher.prototype);
   ImageHotspots.Popup.prototype.constructor = ImageHotspots.Popup;
+
+  /** @constant {number} */
+  ImageHotspots.Popup.FORCE_AUTO = 0;
+  /** @constant {number} */
+  ImageHotspots.Popup.FORCE_LEFT = 1;
+  /** @constant {number} */
+  ImageHotspots.Popup.FORCE_RIGHT = 2;
 
 })(H5P.jQuery, H5P.ImageHotspots, H5P.EventDispatcher);

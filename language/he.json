@@ -65,11 +65,7 @@
             "description": "לחצו על התמונה הממוזערת כדי למקם את הנקודה-החמה"
           },
           {
-            "label": "יש לכסות את כל תמונת הרקע",
-            "description": "כאשר המשתמש לוחץ על הנקודה-החמה החלון הקופץ יכסה את כל תמונת הרקע"
-          },
-          {
-            "label": "Header",
+            "label": "כותרת",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
@@ -77,6 +73,45 @@
             "field": {
               "label": "תוכן הפריט"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

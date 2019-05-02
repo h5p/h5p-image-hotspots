@@ -65,10 +65,6 @@
             "description": "在缩图上点击以放置热贴。"
           },
           {
-            "label": "弹出视窗布满整个背景图片",
-            "description": "当用户点击热点时，弹出的视窗会与背景图片的尺寸一致。"
-          },
-          {
             "label": "弹出视窗标题文字",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },
@@ -77,6 +73,45 @@
             "field": {
               "label": "项目"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "弹出视窗布满整个背景图片"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

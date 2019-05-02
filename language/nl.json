@@ -65,10 +65,6 @@
             "description": "Klik op de miniatuurafbeelding om de hotspot te plaatsen"
           },
           {
-            "label": "Gehele achtergrondafbeelding afdekken",
-            "description": "Wanneer de gebruiker op de hotspot klikt, zal de pop-up de gehele achtergrondafbeelding afdekken"
-          },
-          {
             "label": "Koptekst",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },
@@ -77,6 +73,45 @@
             "field": {
               "label": "Inhoud item"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

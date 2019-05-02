@@ -65,10 +65,13 @@
             "description": "Klicke auf die gewünschte Stelle im Vorschaubild, um den Hotspot zu platzieren."
           },
           {
+<<<<<<< HEAD
             "label": "Überdecke das gesamte Hintergrundbild",
             "description": "Sobald die Lernenden auf den Hotspot klicken, wird das erscheinende Fenster den gesamten Hintergrund überdecken."
           },
           {
+=======
+>>>>>>> eb73561 (Add customizing options for popups)
             "label": "Überschrift",
             "description": "Optionale Kopfzeile für die Einblendung. Wird von Vorlesewerkzeugen benutzt."
           },
@@ -77,6 +80,45 @@
             "field": {
               "label": "Inhaltsobjekt"
             }
+          },
+          {
+            "label": "Popup-Einstellungen",
+            "fields": [
+              {
+                "label": "Größe und Position",
+                "description": "Lege fest, wie viel Platz das Popup einnimmt, wenn auf den Hotspot geklickt wird",
+                "options": [
+                  {
+                    "label": "Überdecke den freien Platz neben dem Hotspot"
+                  },
+                  {
+                    "label": "Überdecke das gesamte Hintergrundbild"
+                  },
+                  {
+                    "label": "Individuell"
+                  }
+                ]
+              },
+              {
+                "label": "Maximale Breite (in Prozent)",
+                "description": "Die Breite des Popups wird auf den angegebenen Prozentsatz relativ zur Breite des Hintergrundbildes begrenzt"
+              },
+              {
+                "label": "Position",
+                "description": "Standardmäßig wird das Popup links oder rechts neben dem zugehörigen Hotspot angezeigt, je nachdem, auf welcher Seite mehr Platz besteht",
+                "options": [
+                  {
+                    "label": "Automatisch"
+                  },
+                  {
+                    "label": "Links vom Hotspot"
+                  },
+                  {
+                    "label": "Rechts vom Hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

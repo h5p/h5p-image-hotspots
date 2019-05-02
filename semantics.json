@@ -158,13 +158,6 @@
           ]
         },
         {
-          "name": "alwaysFullscreen",
-          "type": "boolean",
-          "label": "Cover entire background image",
-          "importance": "low",
-          "description": "When the user clicks the hotspot the popup will cover the entire background image"
-        },
-        {
           "name": "header",
           "type": "text",
           "label": "Header",
@@ -188,6 +181,87 @@
               "H5P.Audio 1.5"
             ]
           }
+        },
+        {
+          "name": "popupSettings",
+          "type": "group",
+          "label": "Popup settings",
+          "importance": "medium",
+          "fields": [
+            {
+              "name": "sizePosition",
+              "type": "select",
+              "label": "Size and position",
+              "importance": "low",
+              "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+              "options": [
+                {
+                  "value": "free",
+                  "label": "Cover free space next to hotspot"
+                },
+                {
+                  "value": "fullscreen",
+                  "label": "Cover entire background image"
+                },
+                {
+                  "value": "custom",
+                  "label": "Custom"
+                }
+              ],
+              "default": "free"
+            },
+            {
+              "name": "maxWidth",
+              "type": "number",
+              "label": "Maximum width (in percent)",
+              "description": "The width of the popup will be limited to the percentage relative to the background image's width",
+              "importance": "low",
+              "default": 100,
+              "min": 10,
+              "max": 100,
+              "optional": true,
+              "widget": "showWhen",
+              "showWhen": {
+                "rules": [
+                  {
+                    "field": "sizePosition",
+                    "equals": "custom"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "position",
+              "type": "select",
+              "label": "Position",
+              "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+              "importance": "low",
+              "options": [
+                {
+                  "value": "0",
+                  "label": "Auto"
+                },
+                {
+                  "value": "1",
+                  "label": "Left of hotspot"
+                },
+                {
+                  "value": "2",
+                  "label": "Right of hotspot"
+                }
+              ],
+              "default": "0",
+              "widget": "showWhen",
+              "showWhen": {
+                "rules": [
+                  {
+                    "field": "sizePosition",
+                    "equals": "custom"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     }
