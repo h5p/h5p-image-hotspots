@@ -20,11 +20,38 @@
     }
   },
   {
-    "name": "icon",
+    "name": "iconType",
     "type": "select",
     "label": "Hotspot Icon",
+    "options": [
+      {
+        "value": "icon",
+        "label": "Predefined icon"
+      },
+      {
+        "value": "image",
+        "label": "Uploaded image"
+      }
+    ],
+    "default": "icon"
+  },
+  {
+    "name": "icon",
+    "type": "select",
+    "label": "Predefined icon",
     "importance": "medium",
-    "description": "The icon of the hotspots",
+    "description": "Using a predefined icon for the hotspot.",
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "iconType",
+          "equals": [
+            "icon"
+          ]
+        }
+      ]
+    },
     "options": [
       {
         "value": "plus",
@@ -32,7 +59,7 @@
       },
       {
         "value": "minus",
-        "label": "minus"
+        "label": "Minus"
       },
       {
         "value": "times",
@@ -60,9 +87,20 @@
   {
     "name": "iconImage",
     "type": "image",
-    "label": "Icon image override",
-    "optional": true,
-    "description": "Override the existing icon for hotspot and use your own. This overrides the Hotspot Color & Hotspot Icon settings.<br>75px by 75px is recommended for your image."
+    "label": "Uploaded image",
+    "optional": false,
+    "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image.",
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "iconType",
+          "equals": [
+            "image"
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "hotspots",
