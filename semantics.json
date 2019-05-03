@@ -14,19 +14,6 @@
     "optional": true
   },
   {
-    "name": "color",
-    "type": "text",
-    "label": "Hotspot color",
-    "importance": "medium",
-    "description": "The color of the hotspots",
-    "optional": true,
-    "default": "#981d99",
-    "widget": "colorSelector",
-    "spectrum": {
-      "showInput": true
-    }
-  },
-  {
     "name": "iconType",
     "type": "select",
     "label": "Hotspot Icon",
@@ -104,6 +91,30 @@
           "field": "iconType",
           "equals": [
             "image"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "color",
+    "type": "text",
+    "label": "Hotspot color",
+    "importance": "medium",
+    "description": "The color of the hotspots",
+    "optional": true,
+    "default": "#981d99",
+    "widget": "showWhen",
+    "spectrum": {
+      "showInput": true
+    },
+    "showWhen": {
+      "widget": "colorSelector",
+      "rules": [
+        {
+          "field": "iconType",
+          "equals": [
+            "icon"
           ]
         }
       ]
