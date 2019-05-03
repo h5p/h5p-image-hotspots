@@ -114,7 +114,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     for (var i=0; i<numHotspots; i++) {
       try {
-        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
+        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self, this.options.icon, this.options.iconImage, this.options.iconType);
         hotspot.appendTo(this.$hotspotContainer);
         var hotspotTitle = this.options.hotspots[i].header ? this.options.hotspots[i].header
           : this.options.hotspotNumberLabel.replace('#num', (i + 1).toString());

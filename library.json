@@ -54,6 +54,11 @@
       "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
       "minorVersion": 2
+    },
+    {
+      "machineName": "H5PEditor.ShowWhen",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ]
 }

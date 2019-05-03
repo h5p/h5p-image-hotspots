@@ -50,12 +50,32 @@
 }
 .h5p-image-hotspot:before {
   font-family: H5PFontAwesome4;
-  content: '\f055';
   width: 1.2em;
   height: 1.2em;
   font-size: 1.2em;
   line-height: 1.2em;
   margin: 0 0.1em;
+}
+.h5p-image-hotspot-plus:before {
+  content: '\f055';
+}
+.h5p-image-hotspot-minus:before {
+  content: '\f056';
+}
+.h5p-image-hotspot-times:before {
+  content: '\f057';
+}
+.h5p-image-hotspot-check:before {
+  content: '\f058';
+}
+.h5p-image-hotspot-question:before {
+  content: '\f059';
+}
+.h5p-image-hotspot-info:before {
+  content: '\f05a';
+}
+.h5p-image-hotspot-exclamation:before {
+  content: '\f06a';
 }
 .h5p-image-hotspot-popup {
   position: absolute;
