@@ -13,10 +13,8 @@
    * @param  {number} id
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
-   * @param  {string} icon
-   * @param  {image} iconImage
    */
-  ImageHotspots.Hotspot = function (config, options, id, isSmallDeviceCB, parent, icon, iconImage, iconType) {
+  ImageHotspots.Hotspot = function (config, options, id, isSmallDeviceCB, parent) {
     var self = this;
     this.config = config;
     this.visible = false;
@@ -25,24 +23,19 @@
     this.options = options;
 
     // A utility variable to check if a Predefined icon or an uploaded image should be used.
-    var iconImageExists;
-    // If there is an image loaded & the iconType is image.
-    if (iconImage !== undefined && iconType === 'image') {
-      iconImageExists = true;
-    } else {
-      iconImageExists = false;
-    }
+    var iconImageExists = (options.iconImage !== undefined && options.iconType === 'image');
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
-    this.$element = $(iconImageExists ? '<img/>' : '<div/>', {
-      'class': 'h5p-image-hotspot ' + (!iconImageExists ? 'h5p-image-hotspot-' + icon : ''),
+    this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
+      'class': 'h5p-image-hotspot ' + (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : ''),
+      'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
-      src: iconImageExists ? H5P.getPath(iconImage.path, this.id) : undefined,
+      src: iconImageExists ? H5P.getPath(options.iconImage.path, this.id) : undefined,
       click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {
