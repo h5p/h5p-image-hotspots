@@ -29,7 +29,9 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       image: null,
       hotspots: [],
       hotspotNumberLabel: 'Hotspot #num',
-      closeButtonLabel: 'Close'
+      closeButtonLabel: 'Close',
+      iconType: 'icon',
+      icon: 'plus'
     }, options);
     // Keep provided id.
     this.id = id;
