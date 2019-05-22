@@ -2,66 +2,66 @@
   "semantics": [
     {
       "label": "תמונת רקע",
-      "description": "תמונה מוצגת ברקע"
+      "description": "תמונה מוצגת ברקע."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "",
+      "description": ""
     },
     {
-      "label": "Hotspot Icon",
+      "label": "צלמית נקודה־חמה",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "צלמית מוגדרת מראש"
         },
         {
-          "label": "Uploaded image"
+          "label": "תמונה שהועלתה"
         }
       ]
     },
     {
-      "label": "Predefined icon",
+      "label": "צלמית מוגדרת מראש",
       "description": "Using a predefined icon for the hotspot.",
       "options": [
         {
-          "label": "Plus"
+          "label": "ועוד"
         },
         {
-          "label": "Minus"
+          "label": "מינוס"
         },
         {
-          "label": "Times"
+          "label": "כפול"
         },
         {
-          "label": "Check"
+          "label": "בדיקה"
         },
         {
-          "label": "Question"
+          "label": "שאלה"
         },
         {
-          "label": "Info"
+          "label": "מידע"
         },
         {
-          "label": "Exclamation"
+          "label": "סימן קריאה"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "התמונה שעלתה",
+      "description": ""
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "צבע הנקודה־החמה",
+      "description": "צבע הנקודות־החמות"
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "נקודה־חמה",
+      "label": "נקודות־חמות",
       "field": {
-        "label": "Hotspot",
+        "label": "נקודה־חמה",
         "fields": [
           {
-            "label": "Hotspot position",
+            "label": "מיקום נקודה־חמה",
             "description": "Click on the thumbnail image to place the hotspot"
           },
           {
@@ -69,13 +69,13 @@
             "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "כותרת",
+            "description": "כותרת אפשרית עבור החלון הקופץ"
           },
           {
-            "label": "Popup content",
+            "label": "תוכן החלון הקופץ",
             "field": {
-              "label": "Content Item"
+              "label": "תוכן הפריט"
             }
           }
         ]
@@ -83,12 +83,12 @@
     },
     {
       "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
+      "default": "נקודה־חמה #num",
       "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
     },
     {
       "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "default": "סגירה"
     }
   ]
 }
