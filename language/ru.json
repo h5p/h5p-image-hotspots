@@ -1,51 +1,94 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Background image",
-      "description":"Image shown on background."
+      "label": "Фоновое изображение",
+      "description": "Изображение показанное на фоне"
     },
     {
-      "label":"Hotspot color",
-      "description":"The color of the hotspots",
-      "default":"#981d99",
-      "spectrum":{
-        
-      }
+      "label": "Альтернативный текст для фонового изображения",
+      "description": "Если браузер не может загрузить изображение, этот текст будет отображаться вместо него. Также используется вспомогательными технологиями"
     },
     {
-      "entity":"hotspot",
-      "label":"Hotspots",
-      "field":{
-        "label":"Hotspot",
-        "fields":[
+      "label": "Hotspot Icon",
+      "options": [
+        {
+          "label": "Predefined icon"
+        },
+        {
+          "label": "Uploaded image"
+        }
+      ]
+    },
+    {
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspot.",
+      "options": [
+        {
+          "label": "Plus"
+        },
+        {
+          "label": "Minus"
+        },
+        {
+          "label": "Times"
+        },
+        {
+          "label": "Check"
+        },
+        {
+          "label": "Question"
+        },
+        {
+          "label": "Info"
+        },
+        {
+          "label": "Exclamation"
+        }
+      ]
+    },
+    {
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+    },
+    {
+      "label": "Цвет метки",
+      "description": "Цвет меток"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Метки",
+      "field": {
+        "label": "Метка",
+        "fields": [
           {
-            "label":"Hotspot position",
-            "description":"Click on the thumbnail image to place the hotspot",
-            "fields":[
-              {
-                
-              },
-              {
-                
-              }
-            ]
+            "label": "Позиция метки",
+            "description": "Нажмите на уменьшенное изображение для размещения метки"
           },
           {
-            "label":"Cover entire background image",
-            "description":"When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Обложка всего фонового изображения",
+            "description": "Когда пользователь нажимает на метку, всплывающее окно будет охватывать все фоновое изображение"
           },
           {
-            "label":"Header",
-            "description":"Optional header for the popup"
+            "label": "Заголовок",
+            "description": "Необязательный заголовок для всплывающего окна"
           },
           {
-            "label":"Popup content",
-            "field":{
-              "label":"Content Item"
+            "label": "Содержимое всплывающего окна",
+            "field": {
+              "label": "Элемент содержимого"
             }
           }
         ]
       }
+    },
+    {
+      "label": "Название метки для вспомогательных технологий",
+      "default": "Метка #num",
+      "description": "Будет помогать объявлять, какая метка была перемещена, если нет заголовка указанного для метки. #num можно использовать для замены номера метки."
+    },
+    {
+      "label": "Кнопка \"Закрыть\" для вспомогательных технологий",
+      "default": "Закрыть"
     }
   ]
 }

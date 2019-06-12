@@ -29,7 +29,9 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       image: null,
       hotspots: [],
       hotspotNumberLabel: 'Hotspot #num',
-      closeButtonLabel: 'Close'
+      closeButtonLabel: 'Close',
+      iconType: 'icon',
+      icon: 'plus'
     }, options);
     // Keep provided id.
     this.id = id;
@@ -51,7 +53,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     self.$container = $container;
 
     if (this.options.image === null || this.options.image === undefined) {
-      $container.append('<div class="background-image-missing">I really need a background image :)</div>');
+      $container.append('<div class="background-image-missing">Missing required background image</div>');
       return;
     }
 
@@ -112,7 +114,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       }
     });
 
-    for(var i=0; i<numHotspots; i++) {
+    for (var i=0; i<numHotspots; i++) {
       try {
         var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
@@ -181,11 +183,15 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @param {boolean} [e.decreaseSize]
    */
   ImageHotspots.prototype.resize = function (e) {
+    if (this.options.image === null) {
+      return;
+    }
+
     var self = this;
     var containerWidth = self.$container.width();
     var containerHeight = self.$container.height();
     var width = containerWidth;
-    var height = Math.floor((width/self.options.image.width)*self.options.image.height);
+    var height = Math.floor((width/self.options.image.width) * self.options.image.height);
     var forceImageHeight = e && e.data && e.data.forceImageHeight;
 
     // Check if decreasing iframe size
@@ -197,7 +203,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     // If fullscreen, we have both a max width and max height.
     if (!forceImageHeight && H5P.isFullscreen && height > containerHeight) {
       height = containerHeight;
-      width = Math.floor((height/self.options.image.height)*self.options.image.width);
+      width = Math.floor((height/self.options.image.height) * self.options.image.width);
     }
 
     // Check if we need to apply semi full screen fix.

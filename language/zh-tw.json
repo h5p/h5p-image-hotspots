@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Bakgrunnsbilde",
-      "description": "Bilde brukt som bakgrunn"
+      "label": "背景圖示",
+      "description": "圖像顯示在背景上."
     },
     {
       "label": "Alternative text for background image",

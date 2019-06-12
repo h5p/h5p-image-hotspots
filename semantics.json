@@ -14,6 +14,89 @@
     "optional": true
   },
   {
+    "name": "iconType",
+    "type": "select",
+    "label": "Hotspot Icon",
+    "options": [
+      {
+        "value": "icon",
+        "label": "Predefined icon"
+      },
+      {
+        "value": "image",
+        "label": "Uploaded image"
+      }
+    ],
+    "default": "icon"
+  },
+  {
+    "name": "icon",
+    "type": "select",
+    "label": "Predefined icon",
+    "importance": "medium",
+    "description": "Using a predefined icon for the hotspot.",
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "iconType",
+          "equals": [
+            "icon"
+          ]
+        }
+      ]
+    },
+    "options": [
+      {
+        "value": "plus",
+        "label": "Plus"
+      },
+      {
+        "value": "minus",
+        "label": "Minus"
+      },
+      {
+        "value": "times",
+        "label": "Times"
+      },
+      {
+        "value": "check",
+        "label": "Check"
+      },
+      {
+        "value": "question",
+        "label": "Question"
+      },
+      {
+        "value": "info",
+        "label": "Info"
+      },
+      {
+        "value": "exclamation",
+        "label": "Exclamation"
+      }
+    ],
+    "default": "plus"
+  },
+  {
+    "name": "iconImage",
+    "type": "image",
+    "label": "Uploaded image",
+    "optional": false,
+    "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image.",
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "iconType",
+          "equals": [
+            "image"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "color",
     "type": "text",
     "label": "Hotspot color",
@@ -21,9 +104,20 @@
     "description": "The color of the hotspots",
     "optional": true,
     "default": "#981d99",
-    "widget": "colorSelector",
+    "widget": "showWhen",
     "spectrum": {
       "showInput": true
+    },
+    "showWhen": {
+      "widget": "colorSelector",
+      "rules": [
+        {
+          "field": "iconType",
+          "equals": [
+            "icon"
+          ]
+        }
+      ]
     }
   },
   {
@@ -56,6 +150,10 @@
             {
               "name": "y",
               "type": "number"
+            },
+            {
+              "name": "legacyPositioning",
+              "type": "boolean"
             }
           ]
         },
@@ -85,8 +183,8 @@
             "label": "Content Item",
             "options": [
               "H5P.Text 1.1",
-              "H5P.Video 1.3",
-              "H5P.Image 1.0"
+              "H5P.Video 1.5",
+              "H5P.Image 1.1"
             ]
           }
         }

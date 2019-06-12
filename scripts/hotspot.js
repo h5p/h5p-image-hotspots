@@ -22,21 +22,27 @@
     this.isSmallDeviceCB = isSmallDeviceCB;
     this.options = options;
 
+    // A utility variable to check if a Predefined icon or an uploaded image should be used.
+    var iconImageExists = (options.iconImage !== undefined && options.iconType === 'image');
+
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
-    this.$element = $('<button/>', {
-      'class': 'h5p-image-hotspot',
+    // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
+    this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
+      'class': 'h5p-image-hotspot ' + (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : ''),
+      'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
-      click: function(){
+      src: iconImageExists ? H5P.getPath(options.iconImage.path, this.id) : undefined,
+      click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {
           return false;
         }
 
-        if(self.visible) {
+        if (self.visible) {
           self.hidePopup();
         }
         else {
@@ -51,7 +57,7 @@
             return false;
           }
 
-          if(self.visible) {
+          if (self.visible) {
             self.hidePopup();
           }
           else {
@@ -61,11 +67,21 @@
           return false;
         }
       }
-    }).css({
-      top: this.config.position.y + '%',
-      left: this.config.position.x + '%',
-      color: options.color
     });
+    if (this.config.position.legacyPositioning) {
+      this.$element.css({
+        top: this.config.position.y + '%',
+        left: this.config.position.x + '%',
+        color: options.color
+      });
+    }
+    else {
+      this.$element.css({
+        top: 'calc(' + this.config.position.y + '% - 0.6em)',
+        left: 'calc(' + this.config.position.x + '% - 0.6em)',
+        color: options.color
+      });
+    }
 
     parent.on('resize', function () {
       if (self.popup) {
@@ -200,9 +216,9 @@
     }
 
     // We don't get click events on body for iOS-devices
-    $('body').children().on('click.h5p-image-hotspot-popup', function(event) {
+    $('body').children().on('click.h5p-image-hotspot-popup', function (event) {
       var $target = $(event.target);
-      if(self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
+      if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
         self.hidePopup();
       }
     });
@@ -272,21 +288,7 @@
    */
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
     this.$element.attr('title', title);
-  };
-
-  /**
-   * Hex string to RGB
-   * eg: FFFFFF -> 255,255,255
-   * @private
-   * @param {string} hex
-   * @returns {string} RGB equivalent
-   */
-  var hexToRgb = function(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    if(result) {
-      return parseInt(result[1], 16) + ',' + parseInt(result[2], 16) + ',' + parseInt(result[3], 16);
-    }
-    return '0,0,0';
+    this.$element.attr('aria-label', title);
   };
 
 })(H5P.jQuery, H5P.ImageHotspots);

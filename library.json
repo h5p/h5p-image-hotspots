@@ -2,13 +2,17 @@
   "title": "Image Hotspots",
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
-  "minorVersion": 5,
-  "patchVersion": 3,
+  "minorVersion": 8,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
   "machineName": "H5P.ImageHotspots",
   "fullscreen": 1,
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 19
+  },
   "embedTypes": [
     "iframe"
   ],
@@ -44,12 +48,17 @@
     {
       "machineName": "H5PEditor.ImageCoordinateSelector",
       "majorVersion": 1,
-      "minorVersion": 1
+      "minorVersion": 2
     },
     {
       "machineName": "H5PEditor.ColorSelector",
       "majorVersion": 1,
       "minorVersion": 2
+    },
+    {
+      "machineName": "H5PEditor.ShowWhen",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ]
 }

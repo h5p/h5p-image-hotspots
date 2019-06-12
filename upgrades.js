@@ -1,6 +1,6 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
+H5PUpgrades['H5P.ImageHotspots'] = (function () {
   return {
     1: {
        /**
@@ -67,6 +67,25 @@ H5PUpgrades['H5P.ImageHotspots'] = (function ($) {
         finished(null, parameters);
       },
 
+      /**
+       * Upgrades content parameters to support ImageHotspots 1.8
+       *
+       * Mark all existing hotspots as being legacy positioned
+       *
+       * @param parameters
+       * @param finished
+       */
+      8: function (parameters, finished) {
+        if (parameters.hotspots !== undefined) {
+          parameters.hotspots.forEach(function (hotspot) {
+            if (hotspot.position) {
+              hotspot.position.legacyPositioning = true;
+            }
+          });
+        }
+        finished(null, parameters);
+      },
+
     }
   };
-})(H5P.jQuery);
+})();

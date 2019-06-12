@@ -1,0 +1,94 @@
+{
+  "semantics": [
+    {
+      "label": "Малюнок тла",
+      "description": "Малюнок, який показано на тлі"
+    },
+    {
+      "label": "Альтернативний текст для малюнка тла",
+      "description": "Якщо браузер не може завантажити малюнок, цей текст буде відображатися замість нього. Також використовується допоміжними технологіями"
+    },
+    {
+      "label": "Hotspot Icon",
+      "options": [
+        {
+          "label": "Predefined icon"
+        },
+        {
+          "label": "Uploaded image"
+        }
+      ]
+    },
+    {
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspot.",
+      "options": [
+        {
+          "label": "Plus"
+        },
+        {
+          "label": "Minus"
+        },
+        {
+          "label": "Times"
+        },
+        {
+          "label": "Check"
+        },
+        {
+          "label": "Question"
+        },
+        {
+          "label": "Info"
+        },
+        {
+          "label": "Exclamation"
+        }
+      ]
+    },
+    {
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+    },
+    {
+      "label": "Колір мітки",
+      "description": "Колір міток"
+    },
+    {
+      "entity": "hotspot",
+      "label": "Мітки",
+      "field": {
+        "label": "Мітка",
+        "fields": [
+          {
+            "label": "Позиція мітки",
+            "description": "Натисніть зменшене зображення для розміщення мітки"
+          },
+          {
+            "label": "Обкладинка всього малюнка тла",
+            "description": "Коли користувач натискає на мітку, випливаюче вікно буде захоплювати весь малюнок тла"
+          },
+          {
+            "label": "Заголовок",
+            "description": "Необов'язковий заголовок для випливаючого вікна"
+          },
+          {
+            "label": "Вміст випливаючого вікна",
+            "field": {
+              "label": "Елемент вмісту"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Назва мітки для допоміжних технологій",
+      "default": "Мітка #num",
+      "description": "Буде допомагати оголошувати, яка мітка була переміщена, якщо нема заголовка вказаного для мітки. #num можна використовувати для заміни номера мітки."
+    },
+    {
+      "label": "Кнопка \"Закрити\" для допоміжних технологій",
+      "default": "Закрити"
+    }
+  ]
+}
