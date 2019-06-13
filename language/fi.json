@@ -5,90 +5,90 @@
       "description": "Taustakuva hotspoteille."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Vaihtoehtoinen teksti taustakuvalle.",
+      "description": "Jos selain ei pysty lataamaan tätä kuvaa tämä teksti näytetään sen sijasta. Myös ruudunlukijat lukevat tämän tiedon."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Hotspotin ikoni",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Valmisikoni"
         },
         {
-          "label": "Uploaded image"
+          "label": "Lataa oma kuva"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Valmisikoni",
+      "description": "Käyttää sovelluksen omia ikoneita",
       "options": [
         {
-          "label": "Plus"
+          "label": "Plus-merkki"
         },
         {
-          "label": "Minus"
+          "label": "Miinus-merkki"
         },
         {
-          "label": "Times"
+          "label": "Kertolaskumerkki"
         },
         {
-          "label": "Check"
+          "label": "Oikein-merkki"
         },
         {
-          "label": "Question"
+          "label": "Kysymysmerkki"
         },
         {
-          "label": "Info"
+          "label": "Info-merkki"
         },
         {
-          "label": "Exclamation"
+          "label": "Huutomerkki"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Itseladattu kuva",
+      "description": "Käytä valitsemaasi kuvaa hotspot-ikonina.<br>75px kertaa 75px pikseliä on suositeltu koko"
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Hotspot-ikonin väri",
+      "description": "Hotspot-ikonin väri"
     },
     {
       "entity": "hotspot",
-      "label": "Hotspots",
+      "label": "Hotspotit",
       "field": {
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Hotspot-ikonin sijainti",
+            "description": "Klikkaa pienoiskuvaa määrittääksesi hotspot-ikonin sijainnin."
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Peitä koko taustakuva",
+            "description": "Kun käyttäjä klikkaa hotspot-ikonia avautuva pop up-ikkuna peittää koko taustakuvan."
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Otsikko",
+            "description": "Pop up-ikkunan otsikko (ei pakollinen)"
           },
           {
-            "label": "Popup content",
+            "label": "Pop up -ikkunan sisältö",
             "field": {
-              "label": "Content Item"
+              "label": "Sisältövaihtoehto"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
+      "label": "Hotspot selite avustaville teknologioille",
       "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "description": "Auttaa esimerkiksi ruudunlukijasovellusta kertomaan mihin hotspot-ikoniin on navigoitu, jos sille ei ole erikseen määritetty otsikkoa joka luettaisiin ääneen. #num muuttujaa/tekstiä voidaan käyttää korvaamaan hotspot-ikonin numero."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Sulje-painikkeen selite avustaville teknologioille.",
+      "default": "Sulje"
     }
   ]
 }
