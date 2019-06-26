@@ -9,46 +9,46 @@
       "description": "Nabigatzaileak ezin badu irudia kargatu testu hau haren ordez erakutsiko da. Laguntzako teknologiek ere erabiltzen dute."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Leku-beroarentzako Ikonoa",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Lehenetsitako ikonoa"
         },
         {
-          "label": "Uploaded image"
+          "label": "Igotako irudia"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Lehenetsitako ikonoa",
+      "description": "Leku-beroarentzako lehenetsitako ikonoa erabiltzen.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Gehitu"
         },
         {
-          "label": "Minus"
+          "label": "Kendu"
         },
         {
-          "label": "Times"
+          "label": "Biderkatu"
         },
         {
-          "label": "Check"
+          "label": "Egiaztatu"
         },
         {
-          "label": "Question"
+          "label": "Galdera"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Harridura"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Igotako irudia",
+      "description": "Zure irudi bat erabili ezazu leku-beroaren ikonorako.<br>Zure irudirako 75px x 75px tamaina gomendatzen da."
     },
     {
       "label": "Leku beroen kolorea",
