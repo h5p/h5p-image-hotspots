@@ -9,46 +9,46 @@
       "description": "Seda teksti näidatakse siis, kui brauser ei saa pilti laadida. Samuti kasutatakse teksti assisteeriva tehnoloogia puhul."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Kuumkoha ikoon",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Ettemääratletud ikoon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Üles laetud pilt"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Ettemääratletud pilt",
+      "description": "Kuumkoha jaoks kasutatakse ettemääratletud pilti.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Pluss"
         },
         {
-          "label": "Minus"
+          "label": "Miinus"
         },
         {
-          "label": "Times"
+          "label": "Ajad"
         },
         {
-          "label": "Check"
+          "label": "Kontrolli"
         },
         {
-          "label": "Question"
+          "label": "Küsimus"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Hüüumärk"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Üles laetud pilt",
+      "description": "Kasuta kuumkoha ikooniks oma pilti.<br>Pildi suuruseks on soovitatud 75px korda 75px."
     },
     {
       "label": "Tulipunkti värv",
