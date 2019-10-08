@@ -9,46 +9,46 @@
       "description": "Se o navegador não puder carregar a imagem, este texto será exibido no lugar. Também utilizado por tecnologias assistivas."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Ícone de ponto de acesso",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Ícone pré-definido"
         },
         {
-          "label": "Uploaded image"
+          "label": "Imagem carregada"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Ícone pré-definido",
+      "description": "Usando um ícone pré-definido para o ponto de acesso.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Mais"
         },
         {
-          "label": "Minus"
+          "label": "Menos"
         },
         {
-          "label": "Times"
+          "label": "Vezes"
         },
         {
-          "label": "Check"
+          "label": "Sinal de visto"
         },
         {
-          "label": "Question"
+          "label": "Questão"
         },
         {
-          "label": "Info"
+          "label": "Informação"
         },
         {
-          "label": "Exclamation"
+          "label": "Exclamação"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Imagem carregada",
+      "description": "Use a sua própria imagem para o ícone do ponto de acesso.<br>75px por 75px é o tamanho recomendado para a imagem."
     },
     {
       "label": "Cor do ponto de acesso",
