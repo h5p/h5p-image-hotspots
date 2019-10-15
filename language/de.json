@@ -9,19 +9,19 @@
       "description": "Wenn der Browser das Bild nicht anzeigen kann, wird dieser Text stattdessen angezeigt. Wird auch zur Barrierefreiheit genutzt."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Hotspot-Symbol",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Mitgeliefertes Symbol"
         },
         {
-          "label": "Uploaded image"
+          "label": "Hochgeladenes Bild"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Mitgeliefertes Symbol",
+      "description": "Wähle eines der mitgelieferten Symbole aus der Liste aus.",
       "options": [
         {
           "label": "Plus"
@@ -30,28 +30,28 @@
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "Malzeichen (X)"
         },
         {
-          "label": "Check"
+          "label": "Haken"
         },
         {
-          "label": "Question"
+          "label": "Fragezeichen"
         },
         {
-          "label": "Info"
+          "label": "Infozeichen (i)"
         },
         {
-          "label": "Exclamation"
+          "label": "Ausrufezeichen"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Hochgeladenes Bild",
+      "description": "Verwende ein eigenes Bild als Hotspot-Symbol.<br>Als Größe ist 75px mal 75px empfehlenswert."
     },
     {
-      "label": "Farbe des Hotspots",
+      "label": "Hotspot-Farbe",
       "description": "Die Farbe der Hotspots"
     },
     {
@@ -62,15 +62,15 @@
         "fields": [
           {
             "label": "Hotspot-Position",
-            "description": "Klicke das Vorschaubild an, um den Hotspot zu platzieren"
+            "description": "Klicke auf die gewünschte Stelle im Vorschaubild, um den Hotspot zu platzieren."
           },
           {
             "label": "Überdecke das gesamte Hintergrundbild",
-            "description": "Sobald der Lernende auf den Hotspot klickt, wird das erscheinende Fenster den gesamten Hintergrund überdecken"
+            "description": "Sobald der Lernende auf den Hotspot klickt, wird das erscheinende Fenster den gesamten Hintergrund überdecken."
           },
           {
-            "label": "Kopfzeile",
-            "description": "Optionale Kopfzeile für das Fenster"
+            "label": "Überschrift",
+            "description": "Optionale Überschrift für das Fenster"
           },
           {
             "label": "Fensterinhalt",
@@ -84,7 +84,7 @@
     {
       "label": "Beschriftung von Hotpots für Vorlesewerkzeuge",
       "default": "Hotspot Nummer #num",
-      "description": "Wenn ein Vorlesewerkzeug (Barrierefreiheit) verwendet wird, verdeutlicht dieser Text, zu welchem Hotspot navigiert wurde, sofern für einen Hotspot keine Kopfzeile existiert. #num kann als Platzhalter für die Nummer des Hotspots verwendet werden."
+      "description": "Wenn ein Vorlesewerkzeug (Barrierefreiheit) verwendet wird, verdeutlicht dieser Text, zu welchem Hotspot navigiert wurde, sofern für einen Hotspot keine Überschrift existiert. #num kann als Platzhalter für die Nummer des Hotspots verwendet werden."
     },
     {
       "label": "Beschriftung des \"Schließen\"-Buttons (Barrierefreiheit)",
