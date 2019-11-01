@@ -46,7 +46,7 @@
           self.hidePopup();
         }
         else {
-          self.showPopup();
+          self.showPopup(true);
         }
         return false;
       },
