@@ -104,14 +104,6 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         return -1;
       }
 
-      // Order top-to-bottom, left-to-right
-      if (a.position.y !== b.position.y) {
-        return a.position.y < b.position.y ? -1 : 1;
-      }
-      else {
-        // a and b y position is equal, sort on x
-        return a.position.x < b.position.x ? -1 : 1;
-      }
     });
 
     for (var i=0; i<numHotspots; i++) {
