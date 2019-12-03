@@ -56,6 +56,13 @@
   line-height: 1.2em;
   margin: 0 0.1em;
 }
+.h5p-image-hotspots-container {
+  counter-reset: hotspot;
+}
+.h5p-image-hotspot-number:before {
+  counter-increment: hotspot;
+  content: counter(hotspot);
+}
 .h5p-image-hotspot-plus:before {
   content: '\f055';
 }

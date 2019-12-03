@@ -56,6 +56,10 @@
         "label": "Minus"
       },
       {
+        "value": "number",
+        "label": "Number"
+      },
+      {
         "value": "times",
         "label": "Times"
       },
