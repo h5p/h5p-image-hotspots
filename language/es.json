@@ -24,10 +24,10 @@
       "description": "Usando un ícono predefinido para el .",
       "options": [
         {
-          "label": "Plus"
+          "label": "Más"
         },
         {
-          "label": "Minus"
+          "label": "Menos"
         },
         {
           "label": "Veces"
