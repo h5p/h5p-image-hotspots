@@ -9,46 +9,46 @@
       "description": "Если браузер не может загрузить изображение, этот текст будет отображаться вместо него. Также используется вспомогательными технологиями"
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Иконка метки",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Предопрелелённая иконка"
         },
         {
-          "label": "Uploaded image"
+          "label": "Загруженное изображение"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Предопрелелённая иконка",
+      "description": "Использовать предопрелелённую иконку длф метки.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Плюс"
         },
         {
-          "label": "Minus"
+          "label": "Минус"
         },
         {
-          "label": "Times"
+          "label": "Количество раз"
         },
         {
-          "label": "Check"
+          "label": "Проверка"
         },
         {
-          "label": "Question"
+          "label": "Вопрос"
         },
         {
-          "label": "Info"
+          "label": "Инфо"
         },
         {
-          "label": "Exclamation"
+          "label": "Восклицание"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Загруженное изображение",
+      "description": "Используйте своё изображение для иконки метки.<br>75px на 75px рекомендуемый размер для изображения."
     },
     {
       "label": "Цвет метки",
