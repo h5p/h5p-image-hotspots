@@ -9,46 +9,46 @@
       "description": "Si el navegador no puede cargar la imagen, este texto se mostrará en su lugar. También utilizado por las tecnologías de asistencia."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Ícono Hotspot",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Ícono predefinido"
         },
         {
-          "label": "Uploaded image"
+          "label": "Imagen subida"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Ícono predefinido",
+      "description": "Usando un ícono predefinido para el .",
       "options": [
         {
-          "label": "Plus"
+          "label": "Más"
         },
         {
-          "label": "Minus"
+          "label": "Menos"
         },
         {
-          "label": "Times"
+          "label": "Veces"
         },
         {
-          "label": "Check"
+          "label": "Revisar"
         },
         {
-          "label": "Question"
+          "label": "Pregunta"
         },
         {
-          "label": "Info"
+          "label": "Información"
         },
         {
-          "label": "Exclamation"
+          "label": "Exclamación"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Imagen subida",
+      "description": "Use su propia imagen para el ícono de hotspot icon.<br>75px po 75px es lo recomendado para su imagen."
     },
     {
       "label": "Color del Hotspot",
