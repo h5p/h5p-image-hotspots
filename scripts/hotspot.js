@@ -72,14 +72,16 @@
       this.$element.css({
         top: this.config.position.y + '%',
         left: this.config.position.x + '%',
-        color: options.color
+        color: options.color,
+        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
       });
     }
     else {
       this.$element.css({
         top: 'calc(' + this.config.position.y + '% - 0.6em)',
         left: 'calc(' + this.config.position.x + '% - 0.6em)',
-        color: options.color
+        color: options.color,
+        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
       });
     }
 
