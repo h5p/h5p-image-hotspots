@@ -21,6 +21,7 @@
     this.id = id;
     this.isSmallDeviceCB = isSmallDeviceCB;
     this.options = options;
+    this.parent = parent;
 
     // A utility variable to check if a Predefined icon or an uploaded image should be used.
     var iconImageExists = (options.iconImage !== undefined && options.iconType === 'image');
@@ -31,7 +32,9 @@
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
-      'class': 'h5p-image-hotspot ' + (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : ''),
+      'class': 'h5p-image-hotspot ' + 
+        (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : '') +
+        (config.position.legacyPositioning ? ' legacy-positioning' : ''),  
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
@@ -68,22 +71,13 @@
         }
       }
     });
-    if (this.config.position.legacyPositioning) {
-      this.$element.css({
-        top: this.config.position.y + '%',
-        left: this.config.position.x + '%',
-        color: options.color,
-        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
-      });
-    }
-    else {
-      this.$element.css({
-        top: 'calc(' + this.config.position.y + '% - 0.6em)',
-        left: 'calc(' + this.config.position.x + '% - 0.6em)',
-        color: options.color,
-        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
-      });
-    }
+    
+    this.$element.css({
+      top: this.config.position.y + '%',
+      left: this.config.position.x + '%',
+      color: options.color,
+      backgroundColor: options.backgroundColor ? options.backgroundColor : ''
+    });
 
     parent.on('resize', function () {
       if (self.popup) {
@@ -122,6 +116,8 @@
     var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
     self.loadingPopup = true;
 
+    this.parent.setShowingPopup(true);
+
     this.actionInstances = [];
     var waitForLoaded = [];
     this.config.content.forEach(function (action) {
@@ -131,6 +127,7 @@
       });
 
       var actionInstance = H5P.newRunnable(action, self.id);
+
       self.actionInstances.push(actionInstance);
       if (actionInstance.libraryInfo.machineName === 'H5P.Image' || actionInstance.libraryInfo.machineName === 'H5P.Video') {
         waitForLoaded.push(actionInstance);
@@ -169,6 +166,12 @@
       self.config.alwaysFullscreen || self.isSmallDeviceCB(),
       self.options
     );
+
+    self.parent.on('resize', function () {
+      if (self.visible) {
+        self.popup.resize();
+      }
+    });
 
     // Release
     self.popup.on('closed', function (e) {
@@ -251,6 +254,8 @@
       this.popup = undefined;
       this.toggleHotspotsTabindex();
     }
+
+    this.parent.setShowingPopup(false);
   };
 
   /**

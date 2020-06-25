@@ -25,8 +25,9 @@
     var self = this;
     this.$container = $container;
     var width = this.$container.width();
+    var height = this.$container.height();
 
-    var pointerWidthInPercent = 4;
+    var pointerWidthInPercent = 1.55;
     hotspotWidth = (hotspotWidth/width)*100;
 
     var popupLeft = 0;
@@ -40,7 +41,7 @@
     else {
       toTheLeft = (x > 45);
       popupLeft = (toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
-      popupWidth = (toTheLeft ?  x - pointerWidthInPercent : 100 - popupLeft);
+      popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
     }
 
     this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
@@ -55,7 +56,14 @@
       event.stopPropagation();
     }).appendTo(this.$popupBackground);
 
-    this.$popupContent = $('<div/>', {'class': 'h5p-image-hotspot-popup-content'});
+    this.$popupContent = $('<div/>', {
+      'class': 'h5p-image-hotspot-popup-content',
+      on: {
+        scroll: function () {
+          $(this).addClass('has-scrolled');
+        }
+      }
+    });
     if (header) {
       this.$popupHeader = $('<div/>', {
         'class': 'h5p-image-hotspot-popup-header',
@@ -84,81 +92,83 @@
 
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
-    if (fullscreen) {
-      this.$closeButton.addClass('h5p-image-hotspot-close-fullscreen');
-
-      if (!H5P.isFullscreen) {
-        var $fullscreenButton = $('.h5p-enable-fullscreen');
-        this.$closeButton.css({
-          width: $fullscreenButton.outerWidth() + 'px',
-          top: $fullscreenButton.outerHeight() + 'px'
-        });
-      }
-
-      H5P.Transition.onTransitionEnd(self.$popup, function () {
-        self.$closeButton.css({
-          right: '0'
-        });
-      }, 300);
-    }
-    else {
+    if (!fullscreen) {
       this.$pointer = $('<div/>', {
         'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right'),
       }).css({
-        top: y + 0.5 + '%'
-      }).appendTo(this.$popup);
+        top: y + '%',
+      }).appendTo(this.$popupBackground);
     }
 
     this.$popupBackground.appendTo(this.$container);
+
+    self.resize = function () {
+      if (fullscreen) {
+        return;
+      }
+
+      // Reset 
+      self.$popup.css({
+        maxHeight: '',
+        height: ''
+      });
+      
+      height = this.$container.height();
+      var contentHeight = self.$popupContent.height();
+      var parentHeight = self.$popup.height();
+
+      if (contentHeight < height) {
+        // don't need all height:
+        self.$popup.css({
+          maxHeight: 'auto',
+          height: 'auto'
+        });
+
+        // find new top:
+        var top = Math.max(0, ((y / 100) * parentHeight) - (contentHeight / 2));
+
+        // Check if we need to move it a bit up (in case it overflows)
+        if (top + contentHeight > parentHeight) {
+          top = parentHeight - contentHeight;
+        }
+
+        // From pixels to percent:
+        self.$popup.css({
+          top: (top / parentHeight) * 100 + '%'
+        });
+
+        self.$popupContent.css({
+          height: '',
+          overflow: ''
+        }).removeClass('overflowing');
+      }
+      else {
+        // Need all height:
+        self.$popupContent.css({
+          height: '100%',
+          overflow: 'auto'
+        }).addClass('overflowing');
+      }      
+    };
 
     /**
      * Show popup
      * @param {boolean} [focusContainer] Will focus container for keyboard accessibility
      */
     self.show = function (focusContainer) {
-      // Fix height
-      var contentHeight = self.$popupContent.height();
-      var parentHeight = self.$popup.height();
 
       if (!fullscreen) {
-        if (contentHeight < parentHeight) {
-          // don't need all height:
-          self.$popup.css({
-            maxHeight: 'auto',
-            height: 'auto'
-          });
 
-          // find new top:
-          var yInPixels = (y / 100) * parentHeight;
-          var top = ((y / 100) * parentHeight) - (contentHeight / 2);
+        self.resize();
 
-          // Make sure popup close button is not conflicting with full screen button
-          if (top < 30) {
-            top = 30;
-          }
-          else if (top + contentHeight > parentHeight) {
-            top = parentHeight - contentHeight;
-          }
-
-          // From pixels to percent:
-          var pointerTop = yInPixels - top;
-          top = (top / parentHeight) * 100 ;
-          self.$popup.css({
-            top: top + '%'
-          });
-
-          // Need to move pointer:
-          self.$pointer.css({
-            top: ((pointerTop / contentHeight) * 100) - (parentHeight / contentHeight * 0.5) + '%'
-          });
-        }
-        else {
-          // Need all height:
-          self.$popupContent.css({
-            height: '100%',
-            overflow: 'auto'
-          });
-        }
+        // Need to move pointer:
+        self.$pointer.css({
+          left: toTheLeft ? (
+            popupWidth + '%'
+          ) : (
+            popupLeft + '%'
+          )
+        });
       }
 
       self.$popup.css({
@@ -174,6 +184,11 @@
           else {
             self.$closeButton.focus();
           }
+        }
+
+        // Show pointer;
+        if (self.$pointer) {
+          self.$pointer.addClass('visible');
         }
         self.trigger('finishedLoading');
       }, 300);
