@@ -19,7 +19,7 @@
    * @param {Object} options
    *
    */
-  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options) {
+  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy) {
     EventDispatcher.call(this);
 
     var self = this;
@@ -94,7 +94,7 @@
     // by the popup
     if (!fullscreen) {
       this.$pointer = $('<div/>', {
-        'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right'),
+        'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right') + (legacy ? ' legacy-positioning' : ''),
       }).css({
         top: y + '%',
       }).appendTo(this.$popupBackground);

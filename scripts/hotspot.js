@@ -164,7 +164,8 @@
       self.config.header,
       popupClass,
       self.config.alwaysFullscreen || self.isSmallDeviceCB(),
-      self.options
+      self.options,
+      self.config.position.legacyPositioning
     );
 
     self.parent.on('resize', function () {

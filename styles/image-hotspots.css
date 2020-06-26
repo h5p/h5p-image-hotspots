@@ -36,28 +36,33 @@
   border: none;
   margin: 0;
   font-size: 1em;
-}
-.h5p-image-hotspot:not(.legacy-positioning) {
-  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .h5p-image-hotspot.disabled {
   display: none;
 }
 
+.h5p-image-hotspot:not(.legacy-positioning) {
+  transform: translate(-50%, -50%);
+}
+
 .h5p-image-hotspot.active {
   z-index: 1;
-  cursor: pointer;
-  -webkit-transform: translate(-50%, -50%) scale(1.5); /* Chrome, Safari, Opera */
+}
+
+.h5p-image-hotspot.active,
+.h5p-image-hotspot:focus,
+.not-an-ios-device .h5p-image-hotspot:hover {
   transform: translate(-50%, -50%) scale(1.5);
 }
 
-.h5p-image-hotspot:focus,
-.not-an-ios-device .h5p-image-hotspot:hover {
-  cursor: pointer;
-  -webkit-transform: translate(-50%, -50%) scale(1.5); /* Chrome, Safari, Opera */
-  transform: translate(-50%, -50%) scale(1.5);
+.h5p-image-hotspot.active.legacy-positioning,
+.h5p-image-hotspot.legacy-positioning:focus,
+.not-an-ios-device .h5p-image-hotspot.legacy-positioning:hover {
+  transform: scale(1.5);
 }
+
 .h5p-image-hotspot:before {
   font-family: H5PFontAwesome4;
   display: inline-block;
@@ -119,8 +124,10 @@
   border-bottom: 0.6em solid transparent;
   transform: translate(0, -50%);
   transition: transform 0.3s, opacity 0.2s;
-  transition-delay: 0.1s;
-  
+  transition-delay: 0.1s; 
+}
+.h5p-image-hotspot-popup-pointer.legacy-positioning  {
+  transform: none;
 }
 .h5p-image-hotspot-popup-pointer.visible {
   opacity: 1;
@@ -128,13 +135,22 @@
 .h5p-image-hotspot-popup-pointer.to-the-left {
   transform: translate(-100%, -50%);
 }
+.h5p-image-hotspot-popup-pointer.to-the-left.legacy-positioning  {
+  transform: translate(-100%, 0);
+}
 .h5p-image-hotspot-popup-pointer.visible.to-the-left {
   transform: translate(-1px, -50%);
+}
+.h5p-image-hotspot-popup-pointer.visible.to-the-left.legacy-positioning {
+  transform: translate(-1px, 0);
 }
 .h5p-image-hotspot-popup-pointer.visible.to-the-right {
   border-right: 0.6em solid rgba(255,255,255);
   border-left: none;
   transform: translate(calc(-100% + 1px), -50%);
+}
+.h5p-image-hotspot-popup-pointer.visible.to-the-right.legacy-positioning {
+  transform: translate(calc(-100% + 1px), 0);
 }
 .h5p-image-hotspot-popup-header {
   /* Header is just a one-liner for now */
