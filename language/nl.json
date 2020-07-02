@@ -5,23 +5,23 @@
       "description": "Afbeelding die op de achtergrond wordt getoond."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Alt-tekst voor achtergrondafbeelding",
+      "description": "Als de browser de afbeelding niet kan laden, wordt deze tekst getoond. Ook gebruikt door ondersteunende technologieën."
     },
     {
       "label": "Hotspot Icon",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Voorafingestelde icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Geüploade afbeelding"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Voorafingestelde icon",
+      "description": "Gebruik een voorafingestelde icon voor de hotspot.",
       "options": [
         {
           "label": "Plus"
@@ -30,29 +30,29 @@
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "Keer"
         },
         {
-          "label": "Check"
+          "label": "Vink"
         },
         {
-          "label": "Question"
+          "label": "Vraagteken"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Uitroepteken"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Geüploade afbeeldinge",
+      "description": "Gebruik uw eigen afbeelding voor de hotspot icon.<br>75px bij 75px is de aanbevolen afmeting voor uw afbeelding."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Hotspot kleur",
+      "description": "De kleur van de hotspots"
     },
     {
       "entity": "hotspot",
@@ -61,34 +61,34 @@
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Hotspot positie",
+            "description": "Klik op de thumbnail image om de hotspot te plaatsen"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Gehele achtergrondafbeelding afdekken",
+            "description": "Wanneer de gebruiker op de hotspot klikt, zal de pop-up de gehele achtergrondafbeelding afdekken"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Koptekst",
+            "description": "Optionele kopekst voor de pop-up"
           },
           {
-            "label": "Popup content",
+            "label": "Pop-up inhoud",
             "field": {
-              "label": "Content Item"
+              "label": "Inhoud item"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
+      "label": "Hotspot label voor ondersteunende technologieën",
       "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "description": "Kan vertellen naar welk hotspot element er is genavigeerd als er geen koptekst is opgegeven voor de hotspot. #num kan worden gebruikt als vervanging voor het hotspot nummer."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Sluit-knop label voor ondersteunende technologieën",
+      "default": "Sluiten"
     }
   ]
 }
