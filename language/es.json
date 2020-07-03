@@ -83,7 +83,7 @@
     },
     {
       "label": "Etiqueta de hotspot para tecnologías de asistencia",
-      "default": "Hotspot #num",
+      "default": "Hotspot (Punto caliente) #num",
       "description": "Ayudará a anunciar a qué elemento de punto de acceso se ha navegado si no hay un encabezado especificado para un punto de acceso público. #num se puede usar para reemplazar el número de punto de acceso."
     },
     {
