@@ -112,7 +112,8 @@
   transition: left 0.3s ease-in-out;
   cursor: auto;
 }
-.h5p-image-hotspot-popup.popup-overflowing {
+.h5p-image-hotspot-popup.popup-overflowing,
+.h5p-image-hotspot-popup.fullscreen-popup {
   border-radius: 0;
 }
 
