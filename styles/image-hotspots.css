@@ -200,6 +200,7 @@
   background: linear-gradient(transparent 2em, white);
   opacity: 1;
   transition: opacity 1s;
+  pointer-events: none; /* Make things behind it clickable */
 }
 /* When scroll has been detected, remove the content fade-out */
 .h5p-image-hotspot-popup-content.overflowing.has-scrolled:after {
