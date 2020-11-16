@@ -112,12 +112,17 @@
         maxHeight: '',
         height: ''
       });
+      self.$popupContent.css({
+        height: ''
+      });
       
       height = this.$container.height();
-      var contentHeight = self.$popupContent.height();
-      var parentHeight = self.$popup.height();
+      var contentHeight = self.$popupContent.outerHeight();
+      var parentHeight = self.$popup.outerHeight();
 
-      if (contentHeight < height) {
+      var fitsWithin = contentHeight < height;
+
+      if (fitsWithin) {
         // don't need all height:
         self.$popup.css({
           maxHeight: 'auto',
@@ -136,19 +141,14 @@
         self.$popup.css({
           top: (top / parentHeight) * 100 + '%'
         });
-
-        self.$popupContent.css({
-          height: '',
-          overflow: ''
-        }).removeClass('overflowing');
       }
-      else {
-        // Need all height:
-        self.$popupContent.css({
-          height: '100%',
-          overflow: 'auto'
-        }).addClass('overflowing');
-      }      
+      
+      self.$popupContent.css({
+        height: fitsWithin ? '' : '100%',
+        overflow: fitsWithin ? '' : 'auto'
+      }).toggleClass('overflowing', !fitsWithin);
+
+      self.$popup.toggleClass('popup-overflowing', !fitsWithin);
     };
 
     /**

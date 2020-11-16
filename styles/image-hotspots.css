@@ -112,6 +112,9 @@
   transition: left 0.3s ease-in-out;
   cursor: auto;
 }
+.h5p-image-hotspot-popup.popup-overflowing {
+  border-radius: 0;
+}
 
 .h5p-image-hotspot-has-header .h5p-image-hotspot-popup-body {
   padding-top: 0;
@@ -173,9 +176,10 @@
   height: 1.5em;
 }
 .h5p-image-hotspot-popup-body {
-  padding: 4em 1.5em 1.5em 1.5em;
+  padding: 1.5em;
   font-size: 0.75em;
 }
+
 .h5p-text.h5p-image-hotspot-popup-body {
   bottom: 0;
   overflow: auto;
