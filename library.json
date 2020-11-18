@@ -3,7 +3,7 @@
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
   "minorVersion": 9,
-  "patchVersion": 2,
+  "patchVersion": 3,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
