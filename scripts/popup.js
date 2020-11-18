@@ -31,7 +31,7 @@
     hotspotWidth = (hotspotWidth/width)*100;
 
     var popupLeft = 0;
-    var popupWidth;
+    var popupWidth = 0;
     var toTheLeft = false;
 
     if (fullscreen) {
@@ -41,10 +41,7 @@
     else {
       toTheLeft = (x > 45);
       popupLeft = (toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
-
-      if (toTheLeft) {
-        popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
-      }
+      popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
     }
 
     this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
@@ -53,8 +50,7 @@
       'role': 'dialog'
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
-      width: popupWidth ? popupWidth + '%' : '',
-      right: !fullscreen && !toTheLeft ? '0' : ''
+      width: popupWidth + '%'
     }).click(function (event) {
       // If clicking on popup, stop propagating:
       event.stopPropagation();
