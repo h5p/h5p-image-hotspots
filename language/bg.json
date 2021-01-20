@@ -15,13 +15,13 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Качено изображение"
         }
       ]
     },
     {
       "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "description": "Използвайте predefined icon за hotspot.",
       "options": [
         {
           "label": "Plus"
@@ -47,8 +47,8 @@
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Качено изображение",
+      "description": "Използвайте ваше изображение за hotspot icon.<br>75px by 75px е препоръчителен размер за изображението ви."
     },    
     {
       "label": "Цвят на активна точка",
