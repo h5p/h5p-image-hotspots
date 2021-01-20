@@ -1,27 +1,27 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Agtergrond prent",
+      "description": "Prent wat op agtergrond vertoon word."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Alternatiewe teks vir agtergrondprent",
+      "description": "Indien die weblaaier nie die teks kan lees nie, sal 'n alternatiewe teks vertoon word. Word ook gebruik deur hulptegnologieë"
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Warmkol ikoon",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Voorafingestelde ikoon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Opgelaaide prent"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Voorafopgelaaide prent",
+      "description": "Gebruik 'n voorafopgelaaide prent vir die warmkol.",
       "options": [
         {
           "label": "Plus"
@@ -30,65 +30,65 @@
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "Maal"
         },
         {
-          "label": "Check"
+          "label": "Toets"
         },
         {
-          "label": "Question"
+          "label": "Vraag"
         },
         {
-          "label": "Info"
+          "label": "Inligting"
         },
         {
-          "label": "Exclamation"
+          "label": "Uitroepteken"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image."
+      "label": "Opgelaaide prent",
+      "description": "Gebruik jou eie prent vir die warmkolprent.<br>75px by 75px word aanbeveel vir die prentgrote."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Warmkol kleur",
+      "description": "Die kleur van die warmkol"
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "warmkol",
+      "label": "Warmkolle",
       "field": {
-        "label": "Hotspot",
+        "label": "Warmkol",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Warmkol plasing",
+            "description": "Klik op die miniatuurbeeld om die warmkol te plaas"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Bedek die hele agtergrondprent",
+            "description": "Wanneer die gebruiker op die warmkol klik, sal die opblaasbeeld die hele agtergrondbeeld dek"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Hoofopskrif",
+            "description": "Opsionele opblaasbeeld vir die hoofopskrif"
           },
           {
-            "label": "Popup content",
+            "label": "Opblaasbeeld inhoud",
             "field": {
-              "label": "Content Item"
+              "label": "Inhouditem"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Warmkoletiket vir hulptegnologieë",
+      "default": "Warmkol #num",
+      "description": "Dit sal help om aan te kondig na watter warmkol-element u navigeer het as daar geen hoofopskriftekst vir 'n warmkol is nie. #num kan gebruik word om die warmkol-nommer te vervang."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Sluitingsknoppie-etiket vir hulptegnologieë",
+      "default": "Sluit"
     }
   ]
 }
