@@ -48,7 +48,7 @@
     },
     {
       "label": "Hochgeladenes Bild",
-      "description": "Verwende ein eigenes Bild als Hotspot-Symbol.<br>Als Größe ist 75px mal 75px empfehlenswert."
+      "description": "Verwende ein eigenes Bild als Hotspot-Symbol.<br />Als Größe ist 75px mal 75px empfehlenswert."
     },
     {
       "label": "Hotspot-Farbe",

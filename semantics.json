@@ -83,7 +83,7 @@
     "type": "image",
     "label": "Uploaded image",
     "optional": false,
-    "description": "Use your own image for the hotspot icon.<br>75px by 75px is recommended for your image.",
+    "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image.",
     "widget": "showWhen",
     "showWhen": {
       "rules": [

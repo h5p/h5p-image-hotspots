@@ -48,7 +48,7 @@
     },
     {
       "label": "Naložena slika",
-      "description": "Kot ikono je možno naložiti poljubno sliko.<br>Priporočena velikost slike je 75 x 75 px."
+      "description": "Kot ikono je možno naložiti poljubno sliko.<br />Priporočena velikost slike je 75 x 75 px."
     },
     {
       "label": "Barva interaktivne točke",

@@ -48,7 +48,7 @@
     },
     {
       "label": "Immagine caricata",
-      "description": "Usa una tua immagine come icona dell'hotspot.<br>La dimensione raccomandata è 75px per 75px"
+      "description": "Usa una tua immagine come icona dell'hotspot.<br />La dimensione raccomandata è 75px per 75px"
     },
     {
       "label": "Colore dell'hotspot",

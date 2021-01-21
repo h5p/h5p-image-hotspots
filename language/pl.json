@@ -48,7 +48,7 @@
     },
     {
       "label": "Wgrane zdjęcie",
-      "description": "Użyj własnego obrazu jako ikony znacznika. <br> Zalecane jest zdjęcie w rozdzielczości 75 na 75 pikseli."
+      "description": "Użyj własnego obrazu jako ikony znacznika. <br /> Zalecane jest zdjęcie w rozdzielczości 75 na 75 pikseli."
     },
     {
       "label": "Kolor znacznika",

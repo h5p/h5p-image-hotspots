@@ -48,7 +48,7 @@
     },
     {
       "label": "Imagen subida",
-      "description": "Use su propia imagen para el ícono de hotspot icon.<br>75px po 75px es lo recomendado para su imagen."
+      "description": "Use su propia imagen para el ícono de hotspot icon.<br />75px po 75px es lo recomendado para su imagen."
     },
     {
       "label": "Color del Hotspot",

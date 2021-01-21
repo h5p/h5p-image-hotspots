@@ -48,7 +48,7 @@
     },
     {
       "label": "Imagem carregada",
-      "description": "Use a sua própria imagem para o ícone do ponto de acesso.<br>75px por 75px é o tamanho recomendado para a imagem."
+      "description": "Use a sua própria imagem para o ícone do ponto de acesso.<br />75px por 75px é o tamanho recomendado para a imagem."
     },
     {
       "label": "Cor do ponto de acesso",
