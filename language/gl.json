@@ -48,7 +48,7 @@
     },
     {
       "label": "Imaxe subida",
-      "description": "Usa a túa propia imaxe como icona de punto chave.<br>Recoméndase un tamaño de 75px por 75px para a imaxe."
+      "description": "Usa a túa propia imaxe como icona de punto chave.<br />Recoméndase un tamaño de 75px por 75px para a imaxe."
     },
     {
       "label": "Cor do punto chave",
