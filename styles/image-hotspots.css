@@ -164,17 +164,11 @@
   transform: translate(calc(-100% + 1px), 0);
 }
 .h5p-image-hotspot-popup-header {
-  /* Header is just a one-liner for now */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-weight: bold;
   margin: 0;
-  font-size: 1.25em;
-  padding: 1em 1em 0 1em;
+  padding: 1em 1.75em 0 1em;
   margin-bottom: 0.5em;
-  line-height: 1.5em;
-  height: 1.5em;
+  line-height: 1.1em;
 }
 .h5p-image-hotspot-popup-body {
   padding: 1.5em;
