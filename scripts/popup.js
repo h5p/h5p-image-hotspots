@@ -39,7 +39,7 @@
       className += ' fullscreen-popup';
     }
     else {
-      toTheLeft = (x > 45);
+      toTheLeft = (x > 50);
       popupLeft = (toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
       popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
     }
