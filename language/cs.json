@@ -48,7 +48,7 @@
     },
     {
       "label": "Nahraný obrázek",
-      "description": "Použijte svůj vlastní obrázek pro ikonu hotspotu. Pro  obrázek se doporučuje 75 x 75 pixelů."
+      "description": "Použijte svůj vlastní obrázek pro ikonu hotspotu. <br />Pro obrázek se doporučuje 75 x 75 pixelů."
     },
     {
       "label": "Barva aktivního bodu",
@@ -82,12 +82,12 @@
       }
     },
     {
-      "label": "Popisek aktivního bodu pro asistenční technologie",
+      "label": "Popisek aktivního bodu pro podpůrné technologie",
       "default": "Aktivní bod #num",
       "description": "Pomůže oznámit, ke kterému prvku aktivního bodu byl navigován, pokud pro hotspot není zadána žádná záhlaví. #num lze použít k nahrazení čísla aktivního bodu."
     },
     {
-      "label": "Popisek tlačítka zavřít pro asistenční technologie",
+      "label": "Popisek tlačítka zavřít pro podpůrné technologie",
       "default": "Zavřít"
     }
   ]

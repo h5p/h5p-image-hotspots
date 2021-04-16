@@ -9,7 +9,7 @@
       "description": "Si el navegador no puede cargar la imagen, este texto se mostrará en su lugar. También utilizado por las tecnologías de asistencia."
     },
     {
-      "label": "Ícono Hotspot",
+      "label": "Ícono de hotspot",
       "options": [
         {
           "label": "Ícono predefinido"
@@ -21,7 +21,7 @@
     },
     {
       "label": "Ícono predefinido",
-      "description": "Usando un ícono predefinido para el .",
+      "description": "Usando un ícono predefinido para el hotspot.",
       "options": [
         {
           "label": "Más"
@@ -30,10 +30,10 @@
           "label": "Menos"
         },
         {
-          "label": "Veces"
+          "label": "Por"
         },
         {
-          "label": "Revisar"
+          "label": "Comprobar"
         },
         {
           "label": "Pregunta"
@@ -48,21 +48,21 @@
     },
     {
       "label": "Imagen subida",
-      "description": "Use su propia imagen para el ícono de hotspot icon.<br />75px po 75px es lo recomendado para su imagen."
+      "description": "Use su propia imagen para el ícono de hotspot.<br />75px por 75px es lo recomendado para su imagen."
     },
     {
-      "label": "Color del Hotspot",
-      "description": "El color del Hotspot"
+      "label": "Color del hotspot",
+      "description": "El color de los hotspots"
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "punto caliente (hotspot)",
+      "label": "Puntos calientes (Hotspots)",
       "field": {
-        "label": "Hotspot",
+        "label": "Punto caliente (Hotspot)",
         "fields": [
           {
             "label": "Posición del Hotspot",
-            "description": "Haga clic en la imagen en miniatura para colocar el punto de acceso hotspot"
+            "description": "Haga clic en la imagen en miniatura para colocar el hotspot"
           },
           {
             "label": "Cubrir toda la imagen de fondo",
@@ -75,7 +75,7 @@
           {
             "label": "Contenido emergente",
             "field": {
-              "label": "Item del contenido"
+              "label": "Elemento del Contenido"
             }
           }
         ]
@@ -83,8 +83,8 @@
     },
     {
       "label": "Etiqueta de hotspot para tecnologías de asistencia",
-      "default": "Hotspot (Punto caliente) #num",
-      "description": "Ayudará a anunciar a qué elemento de punto de acceso se ha navegado si no hay un encabezado especificado para un punto de acceso público. #num se puede usar para reemplazar el número de punto de acceso."
+      "default": "Punto caliente (Hotspot) #num",
+      "description": "Ayudará a anunciar a qué elemento hotspot se ha navegado si no hay un encabezado especificado para un hotspot. #num se puede usar para reemplazar el número del hotspot."
     },
     {
       "label": "Etiqueta de cierre de botón para tecnologías de asistencia",
