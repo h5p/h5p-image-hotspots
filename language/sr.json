@@ -1,94 +1,94 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Позадинска слика",
+      "description": "Слика приказана на позадини."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Алтернативни текст за позадинску слику",
+      "description": "Ако прегледач не може да учита слику, уместо тога ће се приказати овај текст."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Икона вруће тачке",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Унапред дефинисана икона"
         },
         {
-          "label": "Uploaded image"
+          "label": "Отпремљена слика"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Унапред дефинисана икона",
+      "description": "Коришћење предефинисане иконе за врућу тачку.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Плус"
         },
         {
-          "label": "Minus"
+          "label": "Минус"
         },
         {
-          "label": "Times"
+          "label": "Пута"
         },
         {
-          "label": "Check"
+          "label": "Провера"
         },
         {
-          "label": "Question"
+          "label": "Питање"
         },
         {
-          "label": "Info"
+          "label": "Информација"
         },
         {
-          "label": "Exclamation"
+          "label": "Узвик"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Отпремљена слика",
+      "description": "Користите своју слику за врућу тачку.<br />75px пута 75px је препоручена."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Боја вруће тачке",
+      "description": "Боја вруће тачке"
     },
     {
       "entity": "hotspot",
-      "label": "Hotspots",
+      "label": "Врућа тачка",
       "field": {
-        "label": "Hotspot",
+        "label": "Врућа тачка",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Позиција вруће тачке",
+            "description": "Кликните на сличицу да бисте поставили врућу тачку"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Покријте целу позадинску слику",
+            "description": "Када корисник кликне на врућу тачку, искачући прозор ће покрити целу позадинску слику"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Заглавље",
+            "description": "Необавезно заглавље за искачући прозор"
           },
           {
-            "label": "Popup content",
+            "label": "Искачући садржај",
             "field": {
-              "label": "Content Item"
+              "label": "Садржај"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Ознака вруће тачке за помоћне технологије",
+      "default": "Врућа тачка #num",
+      "description": "Помоћи ће вам да саопштите до ког је елемента вруће тачке кретао ако за врућу тачку није наведено заглавље. #num се може користити за замену броја вруће тачке."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Ознака дугмета за затварање",
+      "default": "Затвори"
     }
   ]
 }
