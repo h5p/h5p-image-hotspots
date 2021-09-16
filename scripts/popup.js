@@ -17,11 +17,12 @@
    * @param {string} className
    * @param {boolean} fullscreen
    * @param {Object} options
+   * @param {boolean} legacy True, if legacy mode.
    * @param {object} [customSettings] Custom settings.
    * @param {number} [customSettings.maxWidth=100] Maximum width for popup (percentage).
    * @param {number} [customSettings.position=0] Force popup left (=1) or right (=2).
    */
-  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy) {
+  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy, customSettings) {
     EventDispatcher.call(this);
 
     var self = this;
@@ -29,7 +30,7 @@
     // Sanitize custom settings
     customSettings = customSettings || {};
     const maxWidth = Math.min(100, Math.max(0, customSettings.maxWidth || 100));
-    const forcePos = parseInt(options.popupSettings.position) || ImageHotspots.Popup.FORCE_AUTO;
+    const forcePos = parseInt(customSettings.position) || ImageHotspots.Popup.FORCE_AUTO;
 
     this.$container = $container;
     var width = this.$container.width();
@@ -51,8 +52,8 @@
       toTheLeft = ((x > 50) || forcePos === ImageHotspots.Popup.FORCE_LEFT) && (forcePos !== ImageHotspots.Popup.FORCE_RIGHT);
 
       if (toTheLeft) {
-        popupWidth = Math.min(x - pointerWidthInPercent, maxWidth);
-        popupLeft = x - pointerWidthInPercent - popupWidth;
+        popupWidth = Math.min(x - hotspotWidth - pointerWidthInPercent, maxWidth);
+        popupLeft = x - hotspotWidth - pointerWidthInPercent - popupWidth;
       }
       else {
         popupWidth = Math.min(100 - (x + hotspotWidth + pointerWidthInPercent), maxWidth);
@@ -190,7 +191,7 @@
         // Need to move pointer:
         self.$pointer.css({
           left: toTheLeft ? (
-            popupWidth + '%'
+            popupLeft + popupWidth + '%'
           ) : (
             popupLeft + '%'
           )

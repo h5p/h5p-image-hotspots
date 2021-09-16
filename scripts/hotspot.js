@@ -188,7 +188,8 @@
       popupClass,
       self.config.popupSettings.sizePosition === 'fullscreen' || self.isSmallDeviceCB(),
       self.options,
-      self.config.position.legacyPositioning
+      self.config.position.legacyPositioning,
+      self.config.popupSettings
     );
 
     self.parent.on('resize', function () {
