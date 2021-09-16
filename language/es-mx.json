@@ -65,10 +65,6 @@
             "description": "Haga clic en la imagen en miniatura para colocar el hotspot"
           },
           {
-            "label": "Cubrir toda la imagen de fondo",
-            "description": "Cuando el usuario hace clic en el hotspot, la ventana emergente cubrirá toda la imagen de fondo"
-          },
-          {
             "label": "Encabezado",
             "description": "Encabezado opcional para el popup. Esto es usado por tecnologías de asistencia."
           },
@@ -77,6 +73,45 @@
             "field": {
               "label": "Elemento del Contenido"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
