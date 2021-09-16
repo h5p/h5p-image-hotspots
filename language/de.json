@@ -65,13 +65,6 @@
             "description": "Klicke auf die gewünschte Stelle im Vorschaubild, um den Hotspot zu platzieren."
           },
           {
-<<<<<<< HEAD
-            "label": "Überdecke das gesamte Hintergrundbild",
-            "description": "Sobald die Lernenden auf den Hotspot klicken, wird das erscheinende Fenster den gesamten Hintergrund überdecken."
-          },
-          {
-=======
->>>>>>> eb73561 (Add customizing options for popups)
             "label": "Überschrift",
             "description": "Optionale Kopfzeile für die Einblendung. Wird von Vorlesewerkzeugen benutzt."
           },

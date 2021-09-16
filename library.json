@@ -2,8 +2,9 @@
   "title": "Image Hotspots",
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
-  "minorVersion": 10,
-  "patchVersion": 7,
+  "minorVersion": 11,
+  "patchVersion": 0,
+
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
