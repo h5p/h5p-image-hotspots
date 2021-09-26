@@ -1,58 +1,58 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Arka plan resmi",
+      "description": "Arka planda gösterilecek resim."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Arka plan resmi için alt metin.",
+      "description": "Tarayıcı resmi yükleyemezse, bunun yerine bu metin görüntülenecektir. Ayrıca yardımcı teknolojiler tarafından da kullanılır."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Görsel Etkin Nokta İşaretleme (Hotspot) Simgesi",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Tanımlı simgeler"
         },
         {
-          "label": "Uploaded image"
+          "label": "Yüklenen resim"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Tanımlı simgeler",
+      "description": "Etkin nokta için önceden tanımlanmış bir simge kullanma.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Artı"
         },
         {
-          "label": "Minus"
+          "label": "Tire"
         },
         {
-          "label": "Times"
+          "label": "Zaman"
         },
         {
-          "label": "Check"
+          "label": "Kontrol"
         },
         {
-          "label": "Question"
+          "label": "Soru"
         },
         {
-          "label": "Info"
+          "label": "Bilgi"
         },
         {
-          "label": "Exclamation"
+          "label": "Ünlem"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Yüklenen resim",
+      "description": "Etkin nokta simegesi için kendiniz resim yükleyin.<br /> 75px x 75px boyutu önerilmektedir.
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Etkin nokta rengi",
+      "description": "Etkin noktaların rengi"
     },
     {
       "entity": "hotspot",
@@ -61,34 +61,34 @@
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Etkin nokta pozisyonu",
+            "description": "Etkin noktayı yerleştirmek için küçük noktaya tıklayın."
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Tüm arka plan resmini örtün.",
+            "description": "Kullanıcı etkin noktayı tıkladığında açılır pencere tüm arka plan resmini kaplar."
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Başlık",
+            "description": "Açılır pencere için başlık (isteğe bağlı)"
           },
           {
-            "label": "Popup content",
+            "label": "açılır pencere içeriği",
             "field": {
-              "label": "Content Item"
+              "label": "İçerik Öğesi"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Yardımcı teknoloji için etkin nokta etiketi",
+      "default": "Etkin nokta #num",
+      "description": "Bir etkin nokta için başlık belirtilmemişse, hangi etkin nokta öğesine gidildiğini seslendirmeye yardımcı olur. #num, etkin nokta numarasını değiştirmek için kullanılabilir."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Yardımcı teknolojileri kapat butonu etiketi",
+      "default": "Kapat"
     }
   ]
 }
