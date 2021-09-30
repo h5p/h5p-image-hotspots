@@ -126,6 +126,13 @@
         appendTo: $popupBody
       });
 
+      // Enforce autoplay for transparent audios
+      if (action.library.split(' ')[0] === 'H5P.Audio') {
+        if (action.params.playerMode === 'transparent') {
+          action.params.autoplay = true;
+        }
+      }
+
       var actionInstance = H5P.newRunnable(action, self.id);
 
       self.actionInstances.push(actionInstance);
@@ -133,6 +140,17 @@
         waitForLoaded.push(actionInstance);
       }
       actionInstance.attach($popupFraction);
+
+      if (actionInstance.libraryInfo.machineName === 'H5P.Audio') {
+        if (actionInstance.audio && actionInstance.params.playerMode === 'full' && !!window.chrome) {
+          // Workaround for missing https://github.com/h5p/h5p-audio/pull/48
+          actionInstance.audio.style.height = '54px';
+        }
+        else if (actionInstance.$audioButton && actionInstance.params.playerMode === 'transparent') {
+          // Completely hide transparent button
+          actionInstance.$audioButton.css({ height: 0, padding: 0 });
+        }
+      }
     });
 
     var readyToPopup = function () {
