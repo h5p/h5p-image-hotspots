@@ -260,5 +260,13 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);
   };
 
+  ImageHotspots.prototype.pause = function() {
+    this.hotspots.forEach(function(hotspot) {
+      if (hotspot.pause) {
+        hotspot.pause();
+      }
+    });
+  };
+
   return ImageHotspots;
 })(H5P.jQuery, H5P.EventDispatcher);

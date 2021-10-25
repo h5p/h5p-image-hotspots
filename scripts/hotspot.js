@@ -150,6 +150,14 @@
           // Completely hide transparent button
           actionInstance.$audioButton.css({ height: 0, padding: 0 });
         }
+
+        self.pause = function () {
+          if (actionInstance.audio && 
+              (actionInstance.audio.pause instanceof Function ||
+              typeof actionInstance.audio.pause === 'function')) {
+            actionInstance.audio.pause();
+          }
+        };
       }
     });
 
