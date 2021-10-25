@@ -150,14 +150,6 @@
           // Completely hide transparent button
           actionInstance.$audioButton.css({ height: 0, padding: 0 });
         }
-
-        self.pause = function () {
-          if (actionInstance.audio && 
-              (actionInstance.audio.pause instanceof Function ||
-              typeof actionInstance.audio.pause === 'function')) {
-            actionInstance.audio.pause();
-          }
-        };
       }
     });
 
@@ -323,6 +315,18 @@
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
     this.$element.attr('title', title);
     this.$element.attr('aria-label', title);
+  };
+
+  ImageHotspots.Hotspot.prototype.pause = function () {
+    if (this.actionInstances) {
+      this.actionInstances.forEach(function(actionInstance) {
+        if (actionInstance.audio && 
+            (actionInstance.audio.pause instanceof Function ||
+            typeof actionInstance.audio.pause === 'function')) {
+          actionInstance.audio.pause();
+        }
+      });
+    };
   };
 
 })(H5P.jQuery, H5P.ImageHotspots);
