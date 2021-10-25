@@ -267,6 +267,7 @@
       // We don't get click events on body for iOS-devices
       $('body').children().off('click.h5p-image-hotspot-popup');
 
+      this.pause();
       this.popup.hide();
       this.$element.removeClass('active');
       this.visible = false;
