@@ -1,15 +1,15 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Imatge de fons",
+      "description": "La imatge que es mostra al fons."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Text alternatiu per a la imatge de fons",
+      "description": "Aquest text es mostrarà quan el navegador no pugui carregar la imatge. També és utilitzat per tecnologies d'assistència."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Icona de la zona sensible",
       "options": [
         {
           "label": "Icona predefinida"
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "label": "Predefined icon",
+      "label": "Icona predefinida",
       "description": "Ús d’una icona predefinida per a la zona sensible.",
       "options": [
         {
@@ -39,7 +39,7 @@
           "label": "Pregunta"
         },
         {
-          "label": "Info"
+          "label": "Informació"
         },
         {
           "label": "Exclamació"
@@ -47,11 +47,11 @@
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Imatge carregada",
+      "description": "Empreu la vostra pròpia imatge per a la icona de la zona sensible. <br />La mida recomanada per a la vostra imatge és 75px per 75px."
     },
     {
-      "label": "Hotspot color",
+      "label": "Color de la zona sensible",
       "description": "Color de les zones sensibles"
     },
     {
@@ -62,15 +62,15 @@
         "fields": [
           {
             "label": "Posició de la zona sensible",
-            "description": "Feu clic a la imatge en miniatura per situar-hi la zona sensible."
+            "description": "Feu clic a la imatge en miniatura per situar-hi la zona sensible"
           },
           {
             "label": "Imatge que ocupa tot el fons",
             "description": "Quan l’usuari fa clic a la zona sensible, l’element emergent cobreix tota la imatge de fons"
           },
           {
-            "label": "Títol",
-            "description": "Encapçalament opcional per a l’element emergent"
+            "label": "Capçalera",
+            "description": "Capçalera opcional per a l’element emergent"
           },
           {
             "label": "Contingut emergent",
@@ -84,10 +84,10 @@
     {
       "label": "Etiqueta de la zona sensible per a tecnologies d’assistència",
       "default": "Zona sensible #num",
-      "description": "Ajudarà a indicar quin element de la zona sensible s’ha seleccionat si la zona sensible no té cap títol. El número de zona sensible es pot substituir per #num."
+      "description": "Ajudarà a indicar quin element de la zona sensible s’ha seleccionat si la zona sensible no té cap capçalera. El número de zona sensible es pot substituir per #num."
     },
     {
-      "label": "Etiqueta del botó “Tanca” per a tecnologies d’assistència",
+      "label": "Etiqueta del botó «Tanca» per a tecnologies d’assistència",
       "default": "Tanca"
     }
   ]
