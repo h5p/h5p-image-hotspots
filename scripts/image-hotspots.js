@@ -1,7 +1,7 @@
 /**
  * Defines the H5P.ImageHotspots class
  */
- H5P.ImageHotspots = (function ($, EventDispatcher) {
+H5P.ImageHotspots = (function ($, EventDispatcher) {
 
   /**
    * Default font size
@@ -149,7 +149,7 @@
       self.toggleTrapFocus(false);
     });
 
-    self.resize(); 
+    self.resize();
   };
 
   ImageHotspots.prototype.setShowingPopup = function (visible) {

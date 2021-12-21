@@ -1,7 +1,7 @@
 /**
  * Defines the ImageHotspots.Hotspot class
  */
- (function ($, ImageHotspots) {
+(function ($, ImageHotspots) {
 
   /**
    * Creates a new Hotspot
