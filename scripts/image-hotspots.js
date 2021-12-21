@@ -132,6 +132,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.on('resize', self.resize, self);
 
     this.on('enterFullScreen', function () {
+      self.fullscreenButton.tabIndex = -1;
       // Resize image when entering fullscreen.
       setTimeout(function () {
         self.trigger('resize');
@@ -142,6 +143,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     });
 
     this.on('exitFullScreen', function () {
+      self.fullscreenButton.tabIndex = 0;
       // Do not rely on that isFullscreen has been updated
       self.trigger('resize', {forceImageHeight: true});
       self.toggleTrapFocus(false);
@@ -193,6 +195,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     }
 
     var self = this;
+    self.fullscreenButton = document.querySelector('.h5p-enable-fullscreen');
     var containerWidth = self.$container.width();
     var containerHeight = self.$container.height();
     var width = containerWidth;

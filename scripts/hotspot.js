@@ -151,6 +151,9 @@
           actionInstance.$audioButton.css({ height: 0, padding: 0 });
         }
       }
+
+      // Stop screenreader to read fullscreen button
+      self.parent.fullscreenButton.tabIndex = -1;
     });
 
     var readyToPopup = function () {
@@ -276,6 +279,7 @@
     }
 
     this.parent.setShowingPopup(false);
+    this.parent.fullscreenButton.tabIndex = 0;
   };
 
   /**
