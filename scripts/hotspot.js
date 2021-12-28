@@ -126,6 +126,13 @@
         appendTo: $popupBody
       });
 
+      // Enforce autoplay for transparent audios
+      if (action.library.split(' ')[0] === 'H5P.Audio') {
+        if (action.params.playerMode === 'transparent') {
+          action.params.autoplay = true;
+        }
+      }
+
       var actionInstance = H5P.newRunnable(action, self.id);
 
       self.actionInstances.push(actionInstance);
@@ -133,6 +140,17 @@
         waitForLoaded.push(actionInstance);
       }
       actionInstance.attach($popupFraction);
+
+      if (actionInstance.libraryInfo.machineName === 'H5P.Audio') {
+        if (actionInstance.audio && actionInstance.params.playerMode === 'full' && !!window.chrome) {
+          // Workaround for missing https://github.com/h5p/h5p-audio/pull/48
+          actionInstance.audio.style.height = '54px';
+        }
+        else if (actionInstance.$audioButton && actionInstance.params.playerMode === 'transparent') {
+          // Completely hide transparent button
+          actionInstance.$audioButton.css({ height: 0, padding: 0 });
+        }
+      }
     });
 
     var readyToPopup = function () {
@@ -249,6 +267,7 @@
       // We don't get click events on body for iOS-devices
       $('body').children().off('click.h5p-image-hotspot-popup');
 
+      this.pause();
       this.popup.hide();
       this.$element.removeClass('active');
       this.visible = false;
@@ -297,6 +316,18 @@
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
     this.$element.attr('title', title);
     this.$element.attr('aria-label', title);
+  };
+
+  ImageHotspots.Hotspot.prototype.pause = function () {
+    if (this.actionInstances) {
+      this.actionInstances.forEach(function(actionInstance) {
+        if (actionInstance.audio && 
+            (actionInstance.audio.pause instanceof Function ||
+            typeof actionInstance.audio.pause === 'function')) {
+          actionInstance.audio.pause();
+        }
+      });
+    };
   };
 
 })(H5P.jQuery, H5P.ImageHotspots);
