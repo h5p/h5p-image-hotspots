@@ -1,0 +1,94 @@
+{
+  "semantics": [
+    {
+      "label": "Fona attēls",
+      "description": "Fonā rādāmais attēls."
+    },
+    {
+      "label": "Teksta alternatīva fona attēlam",
+      "description": "Ja pārlūkprogramma nevar ielādēt attēlu, tiks atspoguļots šis teksts. Tekstu izmanto arī asistīvās tehnoloģijas."
+    },
+    {
+      "options": [
+        {
+          "label": "Sākotnējā ikona"
+        },
+        {
+          "label": "Augšupielādēts attēls"
+        }
+      ],
+      "label": "Aktīvā punkta ikona"
+    },
+    {
+      "label": "Sākotnējā ikona",
+      "options": [
+        {
+          "label": "Pluszīme"
+        },
+        {
+          "label": "Mīnuss"
+        },
+        {
+          "label": "Reizes"
+        },
+        {
+          "label": "Pārbaudīt"
+        },
+        {
+          "label": "Jautājums"
+        },
+        {
+          "label": "Info"
+        },
+        {
+          "label": "Izsaukuma zīme"
+        }
+      ],
+      "description": "Izmanto sākotnējo aktīvā punkta ikonu."
+    },
+    {
+      "label": "Augšupielādēts attēls",
+      "description": "Aktīvā punkta ikonai izmantojiet savu attēlu.<br />Rekomendētais attēla izmērs ir 75px uz 75px."
+    },
+    {
+      "description": "Aktīvo punktu krāsas",
+      "label": "Aktīvā punkta krāsa"
+    },
+    {
+      "field": {
+        "fields": [
+          {
+            "label": "Aktīvā punkta pozīcija",
+            "description": "Klikšķiniet uz sīktēla, lai ievietotu aktīvo punktu"
+          },
+          {
+            "label": "Pārklāt visu fona attēlu",
+            "description": "Kad lietotājs klikšķina aktīvo punktu, iznirstošais logs nosegs visu fona attēlu"
+          },
+          {
+            "label": "Galvene",
+            "description": "Neobligāta iznirstošā loga galvene"
+          },
+          {
+            "label": "Iznirstošā loga saturs",
+            "field": {
+              "label": "Satura elements"
+            }
+          }
+        ],
+        "label": "Aktīvais punkts"
+      },
+      "entity": "aktīvais punkts",
+      "label": "Aktīvie punkti"
+    },
+    {
+      "label": "Aktīvā punkta etiķete asistīvajām tehnoloģijām",
+      "default": "Aktīvais punkts #num",
+      "description": "Palīdzēs paziņot kurā aktīvajā punktā nonākts, ja aktīvajam punktam nav galvenes. #num var tikt izmantots, lai aizvietotu aktīvā punkta numuru."
+    },
+    {
+      "label": "Aizvēršanas pogas etiķete asistīvajām tehnoloģijām",
+      "default": "Aizvērt"
+    }
+  ]
+}
