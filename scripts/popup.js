@@ -91,9 +91,7 @@
     }).appendTo(this.$popup);
 
     if (!header) {
-      self.$popupContent.css({
-        paddingTop: '0.35em'
-      });
+      self.$popupContent.addClass('h5p-image-hotspot-popup-content-no-header');
     }
 
     // Need to add pointer to parent container, since this should be partly covered

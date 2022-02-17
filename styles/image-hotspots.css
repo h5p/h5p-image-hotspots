@@ -206,6 +206,10 @@
   opacity: 0;
 }
 
+.h5p-image-hotspot-popup-content.h5p-image-hotspot-popup-content-no-header {
+  padding-top: 0.35em;
+}
+
 .h5p-image-hotspot-popup-content::-webkit-scrollbar {
   background-color: #ebebeb;
   width: 0.25em;
