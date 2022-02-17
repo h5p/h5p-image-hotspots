@@ -90,6 +90,12 @@
       }
     }).appendTo(this.$popup);
 
+    if (!header) {
+      self.$popupContent.css({
+        paddingTop: '0.35em'
+      });
+    }
+
     // Need to add pointer to parent container, since this should be partly covered
     // by the popup
     if (!fullscreen) {
