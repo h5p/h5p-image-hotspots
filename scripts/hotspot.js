@@ -153,7 +153,9 @@
       }
 
       // Stop screenreader to read fullscreen button
-      self.parent.fullscreenButton.tabIndex = -1;
+      if (self.parent.fullscreenButton) {
+        self.parent.fullscreenButton.tabIndex = -1;
+      }
     });
 
     var readyToPopup = function () {
@@ -279,7 +281,11 @@
     }
 
     this.parent.setShowingPopup(false);
-    this.parent.fullscreenButton.tabIndex = 0;
+
+    // Make fullscreen button focusable again
+    if (this.parent.fullscreenButton) {
+      this.parent.fullscreenButton.tabIndex = 0;
+    }
   };
 
   /**
