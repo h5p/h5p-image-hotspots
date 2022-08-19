@@ -6,13 +6,13 @@
     },
     {
       "label": "Texto alternativo para a imagem de fundo",
-      "description": "Se o navegador não puder carregar a imagem, este texto será exibido no lugar. Também utilizado por tecnologias assistivas."
+      "description": "Se o navegador não puder carregar a imagem, este texto será exibido no lugar. Também utilizado por tecnologias de assistências."
     },
     {
       "label": "Ícone de ponto de acesso",
       "options": [
         {
-          "label": "Ícone pré-definido"
+          "label": "Ícone predefinido"
         },
         {
           "label": "Imagem carregada"
@@ -20,8 +20,8 @@
       ]
     },
     {
-      "label": "Ícone pré-definido",
-      "description": "Usando um ícone pré-definido para o ponto de acesso.",
+      "label": "Ícone predefinido",
+      "description": "Usando um ícone predefinido para o ponto de acesso.",
       "options": [
         {
           "label": "Mais"
@@ -33,7 +33,7 @@
           "label": "Vezes"
         },
         {
-          "label": "Sinal de visto"
+          "label": "Verificar"
         },
         {
           "label": "Questão"
@@ -55,17 +55,17 @@
       "description": "A cor dos pontos de acessos"
     },
     {
-      "entity": "hotspot",
+      "entity": "ponto de acesso (hotspot)",
       "label": "Pontos de acesso",
       "field": {
         "label": "Ponto de acesso",
         "fields": [
           {
             "label": "Posição do ponto de acesso",
-            "description": "Clique na miniatura da imagem para posicionar o ponto de acesso"
+            "description": "Clique na imagem em miniatura para posicionar o ponto de acesso"
           },
           {
-            "label": "Cobrir a imagem de fundo inteira",
+            "label": "Cobrir toda a imagem de fundo",
             "description": "Quando o usuário clicar no ponto de acesso, o popup cobrirá toda a imagem de fundo"
           },
           {
@@ -75,19 +75,19 @@
           {
             "label": "Conteúdo do popup",
             "field": {
-              "label": "Item do conteúdo"
+              "label": "Item de conteúdo"
             }
           }
         ]
       }
     },
     {
-      "label": "Rótulo para pontos de acesso para tecnologias assistivas",
+      "label": "Rótulo para pontos de acesso para tecnologias de assistência",
       "default": "Ponto de acesso #num",
       "description": "Ajudará a anunciar qual elemento de ponto de acesso está sendo navegado ou se não há um cabeçalho especificado para um ponto de acesso. #num pode ser usado para susbtituir o número do ponto de acesso."
     },
     {
-      "label": "Rótulo do botão de Fechar para tecnologias assistivas",
+      "label": "Rótulo do botão Fechar para tecnologias de assistência",
       "default": "Fechar"
     }
   ]
