@@ -36,13 +36,13 @@
           "label": "Potwierdzenie"
         },
         {
-          "label": "Znak zapytania"
+          "label": "Pytanie"
         },
         {
           "label": "Informacje"
         },
         {
-          "label": "Wykrzynik"
+          "label": "Wykrzyknik"
         }
       ]
     },
@@ -65,15 +65,15 @@
             "description": "Kliknij na zdjęcie aby dodać znacznik"
           },
           {
-            "label": "Pokryj całe zdjecie w tle",
+            "label": "Pokryj całe zdjęcie w tle",
             "description": "Kiedy użytkownik kliknie na znacznik, popup pokryje całe zdjęcie w tle."
           },
           {
             "label": "Nagłówek",
-            "description": "Opcjonalny nagłówek dla popupu"
+            "description": "Opcjonalny nagłówek dla popup'u"
           },
           {
-            "label": "Zawartość popupu.",
+            "label": "Zawartość popup'u",
             "field": {
               "label": "Zawartość"
             }
@@ -82,12 +82,12 @@
       }
     },
     {
-      "label": "Etykieta znacznika dla technologii wspomagających niewidomych",
+      "label": "Etykieta znacznika dla technologii wspomagających",
       "default": "Znacznik #num",
-      "description": "Pomoże ogłosić, do którego znacznika przeszedł użytkownik oraz, który popup został właśnie otwarty"
+      "description": "Pomoże ogłosić, do którego elementu znacznika nawigowano, jeśli nie określono nagłówka dla znacznika. #num może być użyty do zastąpienia numeru znacznika."
     },
     {
-      "label": "Etykieta przycisku dla technologii wspomagających niewidomych",
+      "label": "Etykieta przycisku zamykania dla technologii wspomagających",
       "default": "Zamknij"
     }
   ]
