@@ -344,6 +344,7 @@
   /**
    * Decode special characters in the provided string
    * @param {string} input String to decode characters
+   * @returns {string} Decoded string
    */
   ImageHotspots.Hotspot.prototype.htmlDecode = function (input) {
     const dparser = new DOMParser().parseFromString(input, 'text/html');
