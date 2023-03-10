@@ -341,7 +341,10 @@
     };
   };
 
-  
+  /**
+   * Decode special characters in the provided string
+   * @param {string} input String to decode characters
+   */
   ImageHotspots.Hotspot.prototype.htmlDecode = function (input) {
     const dparser = new DOMParser().parseFromString(input, 'text/html');
     return dparser.documentElement.textContent;
