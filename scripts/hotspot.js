@@ -132,6 +132,15 @@
           action.params.autoplay = true;
         }
       }
+      else if (action.library.split(' ')[0] === 'H5P.Video') {
+        if ( // All non HTML5 handlers suffer from bad resizing if fit === true.
+          action.params.sources && action.params.sources.length &&
+          action.params.sources[0].mime !== 'video/mp4' &&
+          action.params.sources[0].mime !== 'video/webm' &&
+          action.params.sources[0].mime !== 'video/ogg'
+        )
+        action.params.visuals.fit = false;
+      }
 
       var actionInstance = H5P.newRunnable(action, self.id);
 
