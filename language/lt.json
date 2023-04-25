@@ -1,0 +1,94 @@
+{
+  "semantics": [
+    {
+      "description": "Paveikslėlis rodomas fone.",
+      "label": "Fono paveikslėlis"
+    },
+    {
+      "description": "Jei naršyklė negali įkelti paveikslėlio, vietoj jo bus rodomas šis tekstas. Taip pat naudojamos pagalbinės technologijos.",
+      "label": "Alternatyvus tekstas fono paveikslėliui"
+    },
+    {
+      "options": [
+        {
+          "label": "Iš anksto nustatyta piktograma"
+        },
+        {
+          "label": "Įkeltas paveikslėlis"
+        }
+      ],
+      "label": "Aktyviosios srities piktograma"
+    },
+    {
+      "label": "Iš anksto nustatyta piktograma",
+      "options": [
+        {
+          "label": "Plius"
+        },
+        {
+          "label": "Minus"
+        },
+        {
+          "label": "Laikai"
+        },
+        {
+          "label": "Tikrinti"
+        },
+        {
+          "label": "Klausimas"
+        },
+        {
+          "label": "Info"
+        },
+        {
+          "label": "Šauktukas"
+        }
+      ],
+      "description": "Iš anksto nustatytos aktyviosios srities piktogramos naudojimas."
+    },
+    {
+      "description": "Kaip aktyviosios srities piktogramą naudokite savo paveikslėlį.<br />Rekomenduojama naudoti 75 x 75 piks. paveikslėlį.",
+      "label": "Įkeltas paveikslėlis"
+    },
+    {
+      "description": "Aktyviųjų sričių spalva",
+      "label": "Aktyviosios srities spalva"
+    },
+    {
+      "label": "Aktyviosios sritys",
+      "field": {
+        "fields": [
+          {
+            "label": "Aktyviosios srities pozicija",
+            "description": "Norėdami įdėti aktyviąją sritį, spustelėkite miniatiūros paveikslėlį"
+          },
+          {
+            "label": "Uždengti visą fono paveikslėlį",
+            "description": "Kai naudotojas spusteli aktyviąją sritį, iššokantis langas apims visą fono paveikslėlį"
+          },
+          {
+            "label": "Antraštė",
+            "description": "Pasirenkama iššokančiojo lango antraštė"
+          },
+          {
+            "label": "Iššokantis turinys",
+            "field": {
+              "label": "Turinio elementas"
+            }
+          }
+        ],
+        "label": "Aktyvioji sritis"
+      },
+      "entity": "aktyvioji sritis"
+    },
+    {
+      "label": "Aktyviosios srities pavadinimas, skirtas pagalbinėms technologijoms",
+      "description": "Padės paskelbti, į kurį aktyviosios srities elementą buvo nukreipta, jei aktyviajai sričiai nenurodyta antraštė. #num galima naudoti aktyviosios srities numeriui pakeisti.",
+      "default": "Aktyvioji sritis #num"
+    },
+    {
+      "default": "Uždaryti",
+      "label": "Uždaryti mygtuko pavadinimas, skirtas pagalbinėms technologijoms"
+    }
+  ]
+}
