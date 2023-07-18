@@ -52,7 +52,7 @@
     },
     {
       "label": "Color del hotspot",
-      "description": "El color de los hotspots"
+      "description": "El color de los hotspots",
     },
     {
       "entity": "punto caliente (hotspot)",
@@ -70,7 +70,7 @@
           },
           {
             "label": "Encabezado",
-            "description": "Encabezado opcional para la ventana emergente"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contenido emergente",

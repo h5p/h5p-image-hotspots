@@ -70,7 +70,7 @@
           },
           {
             "label": "Päis",
-            "description": "Valikuline hüpikakna pealkiri"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Hüpikakna sisu",

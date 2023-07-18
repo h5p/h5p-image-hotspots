@@ -70,7 +70,7 @@
           },
           {
             "label": "Intestazione",
-            "description": "Intestazione facoltativa per il popup"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contenuto del popup",
