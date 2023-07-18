@@ -47,7 +47,8 @@
     this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className,
-      'role': 'dialog'
+      'role': 'dialog',
+      'aria-labelledby': header ? 'h5p-image-hotspot-popup-header' : undefined,
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
@@ -67,6 +68,7 @@
     if (header) {
       this.$popupHeader = $('<div/>', {
         'class': 'h5p-image-hotspot-popup-header',
+        'id': 'h5p-image-hotspot-popup-header',
         html: header,
         'tabindex': '-1'
       });
