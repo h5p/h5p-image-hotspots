@@ -69,8 +69,8 @@
             "description": "כאשר המשתמש לוחץ על הנקודה-החמה החלון הקופץ יכסה את כל תמונת הרקע"
           },
           {
-            "label": "כותרת",
-            "description": "כותרת אפשרית עבור החלון הקופץ"
+            "label": "Header",
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "תוכן החלון הקופץ",

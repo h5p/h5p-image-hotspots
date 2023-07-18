@@ -70,7 +70,7 @@
           },
           {
             "label": "Başlık",
-            "description": "Açılır pencere için başlık (isteğe bağlı)"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "açılır pencere içeriği",

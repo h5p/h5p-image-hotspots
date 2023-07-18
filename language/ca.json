@@ -70,7 +70,7 @@
           },
           {
             "label": "Capçalera",
-            "description": "Capçalera opcional per a l’element emergent"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contingut emergent",

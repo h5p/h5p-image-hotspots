@@ -9,6 +9,7 @@
       "description": "Ja pārlūkprogramma nevar ielādēt attēlu, tiks atspoguļots šis teksts. Tekstu izmanto arī asistīvās tehnoloģijas."
     },
     {
+      "label": "Aktīvā punkta ikona",
       "options": [
         {
           "label": "Sākotnējā ikona"
@@ -16,11 +17,11 @@
         {
           "label": "Augšupielādēts attēls"
         }
-      ],
-      "label": "Aktīvā punkta ikona"
+      ]
     },
     {
       "label": "Sākotnējā ikona",
+      "description": "Izmanto sākotnējo aktīvā punkta ikonu.",
       "options": [
         {
           "label": "Pluszīme"
@@ -43,19 +44,21 @@
         {
           "label": "Izsaukuma zīme"
         }
-      ],
-      "description": "Izmanto sākotnējo aktīvā punkta ikonu."
+      ]
     },
     {
       "label": "Augšupielādēts attēls",
       "description": "Aktīvā punkta ikonai izmantojiet savu attēlu.<br />Rekomendētais attēla izmērs ir 75px uz 75px."
     },
     {
-      "description": "Aktīvo punktu krāsas",
-      "label": "Aktīvā punkta krāsa"
+      "label": "Aktīvā punkta krāsa",
+      "description": "Aktīvo punktu krāsas"
     },
     {
+      "entity": "aktīvais punkts",
+      "label": "Aktīvie punkti",
       "field": {
+        "label": "Aktīvais punkts",
         "fields": [
           {
             "label": "Aktīvā punkta pozīcija",
@@ -67,7 +70,7 @@
           },
           {
             "label": "Galvene",
-            "description": "Neobligāta iznirstošā loga galvene"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Iznirstošā loga saturs",
@@ -75,11 +78,8 @@
               "label": "Satura elements"
             }
           }
-        ],
-        "label": "Aktīvais punkts"
-      },
-      "entity": "aktīvais punkts",
-      "label": "Aktīvie punkti"
+        ]
+      }
     },
     {
       "label": "Aktīvā punkta etiķete asistīvajām tehnoloģijām",

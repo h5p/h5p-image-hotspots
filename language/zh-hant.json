@@ -70,7 +70,7 @@
           },
           {
             "label": "彈出視窗標題文字",
-            "description": "彈出視窗上顯示的標題。"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "彈出視窗內文文字",
