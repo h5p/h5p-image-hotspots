@@ -52,7 +52,7 @@
     },
     {
       "label": "Color del hotspot",
-      "description": "El color de los hotspots",
+      "description": "El color de los hotspots"
     },
     {
       "entity": "punto caliente (hotspot)",

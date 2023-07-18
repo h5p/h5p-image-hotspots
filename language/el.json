@@ -52,7 +52,7 @@
     },
     {
       "label": "Χρώμα Hotspot",
-      "description": "Το χρώμα των hotspots",
+      "description": "Το χρώμα των hotspots"
     },
     {
       "entity": "hotspot",
