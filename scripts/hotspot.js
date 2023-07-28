@@ -247,7 +247,8 @@
     // We don't get click events on body for iOS-devices
     $('body').children().on('click.h5p-image-hotspot-popup', function (event) {
       var $target = $(event.target);
-      if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
+      if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')
+        && event.target.id === 'h5p-image-hotspots-overlay') {
         self.hidePopup();
       }
     });
