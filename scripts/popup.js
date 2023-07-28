@@ -44,7 +44,11 @@
       popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
     }
 
-    this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
+    this.$popupBackground = $('<div/>', {
+      'class': 'h5p-image-hotspots-overlay',
+      'id': 'h5p-image-hotspots-overlay'
+    });
+
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className,
       'tabindex': '0',
@@ -54,9 +58,6 @@
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
-    }).click(function (event) {
-      // If clicking on popup, stop propagating:
-      event.stopPropagation();
     }).appendTo(this.$popupBackground);
 
     this.$popupContent = $('<div/>', {
