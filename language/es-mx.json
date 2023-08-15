@@ -70,7 +70,7 @@
           },
           {
             "label": "Encabezado",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Encabezado opcional para el popup. Esto es usado por tecnologías de asistencia."
           },
           {
             "label": "Contenido emergente",
