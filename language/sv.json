@@ -70,7 +70,7 @@
           },
           {
             "label": "Rubrik",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Valfri rubrik för popup-fönster. Används av tillgänglighetshjälpmedel."
           },
           {
             "label": "Popup-innehåll",
