@@ -70,7 +70,7 @@
           },
           {
             "label": "Encabezado",
-            "description": "Encabezado opcional para la ventana emergente"
+            "description": "Encabezado opcional para el popup. Esto es usado por tecnologías de asistencia."
           },
           {
             "label": "Contenido emergente",

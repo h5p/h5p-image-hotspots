@@ -52,7 +52,8 @@
     },
     {
       "label": "Couleur de la puce cliquable",
-      "description": "Couleur des puces cliquables (en code hexadécimal)."
+      "description": "Couleur des puces cliquables (en code hexadécimal).",
+      "default": "#981d99"
     },
     {
       "entity": "Puces cliquables",
@@ -69,8 +70,8 @@
             "description": "Quand l'utilisateur cliquera sur la puce cliquable, le popup recouvrira toute l'image d'arrière-plan."
           },
           {
-            "label": "Titre",
-            "description": "Titre facultatif du popup."
+            "label": "Header",
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contenu du popup",

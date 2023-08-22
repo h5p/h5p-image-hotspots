@@ -70,7 +70,7 @@
           },
           {
             "label": "Überschrift",
-            "description": "Optionale Überschrift für das Fenster"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Fensterinhalt",

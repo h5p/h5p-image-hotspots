@@ -70,7 +70,7 @@
           },
           {
             "label": "Rubrik",
-            "description": "Valfri rubrik för popup"
+            "description": "Valfri rubrik för popup-fönster. Används av tillgänglighetshjälpmedel."
           },
           {
             "label": "Popup-innehåll",

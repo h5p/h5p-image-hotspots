@@ -70,7 +70,7 @@
           },
           {
             "label": "الترويسة",
-            "description": "ترويسة اختيارية للنوافذ المنبثقة"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "محتوى منبثق",

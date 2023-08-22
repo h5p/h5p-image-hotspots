@@ -70,7 +70,7 @@
           },
           {
             "label": "Goiburua",
-            "description": "Popuparen aukerako goiburua"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Popuparen edukia",

@@ -70,7 +70,7 @@
           },
           {
             "label": "Заглавље",
-            "description": "Необавезно заглавље за искачући прозор"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Искачући садржај",

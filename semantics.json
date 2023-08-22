@@ -169,7 +169,7 @@
           "type": "text",
           "label": "Header",
           "importance": "low",
-          "description": "Optional header for the popup",
+          "description": "Optional header for the popup. This is used by assistive technologies.",
           "optional": true
         },
         {

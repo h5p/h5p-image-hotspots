@@ -44,16 +44,20 @@
       popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
     }
 
-    this.$popupBackground = $('<div/>', {'class': 'h5p-image-hotspots-overlay'});
+    this.$popupBackground = $('<div/>', {
+      'class': 'h5p-image-hotspots-overlay',
+      'id': 'h5p-image-hotspots-overlay'
+    });
+
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className,
-      'role': 'dialog'
+      'tabindex': '0',
+      'role': 'dialog',
+      'aria-modal': 'true',
+      'aria-labelledby': header ? 'h5p-image-hotspot-popup-header' : undefined,
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
-    }).click(function (event) {
-      // If clicking on popup, stop propagating:
-      event.stopPropagation();
     }).appendTo(this.$popupBackground);
 
     this.$popupContent = $('<div/>', {
@@ -67,8 +71,10 @@
     if (header) {
       this.$popupHeader = $('<div/>', {
         'class': 'h5p-image-hotspot-popup-header',
+        'id': 'h5p-image-hotspot-popup-header',
         html: header,
-        'tabindex': '-1'
+        'tabindex': '-1',
+        'aria-hidden': 'true'
       });
       this.$popupContent.append(this.$popupHeader);
       this.$popup.addClass('h5p-image-hotspot-has-header');
@@ -119,7 +125,7 @@
       self.$popupContent.css({
         height: ''
       });
-      
+
       height = this.$container.height();
       var contentHeight = self.$popupContent.outerHeight();
       var parentHeight = self.$popup.outerHeight();
@@ -146,7 +152,7 @@
           top: (top / parentHeight) * 100 + '%'
         });
       }
-      
+
       self.$popupContent.css({
         height: fitsWithin ? '' : '100%',
         overflow: fitsWithin ? '' : 'auto'
@@ -179,6 +185,7 @@
         left: popupLeft + '%'
       });
       self.$popupBackground.addClass('visible');
+      self.$popup.focus();
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         if (focusContainer) {

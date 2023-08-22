@@ -70,7 +70,7 @@
           },
           {
             "label": "Заголовок",
-            "description": "Необов'язковий заголовок для випливаючого вікна"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Вміст випливаючого вікна",

@@ -70,7 +70,7 @@
           },
           {
             "label": "Nagłówek",
-            "description": "Opcjonalny nagłówek dla popup'u"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Zawartość popup'u",

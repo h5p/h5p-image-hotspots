@@ -70,7 +70,7 @@
           },
           {
             "label": "Koptekst",
-            "description": "Optionele koptekst voor de pop-up"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Pop-up inhoud",
