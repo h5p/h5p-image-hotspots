@@ -70,7 +70,7 @@
           },
           {
             "label": "Cabeceira",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Cabeceira opcional para a ventá emerxente. Isto é usado polas tecnoloxías de asistencia."
           },
           {
             "label": "Contido da pantalla emerxente",
