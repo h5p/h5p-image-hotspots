@@ -70,7 +70,7 @@
           },
           {
             "label": "Kichwa",
-            "description": "Kichwa cha ziada cha kidirisha dukizi"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Maudhui dukizi",

@@ -70,7 +70,7 @@
           },
           {
             "label": "Заголовок",
-            "description": "Необязательный заголовок для всплывающего окна"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Содержимое всплывающего окна",

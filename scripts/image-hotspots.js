@@ -31,15 +31,32 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
       iconType: 'icon',
-      icon: 'plus'
+      icon: 'plus',
+      disableScaling: true
     }, options);
     // Keep provided id.
     this.id = id;
     this.isSmallDevice = false;
+
+    /**
+     * Process HTML escaped string for use as attribute value,
+     * e.g. for alt text or title attributes.
+     *
+     * @param {string} value
+     * @return {string} WARNING! Do NOT use for innerHTML.
+     */
+    this.massageAttributeOutput = function (value) {
+      const dparser = new DOMParser().parseFromString(value, 'text/html');
+      const div = document.createElement('div');
+      div.innerHTML = dparser.documentElement.textContent;;
+      return div.textContent || div.innerText || '';
+    };
   }
+
   // Extends the event dispatcher
   ImageHotspots.prototype = Object.create(EventDispatcher.prototype);
   ImageHotspots.prototype.constructor = ImageHotspots;
+
 
   /**
    * Attach function called by H5P framework to insert H5P content into
@@ -76,7 +93,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
       // Set alt text of image
       if (this.options.backgroundImageAltText) {
-        this.$image.attr('alt', this.options.backgroundImageAltText);
+        this.$image.attr('alt', this.massageAttributeOutput(this.options.backgroundImageAltText));
       }
       else {
         // Ignore image if no alternative text for assistive technologies
@@ -252,7 +269,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       self.initialWidth = self.$container.width();
     }
 
-    self.fontSize = Math.max(DEFAULT_FONT_SIZE, (DEFAULT_FONT_SIZE * (width/self.initialWidth)));
+    self.fontSize = this.options.disableScaling ? DEFAULT_FONT_SIZE : Math.max(DEFAULT_FONT_SIZE, (DEFAULT_FONT_SIZE * (width/self.initialWidth)));
 
     self.$hotspotContainer.css({
       width: width + 'px',
