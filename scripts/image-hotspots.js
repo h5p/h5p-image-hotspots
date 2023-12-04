@@ -31,7 +31,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
       iconType: 'icon',
-      icon: 'plus'
+      icon: 'plus',
+      disableScaling: true
     }, options);
     // Keep provided id.
     this.id = id;
@@ -268,7 +269,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       self.initialWidth = self.$container.width();
     }
 
-    self.fontSize = Math.max(DEFAULT_FONT_SIZE, (DEFAULT_FONT_SIZE * (width/self.initialWidth)));
+    self.fontSize = this.options.disableScaling ? DEFAULT_FONT_SIZE : Math.max(DEFAULT_FONT_SIZE, (DEFAULT_FONT_SIZE * (width/self.initialWidth)));
 
     self.$hotspotContainer.css({
       width: width + 'px',

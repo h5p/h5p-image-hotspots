@@ -52,8 +52,7 @@
     },
     {
       "label": "ჰოტსპოტის ფერი",
-      "description": "ჰოტსპოტის ფერი",
-      "default": "#981d99"
+      "description": "ჰოტსპოტის ფერი"
     },
     {
       "entity": "hotspot",

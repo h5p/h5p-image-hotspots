@@ -52,8 +52,7 @@
     },
     {
       "label": "رنگ نقطه داغ",
-      "description": "رنگ نقطه داغ",
-      "default": "#981d99"
+      "description": "رنگ نقطه داغ"
     },
     {
       "entity": "نقطه داغ",
