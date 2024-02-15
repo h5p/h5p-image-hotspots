@@ -65,18 +65,53 @@
             "description": "Κάντε κλικ στη μικρογραφία της εικόνας για να τοποθετήσετε το hotspot"
           },
           {
-            "label": "Να καλύπτει ολόκληρη την εικόνα φόντου",
-            "description": "Όταν ο χρήστης κάνει κλικ πάνω στο hotspot, το αναδυόμενο περιεχόμενο θα καλύπτει ολόκληρη την εικόνα φόντου"
-          },
-          {
             "label": "Επικεφαλίδα",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Eπικεφαλίδα για το αναδυόμενο περιεχόμενο (προαιρετικό). This is used by assistive technologies."
           },
           {
             "label": "Αναδυόμενο περιεχόμενο",
             "field": {
               "label": "Στοιχείο περιεχομένου"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

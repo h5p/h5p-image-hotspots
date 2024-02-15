@@ -65,10 +65,6 @@
             "description": "썸네일 이미지를 클릭하여 핫스팟을 배치"
           },
           {
-            "label": "전체 배경 이미지 덮기",
-            "description": "사용자가 핫스팟을 클릭하면 팝업이 전체 배경 이미지를 덮습니다."
-          },
-          {
             "label": "머릿말",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },
@@ -77,6 +73,45 @@
             "field": {
               "label": "콘텐츠 항목"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

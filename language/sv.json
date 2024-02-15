@@ -65,10 +65,6 @@
             "description": "Klicka på miniatyrbilden för att placera hotspot"
           },
           {
-            "label": "Täck hela bakgrundsbilden",
-            "description": "När användaren klickar på denna hotspot så kommer popup täcka hela bakgrundsbilden"
-          },
-          {
             "label": "Rubrik",
             "description": "Valfri rubrik för popup-fönster. Används av tillgänglighetshjälpmedel."
           },
@@ -77,6 +73,45 @@
             "field": {
               "label": "Content Item"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }

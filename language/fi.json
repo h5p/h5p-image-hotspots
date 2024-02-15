@@ -65,18 +65,53 @@
             "description": "Klikkaa pienoiskuvaa määrittääksesi hotspot-kuvakkeen sijainti"
           },
           {
-            "label": "Peitä koko taustakuva",
-            "description": "Kun käyttäjä klikkaa hotspot-kuvaketta, avautuva pop up-ikkuna peittää koko taustakuvan."
-          },
-          {
             "label": "Otsikko",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Ponnahdusikkunan otsikko (ei pakollinen). This is used by assistive technologies."
           },
           {
             "label": "Ponnahdusikkunan sisältö",
             "field": {
               "label": "Sisältövaihtoehto"
             }
+          },
+          {
+            "label": "Popup settings",
+            "fields": [
+              {
+                "label": "Size and position",
+                "description": "Decide how much space the popup will take when the user clicks on a hotspot",
+                "options": [
+                  {
+                    "label": "Cover free space next to hotspot"
+                  },
+                  {
+                    "label": "Cover entire background image"
+                  },
+                  {
+                    "label": "Custom"
+                  }
+                ]
+              },
+              {
+                "label": "Maximum width (in percent)",
+                "description": "The width of the popup will be limited to the percentage relative to the background image's width"
+              },
+              {
+                "label": "Position",
+                "description": "By default, the popup will be placed left or right of the corresponding hotspot depending on where there's more space",
+                "options": [
+                  {
+                    "label": "Auto"
+                  },
+                  {
+                    "label": "Left of hotspot"
+                  },
+                  {
+                    "label": "Right of hotspot"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
