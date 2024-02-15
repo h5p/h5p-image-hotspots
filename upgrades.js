@@ -75,13 +75,28 @@ H5PUpgrades['H5P.ImageHotspots'] = (function () {
        * @param parameters
        * @param finished
        */
-      10: function (parameters, finished) {
+      8: function (parameters, finished) {
         if (parameters.hotspots !== undefined) {
           parameters.hotspots.forEach(function (hotspot) {
             if (hotspot.position) {
               hotspot.position.legacyPositioning = true;
             }
+          });
+        }
+        finished(null, parameters);
+      },
 
+      /**
+       * Upgrades content parameters to support ImageHotspots 1.11
+       *
+       * Move fullscreen setting to popup settings
+       *
+       * @param parameters
+       * @param finished
+       */
+      11: function (parameters, finished) {
+        if (parameters.hotspots !== undefined) {
+          parameters.hotspots.forEach(function (hotspot) {
             // Move "always fullscreen" option to popup settings group
             hotspot.popupSettings = {};
             hotspot.popupSettings.sizePosition = (hotspot.alwaysFullscreen === true) ? 'fullscreen' : 'free';
