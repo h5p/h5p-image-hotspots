@@ -126,22 +126,28 @@
         appendTo: $popupBody
       });
 
+      const machineName = action.library?.split(' ')[0];
+
       // Enforce autoplay for transparent audios
-      if (action.library.split(' ')[0] === 'H5P.Audio') {
+      if (machineName === 'H5P.Audio') {
         if (action.params.playerMode === 'transparent') {
           action.params.autoplay = true;
         }
+      }
+      else if (machineName === 'H5P.Text' || machineName === 'H5P.Image') {
+        // @see https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
+        $popupFraction[0].setAttribute('tabindex', '-1');
       }
 
       var actionInstance = H5P.newRunnable(action, self.id);
 
       self.actionInstances.push(actionInstance);
-      if (actionInstance.libraryInfo.machineName === 'H5P.Image' || actionInstance.libraryInfo.machineName === 'H5P.Video') {
+      if (machineName === 'H5P.Image' || machineName === 'H5P.Video') {
         waitForLoaded.push(actionInstance);
       }
       actionInstance.attach($popupFraction);
 
-      if (actionInstance.libraryInfo.machineName === 'H5P.Audio') {
+      if (machineName === 'H5P.Audio') {
         if (actionInstance.audio && actionInstance.params.playerMode === 'full' && !!window.chrome) {
           // Workaround for missing https://github.com/h5p/h5p-audio/pull/48
           actionInstance.audio.style.height = '54px';
