@@ -34,6 +34,16 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       icon: 'plus',
       disableScaling: true
     }, options);
+
+    // Remove hotspots without any content
+    this.options.hotspots = this.options.hotspots.filter((hotspot) => {
+      hotspot.content = hotspot.content.filter((content) => {
+        return content.library !== undefined;
+      });
+
+      return hotspot.content.length > 0;
+    });
+
     // Keep provided id.
     this.id = id;
     this.isSmallDevice = false;
