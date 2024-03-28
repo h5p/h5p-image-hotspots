@@ -118,7 +118,7 @@
         return;
       }
 
-      // Reset 
+      // Reset
       self.$popup.css({
         maxHeight: '',
         height: ''

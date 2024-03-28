@@ -32,9 +32,9 @@
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
-      'class': 'h5p-image-hotspot ' + 
+      'class': 'h5p-image-hotspot ' +
         (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : '') +
-        (config.position.legacyPositioning ? ' legacy-positioning' : ''),  
+        (config.position.legacyPositioning ? ' legacy-positioning' : ''),
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
@@ -71,7 +71,7 @@
         }
       }
     });
-    
+
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
@@ -338,7 +338,7 @@
   ImageHotspots.Hotspot.prototype.pause = function () {
     if (this.actionInstances) {
       this.actionInstances.forEach(function(actionInstance) {
-        if (actionInstance.audio && 
+        if (actionInstance.audio &&
             (actionInstance.audio.pause instanceof Function ||
             typeof actionInstance.audio.pause === 'function')) {
           actionInstance.audio.pause();

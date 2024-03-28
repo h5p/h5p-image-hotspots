@@ -234,8 +234,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     if (!decreaseSize) {
       self.$container.css('width', '');
     }
-    
-    // If fullscreen & standalone 
+
+    // If fullscreen & standalone
     if (this.isRoot() && H5P.isFullscreen) {
       // If fullscreen, we have both a max width and max height.
       if (!forceImageHeight && height > containerHeight) {
