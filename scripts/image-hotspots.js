@@ -34,6 +34,16 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       icon: 'plus',
       disableScaling: true
     }, options);
+
+    // Remove hotspots without any content
+    this.options.hotspots = this.options.hotspots.filter((hotspot) => {
+      hotspot.content = hotspot.content.filter((content) => {
+        return content.library !== undefined;
+      });
+
+      return hotspot.content.length > 0;
+    });
+
     // Keep provided id.
     this.id = id;
     this.isSmallDevice = false;
@@ -224,8 +234,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     if (!decreaseSize) {
       self.$container.css('width', '');
     }
-    
-    // If fullscreen & standalone 
+
+    // If fullscreen & standalone
     if (this.isRoot() && H5P.isFullscreen) {
       // If fullscreen, we have both a max width and max height.
       if (!forceImageHeight && height > containerHeight) {

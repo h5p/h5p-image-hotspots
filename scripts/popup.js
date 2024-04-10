@@ -49,12 +49,13 @@
       'id': 'h5p-image-hotspots-overlay'
     });
 
+    const headerID = `h5p-image-hotspot-popup-header-${H5P.createUUID()}`;
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className,
       'tabindex': '0',
       'role': 'dialog',
       'aria-modal': 'true',
-      'aria-labelledby': header ? 'h5p-image-hotspot-popup-header' : undefined,
+      'aria-labelledby': header ? headerID : undefined
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
@@ -68,12 +69,12 @@
         }
       }
     });
+
     if (header) {
       this.$popupHeader = $('<div/>', {
         'class': 'h5p-image-hotspot-popup-header',
-        'id': 'h5p-image-hotspot-popup-header',
+        'id': headerID,
         html: header,
-        'tabindex': '-1',
         'aria-hidden': 'true'
       });
       this.$popupContent.append(this.$popupHeader);
@@ -117,7 +118,7 @@
         return;
       }
 
-      // Reset 
+      // Reset
       self.$popup.css({
         maxHeight: '',
         height: ''
@@ -185,16 +186,20 @@
         left: popupLeft + '%'
       });
       self.$popupBackground.addClass('visible');
-      self.$popup.focus();
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
+        self.$popup.focus();
         if (focusContainer) {
-          if (self.$popupHeader) {
-            self.$popupHeader.focus();
-          }
-          else {
-            self.$closeButton.focus();
-          }
+         /*
+          * Focus should move to an (the first) element contained in the dialog.
+          * This can mean to add tabindex="-1" to a static element at the start
+          * of the content and initially focus that element.
+          * Here, will focus first element (could be text/image with a tabindex
+          * of -1).
+          * @see https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
+          */
+          const focusTarget = self.getFirstFocusableElement(self.$popup[0]);
+          focusTarget?.focus();
         }
 
         // Show pointer;
@@ -207,6 +212,37 @@
 
     self.hide = function () {
       self.$popupBackground.remove();
+    };
+
+    /**
+     * Retrieve first focusable element in container.
+     * @param {HTMLElement} container Container to search in.
+     * @returns {HTMLElement|undefined} First focusable element or undefined.
+     */
+    self.getFirstFocusableElement = function (container) {
+      if (!container) {
+        return;
+      }
+
+      const focusableElementsString = [
+        'a[href]:not([disabled])',
+        'button:not([disabled])',
+        'textarea:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        'video',
+        'audio',
+        '[tabindex]'
+      ].join(', ');
+
+      return []
+        .slice
+        .call(container.querySelectorAll(focusableElementsString))
+        .filter((element) => {
+          return element.getAttribute('disabled') !== 'true' &&
+            element.getAttribute('disabled') !== true;
+        })
+        .shift();
     };
   };
 
