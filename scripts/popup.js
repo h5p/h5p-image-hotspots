@@ -190,16 +190,14 @@
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         self.$popup.focus();
         if (focusContainer) {
-         /*
-          * Focus should move to an (the first) element contained in the dialog.
-          * This can mean to add tabindex="-1" to a static element at the start
-          * of the content and initially focus that element.
-          * Here, will focus first element (could be text/image with a tabindex
-          * of -1).
-          * @see https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
-          */
-          const focusTarget = self.getFirstFocusableElement(self.$popup[0]);
-          focusTarget?.focus();
+          // NVDA screenreader needs a small timeout to be able to read the text
+          setTimeout(function() {
+            if (self.$popupHeader) {
+              self.$popupHeader.focus();
+            } else {
+              self.$closeButton.focus();
+            }
+          }, 50);
         }
 
         // Show pointer;
