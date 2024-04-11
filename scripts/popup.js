@@ -188,7 +188,7 @@
       self.$popupBackground.addClass('visible');
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
-        self.$popup.focus();
+        let focusTarget = self.$popup[0];
         if (focusContainer) {
          /*
           * Focus should move to an (the first) element contained in the dialog.
@@ -198,9 +198,10 @@
           * of -1).
           * @see https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
           */
-          const focusTarget = self.getFirstFocusableElement(self.$popup[0]);
-          focusTarget?.focus();
+          focusTarget =
+            self.getFirstFocusableElement(focusTarget) ?? focusTarget;
         }
+        focusTarget.focus();
 
         // Show pointer;
         if (self.$pointer) {
