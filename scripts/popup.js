@@ -49,13 +49,12 @@
       'id': 'h5p-image-hotspots-overlay'
     });
 
-    const headerID = `h5p-image-hotspot-popup-header-${H5P.createUUID()}`;
     this.$popup = $('<div/>', {
       'class': 'h5p-image-hotspot-popup ' + className,
       'tabindex': '0',
       'role': 'dialog',
       'aria-modal': 'true',
-      'aria-labelledby': header ? headerID : undefined
+      'aria-label': header || undefined
     }).css({
       left: (toTheLeft ? '' : '-') + '100%',
       width: popupWidth + '%'
@@ -73,7 +72,6 @@
     if (header) {
       this.$popupHeader = $('<div/>', {
         'class': 'h5p-image-hotspot-popup-header',
-        'id': headerID,
         html: header,
         'aria-hidden': 'true'
       });
