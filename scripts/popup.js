@@ -164,9 +164,8 @@
 
     /**
      * Show popup
-     * @param {boolean} [focusContainer] Will focus container for keyboard accessibility
      */
-    self.show = function (focusContainer) {
+    self.show = function () {
 
       if (!fullscreen) {
 
@@ -189,16 +188,6 @@
 
       H5P.Transition.onTransitionEnd(self.$popup, function () {
         self.$popup.focus();
-        if (focusContainer) {
-          // NVDA screenreader needs a small timeout to be able to read the text
-          setTimeout(function() {
-            if (self.$popupHeader) {
-              self.$popupHeader.focus();
-            } else {
-              self.$closeButton.focus();
-            }
-          }, 50);
-        }
 
         // Show pointer;
         if (self.$pointer) {
@@ -210,37 +199,6 @@
 
     self.hide = function () {
       self.$popupBackground.remove();
-    };
-
-    /**
-     * Retrieve first focusable element in container.
-     * @param {HTMLElement} container Container to search in.
-     * @returns {HTMLElement|undefined} First focusable element or undefined.
-     */
-    self.getFirstFocusableElement = function (container) {
-      if (!container) {
-        return;
-      }
-
-      const focusableElementsString = [
-        'a[href]:not([disabled])',
-        'button:not([disabled])',
-        'textarea:not([disabled])',
-        'input:not([disabled])',
-        'select:not([disabled])',
-        'video',
-        'audio',
-        '[tabindex]'
-      ].join(', ');
-
-      return []
-        .slice
-        .call(container.querySelectorAll(focusableElementsString))
-        .filter((element) => {
-          return element.getAttribute('disabled') !== 'true' &&
-            element.getAttribute('disabled') !== true;
-        })
-        .shift();
     };
   };
 
