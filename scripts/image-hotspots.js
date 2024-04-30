@@ -37,11 +37,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     // Remove hotspots without any content
     this.options.hotspots = this.options.hotspots.filter((hotspot) => {
-      hotspot.content = hotspot.content.filter((content) => {
+      hotspot.content = hotspot.content?.filter((content) => {
         return content.library !== undefined;
       });
 
-      return hotspot.content.length > 0;
+      return hotspot.content?.length > 0;
     });
 
     // Keep provided id.
