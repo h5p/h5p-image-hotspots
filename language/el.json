@@ -70,7 +70,7 @@
           },
           {
             "label": "Επικεφαλίδα",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Προαιρετική επικεφαλίδα για το αναδυόμενο παράθυρο. Χρησιμοποιείται από υποστηρικτικές τεχνολογίες."
           },
           {
             "label": "Αναδυόμενο περιεχόμενο",
