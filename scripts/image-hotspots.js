@@ -109,6 +109,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         // Ignore image if no alternative text for assistive technologies
         this.$image.attr('aria-hidden', true);
       }
+
+      this.$image.on('load', () => this.trigger('resize'));
     }
 
     var isSmallDevice = function () {
