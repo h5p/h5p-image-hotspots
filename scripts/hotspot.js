@@ -331,6 +331,7 @@
    * @param {string} title Title to set for hotspot element
    */
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
+    title = this.htmlDecode(title);
     this.$element.attr('title', title);
     this.$element.attr('aria-label', title);
   };
@@ -345,6 +346,16 @@
         }
       });
     };
+  };
+
+  /**
+   * Decode special characters in the provided string
+   * @param {string} input String to decode characters
+   * @returns {string} Decoded string
+   */
+  ImageHotspots.Hotspot.prototype.htmlDecode = function (input) {
+    const dparser = new DOMParser().parseFromString(input, 'text/html');
+    return dparser.documentElement.textContent;
   };
 
 })(H5P.jQuery, H5P.ImageHotspots);
