@@ -289,6 +289,17 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       fontSize: self.fontSize + 'px'
     });
 
+    // Check if the image hotspot is being used in layout builder, in that case apply css to resize correctly
+    const isInLayoutBuilder = self.$container.parents().addBack().hasClass('h5p-layoutbuilder-block');
+
+    if (isInLayoutBuilder) {
+
+      // Apply multiple styles with a single call to .css()
+      self.$container.css({ width: '100%' });
+      self.$hotspotContainer.css({ width: '100%', height: 'auto' });
+      self.$image.css({ width: '100%', height: 'auto' });
+    }
+
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);
   };
 
