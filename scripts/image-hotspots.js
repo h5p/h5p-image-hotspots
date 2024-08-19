@@ -175,7 +175,6 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       for (let entry of entries) {
         if (entry.intersectionRatio > 0) {
           this.trigger('resize');
-          observer.disconnect();
           return;
         }
       }
