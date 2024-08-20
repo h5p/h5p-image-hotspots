@@ -206,11 +206,5 @@
     "label": "Close button label for assistive technologies",
     "default": "Close",
     "common": true
-  },
-  {
-    "name": "disableScaling",
-    "type": "boolean",
-    "label": "Disable scaling",
-    "default": false
   }
 ]
