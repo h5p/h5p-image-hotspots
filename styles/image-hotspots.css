@@ -31,7 +31,7 @@
   width: 1.1666667em;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   line-height: 1;
   border-radius: 0.7em;
   -webkit-transition: all .2s ease-in-out;
@@ -88,7 +88,8 @@
 .h5p-image-hotspot-check:before {
   content: '\f058';
 }
-.h5p-image-hotspot-question:before {
+/* Avoid collision with main class name of H5P.ImageHotspotQuestion */
+.h5p-image-hotspots .h5p-image-hotspot-question:before {
   content: '\f059';
 }
 .h5p-image-hotspot-info:before {
@@ -184,7 +185,7 @@
 }
 .fullscreen-popup .h5p-image-hotspot-popup-content {
   height: 100%;
-  overflow: auto; 
+  overflow: auto;
 }
 .h5p-image-hotspot-popup-content {
   overflow: auto;
@@ -193,7 +194,7 @@
 .h5p-image-hotspot-popup-content.overflowing:after {
   content: '';
   width: calc(100% - 1em);
-  height: 10em;    
+  height: 10em;
   position: absolute;
   left: 0;
   bottom: 0;
