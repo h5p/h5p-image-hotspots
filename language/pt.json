@@ -70,7 +70,7 @@
           },
           {
             "label": "Cabeçalho",
-            "description": "Cabeçalho opcional para a janela popup"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Conteúdo da janela popup",

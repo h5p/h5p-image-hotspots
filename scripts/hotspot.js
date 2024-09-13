@@ -32,9 +32,9 @@
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
-      'class': 'h5p-image-hotspot ' + 
+      'class': 'h5p-image-hotspot ' +
         (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : '') +
-        (config.position.legacyPositioning ? ' legacy-positioning' : ''),  
+        (config.position.legacyPositioning ? ' legacy-positioning' : ''),
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
@@ -71,7 +71,7 @@
         }
       }
     });
-    
+
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
@@ -126,31 +126,38 @@
         appendTo: $popupBody
       });
 
+      const machineName = action.library?.split(' ')[0];
+
       // Enforce autoplay for transparent audios
-      if (action.library.split(' ')[0] === 'H5P.Audio') {
+      if (machineName === 'H5P.Audio') {
         if (action.params.playerMode === 'transparent') {
           action.params.autoplay = true;
         }
       }
       else if (action.library.split(' ')[0] === 'H5P.Video') {
-        if ( // All non HTML5 handlers suffer from bad resizing if fit === true.
-          action.params.sources && action.params.sources.length &&
-          action.params.sources[0].mime !== 'video/mp4' &&
-          action.params.sources[0].mime !== 'video/webm' &&
-          action.params.sources[0].mime !== 'video/ogg'
-        )
-        action.params.visuals.fit = false;
+        // All non HTML5 handlers suffer from bad resizing if fit === true.        
+        action.params.visuals.fit = (
+          action.params.sources?.length && (
+            action.params.sources[0].mime === 'video/mp4' ||
+            action.params.sources[0].mime === 'video/webm' ||
+            action.params.sources[0].mime === 'video/ogg'
+          ) || false
+        );        
+      }
+      else if (machineName === 'H5P.Text' || machineName === 'H5P.Image') {
+        // @see https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
+        $popupFraction[0].setAttribute('tabindex', '-1');
       }
 
       var actionInstance = H5P.newRunnable(action, self.id);
 
       self.actionInstances.push(actionInstance);
-      if (actionInstance.libraryInfo.machineName === 'H5P.Image' || actionInstance.libraryInfo.machineName === 'H5P.Video') {
+      if (machineName === 'H5P.Image' || machineName === 'H5P.Video') {
         waitForLoaded.push(actionInstance);
       }
       actionInstance.attach($popupFraction);
 
-      if (actionInstance.libraryInfo.machineName === 'H5P.Audio') {
+      if (machineName === 'H5P.Audio') {
         if (actionInstance.audio && actionInstance.params.playerMode === 'full' && !!window.chrome) {
           // Workaround for missing https://github.com/h5p/h5p-audio/pull/48
           actionInstance.audio.style.height = '54px';
@@ -256,7 +263,8 @@
     // We don't get click events on body for iOS-devices
     $('body').children().on('click.h5p-image-hotspot-popup', function (event) {
       var $target = $(event.target);
-      if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')) {
+      if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')
+        && event.target.id === 'h5p-image-hotspots-overlay') {
         self.hidePopup();
       }
     });
@@ -340,7 +348,7 @@
   ImageHotspots.Hotspot.prototype.pause = function () {
     if (this.actionInstances) {
       this.actionInstances.forEach(function(actionInstance) {
-        if (actionInstance.audio && 
+        if (actionInstance.audio &&
             (actionInstance.audio.pause instanceof Function ||
             typeof actionInstance.audio.pause === 'function')) {
           actionInstance.audio.pause();

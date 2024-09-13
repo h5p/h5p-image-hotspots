@@ -1,27 +1,27 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Bakgrundsbild",
+      "description": "Bild som visas i bakgrunden."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Alternativ text för bakgrundsbild",
+      "description": "Om webbläsaren inte kan visa bilden så kommer denna text visas istället. Används också av tillgänglighetshjälpmedel."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Hotspot-ikon",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Fördefinierad ikon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Uppladdad bild"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Fördefinierad ikon",
+      "description": "Använder en fördefinierad ikon för denna hotspot.",
       "options": [
         {
           "label": "Plus"
@@ -30,10 +30,10 @@
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "Gånger"
         },
         {
-          "label": "Check"
+          "label": "Kontrollera"
         },
         {
           "label": "Question"
@@ -42,17 +42,17 @@
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Utrop"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Uppladdad bild",
+      "description": "Använd din egen bild för hotspot-ikonen.<br />75px gånger 75px är rekommenderat för din bild."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Hotspot-färg",
+      "description": "Färgen på hotspots"
     },
     {
       "entity": "hotspot",
@@ -61,19 +61,19 @@
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Hotspot-position",
+            "description": "Klicka på miniatyrbilden för att placera hotspot"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Täck hela bakgrundsbilden",
+            "description": "När användaren klickar på denna hotspot så kommer popup täcka hela bakgrundsbilden"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup"
+            "label": "Rubrik",
+            "description": "Valfri rubrik för popup-fönster. Används av tillgänglighetshjälpmedel."
           },
           {
-            "label": "Popup content",
+            "label": "Popup-innehåll",
             "field": {
               "label": "Content Item"
             }
@@ -82,13 +82,13 @@
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
+      "label": "Hotspot-etikett för tillgänglighetshjälpmedel",
       "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "description": "Hjälper till med att informera vilket hotspot-element som har navigerats till, om det inte finns någon rubrik specificerad för en hotspot. #num kan användas för ersätta hotspot-nummer."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Etikett för knappen \"stäng\" som används av tillgänglighetshjälpmedel",
+      "default": "Stäng"
     }
   ]
 }

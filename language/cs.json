@@ -6,7 +6,7 @@
     },
     {
       "label": "Alternativní text pro obrázek na pozadí",
-      "description": "Pokud prohlížeč nemůže načíst obrázek, zobrazí se místo toho tento text. Používá se také asistenčními technologiemi."
+      "description": "Pokud prohlížeč nemůže načíst obrázek, zobrazí se místo toho tento text. Používá se také podpůrnými technologiemi."
     },
     {
       "label": "Ikona aktivního bodu",
@@ -70,7 +70,7 @@
           },
           {
             "label": "Záhlaví",
-            "description": "Volitelná hlavička pro vyskakovací okno"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Obsah vyskakovacího okna",
