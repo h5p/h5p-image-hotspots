@@ -89,6 +89,10 @@
     {
       "label": "Etiqueta do botón pechar para tecnoloxías de asistencia",
       "default": "Pechar"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

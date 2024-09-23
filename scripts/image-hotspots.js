@@ -21,6 +21,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspots: [],
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
+      containsAudioVideoLabel: 'Contains Audio/Video',
       iconType: 'icon',
       icon: 'plus'
     }, options);

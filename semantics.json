@@ -206,5 +206,12 @@
     "label": "Close button label for assistive technologies",
     "default": "Close",
     "common": true
+  },
+  {
+    "name": "containsAudioVideoLabel",
+    "type": "text",
+    "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+    "default": "Contains Audio/Video",
+    "common": true
   }
 ]

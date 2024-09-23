@@ -89,6 +89,10 @@
     {
       "label": "視窗關閉輔助文字",
       "default": "關閉"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

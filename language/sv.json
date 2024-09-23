@@ -89,6 +89,10 @@
     {
       "label": "Etikett för knappen \"stäng\" som används av tillgänglighetshjälpmedel",
       "default": "Stäng"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }
