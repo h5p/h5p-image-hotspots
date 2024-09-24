@@ -89,6 +89,10 @@
     {
       "label": "Кнопка \"Закрити\" для допоміжних технологій",
       "default": "Закрити"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

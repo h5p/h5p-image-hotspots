@@ -89,6 +89,10 @@
     {
       "label": "Sulge nupu silt assisteeriva tehnoloogia jaoks",
       "default": "Sulge"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

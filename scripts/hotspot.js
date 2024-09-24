@@ -331,8 +331,17 @@
    * @param {string} title Title to set for hotspot element
    */
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
+    const index = this.$element.parent().find('button').index(this.$element);
+    const content = this.options.hotspots[index].content;
+    let hasAudioVideo = false;
+    for (let item of content) {
+      if (item.library.includes('Video') || item.library.includes('Audio')) {
+        hasAudioVideo = true;
+        break;
+      }
+    }
     this.$element.attr('title', title);
-    this.$element.attr('aria-label', title);
+    this.$element.attr('aria-label', hasAudioVideo ? `${title}. ${this.options.containsAudioVideoLabel}` : title);
   };
 
   ImageHotspots.Hotspot.prototype.pause = function () {

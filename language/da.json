@@ -89,6 +89,10 @@
     {
       "label": "Close button label for assistive technologies",
       "default": "Luk"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

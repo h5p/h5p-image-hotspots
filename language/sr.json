@@ -89,6 +89,10 @@
     {
       "label": "Ознака дугмета за затварање",
       "default": "Затвори"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

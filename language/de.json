@@ -89,6 +89,10 @@
     {
       "label": "Beschriftung des \"Schließen\"-Buttons (Barrierefreiheit)",
       "default": "Schließen"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }
