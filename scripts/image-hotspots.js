@@ -80,7 +80,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       $container.addClass('not-an-ios-device');
     }
 
-    $container.addClass('h5p-image-hotspots');
+    $container.addClass('h5p-image-hotspots h5p-theme');
 
     this.$hotspotContainer = $('<div/>', {
       'class': 'h5p-image-hotspots-container'
