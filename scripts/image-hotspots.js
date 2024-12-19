@@ -3,13 +3,6 @@
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
 
-  /**
-   * Default font size
-   *
-   * @constant
-   * @type {number}
-   * @default
-   */
   const DEFAULT_FONT_SIZE = 24;
 
   /**
