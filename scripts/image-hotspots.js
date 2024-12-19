@@ -10,7 +10,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @type {number}
    * @default
    */
-  var DEFAULT_FONT_SIZE = 24;
+  const DEFAULT_FONT_SIZE = 24;
 
   /**
    * Creates a new Image hotspots instance
