@@ -89,6 +89,10 @@
     {
       "label": "닫기 버튼에 대한 보조기술 라벨",
       "default": "닫기"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

@@ -3,14 +3,7 @@
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
 
-  /**
-   * Default font size
-   *
-   * @constant
-   * @type {number}
-   * @default
-   */
-  var DEFAULT_FONT_SIZE = 24;
+  const DEFAULT_FONT_SIZE = 24;
 
   /**
    * Creates a new Image hotspots instance
@@ -30,9 +23,9 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspots: [],
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
+      containsAudioVideoLabel: 'Contains Audio/Video',
       iconType: 'icon',
-      icon: 'plus',
-      disableScaling: true
+      icon: 'plus'
     }, options);
 
     // Remove hotspots without any content
@@ -179,6 +172,17 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     });
 
     self.resize();
+
+    // resize when content becomes visible
+    const observer = new IntersectionObserver((entries, observer) => {
+      for (let entry of entries) {
+        if (entry.intersectionRatio > 0) {
+          this.trigger('resize');
+          return;
+        }
+      }
+    });
+    observer.observe(this.$hotspotContainer.get(0));
   };
 
   ImageHotspots.prototype.setShowingPopup = function (visible) {
@@ -277,16 +281,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       height: height + 'px'
     });
 
-    if (!self.initialWidth) {
-      self.initialWidth = self.$container.width();
-    }
-
-    self.fontSize = this.options.disableScaling ? DEFAULT_FONT_SIZE : Math.max(DEFAULT_FONT_SIZE, (DEFAULT_FONT_SIZE * (width/self.initialWidth)));
-
     self.$hotspotContainer.css({
       width: width + 'px',
       height: height + 'px',
-      fontSize: self.fontSize + 'px'
+      fontSize: `clamp(${DEFAULT_FONT_SIZE}px, 1.2em, ${DEFAULT_FONT_SIZE*2}px)`,
     });
 
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);

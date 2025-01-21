@@ -89,6 +89,10 @@
     {
       "label": "تسمية زر الاغلاق من اجل التقنيات المساعدة",
       "default": "Close"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

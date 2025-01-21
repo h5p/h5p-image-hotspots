@@ -208,9 +208,10 @@
     "common": true
   },
   {
-    "name": "disableScaling",
-    "type": "boolean",
-    "label": "Disable scaling",
-    "default": false
+    "name": "containsAudioVideoLabel",
+    "type": "text",
+    "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+    "default": "Contains Audio/Video",
+    "common": true
   }
 ]

@@ -89,6 +89,10 @@
     {
       "label": "برچسب دکمه بستن برای تکنولوژی‌های کمکی",
       "default": "بستن"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }
