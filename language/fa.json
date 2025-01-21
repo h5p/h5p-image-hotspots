@@ -69,8 +69,8 @@
             "description": "وقتی کاربر روی نقطه داغ کلیک می‌کند، پنجره بازشو تمام تصویر پس‌زمینه را می‌پوشاند"
           },
           {
-            "label": "سرصفحه",
-            "description": "سرصفحه اختیاری برای پنجره بازشونده"
+            "label": "Header",
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "محتوای پنجره باز شونده",
@@ -89,6 +89,10 @@
     {
       "label": "برچسب دکمه بستن برای تکنولوژی‌های کمکی",
       "default": "بستن"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

@@ -70,7 +70,7 @@
           },
           {
             "label": "Hoofopskrif",
-            "description": "Opsionele opblaasbeeld vir die hoofopskrif"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Opblaasbeeld inhoud",
@@ -89,6 +89,10 @@
     {
       "label": "Sluitingsknoppie-etiket vir hulptegnologieë",
       "default": "Sluit"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

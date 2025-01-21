@@ -70,7 +70,7 @@
           },
           {
             "label": "Intestazione",
-            "description": "Intestazione facoltativa per il popup"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contenuto del popup",
@@ -89,6 +89,10 @@
     {
       "label": "Etichetta del pulsante di chiusura per tecnologie assistive",
       "default": "Chiudi"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

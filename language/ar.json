@@ -70,7 +70,7 @@
           },
           {
             "label": "الترويسة",
-            "description": "ترويسة اختيارية للنوافذ المنبثقة"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "محتوى منبثق",
@@ -89,6 +89,10 @@
     {
       "label": "تسمية زر الاغلاق من اجل التقنيات المساعدة",
       "default": "Close"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

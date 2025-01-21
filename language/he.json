@@ -69,8 +69,8 @@
             "description": "כאשר המשתמש לוחץ על הנקודה-החמה החלון הקופץ יכסה את כל תמונת הרקע"
           },
           {
-            "label": "כותרת",
-            "description": "כותרת אפשרית עבור החלון הקופץ"
+            "label": "Header",
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "תוכן החלון הקופץ",
@@ -89,6 +89,10 @@
     {
       "label": "תווית כפתור סגירה עבור טכנולוגיות מסייעות",
       "default": "סגירה"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

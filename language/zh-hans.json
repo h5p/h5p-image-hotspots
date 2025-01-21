@@ -70,7 +70,7 @@
           },
           {
             "label": "弹出视窗标题文字",
-            "description": "弹出视窗上显示的标题。"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "弹出视窗内文文字",
@@ -89,6 +89,10 @@
     {
       "label": "视窗关闭辅助文字",
       "default": "关闭"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

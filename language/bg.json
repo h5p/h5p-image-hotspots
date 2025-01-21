@@ -49,7 +49,7 @@
     {
       "label": "Качено изображение",
       "description": "Използвайте ваше изображение за hotspot icon.<br />75px by 75px е препоръчителен размер за изображението ви."
-    },    
+    },
     {
       "label": "Цвят на активна точка",
       "description": "Цвят на активните точки"
@@ -70,7 +70,7 @@
           },
           {
             "label": "Хедър",
-            "description": "Незадължително заглавие за изскачащия прозорец"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Изскачащо съдържание",
@@ -89,6 +89,10 @@
     {
       "label": "Бутон за приключване за помощните технологии",
       "default": "Приключи"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

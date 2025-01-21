@@ -70,7 +70,7 @@
           },
           {
             "label": "Encabezado",
-            "description": "Encabezado opcional para la ventana emergente"
+            "description": "Encabezado opcional para el popup. Esto es usado por tecnologías de asistencia."
           },
           {
             "label": "Contenido emergente",
@@ -89,6 +89,10 @@
     {
       "label": "Etiqueta de botón de cierre para tecnologías de asistencia",
       "default": "Cerrar"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

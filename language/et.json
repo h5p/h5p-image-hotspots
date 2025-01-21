@@ -70,7 +70,7 @@
           },
           {
             "label": "Päis",
-            "description": "Valikuline hüpikakna pealkiri"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Hüpikakna sisu",
@@ -89,6 +89,10 @@
     {
       "label": "Sulge nupu silt assisteeriva tehnoloogia jaoks",
       "default": "Sulge"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

@@ -70,7 +70,7 @@
           },
           {
             "label": "Goiburua",
-            "description": "Popuparen aukerako goiburua"
+            "description": "Popup-aren goiburua aukerakoa. Hau laguntza-teknologiek erabiltzen dute."
           },
           {
             "label": "Popuparen edukia",
@@ -89,6 +89,10 @@
     {
       "label": "Itxi botoiaren etiketa laguntzako teknologietarako",
       "default": "Itxi"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

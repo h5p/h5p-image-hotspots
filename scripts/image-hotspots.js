@@ -3,14 +3,7 @@
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
 
-  /**
-   * Default font size
-   *
-   * @constant
-   * @type {number}
-   * @default
-   */
-  var DEFAULT_FONT_SIZE = 24;
+  const DEFAULT_FONT_SIZE = 24;
 
   /**
    * Creates a new Image hotspots instance
@@ -30,16 +23,43 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspots: [],
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
+      containsAudioVideoLabel: 'Contains Audio/Video',
       iconType: 'icon',
       icon: 'plus'
     }, options);
+
+    // Remove hotspots without any content
+    this.options.hotspots = this.options.hotspots.filter((hotspot) => {
+      hotspot.content = hotspot.content?.filter((content) => {
+        return content.library !== undefined;
+      });
+
+      return hotspot.content?.length > 0;
+    });
+
     // Keep provided id.
     this.id = id;
     this.isSmallDevice = false;
+
+    /**
+     * Process HTML escaped string for use as attribute value,
+     * e.g. for alt text or title attributes.
+     *
+     * @param {string} value
+     * @return {string} WARNING! Do NOT use for innerHTML.
+     */
+    this.massageAttributeOutput = function (value) {
+      const dparser = new DOMParser().parseFromString(value, 'text/html');
+      const div = document.createElement('div');
+      div.innerHTML = dparser.documentElement.textContent;;
+      return div.textContent || div.innerText || '';
+    };
   }
+
   // Extends the event dispatcher
   ImageHotspots.prototype = Object.create(EventDispatcher.prototype);
   ImageHotspots.prototype.constructor = ImageHotspots;
+
 
   /**
    * Attach function called by H5P framework to insert H5P content into
@@ -76,12 +96,14 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
       // Set alt text of image
       if (this.options.backgroundImageAltText) {
-        this.$image.attr('alt', this.options.backgroundImageAltText);
+        this.$image.attr('alt', this.massageAttributeOutput(this.options.backgroundImageAltText));
       }
       else {
         // Ignore image if no alternative text for assistive technologies
         this.$image.attr('aria-hidden', true);
       }
+
+      this.$image.on('load', () => this.trigger('resize'));
     }
 
     var isSmallDevice = function () {
@@ -150,6 +172,17 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     });
 
     self.resize();
+
+    // resize when content becomes visible
+    const observer = new IntersectionObserver((entries, observer) => {
+      for (let entry of entries) {
+        if (entry.intersectionRatio > 0) {
+          this.trigger('resize');
+          return;
+        }
+      }
+    });
+    observer.observe(this.$hotspotContainer.get(0));
   };
 
   ImageHotspots.prototype.setShowingPopup = function (visible) {
@@ -207,8 +240,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     if (!decreaseSize) {
       self.$container.css('width', '');
     }
-    
-    // If fullscreen & standalone 
+
+    // If fullscreen & standalone
     if (this.isRoot() && H5P.isFullscreen) {
       // If fullscreen, we have both a max width and max height.
       if (!forceImageHeight && height > containerHeight) {
@@ -248,16 +281,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       height: height + 'px'
     });
 
-    if (!self.initialWidth) {
-      self.initialWidth = self.$container.width();
-    }
-
-    self.fontSize = Math.max(DEFAULT_FONT_SIZE, (DEFAULT_FONT_SIZE * (width/self.initialWidth)));
-
     self.$hotspotContainer.css({
       width: width + 'px',
       height: height + 'px',
-      fontSize: self.fontSize + 'px'
+      fontSize: `clamp(${DEFAULT_FONT_SIZE}px, 1.2em, ${DEFAULT_FONT_SIZE*2}px)`,
     });
 
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);

@@ -70,7 +70,7 @@
           },
           {
             "label": "Заглавље",
-            "description": "Необавезно заглавље за искачући прозор"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Искачући садржај",
@@ -89,6 +89,10 @@
     {
       "label": "Ознака дугмета за затварање",
       "default": "Затвори"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

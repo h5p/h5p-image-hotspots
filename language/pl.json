@@ -70,7 +70,7 @@
           },
           {
             "label": "Nagłówek",
-            "description": "Opcjonalny nagłówek dla popup'u"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Zawartość popup'u",
@@ -89,6 +89,10 @@
     {
       "label": "Etykieta przycisku zamykania dla technologii wspomagających",
       "default": "Zamknij"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

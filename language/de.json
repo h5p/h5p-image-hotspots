@@ -66,11 +66,11 @@
           },
           {
             "label": "Überdecke das gesamte Hintergrundbild",
-            "description": "Sobald der Lernende auf den Hotspot klickt, wird das erscheinende Fenster den gesamten Hintergrund überdecken."
+            "description": "Sobald die Lernenden auf den Hotspot klicken, wird das erscheinende Fenster den gesamten Hintergrund überdecken."
           },
           {
             "label": "Überschrift",
-            "description": "Optionale Überschrift für das Fenster"
+            "description": "Optionale Kopfzeile für die Einblendung. Wird von Vorlesewerkzeugen benutzt."
           },
           {
             "label": "Fensterinhalt",
@@ -89,6 +89,10 @@
     {
       "label": "Beschriftung des \"Schließen\"-Buttons (Barrierefreiheit)",
       "default": "Schließen"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

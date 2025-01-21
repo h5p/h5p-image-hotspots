@@ -70,7 +70,7 @@
           },
           {
             "label": "Rubrik",
-            "description": "Valfri rubrik för popup"
+            "description": "Valfri rubrik för popup-fönster. Används av tillgänglighetshjälpmedel."
           },
           {
             "label": "Popup-innehåll",
@@ -89,6 +89,10 @@
     {
       "label": "Etikett för knappen \"stäng\" som används av tillgänglighetshjälpmedel",
       "default": "Stäng"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

@@ -70,7 +70,7 @@
           },
           {
             "label": "Glava pojavnega okna",
-            "description": "Neobvezno. Besedilo se bo pokazalo v pojavnem oknu."
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Vsebina pojavnega okna",
@@ -89,6 +89,10 @@
     {
       "label": "Besedilo gumba Zapri za bralnike zaslona",
       "default": "Zapri"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

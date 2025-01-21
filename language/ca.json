@@ -70,7 +70,7 @@
           },
           {
             "label": "Capçalera",
-            "description": "Capçalera opcional per a l’element emergent"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contingut emergent",
@@ -89,6 +89,10 @@
     {
       "label": "Etiqueta del botó «Tanca» per a tecnologies d’assistència",
       "default": "Tanca"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

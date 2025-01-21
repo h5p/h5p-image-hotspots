@@ -70,7 +70,7 @@
           },
           {
             "label": "Záhlaví",
-            "description": "Volitelná hlavička pro vyskakovací okno"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Obsah vyskakovacího okna",
@@ -89,6 +89,10 @@
     {
       "label": "Popisek tlačítka zavřít pro podpůrné technologie",
       "default": "Zavřít"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

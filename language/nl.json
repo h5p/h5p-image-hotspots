@@ -70,7 +70,7 @@
           },
           {
             "label": "Koptekst",
-            "description": "Optionele koptekst voor de pop-up"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Pop-up inhoud",
@@ -89,6 +89,10 @@
     {
       "label": "Label voor \"Afsluiten\"-knop voor ondersteunende technologieën",
       "default": "Afsluiten"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

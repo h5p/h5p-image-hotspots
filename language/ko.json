@@ -70,7 +70,7 @@
           },
           {
             "label": "머릿말",
-            "description": "(선택사항)팝업에 대한 머릿말"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "팝업 콘텐츠",
@@ -89,6 +89,10 @@
     {
       "label": "닫기 버튼에 대한 보조기술 라벨",
       "default": "닫기"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

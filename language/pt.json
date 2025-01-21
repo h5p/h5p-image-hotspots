@@ -70,7 +70,7 @@
           },
           {
             "label": "Cabeçalho",
-            "description": "Cabeçalho opcional para a janela popup"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Conteúdo da janela popup",
@@ -89,6 +89,10 @@
     {
       "label": "Etiqueta do botão fechar para tecnologias de apoio",
       "default": "Fechar"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

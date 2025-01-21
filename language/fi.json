@@ -70,7 +70,7 @@
           },
           {
             "label": "Otsikko",
-            "description": "Ponnahdusikkunan otsikko (ei pakollinen)"
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Ponnahdusikkunan sisältö",
@@ -89,6 +89,10 @@
     {
       "label": "Sulje-painikkeen selite avustaville teknologioille",
       "default": "Sulje"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

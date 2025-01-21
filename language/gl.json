@@ -70,7 +70,7 @@
           },
           {
             "label": "Cabeceira",
-            "description": "Cabeceira opcional para a pantalla emerxente"
+            "description": "Cabeceira opcional para a ventá emerxente. Isto é usado polas tecnoloxías de asistencia."
           },
           {
             "label": "Contido da pantalla emerxente",
@@ -89,6 +89,10 @@
     {
       "label": "Etiqueta do botón pechar para tecnoloxías de asistencia",
       "default": "Pechar"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }

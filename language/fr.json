@@ -69,8 +69,8 @@
             "description": "Quand l'utilisateur cliquera sur la puce cliquable, le popup recouvrira toute l'image d'arrière-plan."
           },
           {
-            "label": "Titre",
-            "description": "Titre facultatif du popup."
+            "label": "Header",
+            "description": "Optional header for the popup. This is used by assistive technologies."
           },
           {
             "label": "Contenu du popup",
@@ -89,6 +89,10 @@
     {
       "label": "Intitulé du bouton \"Fermer\" pour les technologies d'accessibilité",
       "default": "Fermer"
+    },
+    {
+      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
+      "default": "Contains Audio/Video"
     }
   ]
 }
