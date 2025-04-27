@@ -74,6 +74,7 @@
           },
           {
             "label": "Popuparen edukia",
+            "entity": "content",
             "field": {
               "label": "Eduki-elementua"
             }

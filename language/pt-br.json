@@ -74,6 +74,7 @@
           },
           {
             "label": "Conteúdo do popup",
+            "entity": "content",
             "field": {
               "label": "Item de conteúdo"
             }

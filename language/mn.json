@@ -74,6 +74,7 @@
           },
           {
             "label": "Попап контент",
+            "entity": "content",
             "field": {
               "label": "Агуулгын зүйл"
             }

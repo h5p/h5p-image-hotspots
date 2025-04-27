@@ -74,6 +74,7 @@
           },
           {
             "label": "弹出视窗内文文字",
+            "entity": "content",
             "field": {
               "label": "项目"
             }

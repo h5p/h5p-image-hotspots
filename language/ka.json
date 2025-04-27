@@ -74,6 +74,7 @@
           },
           {
             "label": "Popup-ის შიგთავსი",
+            "entity": "content",
             "field": {
               "label": "შიგთავსის ელემენტი"
             }

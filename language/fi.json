@@ -74,6 +74,7 @@
           },
           {
             "label": "Ponnahdusikkunan sisältö",
+            "entity": "content",
             "field": {
               "label": "Sisältövaihtoehto"
             }
