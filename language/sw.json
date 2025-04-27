@@ -74,6 +74,7 @@
           },
           {
             "label": "Maudhui dukizi",
+            "entity": "content",
             "field": {
               "label": "Kipengee cha Maudhui"
             }

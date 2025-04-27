@@ -74,6 +74,7 @@
           },
           {
             "label": "açılır pencere içeriği",
+            "entity": "content",
             "field": {
               "label": "İçerik Öğesi"
             }

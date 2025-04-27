@@ -74,6 +74,7 @@
           },
           {
             "label": "Hüpikakna sisu",
+            "entity": "content",
             "field": {
               "label": "Sisuelement"
             }

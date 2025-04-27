@@ -74,6 +74,7 @@
           },
           {
             "label": "תוכן החלון הקופץ",
+            "entity": "content",
             "field": {
               "label": "תוכן הפריט"
             }

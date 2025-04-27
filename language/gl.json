@@ -74,6 +74,7 @@
           },
           {
             "label": "Contido da pantalla emerxente",
+            "entity": "content",
             "field": {
               "label": "Elemento de contido"
             }

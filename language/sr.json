@@ -74,6 +74,7 @@
           },
           {
             "label": "Искачући садржај",
+            "entity": "content",
             "field": {
               "label": "Садржај"
             }

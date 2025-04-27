@@ -74,6 +74,7 @@
           },
           {
             "label": "Contingut emergent",
+            "entity": "content",
             "field": {
               "label": "Element de contingut"
             }

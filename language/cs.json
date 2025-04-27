@@ -74,6 +74,7 @@
           },
           {
             "label": "Obsah vyskakovacího okna",
+            "entity": "content",
             "field": {
               "label": "Obsah položky"
             }

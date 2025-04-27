@@ -176,6 +176,7 @@
           "name": "content",
           "type": "list",
           "label": "Popup content",
+          "entity": "content",
           "importance": "medium",
           "field": {
             "name": "action",
