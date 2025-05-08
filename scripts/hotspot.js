@@ -31,14 +31,14 @@
     }
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
-    this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
+    this.$element = $('<button/>', {
       'class': 'h5p-image-hotspot ' +
         (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : '') +
         (config.position.legacyPositioning ? ' legacy-positioning' : ''),
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
-      src: iconImageExists ? H5P.getPath(options.iconImage.path, this.id) : undefined,
+      'html': iconImageExists ? `<img src="${H5P.getPath(options.iconImage.path, this.id)}" alt=""/>` : '',
       click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {
