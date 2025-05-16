@@ -69,6 +69,10 @@
             "description": "Quan l’usuari fa clic a la zona sensible, l’element emergent cobreix tota la imatge de fons"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Capçalera",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

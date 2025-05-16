@@ -69,6 +69,10 @@
             "description": "Erabiltzaileak leku beroan klik egiten duenean popupak atzeko planoko irudi guztia estaliko du"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Goiburua",
             "description": "Popup-aren goiburua aukerakoa. Hau laguntza-teknologiek erabiltzen dute."
           },

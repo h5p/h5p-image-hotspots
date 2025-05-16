@@ -69,6 +69,10 @@
             "description": "Kun käyttäjä klikkaa hotspot-kuvaketta, avautuva pop up-ikkuna peittää koko taustakuvan."
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Otsikko",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

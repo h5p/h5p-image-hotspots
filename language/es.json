@@ -69,6 +69,10 @@
             "description": "Cuando el usuario haga clic en el punto clave, la ventana emergente cubrirá toda la imagen de fondo"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Encabezado",
             "description": "Encabezado opcional para el popup. Esto es usado por tecnologías de asistencia."
           },

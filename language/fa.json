@@ -69,6 +69,10 @@
             "description": "وقتی کاربر روی نقطه داغ کلیک می‌کند، پنجره بازشو تمام تصویر پس‌زمینه را می‌پوشاند"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Header",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

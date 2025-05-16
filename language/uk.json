@@ -69,6 +69,10 @@
             "description": "Коли користувач натискає на мітку, випливаюче вікно буде захоплювати все зображення тла"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Заголовок",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

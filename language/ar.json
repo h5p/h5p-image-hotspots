@@ -69,6 +69,10 @@
             "description": "عندما ينقر المستخدم على نقطة الاتصال ، ستغطي النافذة المنبثقة صورة الخلفية بأكملها"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "الترويسة",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

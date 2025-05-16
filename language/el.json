@@ -68,6 +68,10 @@
             "label": "Να καλύπτει ολόκληρη την εικόνα φόντου",
             "description": "Όταν ο χρήστης κάνει κλικ πάνω στο hotspot, το αναδυόμενο περιεχόμενο θα καλύπτει ολόκληρη την εικόνα φόντου"
           },
+    {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
           {
             "label": "Επικεφαλίδα",
             "description": "Προαιρετική επικεφαλίδα για το αναδυόμενο παράθυρο. Χρησιμοποιείται από υποστηρικτικές τεχνολογίες."

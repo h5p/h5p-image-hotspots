@@ -69,6 +69,10 @@
             "description": "When the user clicks the hotspot the popup will cover the entire background image"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Header",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

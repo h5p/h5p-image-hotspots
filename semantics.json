@@ -165,6 +165,13 @@
           "description": "When the user clicks the hotspot the popup will cover the entire background image"
         },
         {
+          "name": "hotspotIconImage",
+          "type": "image",
+          "label": "Hotspot specific image",
+          "optional": true,
+          "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+        },
+        {
           "name": "header",
           "type": "text",
           "label": "Header",
