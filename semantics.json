@@ -128,6 +128,12 @@
     "importance": "high",
     "min": 1,
     "defaultNum": 1,
+    "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
     "field": {
       "name": "hotspot",
       "type": "group",
