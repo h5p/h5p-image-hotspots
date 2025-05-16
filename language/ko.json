@@ -16,6 +16,9 @@
         },
         {
           "label": "이미지 업로드"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },

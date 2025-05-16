@@ -16,6 +16,9 @@
         },
         {
           "label": "Загруженное изображение"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },

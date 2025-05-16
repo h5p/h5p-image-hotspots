@@ -16,6 +16,9 @@
         },
         {
           "label": "Hochgeladenes Bild"
+        },
+        {
+          "label": "Fortlaufende Nummern"
         }
       ]
     },
