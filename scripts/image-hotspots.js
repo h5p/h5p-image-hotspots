@@ -28,6 +28,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       icon: 'plus'
     }, options);
 
+    if (this.options.iconType === 'numbers') {
+      this.options.icon = 'number';
+    }
+
     // Remove hotspots without any content
     this.options.hotspots = this.options.hotspots.filter((hotspot) => {
       hotspot.content = hotspot.content?.filter((content) => {
