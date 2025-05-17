@@ -80,6 +80,7 @@
     if (options.iconType === 'numbers') {
       this.$element.css({
         backgroundColor: options.color,
+        border: `4px solid ${options.backgroundColor ?? '#ffffff'}`,
         color: options.backgroundColor ?? '#ffffff'
       });
     }
