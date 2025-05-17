@@ -332,8 +332,7 @@
    */
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
     title = this.htmlDecode(title);
-
-    const index = this.$element.parent().find('button').index(this.$element);
+    const index = this.$element.parent().find('.h5p-image-hotspot').index(this.$element);
     const content = this.options.hotspots[index].content;
     let hasAudioVideo = false;
     for (let item of content) {
