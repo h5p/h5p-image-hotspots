@@ -14,6 +14,9 @@
   pointer-events: none; /* Make sure it isn't clickable */
 }
 .h5p-image-hotspots-container {
+  --hotspot-number-font-size-1-digits: 0.75em;
+  --hotspot-number-font-size-2-digits: 0.6em;
+
   counter-reset: hotspot;
   margin: 0 auto;
   position: relative;
@@ -103,7 +106,7 @@
   content: counter(hotspot);
   counter-increment: hotspot;
   font-family: inherit;
-  font-size: 0.75em;
+  font-size: var(--hotspot-number-font-size, 0.75em);
   font-weight: bold;
 }
 .h5p-image-hotspot-popup {

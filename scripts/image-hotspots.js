@@ -92,6 +92,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       'class': 'h5p-image-hotspots-container'
     });
 
+    const maxNumberDigits = this.options.hotspots.length.toString().length;
+    this.$hotspotContainer[0].style.setProperty(
+      '--hotspot-number-font-size', `var(--hotspot-number-font-size-${maxNumberDigits}-digits)`
+    );
+
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
         'class': 'h5p-image-hotspots-background',
