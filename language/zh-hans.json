@@ -60,6 +60,11 @@
     {
       "entity": "热点",
       "label": "所有热点",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "热点",
         "fields": [

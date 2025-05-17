@@ -60,6 +60,11 @@
     {
       "entity": "aktīvais punkts",
       "label": "Aktīvie punkti",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Aktīvais punkts",
         "fields": [

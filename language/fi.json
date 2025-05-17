@@ -60,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Hotspotit",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [

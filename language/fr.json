@@ -60,6 +60,11 @@
     {
       "entity": "Puces cliquables",
       "label": "Puce cliquable",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Puce cliquable",
         "fields": [

@@ -60,6 +60,11 @@
     {
       "entity": "znacznik",
       "label": "Znaczniki",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Znacznik",
         "fields": [

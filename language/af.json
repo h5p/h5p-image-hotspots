@@ -60,6 +60,11 @@
     {
       "entity": "warmkol",
       "label": "Warmkolle",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Warmkol",
         "fields": [

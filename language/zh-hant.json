@@ -60,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "所有熱點",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "熱點",
         "fields": [

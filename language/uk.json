@@ -60,6 +60,11 @@
     {
       "entity": "Інтерактивні маркери",
       "label": "Мітки",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Мітка",
         "fields": [

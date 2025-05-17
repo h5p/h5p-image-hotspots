@@ -60,6 +60,11 @@
     {
       "entity": "interaktivna točka",
       "label": "Interaktivne točke",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Interaktivna točka",
         "fields": [

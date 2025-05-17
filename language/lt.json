@@ -60,6 +60,11 @@
     {
       "entity": "aktyvioji sritis",
       "label": "Aktyviosios sritys",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Aktyvioji sritis",
         "fields": [

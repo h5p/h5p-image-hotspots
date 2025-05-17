@@ -60,6 +60,11 @@
     {
       "entity": "халуун цэг",
       "label": "халуун цэгүүд",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Халуун цэг",
         "fields": [

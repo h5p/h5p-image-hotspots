@@ -60,6 +60,11 @@
     {
       "entity": "активна точка",
       "label": "Активни точки",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Актовна точка",
         "fields": [

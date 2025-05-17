@@ -60,6 +60,11 @@
     {
       "entity": "נקודה־חמה",
       "label": "נקודות־חמות",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "נקודה־חמה",
         "fields": [

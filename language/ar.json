@@ -60,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "نقاط الاتصال",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "نقطة اتصال",
         "fields": [

@@ -60,6 +60,11 @@
     {
       "entity": "ponto de acesso (hotspot)",
       "label": "Pontos de acesso",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Ponto de acesso",
         "fields": [
