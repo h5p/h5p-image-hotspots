@@ -69,6 +69,10 @@
             "description": "Kad lietotājs klikšķina aktīvo punktu, iznirstošais logs nosegs visu fona attēlu"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Galvene",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

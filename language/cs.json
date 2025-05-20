@@ -69,6 +69,10 @@
             "description": "Když uživatel klepne na aktivní bod, vyskakovací okno překryje celý obrázek na pozadí"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Záhlaví",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

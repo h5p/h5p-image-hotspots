@@ -69,6 +69,10 @@
             "description": "Cando o usuario preme no punto chave, a pantalla emerxente cubrirá toda a imaxe de fondo"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Cabeceira",
             "description": "Cabeceira opcional para a ventá emerxente. Isto é usado polas tecnoloxías de asistencia."
           },

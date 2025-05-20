@@ -69,6 +69,10 @@
             "description": "Sobald die Lernenden auf den Hotspot klicken, wird das erscheinende Fenster den gesamten Hintergrund überdecken."
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Überschrift",
             "description": "Optionale Kopfzeile für die Einblendung. Wird von Vorlesewerkzeugen benutzt."
           },

@@ -69,6 +69,10 @@
             "description": "Kiedy użytkownik kliknie na znacznik, popup pokryje całe zdjęcie w tle."
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Nagłówek",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

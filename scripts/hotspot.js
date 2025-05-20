@@ -23,8 +23,13 @@
     this.options = options;
     this.parent = parent;
 
+    const hotspotSpecificIconExtsts = config.hotspotIconImage !== undefined;
+    const iconImage = config.hotspotIconImage ?? options.iconImage;
+
     // A utility variable to check if a Predefined icon or an uploaded image should be used.
-    var iconImageExists = (options.iconImage !== undefined && options.iconType === 'image');
+    var iconImageExists = (
+      iconImage !== undefined && (options.iconType === 'image' || hotspotSpecificIconExtsts)
+    );
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
@@ -38,7 +43,7 @@
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
-      src: iconImageExists ? H5P.getPath(options.iconImage.path, this.id) : undefined,
+      src: iconImageExists ? H5P.getPath(iconImage.path, this.id) : undefined,
       click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {

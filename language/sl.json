@@ -69,6 +69,10 @@
             "description": "Ob kliku na točko, bo pojavno okno prekrilo celotno sliko ozadja."
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Glava pojavnega okna",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

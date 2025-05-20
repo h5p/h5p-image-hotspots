@@ -69,6 +69,10 @@
             "description": "Када корисник кликне на врућу тачку, искачући прозор ће покрити целу позадинску слику"
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "Заглавље",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },

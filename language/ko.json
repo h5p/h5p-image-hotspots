@@ -69,6 +69,10 @@
             "description": "사용자가 핫스팟을 클릭하면 팝업이 전체 배경 이미지를 덮습니다."
           },
           {
+            "label": "Hotspot specific image",
+            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+          },
+          {
             "label": "머릿말",
             "description": "Optional header for the popup. This is used by assistive technologies."
           },
