@@ -16,6 +16,9 @@
         },
         {
           "label": "Opgelaaide prent"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "warmkol",
       "label": "Warmkolle",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Warmkol",
         "fields": [

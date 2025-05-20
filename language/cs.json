@@ -16,6 +16,9 @@
         },
         {
           "label": "Nahraný obrázek"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "aktivní bod",
       "label": "Aktivní body",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Aktivní bod",
         "fields": [

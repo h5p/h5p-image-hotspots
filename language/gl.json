@@ -16,6 +16,9 @@
         },
         {
           "label": "Imaxe subida"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "punto chave",
       "label": "Puntos chave",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Punto chave",
         "fields": [

@@ -28,6 +28,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       icon: 'plus'
     }, options);
 
+    if (this.options.iconType === 'numbers') {
+      this.options.icon = 'number';
+    }
+
     // Remove hotspots without any content
     this.options.hotspots = this.options.hotspots.filter((hotspot) => {
       hotspot.content = hotspot.content?.filter((content) => {
@@ -88,6 +92,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       'class': 'h5p-image-hotspots-container'
     });
 
+    const maxNumberDigits = this.options.hotspots.length.toString().length;
+    this.$hotspotContainer[0].style.setProperty(
+      '--hotspot-number-font-size', `var(--hotspot-number-font-size-${maxNumberDigits}-digits)`
+    );
+
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
         'class': 'h5p-image-hotspots-background',
@@ -114,27 +123,30 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var numHotspots = this.options.hotspots.length;
     this.hotspots = [];
 
-    this.options.hotspots.sort(function (a, b) {
-      // Sanity checks, move data to the back if invalid
-      var firstIsValid = a.position && a.position.x && a.position.y;
-      var secondIsValid = b.position && b.position.x && b.position.y;
-      if (!firstIsValid) {
-        return 1;
-      }
+    // When using consecutive numbers, the hotspots should be in the order they are added
+    if (this.options.iconType !== 'numbers') {
+      this.options.hotspots.sort(function (a, b) {
+        // Sanity checks, move data to the back if invalid
+        var firstIsValid = a.position && a.position.x && a.position.y;
+        var secondIsValid = b.position && b.position.x && b.position.y;
+        if (!firstIsValid) {
+          return 1;
+        }
 
-      if (!secondIsValid) {
-        return -1;
-      }
+        if (!secondIsValid) {
+          return -1;
+        }
 
-      // Order top-to-bottom, left-to-right
-      if (a.position.y !== b.position.y) {
-        return a.position.y < b.position.y ? -1 : 1;
-      }
-      else {
-        // a and b y position is equal, sort on x
-        return a.position.x < b.position.x ? -1 : 1;
-      }
-    });
+        // Order top-to-bottom, left-to-right
+        if (a.position.y !== b.position.y) {
+          return a.position.y < b.position.y ? -1 : 1;
+        }
+        else {
+          // a and b y position is equal, sort on x
+          return a.position.x < b.position.x ? -1 : 1;
+        }
+      });
+    }
 
     for (var i=0; i<numHotspots; i++) {
       try {

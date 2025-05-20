@@ -25,6 +25,10 @@
       {
         "value": "image",
         "label": "Uploaded image"
+      },
+      {
+        "value": "numbers",
+        "label": "Consecutive numbers"
       }
     ],
     "default": "icon"
@@ -114,7 +118,8 @@
         {
           "field": "iconType",
           "equals": [
-            "icon"
+            "icon",
+            "numbers"
           ]
         }
       ]
@@ -128,6 +133,12 @@
     "importance": "high",
     "min": 1,
     "defaultNum": 1,
+    "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
     "field": {
       "name": "hotspot",
       "type": "group",

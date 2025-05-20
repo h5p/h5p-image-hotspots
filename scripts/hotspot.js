@@ -75,9 +75,21 @@
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: options.color,
-      backgroundColor: options.backgroundColor ? options.backgroundColor : ''
     });
+
+    if (options.iconType === 'numbers') {
+      this.$element.css({
+        backgroundColor: options.color,
+        border: `4px solid ${options.backgroundColor ?? '#ffffff'}`,
+        color: options.backgroundColor ?? '#ffffff'
+      });
+    }
+    else {
+      this.$element.css({
+        color: options.color,
+        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
+      });
+    }
 
     parent.on('resize', function () {
       if (self.popup) {

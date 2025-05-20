@@ -16,6 +16,9 @@
         },
         {
           "label": "Отпремљена слика"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Врућа тачка",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Врућа тачка",
         "fields": [

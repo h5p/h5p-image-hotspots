@@ -16,6 +16,9 @@
         },
         {
           "label": "Picha iliyopakiwa"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "eneo lenye mtandao",
       "label": "Maeneo yenye mtandao",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Eneo lenye mtandao",
         "fields": [

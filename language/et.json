@@ -16,6 +16,9 @@
         },
         {
           "label": "Üles laetud pilt"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "tulipunkt",
       "label": "Tulipunktid",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Tulipunkt",
         "fields": [

@@ -14,6 +14,10 @@
   pointer-events: none; /* Make sure it isn't clickable */
 }
 .h5p-image-hotspots-container {
+  --hotspot-number-font-size-1-digits: 0.75em;
+  --hotspot-number-font-size-2-digits: 0.6em;
+
+  counter-reset: hotspot;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -97,6 +101,13 @@
 }
 .h5p-image-hotspot-exclamation:before {
   content: '\f06a';
+}
+.h5p-image-hotspot-number:before {
+  content: counter(hotspot);
+  counter-increment: hotspot;
+  font-family: inherit;
+  font-size: var(--hotspot-number-font-size, 0.75em);
+  font-weight: bold;
 }
 .h5p-image-hotspot-popup {
   position: absolute;

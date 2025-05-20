@@ -16,6 +16,9 @@
         },
         {
           "label": "이미지 업로드"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "핫스팟",
       "label": "핫스팟",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "핫스팟",
         "fields": [
