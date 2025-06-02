@@ -84,18 +84,22 @@
     this.$popupContent.appendTo(this.$popup);
 
     // Add close button
-    this.$closeButton = $('<button>', {
-      'class': 'h5p-image-hotspot-close-popup-button',
-      'aria-label': options.closeButtonLabel,
-      'title': options.closeButtonLabel
-    }).click(function () {
-      self.trigger('closed');
-    }).keydown(function (e) {
-      if (e.which === 32 || e.which === 13) {
-        self.trigger('closed', {refocus: true});
-        return false;
+    this.$closeButton = H5P.Components.Button({
+      classes: 'h5p-image-hotspot-close-popup-button',
+      ariaLabel: options.closeButtonLabel,
+      title: options.closeButtonLabel,
+      styleType: 'secondary',
+      onClick: function () {
+        self.trigger('closed');
+      },
+      onKeyDown: function (e) {
+        if (e.which === 32 || e.which === 13) {
+          self.trigger('closed', {refocus: true});
+          return false;
+        }
       }
-    }).appendTo(this.$popup);
+    });
+    this.$popup.append(this.$closeButton);
 
     if (!header) {
       self.$popupContent.addClass('h5p-image-hotspot-popup-content-no-header');

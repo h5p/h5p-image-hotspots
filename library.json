@@ -42,6 +42,11 @@
       "machineName": "H5P.Transition",
       "majorVersion": 1,
       "minorVersion": 0
+    },
+    {
+      "machineName": "H5P.Components",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ],
   "editorDependencies": [
