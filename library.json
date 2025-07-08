@@ -3,7 +3,7 @@
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
   "minorVersion": 10,
-  "patchVersion": 21,
+  "patchVersion": 22,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
@@ -25,11 +25,23 @@
     },
     {
       "path": "scripts/popup.js"
+    },
+    {
+      "path": "@legacy/scripts/image-hotspots.js"
+    },
+    {
+      "path": "@legacy/scripts/hotspot.js"
+    },
+    {
+      "path": "@legacy/scripts/popup.js"
     }
   ],
   "preloadedCss": [
     {
       "path": "styles/image-hotspots.css"
+    },
+    {
+      "path": "@legacy/styles/image-hotspots.css"
     }
   ],
   "preloadedDependencies": [
