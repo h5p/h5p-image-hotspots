@@ -25,23 +25,11 @@
     },
     {
       "path": "scripts/popup.js"
-    },
-    {
-      "path": "@legacy/scripts/image-hotspots.js"
-    },
-    {
-      "path": "@legacy/scripts/hotspot.js"
-    },
-    {
-      "path": "@legacy/scripts/popup.js"
     }
   ],
   "preloadedCss": [
     {
       "path": "styles/image-hotspots.css"
-    },
-    {
-      "path": "@legacy/styles/image-hotspots.css"
     }
   ],
   "preloadedDependencies": [
