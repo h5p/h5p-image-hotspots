@@ -175,13 +175,6 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     const observer = new IntersectionObserver((entries, observer) => {
       for (let entry of entries) {
         if (entry.intersectionRatio > 0) {
-
-          // Signal to use themed content controls
-          const contentControls = this.$container[0].querySelector('.h5p-content-controls');
-          if (contentControls) {
-            contentControls.classList.add('themed');
-          }
-
           this.trigger('resize');
           return;
         }
