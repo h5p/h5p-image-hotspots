@@ -91,14 +91,9 @@
 .h5p-image-hotspot-check:before {
   content: '\e926';
 }
-<<<<<<< HEAD
 /* Avoid collision with main class name of H5P.ImageHotspotQuestion */
 .h5p-image-hotspots .h5p-image-hotspot-question:before {
   content: '\f059';
-=======
-.h5p-image-hotspot-question:before {
-  content: '\e924';
->>>>>>> feature/redesign
 }
 .h5p-image-hotspot-info:before {
   content: '\e922';
