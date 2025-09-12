@@ -91,7 +91,8 @@
 .h5p-image-hotspot-check:before {
   content: '\e926';
 }
-.h5p-image-hotspot-question:before {
+/* Avoid collision with main class name of H5P.ImageHotspotQuestion */
+.h5p-image-hotspots .h5p-image-hotspot-question:before {
   content: '\e924';
 }
 .h5p-image-hotspot-info:before {
