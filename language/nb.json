@@ -5,90 +5,90 @@
       "description": "Bilde brukt som bakgrunn"
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Alternativ tekst for bakgrunnsbilde",
+      "description": "Hvis nettleseren ikke kan laste inn bildet, vises denne teksten i stedet. Brukes også av assisterende teknologi."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Hotspot-ikon",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Forhåndsdefinert ikon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Opplasta bilde"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Forhåndsdefinert ikon",
+      "description": "Velg et forhåndsdefinert hotspot-ikon fra lista.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Plusstegn"
         },
         {
-          "label": "Minus"
+          "label": "Minustegn"
         },
         {
-          "label": "Times"
+          "label": "Gangetegn"
         },
         {
-          "label": "Check"
+          "label": "Hake"
         },
         {
-          "label": "Question"
+          "label": "Spørsmålstegn"
         },
         {
-          "label": "Info"
+          "label": "Infotegn (i)"
         },
         {
-          "label": "Exclamation"
+          "label": "Utropstegn"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Opplasta bilde",
+      "description": "Bruk et selvvalgt bilde som hotspot-ikon.<br />75 x 75 piksler anbefales som bildestørrelse."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Hotspot-farge",
+      "description": "Velg hotspot-farge."
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "Hotspot",
+      "label": "Hotspoter",
       "field": {
         "label": "Hotspot",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Hotspot-plassering",
+            "description": "Klikk på miniatyrbildet (thumbnail) for å plassere hotspoten."
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Dekk hele bakgrunnsbildet",
+            "description": "Hvis bruker klikker på hotspoten, vil popup-vinduet dekke hele bakgrunnsbildet."
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "label": "Tittel",
+            "description": "Valgfri tittel for popup-vinduet. Tittelen brukes også av assisterende teknologi."
           },
           {
-            "label": "Popup content",
+            "label": "Innhold i popup-vinduet",
             "field": {
-              "label": "Content Item"
+              "label": "Innholdselement"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Hotspot-merkelapp for assisterende teknologi",
+      "default": "Hotspot nummer #num",
+      "description": "Dersom hotspoten mangler tittel, forteller denne teksten hvilken hotspot bruker har navigert til. #num kan brukes i stedet for hotspot-nummeret. Brukes av assisterende teknologi."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Navn på \"Lukk\"-knapp (for assisterende teknologi)",
+      "default": "Lukk"
     },
     {
       "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",

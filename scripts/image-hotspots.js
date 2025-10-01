@@ -3,6 +3,8 @@
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
 
+  const DEFAULT_FONT_SIZE = 24;
+
   /**
    * Creates a new Image hotspots instance
    *
@@ -281,7 +283,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     self.$hotspotContainer.css({
       width: width + 'px',
-      height: height + 'px'
+      height: height + 'px',
+      fontSize: `clamp(${DEFAULT_FONT_SIZE}px, 1.2em, ${DEFAULT_FONT_SIZE*2}px)`,
     });
 
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);

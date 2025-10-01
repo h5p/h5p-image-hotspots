@@ -331,6 +331,8 @@
    * @param {string} title Title to set for hotspot element
    */
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
+    title = this.htmlDecode(title);
+
     const index = this.$element.parent().find('button').index(this.$element);
     const content = this.options.hotspots[index].content;
     let hasAudioVideo = false;
@@ -340,6 +342,7 @@
         break;
       }
     }
+
     this.$element.attr('title', title);
     this.$element.attr('aria-label', hasAudioVideo ? `${title}. ${this.options.containsAudioVideoLabel}` : title);
   };
@@ -354,6 +357,16 @@
         }
       });
     };
+  };
+
+  /**
+   * Decode special characters in the provided string
+   * @param {string} input String to decode characters
+   * @returns {string} Decoded string
+   */
+  ImageHotspots.Hotspot.prototype.htmlDecode = function (input) {
+    const dparser = new DOMParser().parseFromString(input, 'text/html');
+    return dparser.documentElement.textContent;
   };
 
 })(H5P.jQuery, H5P.ImageHotspots);

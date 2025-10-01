@@ -1,98 +1,98 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Háttérkép",
+      "description": "A háttérben látható kép."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Helyettesítő szöveg a háttérképhez",
+      "description": "Ha a böngésző nem tudja betölteni a képet, ez a szöveg jelenik meg helyette. A támogató-segítő eszközök is használják."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Interaktív pont ikon",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Előre definiált ikon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Feltöltött kép"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Előre definiált ikon",
+      "description": "Előre definiált ikon használata az interaktív ponthoz.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Plusz"
         },
         {
-          "label": "Minus"
+          "label": "Mínusz"
         },
         {
-          "label": "Times"
+          "label": "Szorzás"
         },
         {
-          "label": "Check"
+          "label": "Pipa"
         },
         {
-          "label": "Question"
+          "label": "Kérdőjel"
         },
         {
-          "label": "Info"
+          "label": "Infó"
         },
         {
-          "label": "Exclamation"
+          "label": "Felkiáltójel"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Feltöltött kép",
+      "description": "Használjon saját képet az interaktív pont ikonjaként.<br />Az ajánlott méret 75x75px."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Interaktív pont színe",
+      "description": "Az interaktív pontok színe"
     },
     {
-      "entity": "hotspot",
-      "label": "Hotspots",
+      "entity": "interaktív pont",
+      "label": "Interaktív pontok",
       "field": {
-        "label": "Hotspot",
+        "label": "Interaktív pont",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Interaktív pont helye",
+            "description": "Kattintson a miniatűr képre az interaktív pont elhelyezéséhez"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "A teljes háttérkép lefedése",
+            "description": "Amikor a felhasználó az interaktív pontra kattint, a felugró ablak a teljes háttérképet lefedi"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "label": "Fejléc",
+            "description": "Opcionális fejléc a felugró ablakhoz. Ezt a támogató-segítő eszközök használják."
           },
           {
-            "label": "Popup content",
+            "label": "Felugró ablak tartalma",
             "field": {
-              "label": "Content Item"
+              "label": "Tartalom elem"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Interaktív pont címkéje a támogató-segítő eszközöknek",
+      "default": "#num. interaktív pont",
+      "description": "Segít közölni, hogy melyik interaktív ponthoz navigált a felhasználó, ha nincs fejléc megadva az adott pontnál. A #num használható az interaktív pont számának behelyettesítésére."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Bezárás gomb címkéje a támogató-segítő eszközöknek",
+      "default": "Bezárás"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Címke a támogató-segítő eszközöknek, amely jelzik, hogy az interaktív pont hangot/videót tartalmaz",
+      "default": "Hangot/videót tartalmaz"
     }
   ]
 }

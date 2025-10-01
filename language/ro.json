@@ -1,27 +1,27 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Imagine de fundal",
+      "description": "Imaginea afișată pe fundal."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Text alternativ pentru imaginea de fundal",
+      "description": "Dacă browserul nu poate încărca imaginea, acest text va fi afișat în schimb. De asemenea, este folosit de tehnologiile asistive."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Pictogramă punct activ",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Pictogramă predefinită"
         },
         {
-          "label": "Uploaded image"
+          "label": "Imagine încărcată"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Pictogramă predefinită",
+      "description": "Utilizarea unei pictograme predefinite pentru punctul activ.",
       "options": [
         {
           "label": "Plus"
@@ -30,69 +30,69 @@
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "X (Închide)"
         },
         {
-          "label": "Check"
+          "label": "Bifă"
         },
         {
-          "label": "Question"
+          "label": "Întrebare"
         },
         {
-          "label": "Info"
+          "label": "Informații"
         },
         {
-          "label": "Exclamation"
+          "label": "Exclamare"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Imagine încărcată",
+      "description": "Folosiți propria imagine pentru pictograma punctului activ.<br />Se recomandă o imagine de 75px pe 75px."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Culoare punct activ",
+      "description": "Culoarea punctelor active"
     },
     {
       "entity": "hotspot",
-      "label": "Hotspots",
+      "label": "Puncte active",
       "field": {
-        "label": "Hotspot",
+        "label": "Punct activ",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Poziție punct activ",
+            "description": "Apăsați pe miniatura imaginii pentru a plasa punctul activ"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Acoperă întreaga imagine de fundal",
+            "description": "Când utilizatorul apasă pe punctul activ, fereastra pop-up va acoperi întreaga imagine de fundal"
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "label": "Antet",
+            "description": "Antet opțional pentru fereastra pop-up. Acesta este utilizat de tehnologiile asistive."
           },
           {
-            "label": "Popup content",
+            "label": "Conținut pop-up",
             "field": {
-              "label": "Content Item"
+              "label": "Element de conținut"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Etichetă punct activ pentru tehnologii asistive",
+      "default": "Punct activ #num",
+      "description": "Va ajuta la anunțarea elementului punct activ la care s-a navigat, dacă nu este specificat un antet pentru un punct activ. #num poate fi folosit pentru a înlocui numărul punctului activ."
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Etichetă buton de închidere pentru tehnologii asistive",
+      "default": "Închide"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Etichetă pentru tehnologii asistive care indică faptul că punctul activ conține Audio/Video",
+      "default": "Conține Audio/Video"
     }
   ]
 }

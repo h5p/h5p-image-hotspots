@@ -32,7 +32,7 @@
   width: 1.3em; 
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   line-height: 1;
   border-radius: 3em;
   -webkit-transition: all .2s ease-in-out;
@@ -188,7 +188,7 @@
 }
 .fullscreen-popup .h5p-image-hotspot-popup-content {
   height: 100%;
-  overflow: auto; 
+  overflow: auto;
 }
 .h5p-image-hotspot-popup-content {
   overflow: auto;
@@ -197,7 +197,7 @@
 .h5p-image-hotspot-popup-content.overflowing:after {
   content: '';
   width: calc(100% - 1em);
-  height: 10em;    
+  height: 10em;
   position: absolute;
   left: 0;
   bottom: 0;
