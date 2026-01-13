@@ -70,7 +70,7 @@
           },
           {
             "label": "Glava pojavnega okna",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "description": "Neobvezno besedilo za pojavno okno. Uporabljajo ga tudi bralniki zaslona."
           },
           {
             "label": "Vsebina pojavnega okna",
@@ -91,8 +91,8 @@
       "default": "Zapri"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Besedilo za bralnike zaslona, da točka vsebuje avdio/video",
+      "default": "Točka vsebuje zvok/video"
     }
   ]
 }
