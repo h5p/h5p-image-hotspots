@@ -9,31 +9,31 @@
       "description": "Si le navigateur ne peut pas charger l'image, ce texte sera affiché à la place. Également utilisé par les technologies d'accessibilité."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Icône Hotspot",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Icône prédéfinie"
         },
         {
-          "label": "Uploaded image"
+          "label": "Image téléversée"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "label": "Icône prédéfinie",
+      "description": "Utiliser une icône prédéfinie pour le hotspot.",
       "options": [
         {
           "label": "Plus"
         },
         {
-          "label": "Minus"
+          "label": "Moins"
         },
         {
-          "label": "Times"
+          "label": "Croix"
         },
         {
-          "label": "Check"
+          "label": "Coche"
         },
         {
           "label": "Question"
@@ -47,8 +47,8 @@
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "label": "Image téléversée",
+      "description": "Utilisez votre propre image pour l'icône du hotspot.<br />75px par 75px est recommandé."
     },
     {
       "label": "Couleur de la puce cliquable",
@@ -69,8 +69,8 @@
             "description": "Quand l'utilisateur cliquera sur la puce cliquable, le popup recouvrira toute l'image d'arrière-plan."
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "label": "En-tête",
+            "description": "En-tête facultatif pour la fenêtre contextuelle. Utilisé par les technologies d'assistance."
           },
           {
             "label": "Contenu du popup",
@@ -91,8 +91,8 @@
       "default": "Fermer"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Intitulé pour les technologies d'assistance indiquant que le hotspot contient de l'audio/vidéo",
+      "default": "Contient Audio/Vidéo"
     }
   ]
 }
