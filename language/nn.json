@@ -91,8 +91,8 @@
       "default": "Lukk"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Merking for assisterande teknologi som indikerer at hotspot inneheld lyd eller video",
+      "default": "Inneheld lyd eller video"
     }
   ]
 }
