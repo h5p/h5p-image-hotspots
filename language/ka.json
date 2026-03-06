@@ -9,50 +9,51 @@
       "description": "თუ ბრაუზერი ვერ ჩატვირთავს სურათს, ეს ტექსტი გამოჩნდება. ასევე გამოიყენება დამხმარე ტექნოლოგიებში."
     },
     {
-      "label": "Hotspot-ის ღილაკი",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "წინასწარ განსაზღვრული ღილაკი"
+          "label": "Predefined icon"
         },
         {
-          "label": "ატვირთული გამოსახულება"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "წინასწარ განსაზღვული ღილაკი",
-      "description": "წინასწარ განსაზღვრული ღილაკის გამოყენებისას.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "პლუსი"
+          "label": "Plus"
         },
         {
-          "label": "მინუსი"
+          "label": "Minus"
         },
         {
-          "label": "გამრავლება"
+          "label": "Times"
         },
         {
-          "label": "შემოწმება"
+          "label": "Check"
         },
         {
-          "label": "შეკითხვა"
+          "label": "Question"
         },
         {
-          "label": "ინფორმაცია"
+          "label": "Info"
         },
         {
-          "label": "ძახილის ნიშანი"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "ატვირთული სურათი",
-      "description": "გამოიყენეთ თქვენი სურათი hospot-ის ღილაკისთვის.<br />75px 75px-ზე არის რეკომენდირებული თქვენი სურათისთვის."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Hotspot-ის ფერი",
-      "description": "Hotspot-ების ფერი"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
     },
     {
       "entity": "ცხელი წერტილი",
@@ -65,12 +66,58 @@
             "description": "დააწკაპუნეთ მინიატურულ სურათზე, რომ მოათავსოთ hotspot-ი"
           },
           {
-            "label": "დაფარე მთლიანი ფონური სურათი",
-            "description": "როცა მომხმარებელი დააჭერს hotspot-ს, popup-ი მთლიანად დაფარავს ფონურ სურათს"
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
           },
           {
-            "label": "Hotspot specific image",
-            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot",
+            "default": "#981d99"
+          },
+          {
+            "label": "დაფარე მთლიანი ფონური სურათი",
+            "description": "როცა მომხმარებელი დააჭერს hotspot-ს, popup-ი მთლიანად დაფარავს ფონურ სურათს"
           },
           {
             "label": "სათაური",

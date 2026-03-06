@@ -9,50 +9,51 @@
       "description": "Si el navegador no puede cargar la imagen, este texto se mostrará en su lugar. También utilizado por las tecnologías de asistencia."
     },
     {
-      "label": "Ícono de hotspot",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Ícono predefinido"
+          "label": "Predefined icon"
         },
         {
-          "label": "Imagen subida"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "Ícono predefinido",
-      "description": "Usando un ícono predefinido para el hotspot.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Más"
+          "label": "Plus"
         },
         {
-          "label": "Menos"
+          "label": "Minus"
         },
         {
-          "label": "Por"
+          "label": "Times"
         },
         {
-          "label": "Comprobar"
+          "label": "Check"
         },
         {
-          "label": "Pregunta"
+          "label": "Question"
         },
         {
-          "label": "Información"
+          "label": "Info"
         },
         {
-          "label": "Exclamación"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Imagen subida",
-      "description": "Use su propia imagen para el ícono de hotspot.<br />75px por 75px es lo recomendado para su imagen."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Color del hotspot",
-      "description": "El color de los hotspots"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
     },
     {
       "entity": "punto caliente (hotspot)",
@@ -65,12 +66,58 @@
             "description": "Haga clic en la imagen en miniatura para colocar el hotspot"
           },
           {
-            "label": "Cubrir toda la imagen de fondo",
-            "description": "Cuando el usuario hace clic en el hotspot, la ventana emergente cubrirá toda la imagen de fondo"
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
           },
           {
-            "label": "Hotspot specific image",
-            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot",
+            "default": "#981d99"
+          },
+          {
+            "label": "Cubrir toda la imagen de fondo",
+            "description": "Cuando el usuario hace clic en el hotspot, la ventana emergente cubrirá toda la imagen de fondo"
           },
           {
             "label": "Encabezado",

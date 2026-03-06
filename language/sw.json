@@ -9,50 +9,51 @@
       "description": "Ikiwa kivinjari hakiwezi kupakia picha, maandishi haya yataonyeshwa badala yake. Pia hutumiwa na teknolojia saidizi."
     },
     {
-      "label": "Ikoni yaeneo lenye mtandao",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Ikoni iliyofafanuliwa mapema"
+          "label": "Predefined icon"
         },
         {
-          "label": "Picha iliyopakiwa"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "Ikoni iliyofafanuliwa mapema",
-      "description": "Kutumia ikoni iliyofafanuliwa mapema kwa eneo lenye mtandao.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Jumlisha"
+          "label": "Plus"
         },
         {
-          "label": "Toa"
+          "label": "Minus"
         },
         {
-          "label": "Zidisha"
+          "label": "Times"
         },
         {
-          "label": "Weka alama"
+          "label": "Check"
         },
         {
-          "label": "Swali"
+          "label": "Question"
         },
         {
-          "label": "Taarifa"
+          "label": "Info"
         },
         {
-          "label": "Mshangao"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Picha iliyopakiwa",
-      "description": "Tumia picha yako mwenyewe kwa ikoni ya eneo lenye mtandao.<br />Pikseli 75 kwa pikseli 75 inapendekezwa kwa picha yako."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Rangi ya eneo lenye mtandao",
-      "description": "Rangi ya maeneo yenye mtandao hayo"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
     },
     {
       "entity": "eneo lenye mtandao",
@@ -65,12 +66,58 @@
             "description": "Bofya kwenye picha ya kijipicha ili kuweka eneo lenye mtandao"
           },
           {
-            "label": "Picha nzima ya sehemu ya nyuma",
-            "description": "Wakati mtumiaji anapobofya eneo lenye mtandao dukizi itafunika picha nzima ya mandharinyuma"
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
           },
           {
-            "label": "Hotspot specific image",
-            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot",
+            "default": "#981d99"
+          },
+          {
+            "label": "Picha nzima ya sehemu ya nyuma",
+            "description": "Wakati mtumiaji anapobofya eneo lenye mtandao dukizi itafunika picha nzima ya mandharinyuma"
           },
           {
             "label": "Kichwa",

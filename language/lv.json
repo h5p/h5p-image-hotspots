@@ -9,50 +9,51 @@
       "description": "Ja pārlūkprogramma nevar ielādēt attēlu, tiks atspoguļots šis teksts. Tekstu izmanto arī asistīvās tehnoloģijas."
     },
     {
-      "label": "Aktīvā punkta ikona",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Sākotnējā ikona"
+          "label": "Predefined icon"
         },
         {
-          "label": "Augšupielādēts attēls"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "Sākotnējā ikona",
-      "description": "Izmanto sākotnējo aktīvā punkta ikonu.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Pluszīme"
+          "label": "Plus"
         },
         {
-          "label": "Mīnuss"
+          "label": "Minus"
         },
         {
-          "label": "Reizes"
+          "label": "Times"
         },
         {
-          "label": "Pārbaudīt"
+          "label": "Check"
         },
         {
-          "label": "Jautājums"
+          "label": "Question"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Izsaukuma zīme"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Augšupielādēts attēls",
-      "description": "Aktīvā punkta ikonai izmantojiet savu attēlu.<br />Rekomendētais attēla izmērs ir 75px uz 75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Aktīvā punkta krāsa",
-      "description": "Aktīvo punktu krāsas"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
     },
     {
       "entity": "aktīvais punkts",
@@ -65,12 +66,58 @@
             "description": "Klikšķiniet uz sīktēla, lai ievietotu aktīvo punktu"
           },
           {
-            "label": "Pārklāt visu fona attēlu",
-            "description": "Kad lietotājs klikšķina aktīvo punktu, iznirstošais logs nosegs visu fona attēlu"
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
           },
           {
-            "label": "Hotspot specific image",
-            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot",
+            "default": "#981d99"
+          },
+          {
+            "label": "Pārklāt visu fona attēlu",
+            "description": "Kad lietotājs klikšķina aktīvo punktu, iznirstošais logs nosegs visu fona attēlu"
           },
           {
             "label": "Galvene",

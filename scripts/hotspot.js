@@ -22,23 +22,29 @@
     this.isSmallDeviceCB = isSmallDeviceCB;
     this.options = options;
     this.parent = parent;
+    // Check custom hotspot icon configuration
+    const isDefault = config.hotspotIconType === 'default';
+    const isIcon = config.hotspotIconType === 'icon';
+    const isImage = config.hotspotIconType === 'image';
 
-    const hotspotSpecificIconExtsts = config.hotspotIconImage !== undefined;
-    const iconImage = config.hotspotIconImage ?? options.iconImage;
+    const hotspotImage = config.hotspotIconImage;
+    const globalImage = options.globalIconImage;
+    const hotspotImageExists = hotspotImage !== undefined && isImage;  
+    const globalImageExists = globalImage !== undefined && options.globalIconType === 'image';
 
-    // A utility variable to check if a Predefined icon or an uploaded image should be used.
-    var iconImageExists = (
-      iconImage !== undefined && (options.iconType === 'image' || hotspotSpecificIconExtsts)
-    );
+    // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
+    const iconImageExists =  hotspotImageExists || (isDefault && globalImageExists);
+    const iconImage = iconImageExists ? (hotspotImageExists ? hotspotImage : globalImage) : undefined;
+    const iconPredefinedIcon = isIcon ? config.hotspotIcon : options.globalIcon;
+    const iconColor = isIcon ? config.hotspotColor : options.globalColor;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
-    // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
       'class': 'h5p-image-hotspot ' +
-        (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : '') +
+        (!iconImageExists ? 'h5p-image-hotspot-' + iconPredefinedIcon : '') +
         (config.position.legacyPositioning ? ' legacy-positioning' : ''),
       'role': 'button',
       'tabindex': 0,
@@ -80,7 +86,7 @@
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: options.color,
+      color: iconColor,
       backgroundColor: options.backgroundColor ? options.backgroundColor : ''
     });
 

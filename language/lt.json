@@ -9,50 +9,51 @@
       "description": "Jei naršyklė negali įkelti paveikslėlio, vietoj jo bus rodomas šis tekstas. Taip pat naudojamos pagalbinės technologijos."
     },
     {
-      "label": "Aktyviosios srities piktograma",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Iš anksto nustatyta piktograma"
+          "label": "Predefined icon"
         },
         {
-          "label": "Įkeltas paveikslėlis"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "Iš anksto nustatyta piktograma",
-      "description": "Iš anksto nustatytos aktyviosios srities piktogramos naudojimas.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Plius"
+          "label": "Plus"
         },
         {
           "label": "Minus"
         },
         {
-          "label": "Laikai"
+          "label": "Times"
         },
         {
-          "label": "Tikrinti"
+          "label": "Check"
         },
         {
-          "label": "Klausimas"
+          "label": "Question"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Šauktukas"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Įkeltas paveikslėlis",
-      "description": "Kaip aktyviosios srities piktogramą naudokite savo paveikslėlį.<br />Rekomenduojama naudoti 75 x 75 piks. paveikslėlį."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Aktyviosios srities spalva",
-      "description": "Aktyviųjų sričių spalva"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots",
+      "default": "#981d99"
     },
     {
       "entity": "aktyvioji sritis",
@@ -65,12 +66,58 @@
             "description": "Norėdami įdėti aktyviąją sritį, spustelėkite miniatiūros paveikslėlį"
           },
           {
-            "label": "Uždengti visą fono paveikslėlį",
-            "description": "Kai naudotojas spusteli aktyviąją sritį, iššokantis langas apims visą fono paveikslėlį"
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
           },
           {
-            "label": "Hotspot specific image",
-            "description": "Use your own image for this hotspot's icon.<br />75px by 75px is recommended for your image."
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot",
+            "default": "#981d99"
+          },
+          {
+            "label": "Uždengti visą fono paveikslėlį",
+            "description": "Kai naudotojas spusteli aktyviąją sritį, iššokantis langas apims visą fono paveikslėlį"
           },
           {
             "label": "Antraštė",
