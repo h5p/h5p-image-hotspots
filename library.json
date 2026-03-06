@@ -3,7 +3,7 @@
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
   "minorVersion": 10,
-  "patchVersion": 19,
+  "patchVersion": 29,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "fullscreen": 1,
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 19
+    "minorVersion": 28
   },
   "embedTypes": [
     "iframe"
