@@ -52,8 +52,7 @@
     },
     {
       "label": "Hotspot color",
-      "description": "The color of the hotspots",
-      "default": "#981d99"
+      "description": "The color of the hotspots"
     },
     {
       "entity": "핫스팟",
@@ -112,8 +111,7 @@
           },
           {
             "label": "Hotspot color",
-            "description": "The color of the hotspot",
-            "default": "#981d99"
+            "description": "The color of the hotspot"
           },
           {
             "label": "전체 배경 이미지 덮기",
