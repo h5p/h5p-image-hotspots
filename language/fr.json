@@ -9,7 +9,7 @@
       "description": "Si le navigateur ne peut pas charger l'image, ce texte sera affiché à la place. Également utilisé par les technologies d'accessibilité."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Global hotspot Icon",
       "options": [
         {
           "label": "Predefined icon"
@@ -21,7 +21,7 @@
     },
     {
       "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -48,11 +48,11 @@
     },
     {
       "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Couleur de la puce cliquable",
-      "description": "Couleur des puces cliquables (en code hexadécimal)."
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "Puces cliquables",
@@ -63,6 +63,55 @@
           {
             "label": "Position de la puce cliquable",
             "description": "Cliquez sur la miniature pour positionner la puce cliquable."
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Recouvrir toute l'image d'arrière-plan",

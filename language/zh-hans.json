@@ -9,7 +9,7 @@
       "description": "当浏览器无法载入图片时会显示的文字，也用来作为视障者的辅助工具。"
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Global hotspot Icon",
       "options": [
         {
           "label": "Predefined icon"
@@ -21,7 +21,7 @@
     },
     {
       "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -48,11 +48,11 @@
     },
     {
       "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "热点颜色",
-      "description": "热点要显示的颜色。"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "热点",
@@ -63,6 +63,55 @@
           {
             "label": "热点位置",
             "description": "在缩图上点击以放置热贴。"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "弹出视窗布满整个背景图片",
