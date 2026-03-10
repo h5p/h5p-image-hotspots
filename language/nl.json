@@ -9,10 +9,10 @@
       "description": "Als de browser de afbeelding niet kan laden, wordt deze tekst getoond. Ook gebruikt door ondersteunende technologieën."
     },
     {
-      "label": "Hotspot pictogram",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Vooringesteld pictogram"
+          "label": "Predefined icon"
         },
         {
           "label": "Geüploade afbeelding"
@@ -23,39 +23,39 @@
       ]
     },
     {
-      "label": "Vooringesteld pictogram",
-      "description": "Gebruik een vooringesteld pictogram voor de hotspot.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
         },
         {
-          "label": "Min"
+          "label": "Minus"
         },
         {
-          "label": "Keer"
+          "label": "Times"
         },
         {
-          "label": "Vink"
+          "label": "Check"
         },
         {
-          "label": "Vraagteken"
+          "label": "Question"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Uitroepteken"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Geüploade afbeelding",
-      "description": "Gebruik uw eigen afbeelding voor de hotspot pictogram.<br />75px bij 75px is de aanbevolen afmeting voor uw afbeelding."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Hotspot kleur",
-      "description": "De kleur van de hotspots"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
@@ -71,6 +71,55 @@
           {
             "label": "Hotspot positie",
             "description": "Klik op de miniatuurafbeelding om de hotspot te plaatsen"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Gehele achtergrondafbeelding afdekken",

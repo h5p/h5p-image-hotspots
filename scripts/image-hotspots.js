@@ -24,12 +24,12 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
       containsAudioVideoLabel: 'Contains Audio/Video',
-      iconType: 'icon',
-      icon: 'plus'
+      globalIconType: 'icon',
+      globalIcon: 'plus'
     }, options);
 
-    if (this.options.iconType === 'numbers') {
-      this.options.icon = 'number';
+    if (this.options.globalIconType === 'numbers') {
+      this.options.globalIcon = 'number';
     }
 
     // Remove hotspots without any content
@@ -124,7 +124,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.hotspots = [];
 
     // When using consecutive numbers, the hotspots should be in the order they are added
-    if (this.options.iconType !== 'numbers') {
+    if (this.options.globalIconType !== 'numbers') {
       this.options.hotspots.sort(function (a, b) {
         // Sanity checks, move data to the back if invalid
         var firstIsValid = a.position && a.position.x && a.position.y;

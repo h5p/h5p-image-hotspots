@@ -9,10 +9,10 @@
       "description": "Tarayıcı resmi yükleyemezse, bunun yerine bu metin görüntülenecektir. Ayrıca yardımcı teknolojiler tarafından da kullanılır."
     },
     {
-      "label": "Görsel Etkin Nokta İşaretleme (Hotspot) Simgesi",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Tanımlı simgeler"
+          "label": "Predefined icon"
         },
         {
           "label": "Yüklenen resim"
@@ -23,39 +23,39 @@
       ]
     },
     {
-      "label": "Tanımlı simgeler",
-      "description": "Etkin nokta için önceden tanımlanmış bir simge kullanma.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Artı"
+          "label": "Plus"
         },
         {
-          "label": "Tire"
+          "label": "Minus"
         },
         {
-          "label": "Zaman"
+          "label": "Times"
         },
         {
-          "label": "Kontrol"
+          "label": "Check"
         },
         {
-          "label": "Soru"
+          "label": "Question"
         },
         {
-          "label": "Bilgi"
+          "label": "Info"
         },
         {
-          "label": "Ünlem"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Yüklenen resim",
-      "description": "Etkin nokta simegesi için kendiniz resim yükleyin.<br /> 75px x 75px boyutu önerilmektedir."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Etkin nokta rengi",
-      "description": "Etkin noktaların rengi"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
@@ -71,6 +71,55 @@
           {
             "label": "Etkin nokta pozisyonu",
             "description": "Etkin noktayı yerleştirmek için küçük noktaya tıklayın."
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Tüm arka plan resmini örtün.",

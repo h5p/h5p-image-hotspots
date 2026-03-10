@@ -9,10 +9,10 @@
       "description": "אם הדפדפן לא יכול להעלות את התמונה טקסט זה יוצג במקום. בשימוש גם על ידי טכנולוגיות מסייעות."
     },
     {
-      "label": "צלמית נקודה־חמה",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "צלמית מוגדרת מראש"
+          "label": "Predefined icon"
         },
         {
           "label": "תמונה שהועלתה"
@@ -23,39 +23,39 @@
       ]
     },
     {
-      "label": "צלמית מוגדרת מראש",
-      "description": "שימוש בצלמית מוגדרת מראש עבור הנקודה-החמה.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "ועוד"
+          "label": "Plus"
         },
         {
-          "label": "מינוס"
+          "label": "Minus"
         },
         {
-          "label": "כפול"
+          "label": "Times"
         },
         {
-          "label": "בדיקה"
+          "label": "Check"
         },
         {
-          "label": "שאלה"
+          "label": "Question"
         },
         {
-          "label": "מידע"
+          "label": "Info"
         },
         {
-          "label": "סימן קריאה"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "התמונה שעלתה",
-      "description": "השתמשו בתמונה משלכם עבור הסמל של הנקודה-החמה.<br /> גודל התמונה המומלץ הוא 75px על 75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "צבע הנקודה־החמה",
-      "description": "צבע הנקודות־החמות"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "נקודה־חמה",
@@ -71,6 +71,55 @@
           {
             "label": "מיקום נקודה־חמה",
             "description": "לחצו על התמונה הממוזערת כדי למקם את הנקודה-החמה"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "יש לכסות את כל תמונת הרקע",

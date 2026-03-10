@@ -9,10 +9,10 @@
       "description": "Amosarase este texto se o navegador non pode amosar a imaxe. Usado tamén polas tecnoloxías de asistencia."
     },
     {
-      "label": "Icona de punto chave",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Icona predefinida"
+          "label": "Predefined icon"
         },
         {
           "label": "Imaxe subida"
@@ -23,39 +23,39 @@
       ]
     },
     {
-      "label": "Icona predefinida",
-      "description": "Usando unha icona predefinida para o punto chave.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Máis"
+          "label": "Plus"
         },
         {
-          "label": "Menos"
+          "label": "Minus"
         },
         {
-          "label": "Veces"
+          "label": "Times"
         },
         {
-          "label": "Comprobar"
+          "label": "Check"
         },
         {
-          "label": "Pregunta"
+          "label": "Question"
         },
         {
-          "label": "Información"
+          "label": "Info"
         },
         {
-          "label": "Exclamación"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Imaxe subida",
-      "description": "Usa a túa propia imaxe como icona de punto chave.<br />Recoméndase un tamaño de 75px por 75px para a imaxe."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Cor do punto chave",
-      "description": "A cor dos puntos chave"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "punto chave",
@@ -71,6 +71,55 @@
           {
             "label": "Posición do punto chave",
             "description": "Preme na imaxe en miniatura para colocar o punto chave"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Cubrir toda a imaxe de fondo",
