@@ -9,19 +9,22 @@
       "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Global hotspot Icon",
       "options": [
         {
           "label": "Predefined icon"
         },
         {
           "label": "Uploaded image"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
       "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -48,7 +51,7 @@
     },
     {
       "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
       "label": "Hotspot color",
@@ -57,12 +60,66 @@
     {
       "entity": "hotspot",
       "label": "Hotspots",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
           {
             "label": "Hotspot position",
             "description": "Click on the thumbnail image to place the hotspot"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Cover entire background image",

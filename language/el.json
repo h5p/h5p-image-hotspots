@@ -9,60 +9,117 @@
       "description": "Αν ο φυλλομετρητής αδυνατεί να φορτώσει την εικόνα, θα εμφανιστεί αυτό το κείμενο. Χρησιμοποιείται επίσης από υποστηρικτικές τεχνολογίες."
     },
     {
-      "label": "Εικονίδιο Hotspot",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Προεπιλεγμένο εικονίδιο"
+          "label": "Predefined icon"
         },
         {
           "label": "Εικόνα που μεταφορτώθηκε"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Προεπιλεγμένο εικονίδιο",
-      "description": "Χρησιμοποιήστε ένα προεπιλεγμένο εικονίδιο για το hotspot.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Συν"
+          "label": "Plus"
         },
         {
-          "label": "Μείον"
+          "label": "Minus"
         },
         {
-          "label": "Επί"
+          "label": "Times"
         },
         {
-          "label": "Έλεγχος"
+          "label": "Check"
         },
         {
-          "label": "Ερώτηση"
+          "label": "Question"
         },
         {
-          "label": "Πληροφορία"
+          "label": "Info"
         },
         {
-          "label": "Διευκρίνιση"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Εικόνα που μεταφορτώθηκε",
-      "description": "Χρησιμοποιήστε τη δική σας εικόνα ως εικονίδιο του hotspot.<br />Προτεινόμενο μέγεθος εικόνας 75px επί 75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Χρώμα Hotspot",
-      "description": "Το χρώμα των hotspots"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
       "label": "Hotspots",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
           {
             "label": "Θέση του Hotspot",
             "description": "Κάντε κλικ στη μικρογραφία της εικόνας για να τοποθετήσετε το hotspot"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Να καλύπτει ολόκληρη την εικόνα φόντου",

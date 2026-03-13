@@ -9,60 +9,117 @@
       "description": "Aquest text es mostrarà quan el navegador no pugui carregar la imatge. També és utilitzat per tecnologies d'assistència."
     },
     {
-      "label": "Icona de la zona sensible",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Icona predefinida"
+          "label": "Predefined icon"
         },
         {
           "label": "Imatge carregada"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Icona predefinida",
-      "description": "Ús d’una icona predefinida per a la zona sensible.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Més"
+          "label": "Plus"
         },
         {
-          "label": "Menys"
+          "label": "Minus"
         },
         {
-          "label": "Vegades"
+          "label": "Times"
         },
         {
-          "label": "Comprova"
+          "label": "Check"
         },
         {
-          "label": "Pregunta"
+          "label": "Question"
         },
         {
-          "label": "Informació"
+          "label": "Info"
         },
         {
-          "label": "Exclamació"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Imatge carregada",
-      "description": "Empreu la vostra pròpia imatge per a la icona de la zona sensible. <br />La mida recomanada per a la vostra imatge és 75px per 75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Color de la zona sensible",
-      "description": "Color de les zones sensibles"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "zona sensible",
       "label": "Zones sensibles",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Zona sensible",
         "fields": [
           {
             "label": "Posició de la zona sensible",
             "description": "Feu clic a la imatge en miniatura per situar-hi la zona sensible"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Imatge que ocupa tot el fons",

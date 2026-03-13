@@ -9,60 +9,117 @@
       "description": "Dersom nettlesaren ikkje kan laste inn biletet, blir denne teksten vist i staden. Teksten blir òg brukt av assisterande teknologi."
     },
     {
-      "label": "Hotspot-ikon",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Førehandsdefinert ikon"
+          "label": "Predefined icon"
         },
         {
           "label": "Opplasta bilete"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Førehandsdefinert ikon",
-      "description": "Vel eit førehandsdefinert hotspot-ikon frå lista.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Plussteikn"
+          "label": "Plus"
         },
         {
-          "label": "Minusteikn"
+          "label": "Minus"
         },
         {
-          "label": "Gongeteikn"
+          "label": "Times"
         },
         {
-          "label": "Hake"
+          "label": "Check"
         },
         {
-          "label": "Spørjeteikn"
+          "label": "Question"
         },
         {
-          "label": "Infoteikn (i)"
+          "label": "Info"
         },
         {
-          "label": "Utropsteikn"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Opplasta bilete",
-      "description": "Bruk eit sjølvvalt bilete som hotspot-ikon.<br />75 x 75 pikslar er tilrådd som biletstorleik."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Hotspot-farge",
-      "description": "Vel hotspot-farge."
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "Hotspot",
       "label": "Hotspotar",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
           {
             "label": "Hotspot-plassering",
             "description": "Klikk på miniatyrbiletet (thumbnail) for å plassere hotspoten."
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Dekk heile bakgrunnsbiletet",

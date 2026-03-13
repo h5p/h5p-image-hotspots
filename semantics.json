@@ -14,9 +14,9 @@
     "optional": true
   },
   {
-    "name": "iconType",
+    "name": "globalIconType",
     "type": "select",
-    "label": "Hotspot Icon",
+    "label": "Global hotspot Icon",
     "options": [
       {
         "value": "icon",
@@ -25,21 +25,25 @@
       {
         "value": "image",
         "label": "Uploaded image"
+      },
+      {
+        "value": "numbers",
+        "label": "Consecutive numbers"
       }
     ],
     "default": "icon"
   },
   {
-    "name": "icon",
+    "name": "globalIcon",
     "type": "select",
     "label": "Predefined icon",
     "importance": "medium",
-    "description": "Using a predefined icon for the hotspot.",
+    "description": "Using a predefined icon for the hotspots.",
     "widget": "showWhen",
     "showWhen": {
       "rules": [
         {
-          "field": "iconType",
+          "field": "globalIconType",
           "equals": [
             "icon"
           ]
@@ -79,16 +83,16 @@
     "default": "plus"
   },
   {
-    "name": "iconImage",
+    "name": "globalIconImage",
     "type": "image",
     "label": "Uploaded image",
-    "optional": false,
-    "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image.",
+    "optional": true,
+    "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image.",
     "widget": "showWhen",
     "showWhen": {
       "rules": [
         {
-          "field": "iconType",
+          "field": "globalIconType",
           "equals": [
             "image"
           ]
@@ -97,7 +101,7 @@
     }
   },
   {
-    "name": "color",
+    "name": "globalColor",
     "type": "text",
     "label": "Hotspot color",
     "importance": "medium",
@@ -112,9 +116,10 @@
       "widget": "colorSelector",
       "rules": [
         {
-          "field": "iconType",
+          "field": "globalIconType",
           "equals": [
-            "icon"
+            "icon",
+            "numbers"
           ]
         }
       ]
@@ -128,6 +133,12 @@
     "importance": "high",
     "min": 1,
     "defaultNum": 1,
+    "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
     "field": {
       "name": "hotspot",
       "type": "group",
@@ -156,6 +167,117 @@
               "type": "boolean"
             }
           ]
+        },
+        {
+          "name": "hotspotIconType",
+          "type": "select",
+          "label": "Custom hotspot icon",
+          "default": "default",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "icon",
+              "label": "Predefined icon"
+            },
+            {
+              "value": "image",
+              "label": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "name": "hotspotIcon",
+          "type": "select",
+          "label": "Predefined icon",
+          "importance": "medium",
+          "description": "Using a predefined icon for the hotspot.",
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "hotspotIconType",
+                "equals": [
+                  "icon"
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "value": "plus",
+              "label": "Plus"
+            },
+            {
+              "value": "minus",
+              "label": "Minus"
+            },
+            {
+              "value": "times",
+              "label": "Times"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "question",
+              "label": "Question"
+            },
+            {
+              "value": "info",
+              "label": "Info"
+            },
+            {
+              "value": "exclamation",
+              "label": "Exclamation"
+            }
+          ],
+          "default": "plus"
+        },
+        {
+          "name": "hotspotIconImage",
+          "type": "image",
+          "label": "Uploaded image",
+          "optional": true,
+          "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image.",
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "hotspotIconType",
+                "equals": [
+                  "image"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "hotspotColor",
+          "type": "text",
+          "label": "Hotspot color",
+          "importance": "medium",
+          "description": "The color of the hotspot",
+          "optional": true,
+          "default": "#981d99",
+          "widget": "showWhen",
+          "spectrum": {
+            "showInput": true
+          },
+          "showWhen": {
+            "widget": "colorSelector",
+            "rules": [
+              {
+                "field": "hotspotIconType",
+                "equals": [
+                  "icon"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "alwaysFullscreen",

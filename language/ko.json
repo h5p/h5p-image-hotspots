@@ -9,60 +9,117 @@
       "description": "브라우저가 이미지를 로드할 수 없는 경우 이 텍스트가 대신 표시될 것이다. 보조 기술에도 사용됨."
     },
     {
-      "label": "핫스팟 아이콘",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "미리 정의된 아이콘"
+          "label": "Predefined icon"
         },
         {
           "label": "이미지 업로드"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "미리 정의된 아이콘",
-      "description": "핫스팟에 미리 정의된 아이콘 사용하기",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "플러스"
+          "label": "Plus"
         },
         {
-          "label": "마이너스"
+          "label": "Minus"
         },
         {
-          "label": "곱하기"
+          "label": "Times"
         },
         {
-          "label": "확인"
+          "label": "Check"
         },
         {
-          "label": "질문"
+          "label": "Question"
         },
         {
-          "label": "정보"
+          "label": "Info"
         },
         {
-          "label": "느낌표"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "이미지 업로드",
-      "description": "핫스팟 아이콘에 사용자 자신의 이미지를 사용하십시오.<br />이미지 사이즈는 7픽셀x7픽셀로 추천합니다."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "핫스팟 색상",
-      "description": "핫스팟 색상"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "핫스팟",
       "label": "핫스팟",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "핫스팟",
         "fields": [
           {
             "label": "핫스팟 위치",
             "description": "썸네일 이미지를 클릭하여 핫스팟을 배치"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "전체 배경 이미지 덮기",

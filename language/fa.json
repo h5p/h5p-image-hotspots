@@ -9,60 +9,118 @@
       "description": "در صورت عدم توانایی مرورگر در بارگذاری تصویر، این متن نمایش داده می‌شود. همچنین توسط فناوری‌های کمکی استفاده می‌شود."
     },
     {
-      "label": "آیکون نقطه هدف",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "آیکون پیش‌فرض"
+          "label": "Predefined icon"
         },
         {
           "label": "تصویر سفارشی"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "آیکون پیش‌فرض",
-      "description": "استفاده از آیکون های از پیش تعریف شده برای نقاط هدف.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "علامت بعلاوه"
+          "label": "Plus"
         },
         {
-          "label": "علامت منها"
+          "label": "Minus"
         },
         {
-          "label": "علامت ضربدر"
+          "label": "Times"
         },
         {
-          "label": "علامت تیک"
+          "label": "Check"
         },
         {
-          "label": "علامت سوال"
+          "label": "Question"
         },
         {
-          "label": "علامت اطلاعات"
+          "label": "Info"
         },
         {
-          "label": "علامت تعجب"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "تصویر سفارشی",
-      "description": "از تصویر دلخواه خود برای آیکون نقطه هدف استفاده کنید. <br /> اندازه توصیه شده: 75 پیکسل در 75 پیکسل."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "رنگ نقطه هدف",
-      "description": "رنگ مورد استفاده برای نقطه هدف"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "نقطه هدف",
       "label": "نقاط هدف",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
+
       "field": {
         "label": "نقطه هدف",
         "fields": [
           {
             "label": "موقعیت نقطه هدف",
             "description": "برای تعیین محل نقطه هدف روی تصویر کلیک کنید"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "پوشش کامل تصویر پس‌زمینه",

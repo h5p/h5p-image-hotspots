@@ -9,19 +9,22 @@
       "description": "Indien die weblaaier nie die teks kan lees nie, sal 'n alternatiewe teks vertoon word. Word ook gebruik deur hulptegnologieë."
     },
     {
-      "label": "Warmkol ikoon",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Voorafingestelde ikoon"
+          "label": "Predefined icon"
         },
         {
           "label": "Opgelaaide prent"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Voorafopgelaaide prent",
-      "description": "Gebruik 'n voorafopgelaaide prent vir die warmkol.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -30,39 +33,93 @@
           "label": "Minus"
         },
         {
-          "label": "Maal"
+          "label": "Times"
         },
         {
-          "label": "Toets"
+          "label": "Check"
         },
         {
-          "label": "Vraag"
+          "label": "Question"
         },
         {
-          "label": "Inligting"
+          "label": "Info"
         },
         {
-          "label": "Uitroepteken"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Opgelaaide prent",
-      "description": "Gebruik jou eie prent vir die warmkolprent.<br />75px by 75px word aanbeveel vir die prentgrote."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Warmkol kleur",
-      "description": "Die kleur van die warmkol"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "warmkol",
       "label": "Warmkolle",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Warmkol",
         "fields": [
           {
             "label": "Warmkol plasing",
             "description": "Klik op die miniatuurbeeld om die warmkol te plaas"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Bedek die hele agtergrondprent",

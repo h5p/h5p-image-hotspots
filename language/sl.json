@@ -9,60 +9,117 @@
       "description": "Besedilo je prikazano v primeru, ko slike ni mogoče naložiti. Uporabljajo ga tudi bralniki zaslona."
     },
     {
-      "label": "Ikona interaktivne točke",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Prednastavljena ikona"
+          "label": "Predefined icon"
         },
         {
           "label": "Naložena slika"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Prednastavljena ikona",
-      "description": "Izbira iz galerije prednastavljenih ikon.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "+"
+          "label": "Plus"
         },
         {
-          "label": "-"
+          "label": "Minus"
         },
         {
-          "label": "x"
+          "label": "Times"
         },
         {
-          "label": "kljukica"
+          "label": "Check"
         },
         {
-          "label": "?"
+          "label": "Question"
         },
         {
-          "label": "i"
+          "label": "Info"
         },
         {
-          "label": "!"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Naložena slika",
-      "description": "Kot ikono je možno naložiti poljubno sliko.<br />Priporočena velikost slike je 75 x 75 px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Barva interaktivne točke",
-      "description": "Barva se izbere v barvni paleti ali z vpisom oznake barve."
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "interaktivna točka",
       "label": "Interaktivne točke",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Interaktivna točka",
         "fields": [
           {
             "label": "Položaj interaktivne točke",
             "description": "Položaj posamezne točke se določi s klikom na želeno mesto na sličici."
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Prekrij celotno sliko ozadja",

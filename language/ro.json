@@ -9,19 +9,22 @@
       "description": "Dacă browserul nu poate încărca imaginea, acest text va fi afișat în schimb. De asemenea, este folosit de tehnologiile asistive."
     },
     {
-      "label": "Pictogramă punct activ",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Pictogramă predefinită"
+          "label": "Predefined icon"
         },
         {
           "label": "Imagine încărcată"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Pictogramă predefinită",
-      "description": "Utilizarea unei pictograme predefinite pentru punctul activ.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -30,39 +33,93 @@
           "label": "Minus"
         },
         {
-          "label": "X (Închide)"
+          "label": "Times"
         },
         {
-          "label": "Bifă"
+          "label": "Check"
         },
         {
-          "label": "Întrebare"
+          "label": "Question"
         },
         {
-          "label": "Informații"
+          "label": "Info"
         },
         {
-          "label": "Exclamare"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Imagine încărcată",
-      "description": "Folosiți propria imagine pentru pictograma punctului activ.<br />Se recomandă o imagine de 75px pe 75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Culoare punct activ",
-      "description": "Culoarea punctelor active"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
       "label": "Puncte active",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Punct activ",
         "fields": [
           {
             "label": "Poziție punct activ",
             "description": "Apăsați pe miniatura imaginii pentru a plasa punctul activ"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Acoperă întreaga imagine de fundal",

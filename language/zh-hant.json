@@ -9,19 +9,22 @@
       "description": "當瀏覽器無法載入圖片時會顯示的文字，也用來作為視障者的輔助工具。"
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Global hotspot Icon",
       "options": [
         {
           "label": "Predefined icon"
         },
         {
           "label": "Uploaded image"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
       "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -48,21 +51,75 @@
     },
     {
       "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "熱點顏色",
-      "description": "熱點要顯示的顏色。"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
       "label": "所有熱點",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "熱點",
         "fields": [
           {
             "label": "熱點位置",
             "description": "在縮圖上點擊以放置熱點。"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "彈出視窗佈滿整個背景圖片",

@@ -9,60 +9,118 @@
       "description": "Ha a böngésző nem tudja betölteni a képet, ez a szöveg jelenik meg helyette. A támogató-segítő eszközök is használják."
     },
     {
-      "label": "Interaktív pont ikon",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Előre definiált ikon"
+          "label": "Predefined icon"
         },
         {
           "label": "Feltöltött kép"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Előre definiált ikon",
-      "description": "Előre definiált ikon használata az interaktív ponthoz.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Plusz"
+          "label": "Plus"
         },
         {
-          "label": "Mínusz"
+          "label": "Minus"
         },
         {
-          "label": "Szorzás"
+          "label": "Times"
         },
         {
-          "label": "Pipa"
+          "label": "Check"
         },
         {
-          "label": "Kérdőjel"
+          "label": "Question"
         },
         {
-          "label": "Infó"
+          "label": "Info"
         },
         {
-          "label": "Felkiáltójel"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Feltöltött kép",
-      "description": "Használjon saját képet az interaktív pont ikonjaként.<br />Az ajánlott méret 75x75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Interaktív pont színe",
-      "description": "Az interaktív pontok színe"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "interaktív pont",
       "label": "Interaktív pontok",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
+
       "field": {
         "label": "Interaktív pont",
         "fields": [
           {
             "label": "Interaktív pont helye",
             "description": "Kattintson a miniatűr képre az interaktív pont elhelyezéséhez"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "A teljes háttérkép lefedése",

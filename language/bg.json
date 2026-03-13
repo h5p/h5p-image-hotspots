@@ -9,19 +9,22 @@
       "description": "Ако браузърът не може да зареди изображението, вместо него ще се покаже този текст. Използва се и от помощни технологии като четци на екранен текст и др."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Global hotspot Icon",
       "options": [
         {
           "label": "Predefined icon"
         },
         {
           "label": "Качено изображение"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
       "label": "Predefined icon",
-      "description": "Използвайте predefined icon за hotspot.",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -47,22 +50,76 @@
       ]
     },
     {
-      "label": "Качено изображение",
-      "description": "Използвайте ваше изображение за hotspot icon.<br />75px by 75px е препоръчителен размер за изображението ви."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Цвят на активна точка",
-      "description": "Цвят на активните точки"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "активна точка",
       "label": "Активни точки",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Актовна точка",
         "fields": [
           {
             "label": "Позиция на активна точка",
             "description": "Кликнете върху картинката, за да поставите активна точка"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Покрийте цялото фоново изображение",

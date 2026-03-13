@@ -9,60 +9,117 @@
       "description": "Если браузер не может загрузить изображение, этот текст будет отображаться вместо него. Также используется вспомогательными технологиями"
     },
     {
-      "label": "Иконка метки",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Предопрелелённая иконка"
+          "label": "Predefined icon"
         },
         {
           "label": "Загруженное изображение"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
-      "label": "Предопрелелённая иконка",
-      "description": "Использовать предопрелелённую иконку длф метки.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Плюс"
+          "label": "Plus"
         },
         {
-          "label": "Минус"
+          "label": "Minus"
         },
         {
-          "label": "Количество раз"
+          "label": "Times"
         },
         {
-          "label": "Проверка"
+          "label": "Check"
         },
         {
-          "label": "Вопрос"
+          "label": "Question"
         },
         {
-          "label": "Инфо"
+          "label": "Info"
         },
         {
-          "label": "Восклицание"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Загруженное изображение",
-      "description": "Используйте своё изображение для иконки метки.<br />75px на 75px рекомендуемый размер для изображения."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Цвет метки",
-      "description": "Цвет меток"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "hotspot",
       "label": "Метки",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Метка",
         "fields": [
           {
             "label": "Позиция метки",
             "description": "Нажмите на уменьшенное изображение для размещения метки"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Обложка всего фонового изображения",
