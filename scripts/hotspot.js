@@ -37,7 +37,6 @@
     const iconImage = iconImageExists ? (hotspotImageExists ? hotspotImage : globalImage) : undefined;
     const iconPredefinedIcon = isIcon ? config.hotspotIcon : options.globalIcon;
     const iconColor = isIcon ? config.hotspotColor : options.globalColor;
-    debugger;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
