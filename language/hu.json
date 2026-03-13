@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Feltöltött kép"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,12 @@
     {
       "entity": "interaktív pont",
       "label": "Interaktív pontok",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
+
       "field": {
         "label": "Interaktív pont",
         "fields": [

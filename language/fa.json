@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "تصویر سفارشی"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,12 @@
     {
       "entity": "نقطه هدف",
       "label": "نقاط هدف",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
+
       "field": {
         "label": "نقطه هدف",
         "fields": [

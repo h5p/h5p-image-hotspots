@@ -37,6 +37,7 @@
     const iconImage = iconImageExists ? (hotspotImageExists ? hotspotImage : globalImage) : undefined;
     const iconPredefinedIcon = isIcon ? config.hotspotIcon : options.globalIcon;
     const iconColor = isIcon ? config.hotspotColor : options.globalColor;
+    debugger;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
@@ -86,9 +87,21 @@
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: iconColor,
-      backgroundColor: options.backgroundColor ? options.backgroundColor : ''
     });
+
+    if (options.globalIconType === 'numbers' && isDefault) {
+      this.$element.css({
+        backgroundColor: iconColor,
+        border: `4px solid ${options.backgroundColor ?? '#ffffff'}`,
+        color: options.backgroundColor ?? '#ffffff'
+      });
+    }
+    else {
+      this.$element.css({
+        color: iconColor,
+        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
+      });
+    }
 
     parent.on('resize', function () {
       if (self.popup) {
