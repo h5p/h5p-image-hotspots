@@ -9,50 +9,50 @@
       "description": "Seda teksti näidatakse siis, kui brauser ei saa pilti laadida. Samuti kasutatakse teksti assisteeriva tehnoloogia puhul."
     },
     {
-      "label": "Kuumkoha ikoon",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Ettemääratletud ikoon"
+          "label": "Predefined icon"
         },
         {
-          "label": "Üles laetud pilt"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "Ettemääratletud pilt",
-      "description": "Kuumkoha jaoks kasutatakse ettemääratletud pilti.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Pluss"
+          "label": "Plus"
         },
         {
-          "label": "Miinus"
+          "label": "Minus"
         },
         {
-          "label": "Ajad"
+          "label": "Times"
         },
         {
-          "label": "Kontrolli"
+          "label": "Check"
         },
         {
-          "label": "Küsimus"
+          "label": "Question"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Hüüumärk"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Üles laetud pilt",
-      "description": "Kasuta kuumkoha ikooniks oma pilti.<br />Pildi suuruseks on soovitatud 75px korda 75px."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Tulipunkti värv",
-      "description": "Tulipunktide värv"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "tulipunkt",
@@ -63,6 +63,55 @@
           {
             "label": "Tulipunkti asukoht",
             "description": "Tulipunkti asetamiseks kliki pisipildil"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Kata kogu taustapilt",
