@@ -134,6 +134,16 @@
           action.params.autoplay = true;
         }
       }
+      else if (action.library.split(' ')[0] === 'H5P.Video') {
+        // All non HTML5 handlers suffer from bad resizing if fit === true.        
+        action.params.visuals.fit = (
+          action.params.sources?.length && (
+            action.params.sources[0].mime === 'video/mp4' ||
+            action.params.sources[0].mime === 'video/webm' ||
+            action.params.sources[0].mime === 'video/ogg'
+          ) || false
+        );        
+      }
       else if (machineName === 'H5P.Text' || machineName === 'H5P.Image') {
         // @see https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
         $popupFraction[0].setAttribute('tabindex', '-1');
