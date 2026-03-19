@@ -22,23 +22,34 @@
     this.isSmallDeviceCB = isSmallDeviceCB;
     this.options = options;
     this.parent = parent;
+    // Check custom hotspot icon configuration
+    const isDefault = config.hotspotIconType === 'default';
+    const isIcon = config.hotspotIconType === 'icon';
+    const isImage = config.hotspotIconType === 'image';
 
-    // A utility variable to check if a Predefined icon or an uploaded image should be used.
-    var iconImageExists = (options.iconImage !== undefined && options.iconType === 'image');
+    const hotspotImage = config.hotspotIconImage;
+    const globalImage = options.globalIconImage;
+    const hotspotImageExists = hotspotImage !== undefined && isImage;  
+    const globalImageExists = globalImage !== undefined && options.globalIconType === 'image';
+
+    // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
+    const iconImageExists =  hotspotImageExists || (isDefault && globalImageExists);
+    const iconImage = iconImageExists ? (hotspotImageExists ? hotspotImage : globalImage) : undefined;
+    const iconPredefinedIcon = isIcon ? config.hotspotIcon : options.globalIcon;
+    const iconColor = isIcon ? config.hotspotColor : options.globalColor;
 
     if (this.config.content === undefined  || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
-    // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
-    this.$element = $('<button/>', {
+    this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
       'class': 'h5p-image-hotspot ' +
-        (!iconImageExists ? 'h5p-image-hotspot-' + options.icon : '') +
+        (!iconImageExists ? 'h5p-image-hotspot-' + iconPredefinedIcon : '') +
         (config.position.legacyPositioning ? ' legacy-positioning' : ''),
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
-      'html': iconImageExists ? `<img src="${H5P.getPath(options.iconImage.path, this.id)}" alt=""/>` : '',
+      src: iconImageExists ? H5P.getPath(iconImage.path, this.id) : undefined,
       click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {
@@ -75,7 +86,7 @@
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: options.color,
+      color: iconColor,
       backgroundColor: options.backgroundColor ? options.backgroundColor : ''
     });
 

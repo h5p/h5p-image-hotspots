@@ -9,50 +9,50 @@
       "description": "Хэрэв хөтөч зургийг ачаалж чадахгүй бол оронд нь энэ текст гарч ирнэ. Мөн туслах технологид ашигладаг."
     },
     {
-      "label": "Халуун цэгийн дүрс",
+      "label": "Global hotspot Icon",
       "options": [
         {
-          "label": "Урьдчилан тодорхойлсон дүрс"
+          "label": "Predefined icon"
         },
         {
-          "label": "Байршуулсан зураг"
+          "label": "Uploaded image"
         }
       ]
     },
     {
-      "label": "Урьдчилан тодорхойлсон дүрс",
-      "description": "Халуун цэгийн хувьд урьдчилан тодорхойлсон дүрсийг ашиглаж байна.",
+      "label": "Predefined icon",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
-          "label": "Дээрээс нь"
+          "label": "Plus"
         },
         {
-          "label": "Хасах"
+          "label": "Minus"
         },
         {
-          "label": "Цаг хугацаа"
+          "label": "Times"
         },
         {
-          "label": "Шалгах"
+          "label": "Check"
         },
         {
-          "label": "Асуулт"
+          "label": "Question"
         },
         {
-          "label": "Мэдээлэл"
+          "label": "Info"
         },
         {
-          "label": "Дуудлага"
+          "label": "Exclamation"
         }
       ]
     },
     {
-      "label": "Байршуулсан зураг",
-      "description": "Халуун цэгийн дүрсэнд өөрийн зургийг ашиглана уу.<br />Таны зурганд 75px x 75px хэмжээтэй байхыг зөвлөж байна."
+      "label": "Uploaded image",
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
-      "label": "Халуун цэгийн өнгө",
-      "description": "Халуун цэгүүдийн өнгө"
+      "label": "Hotspot color",
+      "description": "The color of the hotspots"
     },
     {
       "entity": "халуун цэг",
@@ -63,6 +63,55 @@
           {
             "label": "Халуун цэгийн байрлал",
             "description": "Халуун цэгийг байрлуулахын тулд өнгөц зураг дээр дарна уу"
+          },
+          {
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
+          },
+          {
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
+          },
+          {
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
           },
           {
             "label": "Дэвсгэр зургийг бүхэлд нь хамарна",

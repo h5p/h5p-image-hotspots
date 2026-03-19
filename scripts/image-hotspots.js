@@ -24,8 +24,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
       containsAudioVideoLabel: 'Contains Audio/Video',
-      iconType: 'icon',
-      icon: 'plus'
+      globalIconType: 'icon',
+      globalIcon: 'plus'
     }, options);
 
     // Remove hotspots without any content
