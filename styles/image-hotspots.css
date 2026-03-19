@@ -105,7 +105,7 @@
 .h5p-image-hotspot-exclamation::before {
   content: '\e925';
 }
-.h5p-image-hotspot-number:before {
+.h5p-image-hotspot-number::before {
   content: counter(hotspot);
   counter-increment: hotspot;
   font-family: inherit;
