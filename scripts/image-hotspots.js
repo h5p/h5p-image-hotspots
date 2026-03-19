@@ -5,6 +5,13 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
   const DEFAULT_FONT_SIZE = 24;
 
+  const ICON_TYPE = {
+    DEFAULT: 'default',
+    ICON: 'icon',
+    IMAGE: 'image',
+    NUMBERS: 'numbers',
+  };
+
   /**
    * Creates a new Image hotspots instance
    *
@@ -24,11 +31,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       hotspotNumberLabel: 'Hotspot #num',
       closeButtonLabel: 'Close',
       containsAudioVideoLabel: 'Contains Audio/Video',
-      globalIconType: 'icon',
+      globalIconType: ICON_TYPE.ICON,
       globalIcon: 'plus'
     }, options);
 
-    if (this.options.globalIconType === 'numbers') {
+    if (this.options.globalIconType === ICON_TYPE.NUMBERS) {
       this.options.globalIcon = 'number';
     }
 
@@ -124,7 +131,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.hotspots = [];
 
     // When using consecutive numbers, the hotspots should be in the order they are added
-    if (this.options.globalIconType !== 'numbers') {
+    if (this.options.globalIconType !== ICON_TYPE.NUMBERS) {
       this.options.hotspots.sort(function (a, b) {
         // Sanity checks, move data to the back if invalid
         var firstIsValid = a.position && a.position.x && a.position.y;
@@ -309,6 +316,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       }
     });
   };
+
+  ImageHotspots.ICON_TYPE = ICON_TYPE;
 
   return ImageHotspots;
 })(H5P.jQuery, H5P.EventDispatcher);

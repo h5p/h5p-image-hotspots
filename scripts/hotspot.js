@@ -3,6 +3,8 @@
  */
 (function ($, ImageHotspots) {
 
+  const ICON_TYPE = ImageHotspots.ICON_TYPE;
+
   /**
    * Creates a new Hotspot
    *
@@ -23,14 +25,14 @@
     this.options = options;
     this.parent = parent;
     // Check custom hotspot icon configuration
-    const isDefault = config.hotspotIconType === 'default';
-    const isIcon = config.hotspotIconType === 'icon';
-    const isImage = config.hotspotIconType === 'image';
+    const isDefault = config.hotspotIconType === ICON_TYPE.DEFAULT;
+    const isIcon = config.hotspotIconType === ICON_TYPE.ICON;
+    const isImage = config.hotspotIconType === ICON_TYPE.IMAGE;
 
     const hotspotImage = config.hotspotIconImage;
     const globalImage = options.globalIconImage;
     const hotspotImageExists = hotspotImage !== undefined && isImage;  
-    const globalImageExists = globalImage !== undefined && options.globalIconType === 'image';
+    const globalImageExists = globalImage !== undefined && options.globalIconType === ICON_TYPE.IMAGE;
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     const iconImageExists =  hotspotImageExists || (isDefault && globalImageExists);
@@ -88,7 +90,7 @@
       left: this.config.position.x + '%',
     });
 
-    if (options.globalIconType === 'numbers' && isDefault) {
+    if (options.globalIconType === ICON_TYPE.NUMBERS && isDefault) {
       this.$element.css({
         backgroundColor: iconColor,
         border: `4px solid ${options.backgroundColor ?? '#ffffff'}`,
