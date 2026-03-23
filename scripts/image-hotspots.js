@@ -154,16 +154,29 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         }
       });
     }
-
+    let consecutive_numbers = 1;
     for (var i=0; i<numHotspots; i++) {
       try {
         var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
-        var hotspotTitle = this.options.hotspots[i].header ? this.options.hotspots[i].header
-          : this.options.hotspotNumberLabel.replace('#num', (i + 1).toString());
+
+        let baseTitle;
+        const isDefault = this.options.hotspots[i].hotspotIconType === ICON_TYPE.DEFAULT;
+
+        if (this.options.globalIconType === ICON_TYPE.NUMBERS && isDefault)
+        {
+          baseTitle = this.options.hotspotNumberLabel.replace('#num', (consecutive_numbers++).toString());
+        }
+       
+        const header = this.options.hotspots[i].header;
+        
+        const hotspotTitle = header
+          ? [baseTitle, header].filter(Boolean).join(', ')
+          : (baseTitle ?? 'Untitled Hotspot');
+
         hotspot.setTitle(hotspotTitle);
         this.hotspots.push(hotspot);
-      }
+      } 
       catch (e) {
         H5P.error(e);
       }
