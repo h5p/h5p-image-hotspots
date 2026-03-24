@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Εικόνα που μεταφορτώθηκε"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Hotspots",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Ετικέτα hotspot για υποστηρικτικές τεχνολογίες",
-      "default": "Hotspot #num",
-      "description": "Διευκρινίζει το hotspot σε περίπτωση που δεν έχει προσδιοριστεί επικεφαλίδα. Το #num μπορεί να χρησιμοποιηθεί για να αντικαταστήσει τον αριθμό του hotspot."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Ετικέτα κουμπιού κλεισίματος για υποστηρικτικές τεχνολογίες",

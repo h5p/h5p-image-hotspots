@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Imagem carregada"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "ponto de acesso (hotspot)",
       "label": "Pontos de acesso",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Ponto de acesso",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Rótulo para pontos de acesso para tecnologias de assistência",
-      "default": "Ponto de acesso #num",
-      "description": "Ajudará a anunciar qual elemento de ponto de acesso está sendo navegado ou se não há um cabeçalho especificado para um ponto de acesso. #num pode ser usado para susbtituir o número do ponto de acesso."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Rótulo do botão Fechar para tecnologias de assistência",

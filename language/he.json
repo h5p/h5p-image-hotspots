@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "תמונה שהועלתה"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "נקודה־חמה",
       "label": "נקודות־חמות",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "נקודה־חמה",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "תווית נקודה-חמה עבור טכנולוגיות מסייעות",
-      "default": "נקודה־חמה #num",
-      "description": "יעזור להודיע לאיזה רכיב של הנקודה-החמה נווט אם לא הוגדרה כותרת לנקודה-חמה. ניתן להשתמש ב- #num כדי להחליף את מספר הנקודה-החמה."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "תווית כפתור סגירה עבור טכנולוגיות מסייעות",
