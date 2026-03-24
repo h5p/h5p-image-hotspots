@@ -1,27 +1,30 @@
 {
   "semantics": [
     {
-      "label": "Background image",
-      "description": "Image shown on background."
+      "label": "Imagine de fundal",
+      "description": "Imaginea afișată pe fundal."
     },
     {
-      "label": "Alternative text for background image",
-      "description": "If the browser can't load the image this text will be displayed instead. Also used by assistive technologies."
+      "label": "Text alternativ pentru imaginea de fundal",
+      "description": "Dacă browserul nu poate încărca imaginea, acest text va fi afișat în schimb. De asemenea, este folosit de tehnologiile asistive."
     },
     {
-      "label": "Hotspot Icon",
+      "label": "Global hotspot Icon",
       "options": [
         {
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Imagine încărcată"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
     {
       "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspot.",
+      "description": "Using a predefined icon for the hotspots.",
       "options": [
         {
           "label": "Plus"
@@ -48,7 +51,7 @@
     },
     {
       "label": "Uploaded image",
-      "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
     },
     {
       "label": "Hotspot color",
@@ -56,43 +59,96 @@
     },
     {
       "entity": "hotspot",
-      "label": "Hotspots",
+      "label": "Puncte active",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
-        "label": "Hotspot",
+        "label": "Punct activ",
         "fields": [
           {
-            "label": "Hotspot position",
-            "description": "Click on the thumbnail image to place the hotspot"
+            "label": "Poziție punct activ",
+            "description": "Apăsați pe miniatura imaginii pentru a plasa punctul activ"
           },
           {
-            "label": "Cover entire background image",
-            "description": "When the user clicks the hotspot the popup will cover the entire background image"
+            "label": "Custom hotspot icon",
+            "options": [
+              {
+                "label": "Default"
+              },
+              {
+                "label": "Predefined icon"
+              },
+              {
+                "label": "Uploaded image"
+              }
+            ]
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "label": "Predefined icon",
+            "description": "Using a predefined icon for the hotspot.",
+            "options": [
+              {
+                "label": "Plus"
+              },
+              {
+                "label": "Minus"
+              },
+              {
+                "label": "Times"
+              },
+              {
+                "label": "Check"
+              },
+              {
+                "label": "Question"
+              },
+              {
+                "label": "Info"
+              },
+              {
+                "label": "Exclamation"
+              }
+            ]
           },
           {
-            "label": "Popup content",
+            "label": "Uploaded image",
+            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+          },
+          {
+            "label": "Hotspot color",
+            "description": "The color of the hotspot"
+          },
+          {
+            "label": "Acoperă întreaga imagine de fundal",
+            "description": "Când utilizatorul apasă pe punctul activ, fereastra pop-up va acoperi întreaga imagine de fundal"
+          },
+          {
+            "label": "Antet",
+            "description": "Antet opțional pentru fereastra pop-up. Acesta este utilizat de tehnologiile asistive."
+          },
+          {
+            "label": "Conținut pop-up",
             "field": {
-              "label": "Content Item"
+              "label": "Element de conținut"
             }
           }
         ]
       }
     },
     {
-      "label": "Hotspot label for assistive technologies",
-      "default": "Hotspot #num",
-      "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
-      "label": "Close button label for assistive technologies",
-      "default": "Close"
+      "label": "Etichetă buton de închidere pentru tehnologii asistive",
+      "default": "Închide"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Etichetă pentru tehnologii asistive care indică faptul că punctul activ conține Audio/Video",
+      "default": "Conține Audio/Video"
     }
   ]
 }

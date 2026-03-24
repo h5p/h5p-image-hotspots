@@ -14,6 +14,10 @@
   pointer-events: none; /* Make sure it isn't clickable */
 }
 .h5p-image-hotspots-container {
+  --hotspot-number-font-size-1-digits: 0.75em;
+  --hotspot-number-font-size-2-digits: 0.6em;
+
+  counter-reset: hotspot;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -78,30 +82,37 @@
   transform: scale(1.5);
 }
 
-.h5p-image-hotspot:before {
+.h5p-image-hotspot::before {
   font-family: H5PFontAwesome4;
 }
-.h5p-image-hotspot-plus:before {
+.h5p-image-hotspot-plus::before {
   content: '\f055';
 }
-.h5p-image-hotspot-minus:before {
+.h5p-image-hotspot-minus::before {
   content: '\f056';
 }
-.h5p-image-hotspot-times:before {
+.h5p-image-hotspot-times::before {
   content: '\f057';
 }
-.h5p-image-hotspot-check:before {
+.h5p-image-hotspot-check::before {
   content: '\f058';
 }
 /* Avoid collision with main class name of H5P.ImageHotspotQuestion */
-.h5p-image-hotspots .h5p-image-hotspot-question:before {
+.h5p-image-hotspots .h5p-image-hotspot-question::before {
   content: '\f059';
 }
-.h5p-image-hotspot-info:before {
+.h5p-image-hotspot-info::before {
   content: '\f05a';
 }
-.h5p-image-hotspot-exclamation:before {
+.h5p-image-hotspot-exclamation::before {
   content: '\f06a';
+}
+.h5p-image-hotspot-number::before {
+  content: counter(hotspot);
+  counter-increment: hotspot;
+  font-family: inherit;
+  font-size: var(--hotspot-number-font-size, 0.75em);
+  font-weight: bold;
 }
 .h5p-image-hotspot-popup {
   position: absolute;
@@ -196,7 +207,7 @@
   overflow: auto;
 }
 /* Make the content fade out a bit if there's a scrollbar */
-.h5p-image-hotspot-popup-content.overflowing:after {
+.h5p-image-hotspot-popup-content.overflowing::after {
   content: '';
   width: calc(100% - 1em);
   height: 10em;
@@ -209,7 +220,7 @@
   pointer-events: none; /* Make things behind it clickable */
 }
 /* When scroll has been detected, remove the content fade-out */
-.h5p-image-hotspot-popup-content.overflowing.has-scrolled:after {
+.h5p-image-hotspot-popup-content.overflowing.has-scrolled::after {
   opacity: 0;
 }
 
