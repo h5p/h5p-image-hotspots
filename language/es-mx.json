@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Etiqueta de hotspot para tecnologías de asistencia",
-      "default": "Punto caliente (Hotspot) #num",
-      "description": "Ayudará a anunciar a qué elemento hotspot se ha navegado si no hay un encabezado especificado para un hotspot. #num se puede usar para reemplazar el número del hotspot."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etiqueta de cierre de botón para tecnologías de asistencia",

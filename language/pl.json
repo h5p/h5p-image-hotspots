@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Etykieta znacznika dla technologii wspomagających",
-      "default": "Znacznik #num",
-      "description": "Pomoże ogłosić, do którego elementu znacznika nawigowano, jeśli nie określono nagłówka dla znacznika. #num może być użyty do zastąpienia numeru znacznika."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etykieta przycisku zamykania dla technologii wspomagających",

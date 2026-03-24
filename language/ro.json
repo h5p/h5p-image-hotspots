@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Etichetă punct activ pentru tehnologii asistive",
-      "default": "Punct activ #num",
-      "description": "Va ajuta la anunțarea elementului punct activ la care s-a navigat, dacă nu este specificat un antet pentru un punct activ. #num poate fi folosit pentru a înlocui numărul punctului activ."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etichetă buton de închidere pentru tehnologii asistive",

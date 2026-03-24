@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "熱點輔助說明",
-      "default": "Hotspot #num",
-      "description": "如果熱點沒有設定標題，這可以用來幫助說明熱點。#num 參數為熱點的自動編號。"
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "視窗關閉輔助文字",

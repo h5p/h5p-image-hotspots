@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Leku beroaren etiketa laguntzako teknologietarako",
-      "default": "Leku beroa #num",
-      "description": "Lagunduko du adierazten zein leku beroan nabigatu dugun baldin eta bere popupak goibururik ez badu. #num erabili daiteke leku beroaren zenbakiaren ordez."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Itxi botoiaren etiketa laguntzako teknologietarako",

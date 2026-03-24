@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Etichetta dell'hotspot per tecnologie assistive",
-      "default": "Hotspot #num",
-      "description": "Aiuterà a evidenziare quale elemento dell'hotspot è stato navigato se non ne è stata specificata alcuna intestazione. #num può essere utilizzato per sostituire il numero di hotspot"
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etichetta del pulsante di chiusura per tecnologie assistive",

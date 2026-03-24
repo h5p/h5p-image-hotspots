@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot-merkelapp for assisterende teknologi",
-      "default": "Hotspot nummer #num",
-      "description": "Dersom hotspoten mangler tittel, forteller denne teksten hvilken hotspot bruker har navigert til. #num kan brukes i stedet for hotspot-nummeret. Brukes av assisterende teknologi."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Navn på \"Lukk\"-knapp (for assisterende teknologi)",

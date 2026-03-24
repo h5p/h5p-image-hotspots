@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Lebo ya eneo lenye mtandao kwa ajili ya teknolojia ya usaidizi",
-      "default": "Eneo lenye mtandao #num",
-      "description": "Itasaidia kutangaza kipengele cha eneo lenye mtandao kilichoelekezwa mahali husika ikiwa hakuna kichwa kilichobainishwa cha tovuti ya eneo lenye mtandao. #num inaweza kutumika kuchukua nafasi ya namba ya eneo lenye mtandao."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Funga lebo ya kitufe kwa teknolojia saidizi",

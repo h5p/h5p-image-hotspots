@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Tulipunkti silt assisteeriva tehnoloogia jaoks",
-      "default": "Tulipunkt #num",
-      "description": "Aitab teavitada, missugusele tulipunkti elemendile on navigeeritud, kui tulipunktile ei ole määratud pealkirja. #num saab kasutada tulipunkti arvu asendamiseks."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Sulge nupu silt assisteeriva tehnoloogia jaoks",

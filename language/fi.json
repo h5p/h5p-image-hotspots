@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot selite avustaville teknologioille",
-      "default": "Hotspot #num",
-      "description": "Auttaa esimerkiksi ruudunlukijasovellusta kertomaan mihin hotspot-ikoniin on navigoitu, jos sille ei ole erikseen määritetty otsikkoa joka luettaisiin ääneen. #num muuttujaa/tekstiä voidaan käyttää korvaamaan hotspot-kuvakkeen numero."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Sulje-painikkeen selite avustaville teknologioille",

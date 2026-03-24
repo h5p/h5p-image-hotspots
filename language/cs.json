@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Popisek aktivního bodu pro podpůrné technologie",
-      "default": "Aktivní bod #num",
-      "description": "Pomůže oznámit, ke kterému prvku aktivního bodu byl navigován, pokud pro hotspot není zadána žádná záhlaví. #num lze použít k nahrazení čísla aktivního bodu."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Popisek tlačítka zavřít pro podpůrné technologie",

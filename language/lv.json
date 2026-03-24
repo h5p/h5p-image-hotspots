@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Aktīvā punkta etiķete asistīvajām tehnoloģijām",
-      "default": "Aktīvais punkts #num",
-      "description": "Palīdzēs paziņot kurā aktīvajā punktā nonākts, ja aktīvajam punktam nav galvenes. #num var tikt izmantots, lai aizvietotu aktīvā punkta numuru."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Aizvēršanas pogas etiķete asistīvajām tehnoloģijām",

@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Intitulé de la puce cliquable pour les technologies d'accessibilité",
-      "default": "Puce #num",
-      "description": "Permet d'annoncer à quelle puce l'utilisateur est parvenu à naviguer s'il n'y a pas de titre spécifié pour cette puce. #num peut être utilisé pour remplacer le numéro de la puce."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Intitulé du bouton \"Fermer\" pour les technologies d'accessibilité",

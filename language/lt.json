@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Aktyviosios srities pavadinimas, skirtas pagalbinėms technologijoms",
-      "default": "Aktyvioji sritis #num",
-      "description": "Padės paskelbti, į kurį aktyviosios srities elementą buvo nukreipta, jei aktyviajai sričiai nenurodyta antraštė. #num galima naudoti aktyviosios srities numeriui pakeisti."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Uždaryti mygtuko pavadinimas, skirtas pagalbinėms technologijoms",

@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot-ის ეტიკეტი დამხმარე ტექნოლოგიებისთვის",
-      "default": "ცხელი წერტილი #num",
-      "description": "დაგეხმარება გამოაცხადოს, რომელ hotspot-ზეა ნავიგაცია, თუ არ არის მითითებული სათაური. #num შეიძლება გამოყენებულ იქნას hotspot-ის ნომრის ჩასანაცვლებლად."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "დახურვის ღილაკის სახელი დამხმარე ტექნოლოგიებისთვის",

@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "보조기술의 핫스팟 라벨",
-      "default": "핫스팟 #num",
-      "description": "핫스팟에 대해 지정된 헤더가 없을 경우 어떤 핫스팟 요소가 탐색되었는지 알려주는 데 도움이 될 것이다. #num 이 핫스팟 번호를 대체하여 사용될 수 있음"
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "닫기 버튼에 대한 보조기술 라벨",

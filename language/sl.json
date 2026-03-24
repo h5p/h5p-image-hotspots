@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Oznaka interaktivne točke za bralnike zaslona",
-      "default": "Interaktivna točka #num",
-      "description": "Besedilo je v pomoč bralniku zaslona, ko za vsebino v točkah niso dodane glave. Spremenljivka je #num."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Besedilo gumba Zapri za bralnike zaslona",

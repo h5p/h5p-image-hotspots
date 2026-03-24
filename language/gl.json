@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Etiqueta de punto chave para tecnoloxías de asistencia",
-      "default": "Punto chave #num",
-      "description": "Axudará a anunciar a que elemento se navegou se non se especificou unha cabeceira para ese punto chave. Pódese usar #num para substituir o número do punto chave."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etiqueta do botón pechar para tecnoloxías de asistencia",

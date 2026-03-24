@@ -65,7 +65,6 @@
           "label": "Default"
         }
       ],
-
       "field": {
         "label": "Interaktív pont",
         "fields": [
@@ -140,9 +139,8 @@
       }
     },
     {
-      "label": "Interaktív pont címkéje a támogató-segítő eszközöknek",
-      "default": "#num. interaktív pont",
-      "description": "Segít közölni, hogy melyik interaktív ponthoz navigált a felhasználó, ha nincs fejléc megadva az adott pontnál. A #num használható az interaktív pont számának behelyettesítésére."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Bezárás gomb címkéje a támogató-segítő eszközöknek",

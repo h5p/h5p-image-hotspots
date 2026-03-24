@@ -315,11 +315,10 @@
     }
   },
   {
-    "name": "hotspotNumberLabel",
+    "name": "untitledHotspotLabel",
     "type": "text",
-    "label": "Hotspot label for assistive technologies",
-    "default": "Hotspot #num",
-    "description": "Will help announce what hotspot element has been navigated to if there is no header specified for a hotspot. #num can be used to replace the hotspot number.",
+    "label": "Fallback label for hotspots without a header",
+    "default": "Untitled Hotspot",
     "common": true
   },
   {

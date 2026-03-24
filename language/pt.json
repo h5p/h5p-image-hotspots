@@ -139,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot para tecnologias de apoio",
-      "default": "Hotspot #num",
-      "description": "Esta etiqueta vai ajudar o leitor de ecrã a anunciar o elemento do hotspot se não existir informação específica. #num pode ser utilizado para substituir o número do hotspot."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etiqueta do botão fechar para tecnologias de apoio",

@@ -28,7 +28,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.options = $.extend(true, {}, {
       image: null,
       hotspots: [],
-      hotspotNumberLabel: 'Hotspot #num',
+      untitledHotspotLabel: 'Untitled Hotspot',
       closeButtonLabel: 'Close',
       containsAudioVideoLabel: 'Contains Audio/Video',
       globalIconType: ICON_TYPE.ICON,
@@ -160,19 +160,19 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
 
-        let baseTitle;
+        let numTitle;
         const isDefault = this.options.hotspots[i].hotspotIconType === ICON_TYPE.DEFAULT;
 
         if (this.options.globalIconType === ICON_TYPE.NUMBERS && isDefault)
         {
-          baseTitle = this.options.hotspotNumberLabel.replace('#num', (consecutive_numbers++).toString());
+          numTitle = (consecutive_numbers++).toString();
         }
        
-        const header = this.options.hotspots[i].header;
-        
-        const hotspotTitle = header
-          ? [baseTitle, header].filter(Boolean).join(', ')
-          : (baseTitle ?? 'Untitled Hotspot');
+        const hotspotTitle = [
+          numTitle,
+          this.options.hotspots[i].header ?? this.options.untitledHotspotLabel,
+        ].filter(Boolean).join(', ');
+          
 
         hotspot.setTitle(hotspotTitle);
         this.hotspots.push(hotspot);
