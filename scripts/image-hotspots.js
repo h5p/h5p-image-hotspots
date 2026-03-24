@@ -159,6 +159,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       try {
         var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
+
         let numTitle;
         const isDefault = this.options.hotspots[i].hotspotIconType === ICON_TYPE.DEFAULT;
 
@@ -171,6 +172,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
           numTitle,
           this.options.hotspots[i].header ?? this.options.untitledHotspotLabel,
         ].filter(Boolean).join(', ');
+        
         hotspot.setTitle(hotspotTitle);
         this.hotspots.push(hotspot);
       }
