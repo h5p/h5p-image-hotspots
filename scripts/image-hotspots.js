@@ -4,6 +4,13 @@
 H5P.ImageHotspots = (function ($, EventDispatcher) {
 
   const DEFAULT_FONT_SIZE = 24;
+  
+  const ICON_TYPE = {
+    DEFAULT: 'default',
+    ICON: 'icon',
+    IMAGE: 'image',
+    NUMBERS: 'numbers',
+  };
 
   /**
    * Creates a new Image hotspots instance
@@ -21,12 +28,16 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.options = $.extend(true, {}, {
       image: null,
       hotspots: [],
-      hotspotNumberLabel: 'Hotspot #num',
+      untitledHotspotLabel: 'Untitled Hotspot',
       closeButtonLabel: 'Close',
       containsAudioVideoLabel: 'Contains Audio/Video',
-      iconType: 'icon',
-      icon: 'plus'
+      globalIconType: ICON_TYPE.ICON,
+      globalIcon: 'plus'
     }, options);
+
+    if (this.options.globalIconType === ICON_TYPE.NUMBERS) {
+      this.options.globalIcon = 'number';
+    }
 
     // Remove hotspots without any content
     this.options.hotspots = this.options.hotspots.filter((hotspot) => {
@@ -88,6 +99,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       'class': 'h5p-image-hotspots-container'
     });
 
+    const maxNumberDigits = this.options.hotspots.length.toString().length;
+    this.$hotspotContainer[0].style.setProperty(
+      '--hotspot-number-font-size', `var(--hotspot-number-font-size-${maxNumberDigits}-digits)`
+    );
+
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
         'class': 'h5p-image-hotspots-background',
@@ -114,6 +130,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     var numHotspots = this.options.hotspots.length;
     this.hotspots = [];
 
+    // When using consecutive numbers, the hotspots should be in the order they are added
+    if (this.options.globalIconType !== ICON_TYPE.NUMBERS) {
     this.options.hotspots.sort(function (a, b) {
       // Sanity checks, move data to the back if invalid
       var firstIsValid = a.position && a.position.x && a.position.y;
@@ -135,13 +153,26 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         return a.position.x < b.position.x ? -1 : 1;
       }
     });
-
+  }
+    let consecutive_numbers = 1;
     for (var i=0; i<numHotspots; i++) {
       try {
         var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
-        var hotspotTitle = this.options.hotspots[i].header ? this.options.hotspots[i].header
-          : this.options.hotspotNumberLabel.replace('#num', (i + 1).toString());
+
+        let numTitle;
+        const isDefault = this.options.hotspots[i].hotspotIconType === ICON_TYPE.DEFAULT;
+
+        if (this.options.globalIconType === ICON_TYPE.NUMBERS && isDefault)
+        {
+          numTitle = (consecutive_numbers++).toString();
+        }
+       
+        const hotspotTitle = [
+          numTitle,
+          this.options.hotspots[i].header ?? this.options.untitledHotspotLabel,
+        ].filter(Boolean).join(', ');
+        
         hotspot.setTitle(hotspotTitle);
         this.hotspots.push(hotspot);
       }
@@ -297,6 +328,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       }
     });
   };
+
+  ImageHotspots.ICON_TYPE = ICON_TYPE;
 
   return ImageHotspots;
 })(H5P.jQuery, H5P.EventDispatcher);
