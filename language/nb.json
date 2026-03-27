@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Opplasta bilde"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "Hotspot",
       "label": "Hotspoter",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot-merkelapp for assisterende teknologi",
-      "default": "Hotspot nummer #num",
-      "description": "Dersom hotspoten mangler tittel, forteller denne teksten hvilken hotspot bruker har navigert til. #num kan brukes i stedet for hotspot-nummeret. Brukes av assisterende teknologi."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Navn på \"Lukk\"-knapp (for assisterende teknologi)",

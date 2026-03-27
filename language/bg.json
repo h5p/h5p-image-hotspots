@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Качено изображение"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "активна точка",
       "label": "Активни точки",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Актовна точка",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Етикет на активната точка за помощните технологии",
-      "default": "Активна точка #num",
-      "description": "Ще ви помогне да обявите към кой елемент на активната точка да добавите навигация, ако не е посочено заглавие за точка за достъп. #num може да се използва за замяна на номера на гореща точка."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Бутон за приключване за помощните технологии",

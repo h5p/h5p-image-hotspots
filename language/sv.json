@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Uppladdad bild"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Hotspots",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot-etikett för tillgänglighetshjälpmedel",
-      "default": "Hotspot #num",
-      "description": "Hjälper till med att informera vilket hotspot-element som har navigerats till, om det inte finns någon rubrik specificerad för en hotspot. #num kan användas för ersätta hotspot-nummer."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etikett för knappen \"stäng\" som används av tillgänglighetshjälpmedel",

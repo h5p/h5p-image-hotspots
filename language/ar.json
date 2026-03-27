@@ -16,6 +16,9 @@
         },
         {
           "label": "Uploaded image"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "نقاط الاتصال",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "نقطة اتصال",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "تسمية نقاط الاتصال من اجل التقنيات المساعدة",
-      "default": "Hotspot #num",
-      "description": "سيساعد في الإعلان عن عنصر نقطة الاتصال التي تم الانتقال إليها إذا لم يكن هناك عنوان محدد لنقطة اتصال. #num يمكن استخدامه لاستبدال رقم نقطة الاتصال."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "تسمية زر الاغلاق من اجل التقنيات المساعدة",

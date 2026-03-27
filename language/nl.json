@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Geüploade afbeelding"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Hotspots",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Hotspot label voor ondersteunende technologieën",
-      "default": "Hotspot #num",
-      "description": "Kan vertellen naar welk hotspot element er is genavigeerd als er geen koptekst is opgegeven voor de hotspot. #num kan worden gebruikt als vervanging voor het hotspot nummer."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Label voor \"Afsluiten\"-knop voor ondersteunende technologieën",

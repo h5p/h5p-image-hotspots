@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Yüklenen resim"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Hotspots",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Hotspot",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Yardımcı teknoloji için etkin nokta etiketi",
-      "default": "Etkin nokta #num",
-      "description": "Bir etkin nokta için başlık belirtilmemişse, hangi etkin nokta öğesine gidildiğini seslendirmeye yardımcı olur. #num, etkin nokta numarasını değiştirmek için kullanılabilir."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Yardımcı teknolojileri kapat butonu etiketi",

@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "تصویر سفارشی"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "نقطه هدف",
       "label": "نقاط هدف",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "نقطه هدف",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "برچسب نقطه هدف برای فناوری‌های کمکی",
-      "default": "نقطه هدف شماره #num",
-      "description": "در صورت عدم تعیین عنوان برای نقطه هدف، این متن برای شناسایی نقطه هدف توسط فناوری‌های کمکی استفاده می‌شود. از #num برای نمایش شماره نقطه هدف استفاده کنید."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "برچسب دکمه بستن برای فناوری‌های کمکی",

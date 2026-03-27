@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Отпремљена слика"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "hotspot",
       "label": "Врућа тачка",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Врућа тачка",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Ознака вруће тачке за помоћне технологије",
-      "default": "Врућа тачка #num",
-      "description": "Помоћи ће вам да саопштите до ког је елемента вруће тачке кретао ако за врућу тачку није наведено заглавље. #num се може користити за замену броја вруће тачке."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Ознака дугмета за затварање",

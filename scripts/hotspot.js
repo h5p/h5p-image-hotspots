@@ -3,6 +3,8 @@
  */
 (function ($, ImageHotspots) {
 
+  const ICON_TYPE = ImageHotspots.ICON_TYPE;
+
   /**
    * Creates a new Hotspot
    *
@@ -23,14 +25,14 @@
     this.options = options;
     this.parent = parent;
     // Check custom hotspot icon configuration
-    const isDefault = config.hotspotIconType === 'default';
-    const isIcon = config.hotspotIconType === 'icon';
-    const isImage = config.hotspotIconType === 'image';
+    const isDefault = config.hotspotIconType === ICON_TYPE.DEFAULT;
+    const isIcon = config.hotspotIconType === ICON_TYPE.ICON;
+    const isImage = config.hotspotIconType === ICON_TYPE.IMAGE;
 
     const hotspotImage = config.hotspotIconImage;
     const globalImage = options.globalIconImage;
     const hotspotImageExists = hotspotImage !== undefined && isImage;  
-    const globalImageExists = globalImage !== undefined && options.globalIconType === 'image';
+    const globalImageExists = globalImage !== undefined && options.globalIconType === ICON_TYPE.IMAGE;
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
     const iconImageExists =  hotspotImageExists || (isDefault && globalImageExists);
@@ -86,9 +88,21 @@
     this.$element.css({
       top: this.config.position.y + '%',
       left: this.config.position.x + '%',
-      color: iconColor,
-      backgroundColor: options.backgroundColor ? options.backgroundColor : ''
     });
+
+    if (options.globalIconType === ICON_TYPE.NUMBERS && isDefault) {
+      this.$element.css({
+        backgroundColor: iconColor,
+        border: `4px solid ${options.backgroundColor ?? '#ffffff'}`,
+        color: options.backgroundColor ?? '#ffffff'
+      });
+    }
+    else {
+      this.$element.css({
+        color: iconColor,
+        backgroundColor: options.backgroundColor ? options.backgroundColor : ''
+      });
+    }
 
     parent.on('resize', function () {
       if (self.popup) {
@@ -344,7 +358,7 @@
   ImageHotspots.Hotspot.prototype.setTitle = function (title) {
     title = this.htmlDecode(title);
 
-    const index = this.$element.parent().find('button').index(this.$element);
+    const index = this.$element.parent().find('.h5p-image-hotspot').index(this.$element);
     const content = this.options.hotspots[index].content;
     let hasAudioVideo = false;
     for (let item of content) {
