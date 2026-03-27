@@ -17,7 +17,7 @@
    * @param  {H5P.ImageHotspots} parent
    */
   ImageHotspots.Hotspot = function (config, options, id, isSmallDeviceCB, parent) {
-    var self = this;
+    const self = this;
     this.config = config;
     this.visible = false;
     this.id = id;
@@ -35,24 +35,24 @@
     const globalImageExists = globalImage !== undefined && options.globalIconType === ICON_TYPE.IMAGE;
 
     // Check if there is an iconImage that should be used instead of fontawesome icons to determine the html element.
-    const iconImageExists =  hotspotImageExists || (isDefault && globalImageExists);
+    const iconImageExists = hotspotImageExists || (isDefault && globalImageExists);
     const iconImage = iconImageExists ? (hotspotImageExists ? hotspotImage : globalImage) : undefined;
     const iconPredefinedIcon = isIcon ? config.hotspotIcon : options.globalIcon;
     const iconColor = isIcon ? config.hotspotColor : options.globalColor;
 
-    if (this.config.content === undefined  || this.config.content.length === 0) {
+    if (this.config.content === undefined || this.config.content.length === 0) {
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
     this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
-      'class': 'h5p-image-hotspot ' +
-        (!iconImageExists ? 'h5p-image-hotspot-' + iconPredefinedIcon : '') +
-        (config.position.legacyPositioning ? ' legacy-positioning' : ''),
-      'role': 'button',
-      'tabindex': 0,
+      class: `h5p-image-hotspot ${
+        !iconImageExists ? `h5p-image-hotspot-${iconPredefinedIcon}` : ''
+      }${config.position.legacyPositioning ? ' legacy-positioning' : ''}`,
+      role: 'button',
+      tabindex: 0,
       'aria-haspopup': true,
       src: iconImageExists ? H5P.getPath(iconImage.path, this.id) : undefined,
-      click: function () {
+      click() {
         // prevents duplicates while loading
         if (self.loadingPopup) {
           return false;
@@ -66,7 +66,7 @@
         }
         return false;
       },
-      keydown: function (e) {
+      keydown(e) {
         if (e.which === 32 || e.which === 13) {
           // Prevent duplicates while loading
           if (self.loadingPopup) {
@@ -82,7 +82,7 @@
           e.stopPropagation();
           return false;
         }
-      }
+      },
     });
 
     this.$element.css({
@@ -106,12 +106,10 @@
 
     parent.on('resize', function () {
       if (self.popup) {
-
-        self.actionInstances.forEach(function (actionInstance) {
+        self.actionInstances.forEach((actionInstance) => {
           if (actionInstance.trigger !== undefined) {
-
             // The reason for this timeout is fullscreen on chrome on android
-            setTimeout(function () {
+            setTimeout(() => {
               actionInstance.trigger('resize');
             }, 1);
           }
@@ -135,20 +133,20 @@
    * @param {boolean} [focusPopup] Focuses popup for keyboard accessibility
    */
   ImageHotspots.Hotspot.prototype.showPopup = function (focusPopup) {
-    var self = this;
+    const self = this;
 
     // Create popup content:
-    var $popupBody = $('<div/>', {'class': 'h5p-image-hotspot-popup-body'});
+    const $popupBody = $('<div/>', { class: 'h5p-image-hotspot-popup-body' });
     self.loadingPopup = true;
 
     this.parent.setShowingPopup(true);
 
     this.actionInstances = [];
-    var waitForLoaded = [];
-    this.config.content.forEach(function (action) {
-      var $popupFraction = $('<div>', {
-        'class': 'h5p-image-hotspot-popup-body-fraction',
-        appendTo: $popupBody
+    const waitForLoaded = [];
+    this.config.content.forEach((action) => {
+      const $popupFraction = $('<div>', {
+        class: 'h5p-image-hotspot-popup-body-fraction',
+        appendTo: $popupBody,
       });
 
       const machineName = action.library?.split(' ')[0];
@@ -164,7 +162,7 @@
         $popupFraction[0].setAttribute('tabindex', '-1');
       }
 
-      var actionInstance = H5P.newRunnable(action, self.id);
+      const actionInstance = H5P.newRunnable(action, self.id);
 
       self.actionInstances.push(actionInstance);
       if (machineName === 'H5P.Image' || machineName === 'H5P.Video') {
@@ -189,19 +187,19 @@
       }
     });
 
-    var readyToPopup = function () {
+    const readyToPopup = function () {
       // Disable all hotspots
       self.toggleHotspotsTabindex(true);
       self.visible = true;
       self.popup.show(focusPopup);
       self.$element.addClass('active');
-      self.actionInstances.forEach(function (actionInstance) {
+      self.actionInstances.forEach((actionInstance) => {
         actionInstance.trigger('resize');
       });
     };
 
     // Popup style
-    var popupClass = 'h5p-video';
+    let popupClass = 'h5p-video';
     if (!waitForLoaded.length) {
       popupClass = 'h5p-text';
     }
@@ -211,7 +209,8 @@
 
     // Create Image hot-spots popup
     self.popup = new ImageHotspots.Popup(
-      self.$container, $popupBody,
+      self.$container,
+      $popupBody,
       self.config.position.x,
       self.config.position.y,
       self.$element.outerWidth(),
@@ -219,17 +218,17 @@
       popupClass,
       self.config.alwaysFullscreen || self.isSmallDeviceCB(),
       self.options,
-      self.config.position.legacyPositioning
+      self.config.position.legacyPositioning,
     );
 
-    self.parent.on('resize', function () {
+    self.parent.on('resize', () => {
       if (self.visible) {
         self.popup.resize();
       }
     });
 
     // Release
-    self.popup.on('closed', function (e) {
+    self.popup.on('closed', (e) => {
       self.hidePopup();
 
       // Refocus hotspot
@@ -239,24 +238,23 @@
     });
 
     // Finished loading popup
-    self.popup.on('finishedLoading', function () {
+    self.popup.on('finishedLoading', () => {
       self.loadingPopup = false;
     });
 
     if (waitForLoaded.length) {
-      var loaded = 0;
+      let loaded = 0;
 
       // Wait for libraries to load before showing popup
-      waitForLoaded.forEach(function (unloaded) {
-
+      waitForLoaded.forEach((unloaded) => {
         // Signal that library has finished loading
-        var fire = function () {
+        const fire = function () {
           clearTimeout(timeout);
           unloaded.off('loaded', fire);
           loaded += 1;
 
           if (loaded >= waitForLoaded.length) {
-            setTimeout(function () {
+            setTimeout(() => {
               readyToPopup();
             }, 100);
           }
@@ -264,20 +262,19 @@
 
         // Add timer fallback if loaded event is not triggered
         var timeout = setTimeout(fire, 1000);
-        unloaded.on('loaded', fire, {unloaded: unloaded, timeout: timeout});
+        unloaded.on('loaded', fire, { unloaded, timeout });
         unloaded.trigger('resize');
       });
-
     }
     else {
-      setTimeout(function () {
+      setTimeout(() => {
         readyToPopup();
       }, 100);
     }
 
     // We don't get click events on body for iOS-devices
-    $('body').children().on('click.h5p-image-hotspot-popup', function (event) {
-      var $target = $(event.target);
+    $('body').children().on('click.h5p-image-hotspot-popup', (event) => {
+      const $target = $(event.target);
       if (self.visible && !$target.hasClass('h5p-enable-fullscreen') && !$target.hasClass('h5p-disable-fullscreen')
         && event.target.id === 'h5p-image-hotspots-overlay') {
         self.hidePopup();
@@ -334,8 +331,8 @@
    * @param {boolean} [trapReverseTab] Traps when tabbing backwards
    */
   ImageHotspots.Hotspot.prototype.setTrapFocusTo = function (hotspot, trapReverseTab) {
-    this.$element.on('keydown.trapfocus', function (e) {
-      var keyCombination = e.which === 9 && (trapReverseTab ? e.shiftKey : !e.shiftKey);
+    this.$element.on('keydown.trapfocus', (e) => {
+      const keyCombination = e.which === 9 && (trapReverseTab ? e.shiftKey : !e.shiftKey);
       if (keyCombination) {
         hotspot.focus();
         e.stopPropagation();
@@ -361,7 +358,7 @@
     const index = this.$element.parent().find('.h5p-image-hotspot').index(this.$element);
     const content = this.options.hotspots[index].content;
     let hasAudioVideo = false;
-    for (let item of content) {
+    for (const item of content) {
       if (item.library.includes('Video') || item.library.includes('Audio')) {
         hasAudioVideo = true;
         break;
@@ -374,14 +371,14 @@
 
   ImageHotspots.Hotspot.prototype.pause = function () {
     if (this.actionInstances) {
-      this.actionInstances.forEach(function(actionInstance) {
-        if (actionInstance.audio &&
-            (actionInstance.audio.pause instanceof Function ||
-            typeof actionInstance.audio.pause === 'function')) {
+      this.actionInstances.forEach((actionInstance) => {
+        if (actionInstance.audio
+            && (actionInstance.audio.pause instanceof Function
+            || typeof actionInstance.audio.pause === 'function')) {
           actionInstance.audio.pause();
         }
       });
-    };
+    }
   };
 
   /**
@@ -393,5 +390,4 @@
     const dparser = new DOMParser().parseFromString(input, 'text/html');
     return dparser.documentElement.textContent;
   };
-
-})(H5P.jQuery, H5P.ImageHotspots);
+}(H5P.jQuery, H5P.ImageHotspots));
