@@ -2,7 +2,6 @@
  * Defines the H5P.ImageHotspots class
  */
 H5P.ImageHotspots = (function ($, EventDispatcher) {
-
   const DEFAULT_FONT_SIZE = 24;
 
   const ICON_TYPE = {
@@ -32,7 +31,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       closeButtonLabel: 'Close',
       containsAudioVideoLabel: 'Contains Audio/Video',
       globalIconType: ICON_TYPE.ICON,
-      globalIcon: 'plus'
+      globalIcon: 'plus',
     }, options);
 
     if (this.options.globalIconType === ICON_TYPE.NUMBERS) {
@@ -41,9 +40,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     // Remove hotspots without any content
     this.options.hotspots = this.options.hotspots.filter((hotspot) => {
-      hotspot.content = hotspot.content?.filter((content) => {
-        return content.library !== undefined;
-      });
+      hotspot.content = hotspot.content?.filter((content) => content.library !== undefined);
 
       return hotspot.content?.length > 0;
     });
@@ -62,7 +59,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.massageAttributeOutput = function (value) {
       const dparser = new DOMParser().parseFromString(value, 'text/html');
       const div = document.createElement('div');
-      div.innerHTML = dparser.documentElement.textContent;;
+      div.innerHTML = dparser.documentElement.textContent;
       return div.textContent || div.innerText || '';
     };
   }
@@ -70,7 +67,6 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
   // Extends the event dispatcher
   ImageHotspots.prototype = Object.create(EventDispatcher.prototype);
   ImageHotspots.prototype.constructor = ImageHotspots;
-
 
   /**
    * Attach function called by H5P framework to insert H5P content into
@@ -80,7 +76,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @param {H5P.jQuery} $container
    */
   ImageHotspots.prototype.attach = function ($container) {
-    var self = this;
+    const self = this;
     self.$container = $container;
 
     if (this.options.image === null || this.options.image === undefined) {
@@ -89,25 +85,23 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     }
 
     // Need to know since ios uses :hover when clicking on an element
-    if (/(iPad|iPhone|iPod)/g.test( navigator.userAgent ) === false) {
+    if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent) === false) {
       $container.addClass('not-an-ios-device');
     }
 
     $container.addClass('h5p-image-hotspots h5p-theme');
 
     this.$hotspotContainer = $('<div/>', {
-      'class': 'h5p-image-hotspots-container'
+      class: 'h5p-image-hotspots-container',
     });
 
     const maxNumberDigits = this.options.hotspots.length.toString().length;
-    this.$hotspotContainer[0].style.setProperty(
-      '--hotspot-number-font-size', `var(--hotspot-number-font-size-${maxNumberDigits}-digits)`
-    );
+    this.$hotspotContainer[0].style.setProperty('--hotspot-number-font-size', `var(--hotspot-number-font-size-${maxNumberDigits}-digits)`);
 
     if (this.options.image && this.options.image.path) {
       this.$image = $('<img/>', {
-        'class': 'h5p-image-hotspots-background',
-        src: H5P.getPath(this.options.image.path, this.id)
+        class: 'h5p-image-hotspots-background',
+        src: H5P.getPath(this.options.image.path, this.id),
       }).appendTo(this.$hotspotContainer);
 
       // Set alt text of image
@@ -122,20 +116,20 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       this.$image.on('load', () => this.trigger('resize'));
     }
 
-    var isSmallDevice = function () {
+    const isSmallDevice = function () {
       return self.isSmallDevice;
     };
 
     // Add hotspots
-    var numHotspots = this.options.hotspots.length;
+    const numHotspots = this.options.hotspots.length;
     this.hotspots = [];
 
     // When using consecutive numbers, the hotspots should be in the order they are added
     if (this.options.globalIconType !== ICON_TYPE.NUMBERS) {
-      this.options.hotspots.sort(function (a, b) {
+      this.options.hotspots.sort((a, b) => {
         // Sanity checks, move data to the back if invalid
-        var firstIsValid = a.position && a.position.x && a.position.y;
-        var secondIsValid = b.position && b.position.x && b.position.y;
+        const firstIsValid = a.position && a.position.x && a.position.y;
+        const secondIsValid = b.position && b.position.x && b.position.y;
         if (!firstIsValid) {
           return 1;
         }
@@ -148,35 +142,32 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
         if (a.position.y !== b.position.y) {
           return a.position.y < b.position.y ? -1 : 1;
         }
-        else {
-          // a and b y position is equal, sort on x
-          return a.position.x < b.position.x ? -1 : 1;
-        }
+
+        // a and b y position is equal, sort on x
+        return a.position.x < b.position.x ? -1 : 1;
       });
     }
     let consecutive_numbers = 1;
-    for (var i=0; i<numHotspots; i++) {
+    for (let i = 0; i < numHotspots; i++) {
       try {
-        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
+        const hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
 
         let numTitle;
         const isDefault = this.options.hotspots[i].hotspotIconType === ICON_TYPE.DEFAULT;
 
-        if (this.options.globalIconType === ICON_TYPE.NUMBERS && isDefault)
-        {
+        if (this.options.globalIconType === ICON_TYPE.NUMBERS && isDefault) {
           numTitle = (consecutive_numbers++).toString();
         }
-       
+
         const hotspotTitle = [
           numTitle,
           this.options.hotspots[i].header ?? this.options.untitledHotspotLabel,
         ].filter(Boolean).join(', ');
-          
 
         hotspot.setTitle(hotspotTitle);
         this.hotspots.push(hotspot);
-      } 
+      }
       catch (e) {
         H5P.error(e);
       }
@@ -185,10 +176,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     this.on('resize', self.resize, self);
 
-    this.on('enterFullScreen', function () {
+    this.on('enterFullScreen', () => {
       self.fullscreenButton.tabIndex = -1;
       // Resize image when entering fullscreen.
-      setTimeout(function () {
+      setTimeout(() => {
         self.trigger('resize');
 
         // Trap focus
@@ -196,10 +187,10 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       });
     });
 
-    this.on('exitFullScreen', function () {
+    this.on('exitFullScreen', () => {
       self.fullscreenButton.tabIndex = 0;
       // Do not rely on that isFullscreen has been updated
-      self.trigger('resize', {forceImageHeight: true});
+      self.trigger('resize', { forceImageHeight: true });
       self.toggleTrapFocus(false);
     });
 
@@ -207,7 +198,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     // resize when content becomes visible
     const observer = new IntersectionObserver((entries, observer) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         if (entry.intersectionRatio > 0) {
           this.trigger('resize');
           return;
@@ -259,16 +250,16 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       return;
     }
 
-    var self = this;
+    const self = this;
     self.fullscreenButton = document.querySelector('.h5p-enable-fullscreen');
-    var containerWidth = self.$container.width();
-    var containerHeight = self.$container.height();
-    var width = containerWidth;
-    var height = Math.floor((width/self.options.image.width) * self.options.image.height);
-    var forceImageHeight = e && e.data && e.data.forceImageHeight;
+    const containerWidth = self.$container.width();
+    const containerHeight = self.$container.height();
+    let width = containerWidth;
+    let height = Math.floor((width / self.options.image.width) * self.options.image.height);
+    const forceImageHeight = e && e.data && e.data.forceImageHeight;
 
     // Check if decreasing iframe size
-    var decreaseSize = e && e.data && e.data.decreaseSize;
+    const decreaseSize = e && e.data && e.data.decreaseSize;
     if (!decreaseSize) {
       self.$container.css('width', '');
     }
@@ -278,12 +269,11 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
       // If fullscreen, we have both a max width and max height.
       if (!forceImageHeight && height > containerHeight) {
         height = containerHeight;
-        width = Math.floor((height/self.options.image.height) * self.options.image.width);
+        width = Math.floor((height / self.options.image.height) * self.options.image.width);
       }
 
       // Check if we need to apply semi full screen fix.
       if (self.$container.is('.h5p-semi-fullscreen')) {
-
         // Reset semi fullscreen width
         self.$container.css('width', '');
 
@@ -293,37 +283,37 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
           self.$image.css('width', '10px');
 
           // Trigger changes
-          setTimeout(function () {
-            self.trigger('resize', {decreaseSize: true});
+          setTimeout(() => {
+            self.trigger('resize', { decreaseSize: true });
           }, 200);
         }
 
         // Set width equal to iframe parent width, since iframe content has not been updated yet.
-        var $iframe = $(window.frameElement);
+        const $iframe = $(window.frameElement);
         if ($iframe) {
-          var $iframeParent = $iframe.parent();
+          const $iframeParent = $iframe.parent();
           width = $iframeParent.width();
-          self.$container.css('width', width + 'px');
+          self.$container.css('width', `${width}px`);
         }
       }
     }
 
     self.$image.css({
-      width: width + 'px',
-      height: height + 'px'
+      width: `${width}px`,
+      height: `${height}px`,
     });
 
     self.$hotspotContainer.css({
-      width: width + 'px',
-      height: height + 'px',
-      fontSize: `clamp(${DEFAULT_FONT_SIZE}px, 1.2em, ${DEFAULT_FONT_SIZE*2}px)`,
+      width: `${width}px`,
+      height: `${height}px`,
+      fontSize: `clamp(${DEFAULT_FONT_SIZE}px, 1.2em, ${DEFAULT_FONT_SIZE * 2}px)`,
     });
 
-    self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);
+    self.isSmallDevice = (containerWidth / parseFloat($('body').css('font-size')) < 40);
   };
 
-  ImageHotspots.prototype.pause = function() {
-    this.hotspots.forEach(function(hotspot) {
+  ImageHotspots.prototype.pause = function () {
+    this.hotspots.forEach((hotspot) => {
       if (hotspot.pause) {
         hotspot.pause();
       }
@@ -333,4 +323,4 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
   ImageHotspots.ICON_TYPE = ICON_TYPE;
 
   return ImageHotspots;
-})(H5P.jQuery, H5P.EventDispatcher);
+}(H5P.jQuery, H5P.EventDispatcher));

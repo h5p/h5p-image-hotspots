@@ -2,7 +2,6 @@
  * Defines the ImageHotspots.Popup class
  */
 (function ($, ImageHotspots, EventDispatcher) {
-
   /**
    * Creates new Popup instance
    *
@@ -22,17 +21,17 @@
   ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy) {
     EventDispatcher.call(this);
 
-    var self = this;
+    const self = this;
     this.$container = $container;
-    var width = this.$container.width();
-    var height = this.$container.height();
+    const width = this.$container.width();
+    let height = this.$container.height();
 
-    var pointerWidthInPercent = 1.55;
-    hotspotWidth = (hotspotWidth/width)*100;
+    const pointerWidthInPercent = 1.55;
+    hotspotWidth = (hotspotWidth / width) * 100;
 
-    var popupLeft = 0;
-    var popupWidth = 0;
-    var toTheLeft = false;
+    let popupLeft = 0;
+    let popupWidth = 0;
+    let toTheLeft = false;
 
     if (fullscreen) {
       popupWidth = 100;
@@ -41,40 +40,40 @@
     else {
       toTheLeft = (x > 50);
       popupLeft = (toTheLeft ? 0 : (x + hotspotWidth + pointerWidthInPercent));
-      popupWidth = (toTheLeft ?  (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
+      popupWidth = (toTheLeft ? (x - hotspotWidth - pointerWidthInPercent) : 100 - popupLeft);
     }
 
     this.$popupBackground = $('<div/>', {
-      'class': 'h5p-image-hotspots-overlay',
-      'id': 'h5p-image-hotspots-overlay'
+      class: 'h5p-image-hotspots-overlay',
+      id: 'h5p-image-hotspots-overlay',
     });
     const headerID = `h5p-image-hotspot-popup-header-${H5P.createUUID()}`;
     this.$popup = $('<div/>', {
-      'class': 'h5p-image-hotspot-popup ' + className,
-      'tabindex': '0',
-      'role': 'dialog',
+      class: `h5p-image-hotspot-popup ${className}`,
+      tabindex: '0',
+      role: 'dialog',
       'aria-modal': 'true',
-      'aria-labelledby': header ? headerID : undefined
+      'aria-labelledby': header ? headerID : undefined,
     }).css({
-      left: (toTheLeft ? '' : '-') + '100%',
-      width: popupWidth + '%'
+      left: `${toTheLeft ? '' : '-'}100%`,
+      width: `${popupWidth}%`,
     }).appendTo(this.$popupBackground);
 
     this.$popupContent = $('<div/>', {
-      'class': 'h5p-image-hotspot-popup-content',
+      class: 'h5p-image-hotspot-popup-content',
       on: {
-        scroll: function () {
+        scroll() {
           $(this).addClass('has-scrolled');
-        }
-      }
+        },
+      },
     });
 
     if (header) {
       this.$popupHeader = $('<div/>', {
-        'class': 'h5p-image-hotspot-popup-header',
-        'id': headerID,
+        class: 'h5p-image-hotspot-popup-header',
+        id: headerID,
         html: header,
-        'aria-hidden': 'true'
+        'aria-hidden': 'true',
       });
       this.$popupContent.append(this.$popupHeader);
       this.$popup.addClass('h5p-image-hotspot-has-header');
@@ -84,14 +83,14 @@
 
     // Add close button
     this.$closeButton = $('<button>', {
-      'class': 'h5p-image-hotspot-close-popup-button',
+      class: 'h5p-image-hotspot-close-popup-button',
       'aria-label': options.closeButtonLabel,
-      'title': options.closeButtonLabel
-    }).click(function () {
+      title: options.closeButtonLabel,
+    }).click(() => {
       self.trigger('closed');
-    }).keydown(function (e) {
+    }).keydown((e) => {
       if (e.which === 32 || e.which === 13) {
-        self.trigger('closed', {refocus: true});
+        self.trigger('closed', { refocus: true });
         return false;
       }
     }).appendTo(this.$popup);
@@ -104,9 +103,9 @@
     // by the popup
     if (!fullscreen) {
       this.$pointer = $('<div/>', {
-        'class': 'h5p-image-hotspot-popup-pointer to-the-' + (toTheLeft ? 'left' : 'right') + (legacy ? ' legacy-positioning' : ''),
+        class: `h5p-image-hotspot-popup-pointer to-the-${toTheLeft ? 'left' : 'right'}${legacy ? ' legacy-positioning' : ''}`,
       }).css({
-        top: y + '%',
+        top: `${y}%`,
       }).appendTo(this.$popupBackground);
     }
 
@@ -120,27 +119,27 @@
       // Reset
       self.$popup.css({
         maxHeight: '',
-        height: ''
+        height: '',
       });
       self.$popupContent.css({
-        height: ''
+        height: '',
       });
 
       height = this.$container.height();
-      var contentHeight = self.$popupContent.outerHeight();
-      var parentHeight = self.$popup.outerHeight();
+      const contentHeight = self.$popupContent.outerHeight();
+      const parentHeight = self.$popup.outerHeight();
 
-      var fitsWithin = contentHeight < height;
+      const fitsWithin = contentHeight < height;
 
       if (fitsWithin) {
         // don't need all height:
         self.$popup.css({
           maxHeight: 'auto',
-          height: 'auto'
+          height: 'auto',
         });
 
         // find new top:
-        var top = Math.max(0, ((y / 100) * parentHeight) - (contentHeight / 2));
+        let top = Math.max(0, ((y / 100) * parentHeight) - (contentHeight / 2));
 
         // Check if we need to move it a bit up (in case it overflows)
         if (top + contentHeight > parentHeight) {
@@ -149,13 +148,13 @@
 
         // From pixels to percent:
         self.$popup.css({
-          top: (top / parentHeight) * 100 + '%'
+          top: `${(top / parentHeight) * 100}%`,
         });
       }
 
       self.$popupContent.css({
         height: fitsWithin ? '' : '100%',
-        overflow: fitsWithin ? '' : 'auto'
+        overflow: fitsWithin ? '' : 'auto',
       }).toggleClass('overflowing', !fitsWithin);
 
       self.$popup.toggleClass('popup-overflowing', !fitsWithin);
@@ -165,27 +164,25 @@
      * Show popup
      */
     self.show = function () {
-
       if (!fullscreen) {
-
         self.resize();
 
         // Need to move pointer:
         self.$pointer.css({
           left: toTheLeft ? (
-            popupWidth + '%'
+            `${popupWidth}%`
           ) : (
-            popupLeft + '%'
-          )
+            `${popupLeft}%`
+          ),
         });
       }
 
       self.$popup.css({
-        left: popupLeft + '%'
+        left: `${popupLeft}%`,
       });
       self.$popupBackground.addClass('visible');
 
-      H5P.Transition.onTransitionEnd(self.$popup, function () {
+      H5P.Transition.onTransitionEnd(self.$popup, () => {
         self.$popup.focus();
 
         // Show pointer;
@@ -204,5 +201,4 @@
   // Extends the event dispatcher
   ImageHotspots.Popup.prototype = Object.create(EventDispatcher.prototype);
   ImageHotspots.Popup.prototype.constructor = ImageHotspots.Popup;
-
-})(H5P.jQuery, H5P.ImageHotspots, H5P.EventDispatcher);
+}(H5P.jQuery, H5P.ImageHotspots, H5P.EventDispatcher));
