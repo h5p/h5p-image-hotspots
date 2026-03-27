@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Завантажене зображення"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "Інтерактивні маркери",
       "label": "Мітки",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Мітка",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Назва мітки для допоміжних технологій",
-      "default": "Мітка #num",
-      "description": "Буде допомагати оголошувати, яка мітка була переміщена, якщо нема заголовка вказаного для мітки. #num можна використовувати для заміни номера мітки."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Кнопка \"Закрити\" для допоміжних технологій",

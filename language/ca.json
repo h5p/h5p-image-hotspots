@@ -15,7 +15,10 @@
           "label": "Predefined icon"
         },
         {
-          "label": "Uploaded image"
+          "label": "Imatge carregada"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "zona sensible",
       "label": "Zones sensibles",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "Zona sensible",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "Etiqueta de la zona sensible per a tecnologies d’assistència",
-      "default": "Zona sensible #num",
-      "description": "Ajudarà a indicar quin element de la zona sensible s’ha seleccionat si la zona sensible no té cap capçalera. El número de zona sensible es pot substituir per #num."
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "Etiqueta del botó «Tanca» per a tecnologies d’assistència",

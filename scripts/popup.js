@@ -47,7 +47,6 @@
       class: 'h5p-image-hotspots-overlay',
       id: 'h5p-image-hotspots-overlay',
     });
-
     const headerID = `h5p-image-hotspot-popup-header-${H5P.createUUID()}`;
     this.$popup = $('<div/>', {
       class: `h5p-image-hotspot-popup ${className}`,

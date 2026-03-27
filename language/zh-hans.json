@@ -16,6 +16,9 @@
         },
         {
           "label": "Uploaded image"
+        },
+        {
+          "label": "Consecutive numbers"
         }
       ]
     },
@@ -57,6 +60,11 @@
     {
       "entity": "热点",
       "label": "所有热点",
+      "widgets": [
+        {
+          "label": "Default"
+        }
+      ],
       "field": {
         "label": "热点",
         "fields": [
@@ -131,9 +139,8 @@
       }
     },
     {
-      "label": "热点辅助说明",
-      "default": "热点 #num",
-      "description": "如果热点没有设定标题，这可以用来帮助说明热点。#num 参数为热点的自动编号。"
+      "label": "Fallback label for hotspots without a header",
+      "default": "Untitled Hotspot"
     },
     {
       "label": "视窗关闭辅助文字",
