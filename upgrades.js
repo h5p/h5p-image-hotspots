@@ -1,4 +1,3 @@
-/* eslint-disable */
 var H5PUpgrades = H5PUpgrades || {};
 
 H5PUpgrades['H5P.ImageHotspots'] = (function () {
@@ -95,7 +94,7 @@ H5PUpgrades['H5P.ImageHotspots'] = (function () {
        * @param finished
        */
       11: function (parameters, finished) {
-         if (parameters.iconType) {
+        if (parameters.iconType) {
           parameters.globalIconType = parameters.iconType;
           delete parameters.iconType;
         }
