@@ -1,3 +1,4 @@
+/* eslint-disable */
 var H5PUpgrades = H5PUpgrades || {};
 
 H5PUpgrades['H5P.ImageHotspots'] = (function () {
@@ -82,6 +83,33 @@ H5PUpgrades['H5P.ImageHotspots'] = (function () {
               hotspot.position.legacyPositioning = true;
             }
           });
+        }
+        finished(null, parameters);
+      },
+      /**
+       *  Asynchronous content upgrade hook.
+       * Upgrades content parameters to support ImageHotspots 1.11
+       *
+       *
+       * @param parameters
+       * @param finished
+       */
+      11: function (parameters, finished) {
+         if (parameters.iconType) {
+          parameters.globalIconType = parameters.iconType;
+          delete parameters.iconType;
+        }
+        if (parameters.icon) {
+          parameters.globalIcon = parameters.icon;
+          delete parameters.icon;
+        }
+        if (parameters.iconImage) {
+          parameters.globalIconImage = parameters.iconImage;
+          delete parameters.iconImage;
+        }
+        if (parameters.color) {
+          parameters.globalColor = parameters.color;
+          delete parameters.color;
         }
         finished(null, parameters);
       },
