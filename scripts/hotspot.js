@@ -44,14 +44,14 @@
       throw new Error('Missing content configuration for hotspot. Please fix in editor.');
     }
 
-    this.$element = $(iconImageExists ? '<img/>' : '<button/>', {
+    this.$element = $('<button/>', {
       'class': 'h5p-image-hotspot ' +
         (!iconImageExists ? 'h5p-image-hotspot-' + iconPredefinedIcon : '') +
         (config.position.legacyPositioning ? ' legacy-positioning' : ''),
       'role': 'button',
       'tabindex': 0,
       'aria-haspopup': true,
-      src: iconImageExists ? H5P.getPath(iconImage.path, this.id) : undefined,
+      'html': iconImageExists ? `<img src="${H5P.getPath(iconImage.path, this.id)}" alt=""/>` : '',
       click: function () {
         // prevents duplicates while loading
         if (self.loadingPopup) {
