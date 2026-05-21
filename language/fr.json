@@ -9,60 +9,60 @@
       "description": "Si le navigateur ne peut pas charger l'image, ce texte sera affiché à la place. Également utilisé par les technologies d'accessibilité."
     },
     {
-      "label": "Global hotspot Icon",
+      "label": "Icône du point d'intérêt par défaut",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Icône prédéfinie"
         },
         {
-          "label": "Uploaded image"
+          "label": "Image téléchargée"
         },
         {
-          "label": "Consecutive numbers"
+          "label": "Nombres consécutifs"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspots.",
+      "label": "Icône prédéfinie",
+      "description": "Utiliser une icône prédéfinie pour les points d'intérêts.",
       "options": [
         {
           "label": "Plus"
         },
         {
-          "label": "Minus"
+          "label": "Moins"
         },
         {
-          "label": "Times"
+          "label": "Fois"
         },
         {
-          "label": "Check"
+          "label": "Validation"
         },
         {
-          "label": "Question"
+          "label": "Point d'interrogation"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Point d'exclamation"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
+      "label": "Image téléchargée",
+      "description": "Utilisez votre propre image pour l'icône des points d'accès.<br />75px par 75px est recommandé pour votre image."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Couleur du point d'intérêt",
+      "description": "La couleur des points d'intérêt"
     },
     {
       "entity": "Puces cliquables",
       "label": "Puce cliquable",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Par défaut"
         }
       ],
       "field": {
@@ -73,61 +73,61 @@
             "description": "Cliquez sur la miniature pour positionner la puce cliquable."
           },
           {
-            "label": "Custom hotspot icon",
+            "label": "Icône de point d'intérêt personnalisée",
             "options": [
               {
-                "label": "Default"
+                "label": "Par défaut"
               },
               {
-                "label": "Predefined icon"
+                "label": "Icône prédéfinie"
               },
               {
-                "label": "Uploaded image"
+                "label": "Image téléchargée
               }
             ]
           },
           {
-            "label": "Predefined icon",
-            "description": "Using a predefined icon for the hotspot.",
+            "label": "Icône prédéfinie",
+            "description": "Utiliser une icône prédéfinie pour le point d'intérêt.",
             "options": [
               {
                 "label": "Plus"
               },
               {
-                "label": "Minus"
+                "label": "Moins"
               },
               {
-                "label": "Times"
+                "label": "Foix"
               },
               {
-                "label": "Check"
+                "label": "Validation"
               },
               {
-                "label": "Question"
+                "label": "Point d'interrogation"
               },
               {
                 "label": "Info"
               },
               {
-                "label": "Exclamation"
+                "label": "Point d'exclamation"
               }
             ]
           },
           {
-            "label": "Uploaded image",
-            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+            "label": "Image téléchargée",
+            "description": "Utilisez votre propre image pour l'icône des points d'accès.<br />75px par 75px est recommandé pour votre image."
           },
           {
-            "label": "Hotspot color",
-            "description": "The color of the hotspot"
+            "label": "Couleur du point d'intérêt",
+            "description": "La couleur des points d'intérêt"
           },
           {
             "label": "Recouvrir toute l'image d'arrière-plan",
             "description": "Quand l'utilisateur cliquera sur la puce cliquable, le popup recouvrira toute l'image d'arrière-plan."
           },
           {
-            "label": "Header",
-            "description": "Optional header for the popup. This is used by assistive technologies."
+            "label": "En-tête",
+            "description": "En-tête optionnel pour la popup. Ceci est utilisé par les technologies d'assistance."
           },
           {
             "label": "Contenu du popup",
@@ -139,16 +139,16 @@
       }
     },
     {
-      "label": "Fallback label for hotspots without a header",
-      "default": "Untitled Hotspot"
+      "label": "Étiquette de remplacement pour les points d'intérêt sans en-tête",
+      "default": "Point d'intérêt sans titre"
     },
     {
       "label": "Intitulé du bouton \"Fermer\" pour les technologies d'accessibilité",
       "default": "Fermer"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Étiquette pour les technologies d'accessibilité indiquant que le point d'intérêt contient de l'audio ou de la vidéo",
+      "default": "Contient audio/vidéo"
     }
   ]
 }
