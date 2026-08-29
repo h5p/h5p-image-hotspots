@@ -131,6 +131,7 @@
           },
           {
             "label": "Vsebina pojavnega okna",
+            "entity": "content",
             "field": {
               "label": "Element z vsebino"
             }

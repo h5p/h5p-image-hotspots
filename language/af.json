@@ -131,6 +131,7 @@
           },
           {
             "label": "Opblaasbeeld inhoud",
+            "entity": "content",
             "field": {
               "label": "Inhouditem"
             }

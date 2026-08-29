@@ -131,6 +131,7 @@
           },
           {
             "label": "Conținut pop-up",
+            "entity": "content",
             "field": {
               "label": "Element de conținut"
             }

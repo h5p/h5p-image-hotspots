@@ -131,6 +131,7 @@
           },
           {
             "label": "彈出視窗內文文字",
+            "entity": "content",
             "field": {
               "label": "項目"
             }

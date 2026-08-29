@@ -131,6 +131,7 @@
           },
           {
             "label": "Felugró ablak tartalma",
+            "entity": "content",
             "field": {
               "label": "Tartalom elem"
             }

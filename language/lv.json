@@ -131,6 +131,7 @@
           },
           {
             "label": "Iznirstošā loga saturs",
+            "entity": "content",
             "field": {
               "label": "Satura elements"
             }

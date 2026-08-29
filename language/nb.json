@@ -131,6 +131,7 @@
           },
           {
             "label": "Innhold i popup-vinduet",
+            "entity": "content",
             "field": {
               "label": "Innholdselement"
             }

@@ -131,6 +131,7 @@
           },
           {
             "label": "Innhald i popup-vindauget",
+            "entity": "content",
             "field": {
               "label": "Innhaldselement"
             }

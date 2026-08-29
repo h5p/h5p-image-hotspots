@@ -131,6 +131,7 @@
           },
           {
             "label": "Fensterinhalt",
+            "entity": "Inhalt",
             "field": {
               "label": "Inhaltsobjekt"
             }

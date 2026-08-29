@@ -131,6 +131,7 @@
           },
           {
             "label": "محتوى منبثق",
+            "entity": "content",
             "field": {
               "label": "عنصر المحتوى"
             }

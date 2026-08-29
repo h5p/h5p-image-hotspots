@@ -131,6 +131,7 @@
           },
           {
             "label": "Pop-up inhoud",
+            "entity": "content",
             "field": {
               "label": "Inhoud item"
             }

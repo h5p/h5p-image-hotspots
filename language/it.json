@@ -131,6 +131,7 @@
           },
           {
             "label": "Contenuto del popup",
+            "entity": "content",
             "field": {
               "label": "Item del contenuto"
             }

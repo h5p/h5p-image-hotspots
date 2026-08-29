@@ -131,6 +131,7 @@
           },
           {
             "label": "Contenido emergente",
+            "entity": "content",
             "field": {
               "label": "Elemento del Contenido"
             }

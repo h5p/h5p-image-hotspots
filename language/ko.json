@@ -131,6 +131,7 @@
           },
           {
             "label": "팝업 콘텐츠",
+            "entity": "content",
             "field": {
               "label": "콘텐츠 항목"
             }

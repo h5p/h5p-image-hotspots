@@ -131,6 +131,7 @@
           },
           {
             "label": "Iššokantis turinys",
+            "entity": "content",
             "field": {
               "label": "Turinio elementas"
             }
