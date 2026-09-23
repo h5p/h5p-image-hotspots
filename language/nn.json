@@ -2,67 +2,67 @@
   "semantics": [
     {
       "label": "Bakgrunnsbilete",
-      "description": "Bilete brukt som bakgunn"
+      "description": "Bilete brukt som bakgrunn"
     },
     {
       "label": "Alternativ tekst for bakgrunnsbilete",
-      "description": "Dersom nettlesaren ikkje kan laste inn biletet, blir denne teksten vist i staden. Teksten blir òg brukt av assisterande teknologi."
+      "description": "Dersom nettlesaren ikkje kan laste inn biletet, visast denne teksten i staden. Brukast også av assisterande teknologi."
     },
     {
-      "label": "Global hotspot Icon",
+      "label": "Ikon for globale hotspoter",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Førehåndsdefinert ikon"
         },
         {
           "label": "Opplasta bilete"
         },
         {
-          "label": "Consecutive numbers"
+          "label": "Fortløpande nummerering"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspots.",
+      "label": "Førehåndsdefinert ikon",
+      "description": "Bruk eit førehåndsdefinert ikon for hotspotane.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Pluss"
         },
         {
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "Kryss"
         },
         {
-          "label": "Check"
+          "label": "Hake"
         },
         {
-          "label": "Question"
+          "label": "Spørsmål"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Utropsteikn"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
+      "label": "Opplasta bilete",
+      "description": "Bruk ditt eige bilete som ikon for hotspotane.<br />75px x 75px er tilrådd biletstorleik."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Hotspotfarge",
+      "description": "Fargen på hotspotane"
     },
     {
       "entity": "Hotspot",
       "label": "Hotspotar",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standard"
         }
       ],
       "field": {
@@ -73,64 +73,64 @@
             "description": "Klikk på miniatyrbiletet (thumbnail) for å plassere hotspoten."
           },
           {
-            "label": "Custom hotspot icon",
+            "label": "Eigendefinert hotspotikon",
             "options": [
               {
-                "label": "Default"
+                "label": "Standard"
               },
               {
-                "label": "Predefined icon"
+                "label": "Førehåndsdefinert ikon"
               },
               {
-                "label": "Uploaded image"
+                "label": "Opplasta bilete"
               }
             ]
           },
           {
-            "label": "Predefined icon",
-            "description": "Using a predefined icon for the hotspot.",
+            "label": "Førehåndsdefinert ikon",
+            "description": "Bruk eit førehåndsdefinert ikon for hotspoten.",
             "options": [
               {
-                "label": "Plus"
+                "label": "Pluss"
               },
               {
                 "label": "Minus"
               },
               {
-                "label": "Times"
+                "label": "Kryss"
               },
               {
-                "label": "Check"
+                "label": "Hake"
               },
               {
-                "label": "Question"
+                "label": "Spørsmål"
               },
               {
                 "label": "Info"
               },
               {
-                "label": "Exclamation"
+                "label": "Utropsteikn"
               }
             ]
           },
           {
-            "label": "Uploaded image",
-            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+            "label": "Opplasta bilete",
+            "description": "Bruk ditt eige bilete som ikon for hotspoten.<br />75px x 75px er tilrådd biletstorleik."
           },
           {
-            "label": "Hotspot color",
-            "description": "The color of the hotspot"
+            "label": "Hotspotfarge",
+            "description": "Fargen på hotspoten"
           },
           {
             "label": "Dekk heile bakgrunnsbiletet",
-            "description": "Viss brukar klikkar på hotspoten, vil popup-vindauget dekke heile bakgrunnsbiletet."
+            "description": "Dersom brukaren klikkar på hotspoten, vil sprettoppvindauget dekkje heile bakgrunnsbiletet."
           },
           {
             "label": "Tittel",
-            "description": "Valfri tittel for popup-vindauget. Tittelen blir òg brukt av assisterende teknologi."
+            "description": "Valfri tittel for sprettoppvindauget. Tittelen brukast også av assisterande teknologi."
           },
           {
-            "label": "Innhald i popup-vindauget",
+            "label": "Innhald i sprettoppvindauget",
             "field": {
               "label": "Innhaldselement"
             }
@@ -139,16 +139,16 @@
       }
     },
     {
-      "label": "Fallback label for hotspots without a header",
-      "default": "Untitled Hotspot"
+      "label": "Standardtekst for hotspotar utan overskrift",
+      "default": "Utan tittel"
     },
     {
       "label": "Namn på \"Lukk\"-knapp (for assisterande teknologi)",
       "default": "Lukk"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Tekst for assisterande teknologi som viser at hotspoten inneheld lyd/video",
+      "default": "Inneheld lyd/video"
     }
   ]
 }
