@@ -9,60 +9,60 @@
       "description": "Hvis nettleseren ikke kan laste inn bildet, vises denne teksten i stedet. Brukes også av assisterende teknologi."
     },
     {
-      "label": "Global hotspot Icon",
+      "label": "Ikon for globale hotspoter",
       "options": [
         {
-          "label": "Predefined icon"
+          "label": "Forhåndsdefinert ikon"
         },
         {
-          "label": "Opplasta bilde"
+          "label": "Opplastet bilde"
         },
         {
-          "label": "Consecutive numbers"
+          "label": "Fortløpende nummerering"
         }
       ]
     },
     {
-      "label": "Predefined icon",
-      "description": "Using a predefined icon for the hotspots.",
+      "label": "Forhåndsdefinert ikon",
+      "description": "Bruk et forhåndsdefinert ikon for hotspotene.",
       "options": [
         {
-          "label": "Plus"
+          "label": "Pluss"
         },
         {
           "label": "Minus"
         },
         {
-          "label": "Times"
+          "label": "Kryss"
         },
         {
-          "label": "Check"
+          "label": "Hake"
         },
         {
-          "label": "Question"
+          "label": "Spørsmål"
         },
         {
           "label": "Info"
         },
         {
-          "label": "Exclamation"
+          "label": "Utropstegn"
         }
       ]
     },
     {
-      "label": "Uploaded image",
-      "description": "Use your own image for the hotspots icon.<br />75px by 75px is recommended for your image."
+      "label": "Opplastet bilde",
+      "description": "Bruk ditt eget bilde som ikon for hotspotene.<br />75px x 75px er anbefalt bildestørrelse."
     },
     {
-      "label": "Hotspot color",
-      "description": "The color of the hotspots"
+      "label": "Hotspotfarge",
+      "description": "Fargen på hotspotene"
     },
     {
       "entity": "Hotspot",
       "label": "Hotspoter",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standard"
         }
       ],
       "field": {
@@ -73,53 +73,53 @@
             "description": "Klikk på miniatyrbildet (thumbnail) for å plassere hotspoten."
           },
           {
-            "label": "Custom hotspot icon",
+            "label": "Egendefinert hotspotikon",
             "options": [
               {
-                "label": "Default"
+                "label": "Standard"
               },
               {
-                "label": "Predefined icon"
+                "label": "Forhåndsdefinert ikon"
               },
               {
-                "label": "Uploaded image"
+                "label": "Opplastet bilde"
               }
             ]
           },
           {
-            "label": "Predefined icon",
-            "description": "Using a predefined icon for the hotspot.",
+            "label": "Forhåndsdefinert ikon",
+            "description": "Bruk et forhåndsdefinert ikon for hotspoten.",
             "options": [
               {
-                "label": "Plus"
+                "label": "Pluss"
               },
               {
                 "label": "Minus"
               },
               {
-                "label": "Times"
+                "label": "Kryss"
               },
               {
-                "label": "Check"
+                "label": "Hake"
               },
               {
-                "label": "Question"
+                "label": "Spørsmål"
               },
               {
                 "label": "Info"
               },
               {
-                "label": "Exclamation"
+                "label": "Utropstegn"
               }
             ]
           },
           {
-            "label": "Uploaded image",
-            "description": "Use your own image for the hotspot icon.<br />75px by 75px is recommended for your image."
+            "label": "Opplastet bilde",
+            "description": "Bruk ditt eget bilde som ikon for hotspoten.<br />75px x 75px er anbefalt bildestørrelse."
           },
           {
-            "label": "Hotspot color",
-            "description": "The color of the hotspot"
+            "label": "Hotspotfarge",
+            "description": "Fargen på hotspoten"
           },
           {
             "label": "Dekk hele bakgrunnsbildet",
@@ -139,16 +139,16 @@
       }
     },
     {
-      "label": "Fallback label for hotspots without a header",
-      "default": "Untitled Hotspot"
+      "label": "Standardtekst for hotspoter uten overskrift",
+      "default": "Uten tittel"
     },
     {
       "label": "Navn på \"Lukk\"-knapp (for assisterende teknologi)",
       "default": "Lukk"
     },
     {
-      "label": "Label for assistive technologies denoting that hotspot contains Audio/Video",
-      "default": "Contains Audio/Video"
+      "label": "Tekst for assisterende teknologi som angir at hotspoten inneholder lyd/video",
+      "default": "Inneholder lyd/video"
     }
   ]
 }
